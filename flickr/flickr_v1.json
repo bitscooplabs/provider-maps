@@ -1,0 +1,124 @@
+{
+  "version": "1.0",
+  "name": "Flickr",
+  "url": "http://api.flickr.com/services/",
+
+  "auth": {
+    "type": "oauth1",
+    "version": "1.0a",
+    "signature_method": "HMAC-SHA1",
+    "redirect_url": "https://flickr.com",
+    "authorization_url": "https://www.flickr.com/services/oauth/authorize",
+
+    "request_token": "https://www.flickr.com/services/oauth/request_token",
+    "access_token": "https://www.flickr.com/services/oauth/access_token",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Upload": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/upload"
+        },
+        "parameters": {
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "is_public": {
+            "value": "{{ parameters.is_public }}"
+          },
+          "is_friend": {
+            "value": "{{ parameters.is_friend }}"
+          },
+          "is_family": {
+            "value": "{{ parameters.is_family }}"
+          },
+          "safety_level": {
+            "value": "{{ parameters.safety_level }}"
+          },
+          "content_type": {
+            "value": "{{ parameters.content_type }}"
+          },
+          "hidden": {
+            "value": "{{ parameters.hidden }}"
+          },
+          "async": {
+            "value": "{{ parameters.async }}"
+          }
+        }
+      }
+    },
+    "Replace": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/replace"
+        },
+        "parameters": {
+          "photo_id": {
+            "value": "{{ parameters.photo_id }}",
+            "required": true
+          },
+          "async": {
+            "value": "{{ parameters.async }}"
+          }
+        }
+      }
+    },
+    "Rest?method=flickr": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/rest/?method=flickr.urls.lookupUser"
+        },
+        "parameters": {
+          "api_key": {
+            "value": "{{ parameters.api_key }}",
+            "required": true
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/rest/?method=flickr.photosets.comments.editComment"
+        },
+        "parameters": {
+          "api_key": {
+            "value": "{{ parameters.api_key }}",
+            "required": true
+          },
+          "comment_id": {
+            "value": "{{ parameters.comment_id }}",
+            "required": true
+          },
+          "comment_text": {
+            "value": "{{ parameters.comment_text }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

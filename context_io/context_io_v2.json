@@ -1,0 +1,972 @@
+{
+  "version": "1.0",
+  "name": "Context.io",
+  "url": "https://api.context.io/2.0",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://context.io",
+    "authorization_url": "https://api.context.io/2.0/oauth/authorize",
+    "access_token": "https://api.context.io/2.0/oauth/access_token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "OauthProviders": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/oauth_providers"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/oauth_providers"
+        },
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "provider_consumer_key": {
+            "value": "{{ parameters.provider_consumer_key }}",
+            "required": true
+          },
+          "provider_consumer_secret": {
+            "value": "{{ parameters.provider_consumer_secret }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "OauthProvidersKey": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/oauth_providers/{{ parameters.key }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/oauth_providers/{{ parameters.key }}"
+        }
+      }
+    },
+    "Discovery": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/discovery"
+        },
+        "parameters": {
+          "source_type": {
+            "value": "{{ parameters.source_type }}",
+            "required": true
+          },
+          "email": {
+            "value": "{{ parameters.email }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ConnectTokens": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/connect_tokens"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/connect_tokens"
+        },
+        "parameters": {
+          "callback_url": {
+            "value": "{{ parameters.callback_url }}",
+            "required": true
+          },
+          "service_level": {
+            "value": "{{ parameters.service_level }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "first_name": {
+            "value": "{{ parameters.first_name }}"
+          },
+          "last_name": {
+            "value": "{{ parameters.last_name }}"
+          }
+        }
+      }
+    },
+    "ConnectTokensToken": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/connect_tokens/{{ parameters.token }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/connect_tokens/{{ parameters.token }}"
+        }
+      }
+    },
+    "Accounts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts"
+        },
+        "parameters": {
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "status": {
+            "value": "{{ parameters.status }}"
+          },
+          "status_ok": {
+            "value": "{{ parameters.status_ok }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts"
+        },
+        "parameters": {
+          "email": {
+            "value": "{{ parameters.email }}",
+            "required": true
+          },
+          "first_name": {
+            "value": "{{ parameters.first_name }}"
+          },
+          "last_name": {
+            "value": "{{ parameters.last_name }}"
+          }
+        }
+      }
+    },
+    "AccountsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}"
+        },
+        "parameters": {
+          "first_name": {
+            "value": "{{ parameters.first_name }}"
+          },
+          "last_name": {
+            "value": "{{ parameters.last_name }}"
+          }
+        }
+      }
+    },
+    "AccountsIdConnectTokens": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/connect_tokens"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/connect_tokens"
+        },
+        "parameters": {
+          "callback_url": {
+            "value": "{{ parameters.callback_url }}",
+            "required": true
+          },
+          "service_level": {
+            "value": "{{ parameters.service_level }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "first_name": {
+            "value": "{{ parameters.first_name }}"
+          },
+          "last_name": {
+            "value": "{{ parameters.last_name }}"
+          }
+        }
+      }
+    },
+    "AccountsIdConnectTokensToken": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/connect_tokens/{{ parameters.token }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/connect_tokens/{{ parameters.token }}"
+        }
+      }
+    },
+    "AccountsIdContacts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/contacts"
+        },
+        "parameters": {
+          "search": {
+            "value": "{{ parameters.search }}"
+          },
+          "active_before": {
+            "value": "{{ parameters.active_before }}"
+          },
+          "active_after": {
+            "value": "{{ parameters.active_after }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "AccountsIdContactsEmail": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/contacts/{{ parameters.email }}"
+        }
+      }
+    },
+    "AccountsIdContactsEmailFiles": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/contacts/{{ parameters.email }}/files"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "AccountsIdContactsEmailMessages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/contacts/{{ parameters.email }}/messages"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "AccountsIdContactsEmailThreads": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/contacts/{{ parameters.email }}/threads"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "AccountsIdEmailAddresses": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/email_addresses"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/email_addresses"
+        },
+        "parameters": {
+          "email_address": {
+            "value": "{{ parameters.email_address }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "AccountsIdEmailAddressesEmail": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/email_addresses/{{ parameters.email }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/email_addresses/{{ parameters.email }}"
+        },
+        "parameters": {
+          "primary": {
+            "value": "{{ parameters.primary }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "AccountsIdFiles": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/files"
+        },
+        "parameters": {
+          "file_name": {
+            "value": "{{ parameters.file_name }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "to": {
+            "value": "{{ parameters.to }}"
+          },
+          "from": {
+            "value": "{{ parameters.from }}"
+          },
+          "cc": {
+            "value": "{{ parameters.cc }}"
+          },
+          "bcc": {
+            "value": "{{ parameters.bcc }}"
+          },
+          "date_before": {
+            "value": "{{ parameters.date_before }}"
+          },
+          "date_after": {
+            "value": "{{ parameters.date_after }}"
+          },
+          "indexed_before": {
+            "value": "{{ parameters.indexed_before }}"
+          },
+          "indexed_after": {
+            "value": "{{ parameters.indexed_after }}"
+          },
+          "group_by_revisions": {
+            "value": "{{ parameters.group_by_revisions }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "AccountsIdFilesFileId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/files/{{ parameters.fileId }}"
+        }
+      }
+    },
+    "AccountsIdFilesFileIdChanges": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/files/{{ parameters.fileId }}/changes"
+        }
+      }
+    },
+    "AccountsIdFilesFileIdContent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/files/{{ parameters.fileId }}/content"
+        }
+      }
+    },
+    "AccountsIdFilesFileIdRelated": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/files/{{ parameters.fileId }}/related"
+        }
+      }
+    },
+    "AccountsIdFilesFileIdRevisions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/files/{{ parameters.fileId }}/revisions"
+        }
+      }
+    },
+    "AccountsIdMessages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/messages"
+        },
+        "parameters": {
+          "subject": {
+            "value": "{{ parameters.subject }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "to": {
+            "value": "{{ parameters.to }}"
+          },
+          "from": {
+            "value": "{{ parameters.from }}"
+          },
+          "cc": {
+            "value": "{{ parameters.cc }}"
+          },
+          "bcc": {
+            "value": "{{ parameters.bcc }}"
+          },
+          "folder": {
+            "value": "{{ parameters.folder }}"
+          },
+          "date_before": {
+            "value": "{{ parameters.date_before }}"
+          },
+          "date_after": {
+            "value": "{{ parameters.date_after }}"
+          },
+          "indexed_before": {
+            "value": "{{ parameters.indexed_before }}"
+          },
+          "indexed_after": {
+            "value": "{{ parameters.indexed_after }}"
+          },
+          "include_body": {
+            "value": "{{ parameters.include_body }}"
+          },
+          "include_headers": {
+            "value": "{{ parameters.include_headers }}"
+          },
+          "include_flags": {
+            "value": "{{ parameters.include_flags }}"
+          },
+          "body_type": {
+            "value": "{{ parameters.body_type }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "AccountsIdMessagesMessageId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/messages/{{ parameters.message_id }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/messages/{{ parameters.message_id }}"
+        },
+        "parameters": {
+          "dst_folder": {
+            "value": "{{ parameters.dst_folder }}",
+            "required": true
+          },
+          "dst_source": {
+            "value": "{{ parameters.dst_source }}"
+          },
+          "move": {
+            "value": "{{ parameters.move }}"
+          }
+        }
+      }
+    },
+    "AccountsIdMessagesMessageIdBody": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/messages/{{ parameters.message_id }}/body"
+        },
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}"
+          }
+        }
+      }
+    },
+    "AccountsIdMessagesMessageIdSource": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/messages/{{ parameters.message_id }}/source"
+        }
+      }
+    },
+    "AccountsIdMessagesMessageIdFlags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/messages/{{ parameters.message_id }}/flags"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/messages/{{ parameters.message_id }}/flags"
+        },
+        "parameters": {
+          "seen": {
+            "value": "{{ parameters.seen }}"
+          },
+          "answered": {
+            "value": "{{ parameters.answered }}"
+          },
+          "flagged": {
+            "value": "{{ parameters.flagged }}"
+          },
+          "deleted": {
+            "value": "{{ parameters.deleted }}"
+          },
+          "draft": {
+            "value": "{{ parameters.draft }}"
+          }
+        }
+      }
+    },
+    "AccountsIdMessagesMessageIdHeaders": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/messages/{{ parameters.message_id }}/headers"
+        }
+      }
+    },
+    "AccountsIdMessagesMessageIdThread": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/messages/{{ parameters.message_id }}/thread"
+        }
+      }
+    },
+    "AccountsIdSources": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sources"
+        },
+        "parameters": {
+          "status": {
+            "value": "{{ parameters.status }}"
+          },
+          "status_ok": {
+            "value": "{{ parameters.status_ok }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sources"
+        },
+        "parameters": {
+          "email": {
+            "value": "{{ parameters.email }}",
+            "required": true
+          },
+          "server": {
+            "value": "{{ parameters.server }}",
+            "required": true
+          },
+          "username": {
+            "value": "{{ parameters.username }}",
+            "required": true
+          },
+          "use_ssl": {
+            "value": "{{ parameters.use_ssl }}",
+            "required": true
+          },
+          "port": {
+            "value": "{{ parameters.port }}",
+            "required": true
+          },
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "service_level": {
+            "value": "{{ parameters.service_level }}"
+          },
+          "sync_period": {
+            "value": "{{ parameters.sync_period }}"
+          },
+          "password": {
+            "value": "{{ parameters.password }}"
+          },
+          "provider_token": {
+            "value": "{{ parameters.provider_token }}"
+          },
+          "provider_token_secret": {
+            "value": "{{ parameters.provider_token_secret }}"
+          },
+          "provider_consumer_key": {
+            "value": "{{ parameters.provider_consumer_key }}"
+          }
+        }
+      }
+    },
+    "AccountsIdSourcesLabel": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sources/{{ parameters.label }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sources/{{ parameters.label }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sources/{{ parameters.label }}"
+        },
+        "parameters": {
+          "status": {
+            "value": "{{ parameters.status }}"
+          },
+          "service_level": {
+            "value": "{{ parameters.service_level }}"
+          },
+          "sync_period": {
+            "value": "{{ parameters.sync_period }}"
+          },
+          "password": {
+            "value": "{{ parameters.password }}"
+          },
+          "provider_token": {
+            "value": "{{ parameters.provider_token }}"
+          },
+          "provider_token_secret": {
+            "value": "{{ parameters.provider_token_secret }}"
+          },
+          "provider_consumer_key": {
+            "value": "{{ parameters.provider_consumer_key }}"
+          }
+        }
+      }
+    },
+    "AccountsIdSourcesLabelFolders": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sources/{{ parameters.label }}/folders"
+        }
+      }
+    },
+    "AccountsIdSourcesLabelFoldersFolder": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sources/{{ parameters.label }}/folders/{{ parameters.folder }}"
+        },
+        "parameters": {
+          "delim": {
+            "value": "{{ parameters.delim }}"
+          }
+        }
+      }
+    },
+    "AccountsIdSourcesLabelSync": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sources/{{ parameters.label }}/sync"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sources/{{ parameters.label }}/sync"
+        }
+      }
+    },
+    "AccountsIdSync": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sync"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/sync"
+        }
+      }
+    },
+    "AccountsIdThreads": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/threads"
+        },
+        "parameters": {
+          "subject": {
+            "value": "{{ parameters.subject }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "to": {
+            "value": "{{ parameters.to }}"
+          },
+          "from": {
+            "value": "{{ parameters.from }}"
+          },
+          "cc": {
+            "value": "{{ parameters.cc }}"
+          },
+          "bcc": {
+            "value": "{{ parameters.bcc }}"
+          },
+          "folder": {
+            "value": "{{ parameters.folder }}"
+          },
+          "indexed_before": {
+            "value": "{{ parameters.indexed_before }}"
+          },
+          "indexed_after": {
+            "value": "{{ parameters.indexed_after }}"
+          },
+          "active_before": {
+            "value": "{{ parameters.active_before }}"
+          },
+          "active_after": {
+            "value": "{{ parameters.active_after }}"
+          },
+          "started_before": {
+            "value": "{{ parameters.started_before }}"
+          },
+          "started_after": {
+            "value": "{{ parameters.started_after }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "AccountsIdThreadsThreadId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/threads/{{ parameters.thread_id }}"
+        }
+      }
+    },
+    "AccountsIdWebhooks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/webhooks"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/webhooks"
+        },
+        "parameters": {
+          "callback_url": {
+            "value": "{{ parameters.callback_url }}",
+            "required": true
+          },
+          "failure_notif_url": {
+            "value": "{{ parameters.failure_notif_url }}",
+            "required": true
+          },
+          "filter_to": {
+            "value": "{{ parameters.filter_to }}"
+          },
+          "filter_from": {
+            "value": "{{ parameters.filter_from }}"
+          },
+          "filter_cc": {
+            "value": "{{ parameters.filter_cc }}"
+          },
+          "filter_subject": {
+            "value": "{{ parameters.filter_subject }}"
+          },
+          "filter_thread": {
+            "value": "{{ parameters.filter_thread }}"
+          },
+          "filter_new_important": {
+            "value": "{{ parameters.filter_new_important }}"
+          },
+          "filter_file_name": {
+            "value": "{{ parameters.filter_file_name }}"
+          },
+          "filter_file_revisions": {
+            "value": "{{ parameters.filter_file_revisions }}"
+          },
+          "filter_folder_added": {
+            "value": "{{ parameters.filter_folder_added }}"
+          },
+          "filter_folder_removed": {
+            "value": "{{ parameters.filter_folder_removed }}"
+          },
+          "sync_period": {
+            "value": "{{ parameters.sync_period }}"
+          }
+        }
+      }
+    },
+    "AccountsIdWebhooksWebhookId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/webhooks/{{ parameters.webhook_id }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/webhooks/{{ parameters.webhook_id }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ identifier }}/webhooks/{{ parameters.webhook_id }}"
+        },
+        "parameters": {
+          "active": {
+            "value": "{{ parameters.active }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

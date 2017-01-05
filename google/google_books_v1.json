@@ -1,0 +1,308 @@
+{
+  "version": "1.0",
+  "name": "Google Books",
+  "url": "https://www.googleapis.com/books/v1",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://google.com",
+    "authorization_url": "https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force",
+
+    "access_token": "https://accounts.google.com/o/oauth2/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "UsersUserIdBookshelves": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userId }}/bookshelves"
+        },
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdBookshelvesShelf": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userId }}/bookshelves/{{ parameters.shelf }}"
+        },
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "MylibraryBookshelves": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/mylibrary/bookshelves"
+        },
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "MylibraryBookshelvesShelf": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/mylibrary/bookshelves/{{ parameters.shelf }}"
+        },
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "MylibraryBookshelvesShelfAddVolume": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/mylibrary/bookshelves/{{ parameters.shelf }}/addVolume"
+        },
+        "parameters": {
+          "volumeId": {
+            "value": "{{ parameters.volumeId }}",
+            "required": true
+          },
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          }
+        }
+      }
+    },
+    "MylibraryBookshelvesShelfRemoveVolume": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/mylibrary/bookshelves/{{ parameters.shelf }}/removeVolume"
+        },
+        "parameters": {
+          "volumeId": {
+            "value": "{{ parameters.volumeId }}",
+            "required": true
+          },
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          }
+        }
+      }
+    },
+    "MylibraryBookshelvesShelfClearVolumes": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/mylibrary/bookshelves/{{ parameters.shelf }}/clearVolumes"
+        },
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          }
+        }
+      }
+    },
+    "VolumesVolumeId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/volumes/{{ parameters.volumeId }}"
+        },
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "partner": {
+            "value": "{{ parameters.partner }}"
+          },
+          "projection": {
+            "value": "{{ parameters.projection }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "Volumes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/volumes"
+        },
+        "parameters": {
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          },
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "download": {
+            "value": "{{ parameters.download }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "langRestrict": {
+            "value": "{{ parameters.langRestrict }}"
+          },
+          "libraryRestrict": {
+            "value": "{{ parameters.libraryRestrict }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "orderBy": {
+            "value": "{{ parameters.orderBy }}"
+          },
+          "partner": {
+            "value": "{{ parameters.partner }}"
+          },
+          "printType": {
+            "value": "{{ parameters.printType }}"
+          },
+          "projection": {
+            "value": "{{ parameters.projection }}"
+          },
+          "showPreorders": {
+            "value": "{{ parameters.showPreorders }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          },
+          "startIndex": {
+            "value": "{{ parameters.startIndex }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "MylibraryBookshelvesShelfVolumes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/mylibrary/bookshelves/{{ parameters.shelf }}/volumes"
+        },
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "projection": {
+            "value": "{{ parameters.projection }}"
+          },
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          },
+          "showPreorders": {
+            "value": "{{ parameters.showPreorders }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          },
+          "startIndex": {
+            "value": "{{ parameters.startIndex }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdBookshelvesShelfVolumes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userId }}/bookshelves/{{ parameters.shelf }}/volumes"
+        },
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "showPreorders": {
+            "value": "{{ parameters.showPreorders }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          },
+          "startIndex": {
+            "value": "{{ parameters.startIndex }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    }
+  }
+}

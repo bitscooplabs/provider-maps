@@ -1,0 +1,506 @@
+{
+  "version": "1.0",
+  "name": "Twilio",
+  "url": "https://api.twilio.com/2010-04-01/Accounts",
+
+  "environment": {
+    "signature": ""
+  },
+
+  "headers": {
+    "Authorization": "Basic {{ environment.signature }}"
+  },
+
+  "endpoints": {
+    "AccountSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}.{{ parameters.format }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/"
+        }
+      }
+    },
+    "AccountSidSMSMessages": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/SMS/Messages.{{ parameters.format }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/SMS/Messages.{{ parameters.format }}"
+        },
+        "parameters": {
+          "From": {
+            "value": "{{ parameters.From }}"
+          },
+          "To": {
+            "value": "{{ parameters.To }}"
+          },
+          "DateSent": {
+            "value": "{{ parameters.DateSent }}"
+          }
+        }
+      }
+    },
+    "AccountSidSMSMessagesSMSMessageSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/SMS/Messages/{{ parameters.SMSMessageSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidOutgoingCallerIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/OutgoingCallerIds.{{ parameters.format }}"
+        },
+        "parameters": {
+          "PhoneNumber": {
+            "value": "{{ parameters.PhoneNumber }}"
+          },
+          "FriendlyName": {
+            "value": "{{ parameters.FriendlyName }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/OutgoingCallerIds.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidOutgoingCallerIdsOutgoingCallerIdSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/OutgoingCallerIds/{{ parameters.OutgoingCallerIdSid }}.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/OutgoingCallerIds/{{ parameters.OutgoingCallerIdSid }}.{{ parameters.format }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/OutgoingCallerIds/{{ parameters.OutgoingCallerIdSid }}.{{ parameters.format }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/OutgoingCallerIds/{{ parameters.OutgoingCallerIdSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidAvailablePhoneNumbersIsoCountryCodeLocal": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/AvailablePhoneNumbers/{{ parameters.IsoCountryCode }}/Local.{{ parameters.format }}"
+        },
+        "parameters": {
+          "AreaCode": {
+            "value": "{{ parameters.AreaCode }}"
+          },
+          "Contains": {
+            "value": "{{ parameters.Contains }}"
+          },
+          "InRegion": {
+            "value": "{{ parameters.InRegion }}"
+          },
+          "InPostalCode": {
+            "value": "{{ parameters.InPostalCode }}"
+          },
+          "NearLatLong": {
+            "value": "{{ parameters.NearLatLong }}"
+          },
+          "NearNumber": {
+            "value": "{{ parameters.NearNumber }}"
+          },
+          "InLata": {
+            "value": "{{ parameters.InLata }}"
+          },
+          "InRateCenter": {
+            "value": "{{ parameters.InRateCenter }}"
+          },
+          "Distance": {
+            "value": "{{ parameters.Distance }}"
+          }
+        }
+      }
+    },
+    "AccountSidAvailablePhoneNumbersIsoCountryCodeTollFree": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/AvailablePhoneNumbers/{{ parameters.IsoCountryCode }}/TollFree.{{ parameters.format }}"
+        },
+        "parameters": {
+          "Contains": {
+            "value": "{{ parameters.Contains }}"
+          }
+        }
+      }
+    },
+    "AccountSidCallsCallSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Calls/{{ parameters.CallSid }}.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Calls/{{ parameters.CallSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidCalls": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Calls.{{ parameters.format }}"
+        },
+        "parameters": {
+          "To": {
+            "value": "{{ parameters.To }}"
+          },
+          "From": {
+            "value": "{{ parameters.From }}"
+          },
+          "Status": {
+            "value": "{{ parameters.Status }}"
+          },
+          "StartTime": {
+            "value": "{{ parameters.StartTime }}"
+          },
+          "EndTime": {
+            "value": "{{ parameters.EndTime }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Calls.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidIncomingPhoneNumbersIncomingPhoneNumberSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/IncomingPhoneNumbers/{{ parameters.IncomingPhoneNumberSid }}.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/IncomingPhoneNumbers/{{ parameters.IncomingPhoneNumberSid }}.{{ parameters.format }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/IncomingPhoneNumbers/{{ parameters.IncomingPhoneNumberSid }}.{{ parameters.format }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/IncomingPhoneNumbers/{{ parameters.IncomingPhoneNumberSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidIncomingPhoneNumbers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/IncomingPhoneNumbers.{{ parameters.format }}"
+        },
+        "parameters": {
+          "FriendlyName": {
+            "value": "{{ parameters.FriendlyName }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/IncomingPhoneNumbers.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidCallsCallSidRecordings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Calls/{{ parameters.CallSid }}/Recordings.{{ parameters.format }}"
+        },
+        "parameters": {
+          "DateCreated": {
+            "value": "{{ parameters.DateCreated }}"
+          }
+        }
+      }
+    },
+    "AccountSidRecordings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Recordings.{{ parameters.format }}"
+        },
+        "parameters": {
+          "CallSid": {
+            "value": "{{ parameters.CallSid }}"
+          },
+          "DateCreated": {
+            "value": "{{ parameters.DateCreated }}"
+          }
+        }
+      }
+    },
+    "AccountSidRecordingsRecordingSidTranscriptions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Recordings/{{ parameters.RecordingSid }}/Transcriptions.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidTranscriptionsTranscriptionSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Transcriptions/{{ parameters.TranscriptionSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidTranscriptions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Transcriptions.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidRecordingsRecordingSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Recordings/{{ parameters.RecordingSid }}.{{ parameters.format }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Recordings/{{ parameters.RecordingSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidNotificationsNotificationSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Notifications/{{ parameters.NotificationSid }}.{{ parameters.format }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Notifications/{{ parameters.NotificationSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidNotifications": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Notifications.{{ parameters.format }}"
+        },
+        "parameters": {
+          "Log": {
+            "value": "{{ parameters.Log }}"
+          },
+          "MessageDate": {
+            "value": "{{ parameters.MessageDate }}"
+          }
+        }
+      }
+    },
+    "AccountSidCallsCallSidNotifications": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Calls/{{ parameters.CallSid }}/Notifications.{{ parameters.format }}"
+        },
+        "parameters": {
+          "Log": {
+            "value": "{{ parameters.Log }}"
+          },
+          "MessageDate": {
+            "value": "{{ parameters.MessageDate }}"
+          }
+        }
+      }
+    },
+    "AccountSidConferencesConferenceSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Conferences/{{ parameters.ConferenceSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidConferencesConferenceSidParticipants": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Conferences/{{ parameters.ConferenceSid }}/Participants.{{ parameters.format }}"
+        },
+        "parameters": {
+          "Muted": {
+            "value": "{{ parameters.Muted }}"
+          }
+        }
+      }
+    },
+    "AccountSidConferences": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Conferences.{{ parameters.format }}"
+        },
+        "parameters": {
+          "Status": {
+            "value": "{{ parameters.Status }}"
+          },
+          "FriendlyName": {
+            "value": "{{ parameters.FriendlyName }}"
+          },
+          "DateCreated": {
+            "value": "{{ parameters.DateCreated }}"
+          },
+          "DateUpdated": {
+            "value": "{{ parameters.DateUpdated }}"
+          }
+        }
+      }
+    },
+    "AccountSidConferencesConferenceSidParticipantsCallSid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Conferences/{{ parameters.ConferenceSid }}/Participants/{{ parameters.CallSid }}.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Conferences/{{ parameters.ConferenceSid }}/Participants/{{ parameters.CallSid }}.{{ parameters.format }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Conferences/{{ parameters.ConferenceSid }}/Participants/{{ parameters.CallSid }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "AccountSidSandbox": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Sandbox.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Sandbox.{{ parameters.format }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.AccountSid }}/Sandbox.{{ parameters.format }}"
+        }
+      }
+    }
+  }
+}

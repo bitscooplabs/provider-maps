@@ -1,0 +1,374 @@
+{
+  "version": "1.0",
+  "name": "Bitly",
+  "url": "https://api-ssl.bitly.com",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://bitly.com",
+    "authorization_url": "https://bitly.com/oauth/authorize",
+    "access_token": "https://api-ssl.bitly.com/oauth/access_token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "V3Shorten": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/shorten"
+        },
+        "parameters": {
+          "longUrl": {
+            "value": "{{ parameters.longUrl }}",
+            "required": true
+          },
+          "domain": {
+            "value": "{{ parameters.domain }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3Expand": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/expand"
+        },
+        "parameters": {
+          "shortUrl": {
+            "value": "{{ parameters.shortUrl }}"
+          },
+          "hash": {
+            "value": "{{ parameters.hash }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3LinkLookup": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/link/lookup"
+        },
+        "parameters": {
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3Info": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/info"
+        },
+        "parameters": {
+          "shortUrl": {
+            "value": "{{ parameters.shortUrl }}"
+          },
+          "hash": {
+            "value": "{{ parameters.hash }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3UserInfo": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/user/info"
+        },
+        "parameters": {
+          "login": {
+            "value": "{{ parameters.login }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3UserLinkHistory": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/user/link_history"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "created_before": {
+            "value": "{{ parameters.created_before }}"
+          },
+          "created_after": {
+            "value": "{{ parameters.created_after }}"
+          },
+          "user": {
+            "value": "{{ parameters.user }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3UserPopularLinks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/user/popular_links"
+        },
+        "parameters": {
+          "unit": {
+            "value": "{{ parameters.unit }}",
+            "required": true
+          },
+          "units": {
+            "value": "{{ parameters.units }}",
+            "required": true
+          },
+          "timezone": {
+            "value": "{{ parameters.timezone }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "rollup": {
+            "value": "{{ parameters.rollup }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3LinkClicks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/link/clicks"
+        },
+        "parameters": {
+          "link": {
+            "value": "{{ parameters.link }}",
+            "required": true
+          },
+          "unit": {
+            "value": "{{ parameters.unit }}",
+            "required": true
+          },
+          "units": {
+            "value": "{{ parameters.units }}",
+            "required": true
+          },
+          "timezone": {
+            "value": "{{ parameters.timezone }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "rollup": {
+            "value": "{{ parameters.rollup }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3LinkCountries": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/link/countries"
+        },
+        "parameters": {
+          "link": {
+            "value": "{{ parameters.link }}",
+            "required": true
+          },
+          "unit": {
+            "value": "{{ parameters.unit }}",
+            "required": true
+          },
+          "units": {
+            "value": "{{ parameters.units }}",
+            "required": true
+          },
+          "timezone": {
+            "value": "{{ parameters.timezone }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "rollup": {
+            "value": "{{ parameters.rollup }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3LinkReferrers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/link/referrers"
+        },
+        "parameters": {
+          "link": {
+            "value": "{{ parameters.link }}",
+            "required": true
+          },
+          "unit": {
+            "value": "{{ parameters.unit }}",
+            "required": true
+          },
+          "units": {
+            "value": "{{ parameters.units }}",
+            "required": true
+          },
+          "timezone": {
+            "value": "{{ parameters.timezone }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "rollup": {
+            "value": "{{ parameters.rollup }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3LinkShares": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/link/shares"
+        },
+        "parameters": {
+          "link": {
+            "value": "{{ parameters.link }}",
+            "required": true
+          },
+          "unit": {
+            "value": "{{ parameters.unit }}",
+            "required": true
+          },
+          "units": {
+            "value": "{{ parameters.units }}",
+            "required": true
+          },
+          "timezone": {
+            "value": "{{ parameters.timezone }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "rollup": {
+            "value": "{{ parameters.rollup }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3Search": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/search"
+        },
+        "parameters": {
+          "query": {
+            "value": "{{ parameters.query }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "cities": {
+            "value": "{{ parameters.cities }}"
+          },
+          "lang": {
+            "value": "{{ parameters.lang }}"
+          },
+          "domain": {
+            "value": "{{ parameters.domain }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3RealtimeBurstingPhrases": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/realtime/bursting_phrases"
+        },
+        "parameters": {
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "V3RealtimeHotPhrases": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/v3/realtime/hot_phrases"
+        },
+        "parameters": {
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    }
+  }
+}

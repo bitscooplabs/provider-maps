@@ -1,0 +1,397 @@
+{
+  "version": "1.0",
+  "name": "Constant Contact",
+  "url": "https://api.constantcontact.com/ws/customers",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://constantcontact.com",
+    "authorization_url": "https://oauth2.constantcontact.com/oauth2/oauth/siteowner/authorize",
+
+    "access_token": "https://oauth2.constantcontact.com/oauth2/oauth/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "UsernameContacts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/contacts"
+        },
+        "parameters": {
+          "updatedsince": {
+            "value": "{{ parameters.updatedsince }}",
+            "required": true
+          },
+          "listid": {
+            "value": "{{ parameters.listid }}",
+            "required": true
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/contacts"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UsernameContactsContactId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/contacts/{{ parameters.contact_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/contacts/{{ parameters.contact_id }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/contacts/{{ parameters.contact_id }}"
+        }
+      }
+    },
+    "UsernameContactsContactIdEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/contacts/{{ parameters.contact_id }}/events/"
+        }
+      }
+    },
+    "UsernameLists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/lists"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/lists"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UsernameListsListId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/lists/{{ parameters.list_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/lists/{{ parameters.list_id }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/lists/{{ parameters.list_id }}"
+        }
+      }
+    },
+    "UsernameListsListIdMembers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/lists/{{ parameters.list_id }}/members"
+        }
+      }
+    },
+    "UsernameCampaigns": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/campaigns"
+        },
+        "parameters": {
+          "refresh": {
+            "value": "{{ parameters.refresh }}",
+            "required": true
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/campaigns"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UsernameCampaignsCampaignId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/campaigns/{{ parameters.campaign_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/campaigns/{{ parameters.campaign_id }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/campaigns/{{ parameters.campaign_id }}"
+        }
+      }
+    },
+    "UsernameCampaignsCampaignIdEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/campaigns/{{ parameters.campaign_id }}/events/"
+        }
+      }
+    },
+    "UsernameEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UsernameEventsEventId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events/{{ parameters.event_id }}"
+        }
+      }
+    },
+    "UsernameEventsEventIdRegistrants": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events/{{ parameters.event_id }}/registrants"
+        }
+      }
+    },
+    "UsernameEventsEventIdRegistrantsRegistrantId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events/{{ parameters.event_id }}/registrants/{{ parameters.registrant_id }}"
+        }
+      }
+    },
+    "UsernameEventsEventIdRegistrantsRegistrantIdGuests": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events/{{ parameters.event_id }}/registrants/{{ parameters.registrant_id }}/guests"
+        }
+      }
+    },
+    "UsernameEventsEventIdRegistrantsRegistrantIdGuestsGuestId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events/{{ parameters.event_id }}/registrants/{{ parameters.registrant_id }}/guests/{{ parameters.guest_id }}"
+        }
+      }
+    },
+    "UsernameEventsEventIdRegistrantsRegistrantIdAttendancestatus": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events/{{ parameters.event_id }}/registrants/{{ parameters.registrant_id }}/attendancestatus"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events/{{ parameters.event_id }}/registrants/{{ parameters.registrant_id }}/attendancestatus"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UsernameEventsEventIdRegistrantsRegistrantIdPaymentstatus": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events/{{ parameters.event_id }}/registrants/{{ parameters.registrant_id }}/paymentstatus"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/events/{{ parameters.event_id }}/registrants/{{ parameters.registrant_id }}/paymentstatus"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UsernameActivities": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/activities"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/activities"
+        }
+      }
+    },
+    "UsernameActivitiesActivityId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/activities/{{ parameters.activity_id }}"
+        }
+      }
+    },
+    "UsernameSettingsEmailaddresses": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/settings/emailaddresses"
+        }
+      }
+    },
+    "UsernameSettingsEmailaddressesEmailId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/settings/emailaddresses/{{ parameters.email_id }}"
+        }
+      }
+    },
+    "UsernameLibraryFolders": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/library/folders"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UsernameLibraryFoldersFolderIdImages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/library/folders/{{ parameters.folder_id }}/images"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/library/folders/{{ parameters.folder_id }}/images"
+        }
+      }
+    },
+    "UsernameLibraryFoldersFolderIdImagesImageId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/library/folders/{{ parameters.folder_id }}/images/{{ parameters.image_id }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.username }}/library/folders/{{ parameters.folder_id }}/images/{{ parameters.image_id }}"
+        }
+      }
+    }
+  }
+}

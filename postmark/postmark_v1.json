@@ -1,0 +1,158 @@
+{
+  "version": "1.0",
+  "name": "Postmark",
+  "url": "https://api.postmarkapp.com",
+
+  "endpoints": {
+    "Email": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/email"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "EmailBatch": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/email/batch"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "Deliverystats": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/deliverystats"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "Bounces": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/bounces"
+        },
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}"
+          },
+          "inactive": {
+            "value": "{{ parameters.inactive }}"
+          },
+          "emailFilter": {
+            "value": "{{ parameters.emailFilter }}"
+          },
+          "tag": {
+            "value": "{{ parameters.tag }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "BouncesBounceID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/bounces/{{ parameters.bounceID }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "BouncesBounceIDDump": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/bounces/{{ parameters.bounceID }}/dump"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "BouncesTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/bounces/tags"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "BouncesBounceIDActivate": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/bounces/{{ parameters.bounceID }}/activate"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "Server": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/server"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/server"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    }
+  }
+}

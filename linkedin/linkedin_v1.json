@@ -1,0 +1,263 @@
+{
+  "version": "1.0",
+  "name": "Linkedin",
+  "url": "https://api.linkedin.com/v1",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://google.com",
+    "authorization_url": "https://www.linkedin.com/oauth/v2/authorization",
+
+    "access_token": "https://www.linkedin.com/oauth/v2/accessToken",
+
+    "signature": "header",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "People~?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/people/~?format=json"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      }
+    },
+    "People~(id,numConnections,pictureUrl)?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/people/~:(id,num-connections,picture-url)?format=json"
+        }
+      }
+    },
+    "People~Shares?format=json": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/people/~/shares?format=json"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "x-li-format": "{{ headers.x-li-format }}"
+        }
+      }
+    },
+    "CompaniesIdIsCompanyShareEnabled?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/is-company-share-enabled?format=json"
+        }
+      }
+    },
+    "CompaniesIdRelationToViewerIsCompanyShareEnabled?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/relation-to-viewer/is-company-share-enabled?format=json"
+        }
+      }
+    },
+    "Companies?format=json&isCompanyAdmin=true": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies?format=json&is-company-admin=true"
+        },
+        "parameters": {
+          "start": {
+            "value": "{{ parameters.start }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          }
+        }
+      }
+    },
+    "CompaniesId?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}?format=json"
+        }
+      }
+    },
+    "CompaniesId(id,name,ticker,description)?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}:(id,name,ticker,description)?format=json"
+        }
+      }
+    },
+    "CompaniesIdUpdates?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/updates?format=json"
+        },
+        "parameters": {
+          "event-type": {
+            "value": "{{ parameters.event-type }}"
+          },
+          "start": {
+            "value": "{{ parameters.start }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          }
+        }
+      }
+    },
+    "CompaniesIdUpdatesKey=updateKey?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/updates/key={{ parameters.update_key }}?format=json"
+        }
+      }
+    },
+    "CompaniesIdUpdatesKey=updateKeyUpdateComments?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/updates/key={{ parameters.update_key }}/update-comments?format=json"
+        }
+      }
+    },
+    "CompaniesIdUpdatesKey=updateKeyLikes?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/updates/key={{ parameters.update_key }}/likes?format=json"
+        }
+      }
+    },
+    "CompaniesIdShares?format=json": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/shares?format=json"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "x-li-format": "{{ headers.x-li-format }}"
+        }
+      }
+    },
+    "CompaniesIdNumFollowers?format=json&seniorities=vp,d&jobFunc=it&geos=na": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/num-followers?format=json&seniorities=vp,d&jobFunc=it&geos=na.ca"
+        },
+        "parameters": {
+          "geos": {
+            "value": "{{ parameters.geos }}"
+          },
+          "companySizes": {
+            "value": "{{ parameters.companySizes }}"
+          },
+          "jobFunc": {
+            "value": "{{ parameters.jobFunc }}"
+          },
+          "industries": {
+            "value": "{{ parameters.industries }}"
+          },
+          "seniorities": {
+            "value": "{{ parameters.seniorities }}"
+          }
+        }
+      }
+    },
+    "CompaniesIdUpdatesKey=updateKeyUpdateCommentsAsCompany": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/updates/key={{ parameters.update_key }}/update-comments-as-company/"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "x-li-format": "{{ headers.x-li-format }}"
+        }
+      }
+    },
+    "CompaniesIdHistoricalFollowStatistics?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/historical-follow-statistics?format=json"
+        },
+        "parameters": {
+          "time-granularity": {
+            "value": "{{ parameters.time-granularity }}",
+            "required": true
+          },
+          "start-timestamp": {
+            "value": "{{ parameters.start-timestamp }}",
+            "required": true
+          },
+          "end-timestamp": {
+            "value": "{{ parameters.end-timestamp }}"
+          }
+        }
+      }
+    },
+    "CompaniesIdHistoricalStatusUpdateStatistics?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/historical-status-update-statistics?format=json"
+        },
+        "parameters": {
+          "time-granularity": {
+            "value": "{{ parameters.time-granularity }}",
+            "required": true
+          },
+          "start-timestamp": {
+            "value": "{{ parameters.start-timestamp }}",
+            "required": true
+          },
+          "end-timestamp": {
+            "value": "{{ parameters.end-timestamp }}"
+          },
+          "update-key": {
+            "value": "{{ parameters.update-key }}"
+          }
+        }
+      }
+    },
+    "CompaniesIdCompanyStatistics?format=json": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/companies/{{ identifier }}/company-statistics?format=json"
+        }
+      }
+    }
+  }
+}

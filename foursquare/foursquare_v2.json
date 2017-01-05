@@ -1,0 +1,2364 @@
+{
+  "version": "1.0",
+  "name": "Foursquare",
+  "url": "https://api.foursquare.com/v2",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://foursquare.com",
+    "authorization_url": "https://foursquare.com/oauth2/authenticate",
+    "access_token": "https://foursquare.com/oauth2/access_token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "UsersUSERID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersLeaderboard": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/leaderboard"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "neighbors": {
+            "value": "{{ parameters.neighbors }}"
+          }
+        }
+      }
+    },
+    "UsersRequests": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/requests"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/search"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "phone": {
+            "value": "{{ parameters.phone }}",
+            "required": true
+          },
+          "email": {
+            "value": "{{ parameters.email }}",
+            "required": true
+          },
+          "twitter": {
+            "value": "{{ parameters.twitter }}",
+            "required": true
+          },
+          "twitterSource": {
+            "value": "{{ parameters.twitterSource }}",
+            "required": true
+          },
+          "fbid": {
+            "value": "{{ parameters.fbid }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/search"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "phone": {
+            "value": "{{ parameters.phone }}",
+            "required": true
+          },
+          "email": {
+            "value": "{{ parameters.email }}",
+            "required": true
+          },
+          "twitter": {
+            "value": "{{ parameters.twitter }}",
+            "required": true
+          },
+          "twitterSource": {
+            "value": "{{ parameters.twitterSource }}",
+            "required": true
+          },
+          "fbid": {
+            "value": "{{ parameters.fbid }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUSERIDBadges": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/badges"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUSERIDCheckins": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/checkins"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "afterTimestamp": {
+            "value": "{{ parameters.afterTimestamp }}"
+          },
+          "beforeTimestamp": {
+            "value": "{{ parameters.beforeTimestamp }}"
+          }
+        }
+      }
+    },
+    "UsersUSERIDFriends": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/friends"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUSERIDLists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/lists"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "group": {
+            "value": "{{ parameters.group }}"
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}"
+          }
+        }
+      }
+    },
+    "UsersUSERIDMayorships": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/mayorships"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUSERIDPhotos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/photos"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUSERIDTips": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/tips"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUSERIDTodos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/todos"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUSERIDVenuehistory": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/venuehistory"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "beforeTimestamp": {
+            "value": "{{ parameters.beforeTimestamp }}"
+          },
+          "afterTimestamp": {
+            "value": "{{ parameters.afterTimestamp }}"
+          },
+          "categoryId": {
+            "value": "{{ parameters.categoryId }}"
+          }
+        }
+      }
+    },
+    "UsersUSERIDApprove": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/approve"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUSERIDDeny": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/deny"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUSERIDRequest": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/request"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUSERIDSetpings": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/setpings"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "value": {
+            "value": "{{ parameters.value }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUSERIDUnfriend": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.USER_ID }}/unfriend"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersSelfUpdate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/self/update"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "photo": "{{ headers.photo }}"
+        }
+      }
+    },
+    "VenuesVENUEID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuesAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/venues/add"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}",
+            "required": true
+          },
+          "address": {
+            "value": "{{ parameters.address }}"
+          },
+          "crossStreet": {
+            "value": "{{ parameters.crossStreet }}"
+          },
+          "city": {
+            "value": "{{ parameters.city }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "zip": {
+            "value": "{{ parameters.zip }}"
+          },
+          "phone": {
+            "value": "{{ parameters.phone }}"
+          },
+          "twitter": {
+            "value": "{{ parameters.twitter }}"
+          },
+          "primaryCategoryId": {
+            "value": "{{ parameters.primaryCategoryId }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          },
+          "ignoreDuplicates": {
+            "value": "{{ parameters.ignoreDuplicates }}"
+          },
+          "ignoreDuplicatesKey": {
+            "value": "{{ parameters.ignoreDuplicatesKey }}"
+          }
+        }
+      }
+    },
+    "VenuesCategories": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/categories"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuesExplore": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/explore"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}",
+            "required": true
+          },
+          "llAcc": {
+            "value": "{{ parameters.llAcc }}"
+          },
+          "alt": {
+            "value": "{{ parameters.alt }}"
+          },
+          "altAcc": {
+            "value": "{{ parameters.altAcc }}"
+          },
+          "radius": {
+            "value": "{{ parameters.radius }}"
+          },
+          "section": {
+            "value": "{{ parameters.section }}"
+          },
+          "query": {
+            "value": "{{ parameters.query }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "intent": {
+            "value": "{{ parameters.intent }}"
+          },
+          "novelty": {
+            "value": "{{ parameters.novelty }}"
+          }
+        }
+      }
+    },
+    "VenuesManaged": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/managed"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuesSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/search"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}",
+            "required": true
+          },
+          "llAcc": {
+            "value": "{{ parameters.llAcc }}"
+          },
+          "alt": {
+            "value": "{{ parameters.alt }}"
+          },
+          "altAcc": {
+            "value": "{{ parameters.altAcc }}"
+          },
+          "query": {
+            "value": "{{ parameters.query }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "intent": {
+            "value": "{{ parameters.intent }}"
+          },
+          "radius": {
+            "value": "{{ parameters.radius }}"
+          },
+          "sw": {
+            "value": "{{ parameters.sw }}"
+          },
+          "ne": {
+            "value": "{{ parameters.ne }}"
+          },
+          "categoryId": {
+            "value": "{{ parameters.categoryId }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          },
+          "providerId": {
+            "value": "{{ parameters.providerId }}"
+          },
+          "linkedId": {
+            "value": "{{ parameters.linkedId }}"
+          }
+        }
+      }
+    },
+    "VenuesSuggestcompletion": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/suggestcompletion"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}",
+            "required": true
+          },
+          "query": {
+            "value": "{{ parameters.query }}",
+            "required": true
+          },
+          "llAcc": {
+            "value": "{{ parameters.llAcc }}"
+          },
+          "alt": {
+            "value": "{{ parameters.alt }}"
+          },
+          "altAcc": {
+            "value": "{{ parameters.altAcc }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          }
+        }
+      }
+    },
+    "VenuesTimeseries": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/timeseries"
+        },
+        "parameters": {
+          "venueId": {
+            "value": "{{ parameters.venueId }}",
+            "required": true
+          },
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "startAt": {
+            "value": "{{ parameters.startAt }}",
+            "required": true
+          },
+          "endAt": {
+            "value": "{{ parameters.endAt }}"
+          }
+        }
+      }
+    },
+    "VenuesTrending": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/trending"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "radius": {
+            "value": "{{ parameters.radius }}"
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/events"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDHerenow": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/herenow"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "afterTimestamp": {
+            "value": "{{ parameters.afterTimestamp }}"
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDLinks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/links"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDListed": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/listed"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "group": {
+            "value": "{{ parameters.group }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDMenu": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/menu"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDPhotos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/photos"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "group": {
+            "value": "{{ parameters.group }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDSimilar": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/similar"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDStats": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/stats"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "startAt": {
+            "value": "{{ parameters.startAt }}"
+          },
+          "endAt": {
+            "value": "{{ parameters.endAt }}"
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDTips": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/tips"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDEdit": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/edit"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "address": {
+            "value": "{{ parameters.address }}"
+          },
+          "crossStreet": {
+            "value": "{{ parameters.crossStreet }}"
+          },
+          "city": {
+            "value": "{{ parameters.city }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "zip": {
+            "value": "{{ parameters.zip }}"
+          },
+          "phone": {
+            "value": "{{ parameters.phone }}"
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}"
+          },
+          "categoryId": {
+            "value": "{{ parameters.categoryId }}"
+          },
+          "twitter": {
+            "value": "{{ parameters.twitter }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDFlag": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/flag"
+        },
+        "parameters": {
+          "problem": {
+            "value": "{{ parameters.problem }}",
+            "required": true
+          },
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}"
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDMarktodo": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/marktodo"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "text": {
+            "value": "{{ parameters.text }}"
+          }
+        }
+      }
+    },
+    "VenuesVENUEIDProposeedit": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/venues/{{ parameters.VENUE_ID }}/proposeedit"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "address": {
+            "value": "{{ parameters.address }}"
+          },
+          "crossStreet": {
+            "value": "{{ parameters.crossStreet }}"
+          },
+          "city": {
+            "value": "{{ parameters.city }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "zip": {
+            "value": "{{ parameters.zip }}"
+          },
+          "phone": {
+            "value": "{{ parameters.phone }}"
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}"
+          },
+          "primaryCategoryId": {
+            "value": "{{ parameters.primaryCategoryId }}"
+          }
+        }
+      }
+    },
+    "VenuegroupsGROUPID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venuegroups/{{ parameters.GROUP_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuegroupsAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/venuegroups/add"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          }
+        }
+      }
+    },
+    "VenuegroupsGROUPIDDelete": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/venuegroups/{{ parameters.GROUP_ID }}/delete"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuegroupsList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/venuegroups/list"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VenuegroupsGROUPIDAddvenue": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/venuegroups/{{ parameters.GROUP_ID }}/addvenue"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}"
+          }
+        }
+      }
+    },
+    "VenuegroupsGROUPIDRemovevenue": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/venuegroups/{{ parameters.GROUP_ID }}/removevenue"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}"
+          }
+        }
+      }
+    },
+    "CheckinsCHECKINID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/checkins/{{ parameters.CHECKIN_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "signature": {
+            "value": "{{ parameters.signature }}"
+          }
+        }
+      }
+    },
+    "CheckinsAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/checkins/add"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}",
+            "required": true
+          },
+          "broadcast": {
+            "value": "{{ parameters.broadcast }}",
+            "required": true
+          },
+          "venue": {
+            "value": "{{ parameters.venue }}"
+          },
+          "eventId": {
+            "value": "{{ parameters.eventId }}"
+          },
+          "shout": {
+            "value": "{{ parameters.shout }}"
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}"
+          },
+          "llAcc": {
+            "value": "{{ parameters.llAcc }}"
+          },
+          "alt": {
+            "value": "{{ parameters.alt }}"
+          },
+          "altAcc": {
+            "value": "{{ parameters.altAcc }}"
+          }
+        }
+      }
+    },
+    "CheckinsRecent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/checkins/recent"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "afterTimestamp": {
+            "value": "{{ parameters.afterTimestamp }}"
+          }
+        }
+      }
+    },
+    "CheckinsCHECKINIDAddcomment": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/checkins/{{ parameters.CHECKIN_ID }}/addcomment"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "text": {
+            "value": "{{ parameters.text }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CheckinsCHECKINIDDeletecomment": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/checkins/{{ parameters.CHECKIN_ID }}/deletecomment"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "commentId": {
+            "value": "{{ parameters.commentId }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TipsTIPID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tips/{{ parameters.TIP_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TipsAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/tips/add"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}",
+            "required": true
+          },
+          "text": {
+            "value": "{{ parameters.text }}",
+            "required": true
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          },
+          "broadcast": {
+            "value": "{{ parameters.broadcast }}"
+          }
+        }
+      }
+    },
+    "TipsSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tips/search"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "query": {
+            "value": "{{ parameters.query }}"
+          }
+        }
+      }
+    },
+    "TipsTIPIDDone": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tips/{{ parameters.TIP_ID }}/done"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "TipsTIPIDListed": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tips/{{ parameters.TIP_ID }}/listed"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "group": {
+            "value": "{{ parameters.group }}"
+          }
+        }
+      }
+    },
+    "TipsTIPIDMarkdone": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/tips/{{ parameters.TIP_ID }}/markdone"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TipsTIPIDMarktodo": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/tips/{{ parameters.TIP_ID }}/marktodo"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TipsTIPIDUnmark": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/tips/{{ parameters.TIP_ID }}/unmark"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsLISTID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ListsAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/add"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "collaborative": {
+            "value": "{{ parameters.collaborative }}"
+          },
+          "photoId": {
+            "value": "{{ parameters.photoId }}"
+          }
+        }
+      }
+    },
+    "ListsLISTIDFollowers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/followers"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsLISTIDSuggestphoto": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/suggestphoto"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "itemId": {
+            "value": "{{ parameters.itemId }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsLISTIDSuggesttip": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/suggesttip"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "itemId": {
+            "value": "{{ parameters.itemId }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsLISTIDSuggestvenues": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/suggestvenues"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsLISTIDAdditem": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/additem"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}"
+          },
+          "tipId": {
+            "value": "{{ parameters.tipId }}"
+          },
+          "listId": {
+            "value": "{{ parameters.listId }}"
+          },
+          "itemId": {
+            "value": "{{ parameters.itemId }}"
+          },
+          "text": {
+            "value": "{{ parameters.text }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          }
+        }
+      }
+    },
+    "ListsLISTIDDeleteitem": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/deleteitem"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "itemId": {
+            "value": "{{ parameters.itemId }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsLISTIDFollow": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/follow"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsLISTIDMoveitem": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/moveitem"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "itemId": {
+            "value": "{{ parameters.itemId }}",
+            "required": true
+          },
+          "beforeId": {
+            "value": "{{ parameters.beforeId }}",
+            "required": true
+          },
+          "afterId": {
+            "value": "{{ parameters.afterId }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsLISTIDShare": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/share"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "broadcast": {
+            "value": "{{ parameters.broadcast }}",
+            "required": true
+          },
+          "message": {
+            "value": "{{ parameters.message }}"
+          }
+        }
+      }
+    },
+    "ListsLISTIDUnfollow": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/unfollow"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsLISTIDUpdate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/update"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "collaborative": {
+            "value": "{{ parameters.collaborative }}"
+          },
+          "photoId": {
+            "value": "{{ parameters.photoId }}"
+          }
+        }
+      }
+    },
+    "ListsLISTIDUpdateitem": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/{{ parameters.LIST_ID }}/updateitem"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "itemId": {
+            "value": "{{ parameters.itemId }}",
+            "required": true
+          },
+          "tipId": {
+            "value": "{{ parameters.tipId }}"
+          },
+          "text": {
+            "value": "{{ parameters.text }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          },
+          "photoId": {
+            "value": "{{ parameters.photoId }}"
+          }
+        }
+      }
+    },
+    "UpdatesUPDATEID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/updates/{{ parameters.UPDATE_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UpdatesNotifications": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/updates/notifications"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          }
+        }
+      }
+    },
+    "UpdatesMarknotificationsread": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/updates/marknotificationsread"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "highWatermark": {
+            "value": "{{ parameters.highWatermark }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PhotosPHOTOID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ parameters.PHOTO_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PhotosAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/photos/add"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "broadcast": {
+            "value": "{{ parameters.broadcast }}"
+          },
+          "public": {
+            "value": "{{ parameters.public }}"
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}"
+          },
+          "llAcc": {
+            "value": "{{ parameters.llAcc }}"
+          },
+          "alt": {
+            "value": "{{ parameters.alt }}"
+          },
+          "altAcc": {
+            "value": "{{ parameters.altAcc }}"
+          },
+          "checkinId": {
+            "value": "{{ parameters.checkinId }}"
+          },
+          "tipId": {
+            "value": "{{ parameters.tipId }}"
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "image": "{{ headers.image }}"
+        }
+      }
+    },
+    "SettingsSETTINGID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/settings/{{ parameters.SETTING_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SettingsAll": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/settings/all"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SettingsSETTINGIDSet": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/settings/{{ parameters.SETTING_ID }}/set"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "value": {
+            "value": "{{ parameters.value }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SpecialsSPECIALID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/specials/{{ parameters.SPECIAL_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SpecialsAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/specials/add"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "text": {
+            "value": "{{ parameters.text }}",
+            "required": true
+          },
+          "unlockedText": {
+            "value": "{{ parameters.unlockedText }}",
+            "required": true
+          },
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "finePrint": {
+            "value": "{{ parameters.finePrint }}"
+          },
+          "count1": {
+            "value": "{{ parameters.count1 }}"
+          },
+          "count2": {
+            "value": "{{ parameters.count2 }}"
+          },
+          "count3": {
+            "value": "{{ parameters.count3 }}"
+          },
+          "offerId": {
+            "value": "{{ parameters.offerId }}"
+          },
+          "cost": {
+            "value": "{{ parameters.cost }}"
+          }
+        }
+      }
+    },
+    "SpecialsList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/specials/list"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}"
+          },
+          "status": {
+            "value": "{{ parameters.status }}"
+          }
+        }
+      }
+    },
+    "SpecialsSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/specials/search"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}",
+            "required": true
+          },
+          "radius": {
+            "value": "{{ parameters.radius }}"
+          },
+          "llAcc": {
+            "value": "{{ parameters.llAcc }}"
+          },
+          "alt": {
+            "value": "{{ parameters.alt }}"
+          },
+          "altAcc": {
+            "value": "{{ parameters.altAcc }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          }
+        }
+      }
+    },
+    "SpecialsSPECIALIDConfiguration": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/specials/{{ parameters.SPECIAL_ID }}/configuration"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SpecialsIDFlag": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/specials/{{ parameters.ID }}/flag"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}",
+            "required": true
+          },
+          "problem": {
+            "value": "{{ parameters.problem }}",
+            "required": true
+          },
+          "text": {
+            "value": "{{ parameters.text }}"
+          }
+        }
+      }
+    },
+    "SpecialsSPECIALIDRetire": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/specials/{{ parameters.SPECIAL_ID }}/retire"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CampaignsCAMPAIGNID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/campaigns/{{ parameters.CAMPAIGN_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CampaignsAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/campaigns/add"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "specialId": {
+            "value": "{{ parameters.specialId }}",
+            "required": true
+          },
+          "groupId": {
+            "value": "{{ parameters.groupId }}",
+            "required": true
+          },
+          "venueId": {
+            "value": "{{ parameters.venueId }}",
+            "required": true
+          },
+          "endAt": {
+            "value": "{{ parameters.endAt }}"
+          },
+          "startAt": {
+            "value": "{{ parameters.startAt }}"
+          },
+          "campaignId": {
+            "value": "{{ parameters.campaignId }}"
+          }
+        }
+      }
+    },
+    "CampaignsList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/campaigns/list"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "specialId": {
+            "value": "{{ parameters.specialId }}"
+          },
+          "groupId": {
+            "value": "{{ parameters.groupId }}"
+          },
+          "status": {
+            "value": "{{ parameters.status }}"
+          }
+        }
+      }
+    },
+    "CampaignsCAMPAIGNIDTimeseries": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/campaigns/{{ parameters.CAMPAIGN_ID }}/timeseries"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "startAt": {
+            "value": "{{ parameters.startAt }}"
+          },
+          "endAt": {
+            "value": "{{ parameters.endAt }}"
+          }
+        }
+      }
+    },
+    "CampaignsCAMPAIGNIDDelete": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/campaigns/{{ parameters.CAMPAIGN_ID }}/delete"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CampaignsCAMPAIGNIDEnd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/campaigns/{{ parameters.CAMPAIGN_ID }}/end"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CampaignsCAMPAIGNIDStart": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/campaigns/{{ parameters.CAMPAIGN_ID }}/start"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "startAt": {
+            "value": "{{ parameters.startAt }}"
+          }
+        }
+      }
+    },
+    "EventsEVENTID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/events/{{ parameters.EVENT_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "EventsCategories": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/events/categories"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "EventsSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/events/search"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "domain": {
+            "value": "{{ parameters.domain }}",
+            "required": true
+          },
+          "eventId": {
+            "value": "{{ parameters.eventId }}",
+            "required": true
+          },
+          "participantId": {
+            "value": "{{ parameters.participantId }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PagesPAGEID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/pages/{{ parameters.PAGE_ID }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PagesSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/pages/search"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "twitter": {
+            "value": "{{ parameters.twitter }}",
+            "required": true
+          },
+          "fbid": {
+            "value": "{{ parameters.fbid }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PagesPAGEIDVenues": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/pages/{{ parameters.PAGE_ID }}/venues"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "ll": {
+            "value": "{{ parameters.ll }}"
+          },
+          "radius": {
+            "value": "{{ parameters.radius }}"
+          },
+          "sw": {
+            "value": "{{ parameters.sw }}"
+          },
+          "ne": {
+            "value": "{{ parameters.ne }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          }
+        }
+      }
+    },
+    "Multi": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/multi"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}",
+            "required": true
+          },
+          "requests": {
+            "value": "{{ parameters.requests }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

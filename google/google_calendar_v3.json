@@ -1,0 +1,513 @@
+{
+  "version": "1.0",
+  "name": "Google Calendar",
+  "url": "https://www.googleapis.com/calendar/v3",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://google.com",
+    "authorization_url": "https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force",
+
+    "access_token": "https://accounts.google.com/o/oauth2/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "CalendarsCalendarIdAcl": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/acl"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/acl"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "CalendarsCalendarIdAclRuleId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/acl/{{ parameters.ruleId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/acl/{{ parameters.ruleId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/acl/{{ parameters.ruleId }}"
+        }
+      }
+    },
+    "UsersMeCalendarList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/me/calendarList"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "minAccessRole": {
+            "value": "{{ parameters.minAccessRole }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "showHidden": {
+            "value": "{{ parameters.showHidden }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/me/calendarList"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UsersMeCalendarListCalendarId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/me/calendarList/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/users/me/calendarList/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/users/me/calendarList/{{ parameters.calendarId }}"
+        }
+      }
+    },
+    "Calendars": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/calendars"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "CalendarsCalendarId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}"
+        }
+      }
+    },
+    "CalendarsCalendarIdClear": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/clear"
+        }
+      }
+    },
+    "CalendarsCalendarIdEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events"
+        },
+        "parameters": {
+          "iCalUID": {
+            "value": "{{ parameters.iCalUID }}"
+          },
+          "maxAttendees": {
+            "value": "{{ parameters.maxAttendees }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "orderBy": {
+            "value": "{{ parameters.orderBy }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "q": {
+            "value": "{{ parameters.q }}"
+          },
+          "showDeleted": {
+            "value": "{{ parameters.showDeleted }}"
+          },
+          "showHiddenInvitations": {
+            "value": "{{ parameters.showHiddenInvitations }}"
+          },
+          "singleEvents": {
+            "value": "{{ parameters.singleEvents }}"
+          },
+          "timeMax": {
+            "value": "{{ parameters.timeMax }}"
+          },
+          "timeMin": {
+            "value": "{{ parameters.timeMin }}"
+          },
+          "timeZone": {
+            "value": "{{ parameters.timeZone }}"
+          },
+          "updatedMin": {
+            "value": "{{ parameters.updatedMin }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events"
+        },
+        "parameters": {
+          "sendNotifications": {
+            "value": "{{ parameters.sendNotifications }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsEventId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "maxAttendees": {
+            "value": "{{ parameters.maxAttendees }}"
+          },
+          "timeZone": {
+            "value": "{{ parameters.timeZone }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "sendNotifications": {
+            "value": "{{ parameters.sendNotifications }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}"
+        },
+        "parameters": {
+          "sendNotifications": {
+            "value": "{{ parameters.sendNotifications }}"
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsEventIdInstances": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}/instances"
+        },
+        "parameters": {
+          "maxAttendees": {
+            "value": "{{ parameters.maxAttendees }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "originalStart": {
+            "value": "{{ parameters.originalStart }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "showDeleted": {
+            "value": "{{ parameters.showDeleted }}"
+          },
+          "timeZone": {
+            "value": "{{ parameters.timeZone }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsImport": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events/import"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsQuickAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events/quickAdd"
+        },
+        "parameters": {
+          "text": {
+            "value": "{{ parameters.text }}",
+            "required": true
+          },
+          "sendNotifications": {
+            "value": "{{ parameters.sendNotifications }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsEventIdMove": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}/move"
+        },
+        "parameters": {
+          "destination": {
+            "value": "{{ parameters.destination }}",
+            "required": true
+          },
+          "sendNotifications": {
+            "value": "{{ parameters.sendNotifications }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsEventIdReset": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}/reset"
+        },
+        "parameters": {
+          "sendNotifications": {
+            "value": "{{ parameters.sendNotifications }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "UsersMeSettings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/me/settings"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "UsersMeSettingsSetting": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/me/settings/{{ parameters.setting }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "Colors": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/colors"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "FreeBusy": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/freeBusy"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    }
+  }
+}

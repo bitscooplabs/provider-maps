@@ -1,0 +1,129 @@
+{
+  "version": "1.0",
+  "name": "World of Warcraft",
+  "url": "https://us.api.battle.net/wow",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://blizzard.com",
+    "authorization_url": "https://us.battle.net/oauth/authorize",
+    "access_token": "https://us.battle.net/oauth/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "CharacterRealmCharacterName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/character/{{ parameters.realm }}/{{ parameters.characterName }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "GuildRealmGuildName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/guild/{{ parameters.realm }}/{{ parameters.guildName }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "RealmStatus": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/realm/status"
+        }
+      }
+    },
+    "AuctionDataRealm": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/auction/data/{{ parameters.realm }}"
+        }
+      }
+    },
+    "ItemItemId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/item/{{ parameters.itemId }}"
+        }
+      }
+    },
+    "ArenaRealmTeamSizeTeamName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/arena/{{ parameters.realm }}/{{ parameters.teamSize }}/{{ parameters.teamName }}"
+        }
+      }
+    },
+    "DataCharacterRaces": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/data/character/races"
+        }
+      }
+    },
+    "DataCharacterClasses": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/data/character/classes"
+        }
+      }
+    },
+    "DataGuildRewards": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/data/guild/rewards"
+        }
+      }
+    },
+    "DataGuildPerks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/data/guild/perks"
+        }
+      }
+    },
+    "DataItemClasses": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/data/item/classes"
+        }
+      }
+    }
+  }
+}

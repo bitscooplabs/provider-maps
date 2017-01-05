@@ -1,0 +1,704 @@
+{
+  "version": "1.0",
+  "name": "Google Adsense",
+  "url": "https://www.googleapis.com/adsense/v1.4",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://google.com",
+    "authorization_url": "https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force",
+
+    "access_token": "https://accounts.google.com/o/oauth2/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Accounts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}"
+        },
+        "parameters": {
+          "tree": {
+            "value": "{{ parameters.tree }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountIdAdclients": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}/adclients"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountIdAdclientsAdClientIdAdunits": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}/adclients/{{ parameters.adClientId }}/adunits"
+        },
+        "parameters": {
+          "includeInactive": {
+            "value": "{{ parameters.includeInactive }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountIdAdclientsAdClientIdAdunitsAdUnitId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}/adclients/{{ parameters.adClientId }}/adunits/{{ parameters.adUnitId }}"
+        },
+        "parameters": {
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountIdAdclientsAdClientIdAdunitsAdUnitIdCustomchannels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}/adclients/{{ parameters.adClientId }}/adunits/{{ parameters.adUnitId }}/customchannels"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountIdAdclientsAdClientIdCustomchannels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}/adclients/{{ parameters.adClientId }}/customchannels"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountIdAdclientsAdClientIdCustomchannelsCustomChannelId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}/adclients/{{ parameters.adClientId }}/customchannels/{{ parameters.customChannelId }}"
+        },
+        "parameters": {
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountIdAdclientsAdClientIdCustomchannelsCustomChannelIdAdunits": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}/adclients/{{ parameters.adClientId }}/customchannels/{{ parameters.customChannelId }}/adunits"
+        },
+        "parameters": {
+          "includeInactive": {
+            "value": "{{ parameters.includeInactive }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountIdAdclientsAdClientIdUrlchannels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}/adclients/{{ parameters.adClientId }}/urlchannels"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AccountsAccountIdReports": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/accounts/{{ parameters.accountId }}/reports"
+        },
+        "parameters": {
+          "startDate": {
+            "value": "{{ parameters.startDate }}",
+            "required": true
+          },
+          "endDate": {
+            "value": "{{ parameters.endDate }}",
+            "required": true
+          },
+          "accountId": {
+            "value": "{{ parameters.accountId }}"
+          },
+          "currency": {
+            "value": "{{ parameters.currency }}"
+          },
+          "dimension": {
+            "value": "{{ parameters.dimension }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "locale": {
+            "value": "{{ parameters.locale }}"
+          },
+          "metric": {
+            "value": "{{ parameters.metric }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "startIndex": {
+            "value": "{{ parameters.startIndex }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "Adclients": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/adclients"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AdclientsAdClientIdAdunits": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/adclients/{{ parameters.adClientId }}/adunits"
+        },
+        "parameters": {
+          "includeInactive": {
+            "value": "{{ parameters.includeInactive }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AdclientsAdClientIdAdunitsAdUnitId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/adclients/{{ parameters.adClientId }}/adunits/{{ parameters.adUnitId }}"
+        },
+        "parameters": {
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AdclientsAdClientIdAdunitsAdUnitIdCustomchannels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/adclients/{{ parameters.adClientId }}/adunits/{{ parameters.adUnitId }}/customchannels"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AdclientsAdClientIdCustomchannels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/adclients/{{ parameters.adClientId }}/customchannels"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AdclientsAdClientIdCustomchannelsCustomChannelId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/adclients/{{ parameters.adClientId }}/customchannels/{{ parameters.customChannelId }}"
+        },
+        "parameters": {
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AdclientsAdClientIdCustomchannelsCustomChannelIdAdunits": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/adclients/{{ parameters.adClientId }}/customchannels/{{ parameters.customChannelId }}/adunits"
+        },
+        "parameters": {
+          "includeInactive": {
+            "value": "{{ parameters.includeInactive }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "AdclientsAdClientIdUrlchannels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/adclients/{{ parameters.adClientId }}/urlchannels"
+        },
+        "parameters": {
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    },
+    "Reports": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/reports"
+        },
+        "parameters": {
+          "startDate": {
+            "value": "{{ parameters.startDate }}",
+            "required": true
+          },
+          "endDate": {
+            "value": "{{ parameters.endDate }}",
+            "required": true
+          },
+          "accountId": {
+            "value": "{{ parameters.accountId }}"
+          },
+          "currency": {
+            "value": "{{ parameters.currency }}"
+          },
+          "dimension": {
+            "value": "{{ parameters.dimension }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "locale": {
+            "value": "{{ parameters.locale }}"
+          },
+          "metric": {
+            "value": "{{ parameters.metric }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "startIndex": {
+            "value": "{{ parameters.startIndex }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "prettyPrint": {
+            "value": "{{ parameters.prettyPrint }}"
+          },
+          "quotaUser": {
+            "value": "{{ parameters.quotaUser }}"
+          },
+          "userIp": {
+            "value": "{{ parameters.userIp }}"
+          }
+        }
+      }
+    }
+  }
+}

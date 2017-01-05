@@ -1,0 +1,865 @@
+{
+  "version": "1.0",
+  "name": "Fitbit",
+  "url": "https://api.fitbit.com/1",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://fitbit.com",
+    "authorization_url": "https://www.fitbit.com/oauth2/authorize",
+    "access_token": "https://api.fitbit.com/oauth2/token",
+
+    "signature": "header",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "UserUserIdProfile": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/profile.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserProfile": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/profile.{{ parameters.format }}"
+        },
+        "parameters": {
+          "gender": {
+            "value": "{{ parameters.gender }}"
+          },
+          "birthday": {
+            "value": "{{ parameters.birthday }}"
+          },
+          "height": {
+            "value": "{{ parameters.height }}"
+          },
+          "nickname": {
+            "value": "{{ parameters.nickname }}"
+          },
+          "fullname": {
+            "value": "{{ parameters.fullname }}"
+          }
+        }
+      }
+    },
+    "UserUserIdBodyDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/body/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserBodyLogWeightDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/weight/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserBodyLogFatDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/fat/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserUserIdActivitiesDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/activities/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserUserIdFoodsLogDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/foods/log/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserUserIdSleepDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/sleep/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserHeartDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/heart/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserBpDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/bp/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserGlucoseDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/glucose/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserUserIdFriends": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/friends.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserFriendsLeaderboard": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/friends/leaderboard.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserActivities": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities.{{ parameters.format }}"
+        },
+        "parameters": {
+          "activityId": {
+            "value": "{{ parameters.activityId }}",
+            "required": true
+          },
+          "startTime": {
+            "value": "{{ parameters.startTime }}",
+            "required": true
+          },
+          "durationMillis": {
+            "value": "{{ parameters.durationMillis }}",
+            "required": true
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          },
+          "distance": {
+            "value": "{{ parameters.distance }}",
+            "required": true
+          }
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserFoodsLog": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log.{{ parameters.format }}"
+        },
+        "parameters": {
+          "foodId": {
+            "value": "{{ parameters.foodId }}",
+            "required": true
+          },
+          "mealTypeId": {
+            "value": "{{ parameters.mealTypeId }}",
+            "required": true
+          },
+          "unitId": {
+            "value": "{{ parameters.unitId }}",
+            "required": true
+          },
+          "amount": {
+            "value": "{{ parameters.amount }}",
+            "required": true
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserSleep": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/sleep.{{ parameters.format }}"
+        },
+        "parameters": {
+          "startTime": {
+            "value": "{{ parameters.startTime }}",
+            "required": true
+          },
+          "duration": {
+            "value": "{{ parameters.duration }}",
+            "required": true
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserHeart": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/heart.{{ parameters.format }}"
+        },
+        "parameters": {
+          "tracker": {
+            "value": "{{ parameters.tracker }}",
+            "required": true
+          },
+          "heartRate": {
+            "value": "{{ parameters.heartRate }}",
+            "required": true
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserBp": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/bp.{{ parameters.format }}"
+        },
+        "parameters": {
+          "systolic": {
+            "value": "{{ parameters.systolic }}",
+            "required": true
+          },
+          "diastolic": {
+            "value": "{{ parameters.diastolic }}",
+            "required": true
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserGlucose": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/glucose.{{ parameters.format }}"
+        },
+        "parameters": {
+          "hba1c": {
+            "value": "{{ parameters.hba1c }}"
+          },
+          "tracker": {
+            "value": "{{ parameters.tracker }}",
+            "required": true
+          },
+          "glucose": {
+            "value": "{{ parameters.glucose }}",
+            "required": true
+          },
+          "time": {
+            "value": "{{ parameters.time }}"
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserFoodsLogFoodLogId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/{{ parameters.food_log_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserActivitiesActivityLogId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/{{ parameters.activity_log_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserUserIdBadges": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/badges.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserSleepSleepLogId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/sleep/{{ parameters.sleep_log_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserHeartHeartLogId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/heart/{{ parameters.heart_log_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserBpBpLogId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/bp/{{ parameters.bp_log_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserUserIdActivitiesCaloriesDateStartDateOrEndDateEndDateOrPeriod": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/activities/calories/date/{{ parameters.start_date_or_end_date }}/{{ parameters.end_date_or_period }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserUserIdBodyWeightDateStartDateOrEndDateEndDateOrPeriod": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/body/weight/date/{{ parameters.start_date_or_end_date }}/{{ parameters.end_date_or_period }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserBody": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/body.{{ parameters.format }}"
+        },
+        "parameters": {
+          "weight": {
+            "value": "{{ parameters.weight }}"
+          },
+          "fat": {
+            "value": "{{ parameters.fat }}"
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserBodyLogWeight": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/weight.{{ parameters.format }}"
+        },
+        "parameters": {
+          "weight": {
+            "value": "{{ parameters.weight }}",
+            "required": true
+          },
+          "time": {
+            "value": "{{ parameters.time }}",
+            "required": true
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserBodyLogFat": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/fat.{{ parameters.format }}"
+        },
+        "parameters": {
+          "fat": {
+            "value": "{{ parameters.fat }}",
+            "required": true
+          },
+          "time": {
+            "value": "{{ parameters.time }}",
+            "required": true
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserBodyLogFatBodyWeightLogId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/fat/{{ parameters.body_weight_log_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserBodyLogFatBodyFatLogId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/fat/{{ parameters.body_fat_log_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserBodyLogWeightGoal": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/weight/goal.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/weight/goal.{{ parameters.format }}"
+        },
+        "parameters": {
+          "weight": {
+            "value": "{{ parameters.weight }}",
+            "required": true
+          },
+          "startWeight": {
+            "value": "{{ parameters.startWeight }}",
+            "required": true
+          },
+          "startDate": {
+            "value": "{{ parameters.startDate }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserBodyLogFatGoal": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/fat/goal.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/body/log/fat/goal.{{ parameters.format }}"
+        },
+        "parameters": {
+          "fat": {
+            "value": "{{ parameters.fat }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserUserIdFoodsLogCaloriesInDateStartDateOrEndDateEndDateOrPeriod": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/foods/log/caloriesIn/date/{{ parameters.start_date_or_end_date }}/{{ parameters.end_date_or_period }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserUserIdSleepMinutesAsleepDateStartDateOrEndDateEndDateOrPeriod": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/sleep/minutesAsleep/date/{{ parameters.start_date_or_end_date }}/{{ parameters.end_date_or_period }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserActivitiesRecent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/recent.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserActivitiesFrequent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/frequent.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserActivitiesFavorite": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/favorite.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserFoodsLogRecent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/recent.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserFoodsLogFrequent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/frequent.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserFoodsLogFavorite": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/favorite.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserActivitiesLogFavoriteId": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/log/favorite/{{ identifier }}.{{ parameters.format }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/log/favorite/{{ identifier }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserActivitiesGoalsDaily": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/goals/daily.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/goals/daily.{{ parameters.format }}?type={{ parameters.type }}&value={{ parameters.value }}"
+        }
+      }
+    },
+    "UserActivitiesGoalsWeekly": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/goals/weekly.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/activities/goals/weekly.{{ parameters.format }}?type={{ parameters.type }}&value={{ parameters.value }}"
+        }
+      }
+    },
+    "UserFoodsLogFavoriteId": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/favorite/{{ identifier }}.{{ parameters.format }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/favorite/{{ identifier }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserFoodsLogWaterDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/water/date/{{ parameters.date }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserFoodsLogWater": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/water.{{ parameters.format }}"
+        },
+        "parameters": {
+          "amount": {
+            "value": "{{ parameters.amount }}",
+            "required": true
+          },
+          "date": {
+            "value": "{{ parameters.date }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserFoodsLogWaterWaterLogId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/water/{{ parameters.water_log_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Foods": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/foods.{{ parameters.format }}"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "defaultFoodMeasurementUnitId": {
+            "value": "{{ parameters.defaultFoodMeasurementUnitId }}",
+            "required": true
+          },
+          "defaultServingSize": {
+            "value": "{{ parameters.defaultServingSize }}",
+            "required": true
+          },
+          "calories": {
+            "value": "{{ parameters.calories }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserMeals": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/meals.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserFoodsLogGoal": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/goal.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/foods/log/goal.{{ parameters.format }}"
+        },
+        "parameters": {
+          "intensity": {
+            "value": "{{ parameters.intensity }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserDevices": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/devices.{{ parameters.format }}"
+        }
+      }
+    },
+    "Activities": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/activities.{{ parameters.format }}"
+        }
+      }
+    },
+    "ActivitiesId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/activities/{{ identifier }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "FoodsSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/foods/search.{{ parameters.format }}?query={{ parameters.query }}"
+        }
+      }
+    },
+    "FoodsFoodId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/foods/{{ parameters.food_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "FoodsUnits": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/foods/units.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserFriendsInvitations": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-/friends/invitations.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/friends/invitations.{{ parameters.format }}?invitedUserEmail={{ parameters.invitedUserEmail }}"
+        }
+      }
+    },
+    "UserFriendsInvitationsFromUserId": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-/friends/invitations/{{ parameters.from_user_id }}.{{ parameters.format }}?accept={{ parameters.accept }}"
+        }
+      }
+    },
+    "UserCollectionPathapiSubscriptionsSubscriptionId": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/-{{ parameters.collection_path }}apiSubscriptions/{{ parameters.subscription_id }}.{{ parameters.format }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/-{{ parameters.collection_path }}apiSubscriptions/{{ parameters.subscription_id }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "UserCollectionPathapiSubscriptions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/-{{ parameters.collection_path }}apiSubscriptions.{{ parameters.format }}"
+        }
+      }
+    }
+  }
+}

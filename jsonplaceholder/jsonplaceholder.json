@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "name": "Sample JSON Placeholder API",
+  "url": "https://jsonplaceholder.typicode.com",
+  "endpoints": {
+    "users": {
+      "route": "/users",
+      "single": {
+        "route": "/users/{{ identifier }}"
+      },
+      "model": {
+        "key": "id",
+        "fields": {
+          "id": "integer",
+          "name": "string",
+          "username": "string",
+          "email": "email"
+        }
+      }
+    },
+    "posts": {
+      "route": "/posts",
+      "single": {
+        "route": "/posts/{{ identifier }}"
+      },
+      "model": {
+        "key": "id",
+        "fields": {
+          "id": "integer",
+          "title": "string",
+          "userId": {
+            "type": "number",
+            "serialized": false
+          },
+          "user": {
+            "type": "related",
+            "ref": "usersHydrated",
+            "reverse": {
+              "identifier": "{{ model.userId }}"
+            }
+          },
+          "full_user": {
+            "type": "related",
+            "ref": "users",
+            "reverse": {
+              "identifier": "{{ model.userId }}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

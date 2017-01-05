@@ -1,0 +1,415 @@
+{
+  "version": "1.0",
+  "name": "Heroku",
+  "url": "https://api.heroku.com",
+
+  "headers": {
+    "Authorization": "{{ parameters.token }}"
+  },
+
+  "endpoints": {
+    "Addons": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/addons"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppAddons": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/addons"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppAddonsAddon": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/addons/{{ parameters.addon }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/addons/{{ parameters.addon }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/addons/{{ parameters.addon }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "Apps": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/apps"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.name }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.name }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppCollaborators": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/collaborators"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppCollaboratorsEmail": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/collaborators/{{ parameters.email }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppConfigVars": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/config_vars"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/config_vars"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppConfigVarsKey": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/config_vars/{{ parameters.key }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppDomains": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/domains"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppDomainsDomainName": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/domains/{{ parameters.domain_name }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "UserKeys": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/keys"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/keys"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "UserKeysKey": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/keys/{{ parameters.key }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppLogs": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/logs"
+        },
+        "parameters": {
+          "logplex": {
+            "value": "{{ parameters.logplex }}",
+            "required": true
+          },
+          "num": {
+            "value": "{{ parameters.num }}"
+          },
+          "ps": {
+            "value": "{{ parameters.ps }}"
+          },
+          "source": {
+            "value": "{{ parameters.source }}"
+          },
+          "tail": {
+            "value": "{{ parameters.tail }}"
+          }
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppPs": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/ps"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/ps"
+        },
+        "parameters": {
+          "command": {
+            "value": "{{ parameters.command }}",
+            "required": true
+          },
+          "attach": {
+            "value": "{{ parameters.attach }}"
+          }
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppPsRestart": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/ps/restart"
+        },
+        "parameters": {
+          "ps": {
+            "value": "{{ parameters.ps }}"
+          },
+          "type": {
+            "value": "{{ parameters.type }}"
+          }
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppPsStop": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/ps/stop"
+        },
+        "parameters": {
+          "ps": {
+            "value": "{{ parameters.ps }}",
+            "required": true
+          },
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppPsScale": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/ps/scale"
+        },
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "qty": {
+            "value": "{{ parameters.qty }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppReleases": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/releases"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/releases"
+        },
+        "parameters": {
+          "rollback": {
+            "value": "{{ parameters.rollback }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppReleasesRelease": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/releases/{{ parameters.release }}"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "AppsAppStack": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/stack"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/apps/{{ parameters.app }}/stack"
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    }
+  }
+}

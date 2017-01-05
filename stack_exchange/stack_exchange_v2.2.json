@@ -1,0 +1,1511 @@
+{
+  "version": "1.0",
+  "name": "Stack Exchange",
+  "url": "http://api.stackexchange.com/2.2",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://stackexchange.com",
+    "authorization_url": "https://stackexchange.com/oauth",
+
+    "access_token": "https://stackexchange.com/oauth/access_token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Answers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/answers"
+        },
+        "parameters": {
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "AnswersIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/answers/{{ parameters.ids }}"
+        },
+        "parameters": {
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "AnswersIdsComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/answers/{{ parameters.ids }}/comments"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "Badges": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/badges"
+        }
+      }
+    },
+    "BadgesIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/badges/{{ parameters.ids }}"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "BadgesName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/badges/name"
+        }
+      }
+    },
+    "BadgesTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/badges/tags"
+        }
+      }
+    },
+    "Comments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/comments"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "CommentsIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/comments/{{ parameters.ids }}"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "PostsIdsComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/posts/{{ parameters.ids }}/comments"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "ErrorsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/errors/{{ identifier }}"
+        }
+      }
+    },
+    "Privileges": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/privileges"
+        }
+      }
+    },
+    "Questions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/questions"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "tagged": {
+            "value": "{{ parameters.tagged }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "QuestionsIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/questions/{{ parameters.ids }}"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "QuestionsIdsAnswers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/questions/{{ parameters.ids }}/answers"
+        },
+        "parameters": {
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "QuestionsIdsComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/questions/{{ parameters.ids }}/comments"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "QuestionsIdsLinked": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/questions/{{ parameters.ids }}/linked"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "QuestionsIdsRelated": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/questions/{{ parameters.ids }}/related"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "QuestionsIdsTimeline": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/questions/{{ parameters.ids }}/timeline"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "QuestionsUnanswered": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/questions/unanswered"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "tagged": {
+            "value": "{{ parameters.tagged }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "QuestionsNoAnswers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/questions/no-answers"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "tagged": {
+            "value": "{{ parameters.tagged }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "RevisionsIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/revisions/{{ parameters.ids }}"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "RevisionsIdRevisionguid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/revisions/{{ identifier }}/{{ parameters.revisionguid }}"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "Search": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/search"
+        },
+        "parameters": {
+          "nottagged": {
+            "value": "{{ parameters.nottagged }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "tagged": {
+            "value": "{{ parameters.tagged }}",
+            "required": true
+          },
+          "inline": {
+            "value": "{{ parameters.inline }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Similar": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/similar"
+        },
+        "parameters": {
+          "nottagged": {
+            "value": "{{ parameters.nottagged }}"
+          },
+          "tagged": {
+            "value": "{{ parameters.tagged }}"
+          },
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          }
+        }
+      }
+    },
+    "Stats": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/stats"
+        }
+      }
+    },
+    "Tags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags"
+        },
+        "parameters": {
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "TagsSynonyms": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/synonyms"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "TagsTagsSynonyms": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/{{ parameters.tags }}/synonyms"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "TagsTagsWikis": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/{{ parameters.tags }}/wikis"
+        }
+      }
+    },
+    "TagsTagTopAnswerersPeriod": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/{{ parameters.tag }}/top-answerers/{{ parameters.period }}"
+        }
+      }
+    },
+    "TagsTagTopAskersPeriod": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/{{ parameters.tag }}/top-askers/{{ parameters.period }}"
+        }
+      }
+    },
+    "Users": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users"
+        },
+        "parameters": {
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsAnswers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/answers"
+        },
+        "parameters": {
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsBadges": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/badges"
+        }
+      }
+    },
+    "UsersIdsComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/comments"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsCommentsToid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/comments/{{ parameters.toid }}"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsFavorites": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/favorites"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsQuestions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/questions"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsQuestionsNoAnswers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/questions/no-answers"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsQuestionsUnaccepted": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/questions/unaccepted"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsQuestionsUnanswered": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/questions/unanswered"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsReputation": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/reputation"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdsTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/tags"
+        },
+        "parameters": {
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdTagsTagsTopAnswers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ identifier }}/tags/{{ parameters.tags }}/top-answers"
+        },
+        "parameters": {
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          }
+        }
+      }
+    },
+    "UsersIdTagsTagsTopQuestions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ identifier }}/tags/{{ parameters.tags }}/top-questions"
+        },
+        "parameters": {
+          "answers": {
+            "value": "{{ parameters.answers }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          }
+        }
+      }
+    },
+    "UsersIdsTimeline": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.ids }}/timeline"
+        },
+        "parameters": {
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    },
+    "UsersIdTopAnswerTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ identifier }}/top-answer-tags"
+        }
+      }
+    },
+    "UsersIdTopQuestionTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ identifier }}/top-question-tags"
+        }
+      }
+    },
+    "UsersModerators": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/moderators"
+        },
+        "parameters": {
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "fromdate": {
+            "value": "{{ parameters.fromdate }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          },
+          "min": {
+            "value": "{{ parameters.min }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "pagesize": {
+            "value": "{{ parameters.pagesize }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "todate": {
+            "value": "{{ parameters.todate }}"
+          }
+        }
+      }
+    }
+  }
+}

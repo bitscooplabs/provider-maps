@@ -1,0 +1,367 @@
+{
+  "version": "1.0",
+  "name": "Napster",
+  "url": "http://api.napster.com/v2.1",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://napster.com",
+    "authorization_url": "https://api.napster.com/oauth/authorize",
+
+    "access_token": "https://api.napster.com/oauth/access_token",
+
+    "signature": "header",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "ArtistsTop": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/artists/top"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ArtistsArt": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/artists/{art.id}"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ArtistsArtFull": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/artists/{art.id}/full"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ArtistsArtAlbums": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/artists/{art.id}/albums"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ArtistsArtRecommendations": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/artists/{art.id}/recommendations"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ArtistsArtSimilar": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/artists/{art.id}/similar"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ArtistsArtTracksTop": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/artists/{art.id}/tracks/top"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "AlbumsTop": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/albums/top"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "AlbumsNew": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/albums/new"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "AlbumsAlb": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/albums/{alb.id}"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "AlbumsAlbTracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/albums/{alb.id}/tracks"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "AlbumsAlbSimilar": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/albums/{alb.id}/similar"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "AlbumsAlbRecommendations": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/albums/{alb.id}/recommendations"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "AlbumsAlbReviews": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/albums/{alb.id}/reviews"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SearchTypeahead": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/search/typeahead"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          },
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "TracksTop": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tracks/top"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "TracksTra": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tracks/{tra.id}"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "TracksTraRecommendations": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tracks/{tra.id}/recommendations"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "Genres": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/genres"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "GenresG": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/genres/{g.id}"
+        },
+        "parameters": {
+          "apikey": {
+            "value": "{{ parameters.apikey }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

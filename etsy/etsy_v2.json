@@ -1,0 +1,1819 @@
+{
+  "version": "1.0",
+  "name": "Etsy",
+  "url": "https://openapi.etsy.com/v2",
+
+  "auth": {
+    "type": "oauth1",
+    "version": "1.0a",
+    "signature_method": "HMAC-SHA1",
+    "redirect_url": "https://etsy.com",
+    "authorization_url": "https://openapi.etsy.com/v2/oauth/authorize",
+
+    "request_token": "https://openapi.etsy.com/v2/oauth/request_token?scopes={{ENTER_YOUR_SPACE_SEPARATED_SCOPES_HERE}}",
+    "access_token": "https://openapi.etsy.com/v2/oauth/access_token",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "CountriesCountryId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/countries/{{ parameters.country_id }}"
+        }
+      }
+    },
+    "Countries": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/countries"
+        }
+      }
+    },
+    "UsersUserIdFavoritesListings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/listings"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdFavoritesListingsListingId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/listings/{{ parameters.listing_id }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/listings/{{ parameters.listing_id }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/listings/{{ parameters.listing_id }}"
+        }
+      }
+    },
+    "UsersUserIdFavoritesUsers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/users"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdFavoritesUsersTargetUserId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/users/{{ parameters.target_user_id }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/users/{{ parameters.target_user_id }}"
+        },
+        "parameters": {
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "target_user_id": {
+            "value": "{{ parameters.target_user_id }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/users/{{ parameters.target_user_id }}"
+        }
+      }
+    },
+    "HomepagesPickers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/pickers/"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "HomepagesPickersFeaturedListingPickerId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/pickers/{{ parameters.featured_listing_picker_id }}"
+        }
+      }
+    },
+    "HomepagesPickersFeaturedListingPickerIdFeatured": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/pickers/{{ parameters.featured_listing_picker_id }}/featured"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "HomepagesPickersFeaturedListingPickerIdListings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/pickers/{{ parameters.featured_listing_picker_id }}/listings"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "HomepagesPickersFeaturedListingPickerIdListingsActive": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/pickers/{{ parameters.featured_listing_picker_id }}/listings/active"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "HomepagesListings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/listings/"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "HomepagesListingsActive": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/listings/active"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "HomepagesListingsFeaturedListingId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/listings/{{ parameters.featured_listing_id }}"
+        }
+      }
+    },
+    "HomepagesListingsFeaturedListingIdPicker": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/listings/{{ parameters.featured_listing_id }}/picker"
+        }
+      }
+    },
+    "HomepagesListingsFeaturedListingIdListing": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/homepages/listings/{{ parameters.featured_listing_id }}/listing"
+        }
+      }
+    },
+    "ListingsListingIdImagesListingImageId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}/images/{{ parameters.listing_image_id }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}/images/{{ parameters.listing_image_id }}"
+        }
+      }
+    },
+    "ListingsListingIdImages": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}/images"
+        },
+        "parameters": {
+          "image": {
+            "value": "{{ parameters.image }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "listing_id": "{{ headers.listing_id }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}/images"
+        }
+      }
+    },
+    "ListingsListingId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}"
+        },
+        "parameters": {
+          "quantity": {
+            "value": "{{ parameters.quantity }}"
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "price": {
+            "value": "{{ parameters.price }}"
+          },
+          "materials": {
+            "value": "{{ parameters.materials }}"
+          },
+          "renew": {
+            "value": "{{ parameters.renew }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "shipping_template_id": {
+            "value": "{{ parameters.shipping_template_id }}"
+          },
+          "shop_section_id": {
+            "value": "{{ parameters.shop_section_id }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}"
+        }
+      }
+    },
+    "ListingsListingIdFavoredBy": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}/favored-by"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ListingsListingIdShippingInfo": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}/shipping/info"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}/shipping/info"
+        },
+        "parameters": {
+          "origin_country_id": {
+            "value": "{{ parameters.origin_country_id }}",
+            "required": true
+          },
+          "destination_country_id": {
+            "value": "{{ parameters.destination_country_id }}"
+          },
+          "primary_cost": {
+            "value": "{{ parameters.primary_cost }}",
+            "required": true
+          },
+          "secondary_cost": {
+            "value": "{{ parameters.secondary_cost }}",
+            "required": true
+          },
+          "region_id": {
+            "value": "{{ parameters.region_id }}"
+          }
+        }
+      }
+    },
+    "ListingsListingIdPayments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/listings/{{ parameters.listing_id }}/payments"
+        }
+      }
+    },
+    "ListingsActive": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/listings/active"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "keywords": {
+            "value": "{{ parameters.keywords }}"
+          },
+          "sort_on": {
+            "value": "{{ parameters.sort_on }}"
+          },
+          "sort_order": {
+            "value": "{{ parameters.sort_order }}"
+          },
+          "min_price": {
+            "value": "{{ parameters.min_price }}"
+          },
+          "max_price": {
+            "value": "{{ parameters.max_price }}"
+          },
+          "color": {
+            "value": "{{ parameters.color }}"
+          },
+          "color_accuracy": {
+            "value": "{{ parameters.color_accuracy }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "materials": {
+            "value": "{{ parameters.materials }}"
+          },
+          "category": {
+            "value": "{{ parameters.category }}"
+          }
+        }
+      }
+    },
+    "ShopsShopIdListingsActive": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/listings/active"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "keywords": {
+            "value": "{{ parameters.keywords }}"
+          },
+          "sort_on": {
+            "value": "{{ parameters.sort_on }}"
+          },
+          "sort_order": {
+            "value": "{{ parameters.sort_order }}"
+          },
+          "min_price": {
+            "value": "{{ parameters.min_price }}"
+          },
+          "max_price": {
+            "value": "{{ parameters.max_price }}"
+          },
+          "color": {
+            "value": "{{ parameters.color }}"
+          },
+          "color_accuracy": {
+            "value": "{{ parameters.color_accuracy }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "materials": {
+            "value": "{{ parameters.materials }}"
+          },
+          "category": {
+            "value": "{{ parameters.category }}"
+          }
+        }
+      }
+    },
+    "Listings": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/listings"
+        },
+        "parameters": {
+          "quantity": {
+            "value": "{{ parameters.quantity }}",
+            "required": true
+          },
+          "title": {
+            "value": "{{ parameters.title }}",
+            "required": true
+          },
+          "description": {
+            "value": "{{ parameters.description }}",
+            "required": true
+          },
+          "price": {
+            "value": "{{ parameters.price }}",
+            "required": true
+          },
+          "materials": {
+            "value": "{{ parameters.materials }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}",
+            "required": true
+          },
+          "shipping_template_id": {
+            "value": "{{ parameters.shipping_template_id }}",
+            "required": true
+          },
+          "shop_section_id": {
+            "value": "{{ parameters.shop_section_id }}"
+          }
+        }
+      }
+    },
+    "OrdersOrderId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orders/{{ parameters.order_id }}"
+        }
+      }
+    },
+    "OrdersOrderIdReceipts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orders/{{ parameters.order_id }}/receipts"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ReceiptsReceiptId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/receipts/{{ parameters.receipt_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/receipts/{{ parameters.receipt_id }}"
+        },
+        "parameters": {
+          "receipt_id": {
+            "value": "{{ parameters.receipt_id }}",
+            "required": true
+          },
+          "was_paid": {
+            "value": "{{ parameters.was_paid }}"
+          },
+          "was_shipped": {
+            "value": "{{ parameters.was_shipped }}"
+          },
+          "message_from_seller": {
+            "value": "{{ parameters.message_from_seller }}"
+          },
+          "message_from_buyer": {
+            "value": "{{ parameters.message_from_buyer }}"
+          }
+        }
+      }
+    },
+    "ReceiptsReceiptIdTransactions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/receipts/{{ parameters.receipt_id }}/transactions"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdRecommendedListings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/recommended_listings"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "excluded_listing_ids": {
+            "value": "{{ parameters.excluded_listing_ids }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdRecommendedListingsRejectsListingIds": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/recommended_listings/rejects/{{ parameters.listing_ids }}"
+        },
+        "headers": {
+          "user_id": "{{ headers.user_id }}",
+          "listing_ids": "{{ headers.listing_ids }}"
+        }
+      }
+    },
+    "UsersUserIdRecommendedListingsViewsListingIds": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/recommended_listings/views/{{ parameters.listing_ids }}"
+        },
+        "headers": {
+          "user_id": "{{ headers.user_id }}",
+          "listing_ids": "{{ headers.listing_ids }}"
+        }
+      }
+    },
+    "RegionsRegionId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/regions/{{ parameters.region_id }}"
+        }
+      }
+    },
+    "Regions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/regions"
+        }
+      }
+    },
+    "ShippingInfoShippingInfoId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shipping/info/{{ parameters.shipping_info_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/shipping/info/{{ parameters.shipping_info_id }}"
+        },
+        "parameters": {
+          "origin_country_id": {
+            "value": "{{ parameters.origin_country_id }}"
+          },
+          "destination_country_id": {
+            "value": "{{ parameters.destination_country_id }}"
+          },
+          "primary_cost": {
+            "value": "{{ parameters.primary_cost }}"
+          },
+          "secondary_cost": {
+            "value": "{{ parameters.secondary_cost }}"
+          },
+          "listing_id": {
+            "value": "{{ parameters.listing_id }}"
+          },
+          "region_id": {
+            "value": "{{ parameters.region_id }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/shipping/info/{{ parameters.shipping_info_id }}"
+        }
+      }
+    },
+    "ShippingTemplatesEntriesShippingTemplateEntryId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shipping/templates/entries/{{ parameters.shipping_template_entry_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/shipping/templates/entries/{{ parameters.shipping_template_entry_id }}"
+        },
+        "parameters": {
+          "destination_country_id": {
+            "value": "{{ parameters.destination_country_id }}"
+          },
+          "primary_cost": {
+            "value": "{{ parameters.primary_cost }}"
+          },
+          "secondary_cost": {
+            "value": "{{ parameters.secondary_cost }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/shipping/templates/entries/{{ parameters.shipping_template_entry_id }}"
+        }
+      }
+    },
+    "ShippingTemplatesEntries": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/shipping/templates/entries"
+        },
+        "parameters": {
+          "shipping_template_id": {
+            "value": "{{ parameters.shipping_template_id }}",
+            "required": true
+          },
+          "destination_country_id": {
+            "value": "{{ parameters.destination_country_id }}"
+          },
+          "primary_cost": {
+            "value": "{{ parameters.primary_cost }}",
+            "required": true
+          },
+          "secondary_cost": {
+            "value": "{{ parameters.secondary_cost }}",
+            "required": true
+          },
+          "destination_region_id": {
+            "value": "{{ parameters.destination_region_id }}"
+          }
+        }
+      }
+    },
+    "ShippingTemplatesShippingTemplateId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shipping/templates/{{ parameters.shipping_template_id }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/shipping/templates/{{ parameters.shipping_template_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/shipping/templates/{{ parameters.shipping_template_id }}"
+        },
+        "parameters": {
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "origin_country_id": {
+            "value": "{{ parameters.origin_country_id }}"
+          }
+        }
+      }
+    },
+    "ShippingTemplatesShippingTemplateIdEntries": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shipping/templates/{{ parameters.shipping_template_id }}/entries"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ShippingTemplates": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/shipping/templates"
+        },
+        "parameters": {
+          "title": {
+            "value": "{{ parameters.title }}",
+            "required": true
+          },
+          "origin_country_id": {
+            "value": "{{ parameters.origin_country_id }}",
+            "required": true
+          },
+          "destination_country_id": {
+            "value": "{{ parameters.destination_country_id }}"
+          },
+          "primary_cost": {
+            "value": "{{ parameters.primary_cost }}",
+            "required": true
+          },
+          "secondary_cost": {
+            "value": "{{ parameters.secondary_cost }}",
+            "required": true
+          },
+          "destination_region_id": {
+            "value": "{{ parameters.destination_region_id }}"
+          }
+        }
+      }
+    },
+    "ShopsShopId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}"
+        },
+        "parameters": {
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "announcement": {
+            "value": "{{ parameters.announcement }}"
+          },
+          "is_refusing_alchemy": {
+            "value": "{{ parameters.is_refusing_alchemy }}"
+          },
+          "alchemy_message": {
+            "value": "{{ parameters.alchemy_message }}"
+          },
+          "sale_message": {
+            "value": "{{ parameters.sale_message }}"
+          },
+          "policy_welcome": {
+            "value": "{{ parameters.policy_welcome }}"
+          },
+          "policy_payment": {
+            "value": "{{ parameters.policy_payment }}"
+          },
+          "policy_shipping": {
+            "value": "{{ parameters.policy_shipping }}"
+          },
+          "policy_refunds": {
+            "value": "{{ parameters.policy_refunds }}"
+          },
+          "policy_additional": {
+            "value": "{{ parameters.policy_additional }}"
+          }
+        }
+      }
+    },
+    "ShopsShopIdReceipts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/receipts"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ShopsShopIdTransactions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/transactions"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ShopsShopIdSections": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/sections"
+        }
+      }
+    },
+    "Shops": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops"
+        },
+        "parameters": {
+          "shop_name": {
+            "value": "{{ parameters.shop_name }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ShopsShopIdListingsFeatured": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/listings/featured"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ShopsShopIdListingsInactive": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/listings/inactive"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ShopsShopIdListingsExpired": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/listings/expired"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "ShopsShopIdListingsInactiveListingId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/listings/inactive/{{ parameters.listing_id }}"
+        }
+      }
+    },
+    "ShopsShopIdListingsExpiredListingId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/listings/expired/{{ parameters.listing_id }}"
+        }
+      }
+    },
+    "ShopsShopIdAppearanceBanner": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/appearance/banner"
+        },
+        "parameters": {
+          "image": {
+            "value": "{{ parameters.image }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ShopsShopIdAppearanceBannerShopBannerId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/shops/{{ parameters.shop_id }}/appearance/banner/{{ parameters.shop_banner_id }}"
+        }
+      }
+    },
+    "SectionsShopSectionId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/sections/{{ parameters.shop_section_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/sections/{{ parameters.shop_section_id }}"
+        },
+        "parameters": {
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "rank": {
+            "value": "{{ parameters.rank }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/sections/{{ parameters.shop_section_id }}"
+        }
+      }
+    },
+    "Sections": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/sections"
+        },
+        "parameters": {
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "CategoriesTag": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/categories/{{ parameters.tag }}"
+        }
+      }
+    },
+    "CategoriesTagSubtag": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/categories/{{ parameters.tag }}/{{ parameters.subtag }}"
+        }
+      }
+    },
+    "CategoriesTagSubtagSubsubtag": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/categories/{{ parameters.tag }}/{{ parameters.subtag }}/{{ parameters.subsubtag }}"
+        }
+      }
+    },
+    "TaxonomyCategories": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/taxonomy/categories"
+        }
+      }
+    },
+    "TaxonomyCategoriesTag": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/taxonomy/categories/{{ parameters.tag }}"
+        }
+      }
+    },
+    "TaxonomyCategoriesTagSubtag": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/taxonomy/categories/{{ parameters.tag }}/{{ parameters.subtag }}"
+        }
+      }
+    },
+    "TaxonomyTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/taxonomy/tags"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          }
+        }
+      }
+    },
+    "TaxonomyTagsTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/taxonomy/tags/{{ parameters.tags }}"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          }
+        }
+      }
+    },
+    "TransactionsTransactionId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/transactions/{{ parameters.transaction_id }}"
+        }
+      }
+    },
+    "TreasuriesTreasuryId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/treasuries/{{ parameters.treasury_id }}"
+        }
+      }
+    },
+    "Treasuries": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/treasuries"
+        },
+        "parameters": {
+          "keywords": {
+            "value": "{{ parameters.keywords }}"
+          },
+          "sort_on": {
+            "value": "{{ parameters.sort_on }}"
+          },
+          "sort_order": {
+            "value": "{{ parameters.sort_order }}"
+          },
+          "maturity": {
+            "value": "{{ parameters.maturity }}"
+          },
+          "detail_level": {
+            "value": "{{ parameters.detail_level }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdTreasuries": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/treasuries"
+        },
+        "parameters": {
+          "sort_on": {
+            "value": "{{ parameters.sort_on }}"
+          },
+          "sort_order": {
+            "value": "{{ parameters.sort_order }}"
+          },
+          "maturity": {
+            "value": "{{ parameters.maturity }}"
+          },
+          "detail_level": {
+            "value": "{{ parameters.detail_level }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}"
+        }
+      }
+    },
+    "UsersUserIdShops": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/shops"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdFavoredBy": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favored-by"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdFeedbackAsSubject": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/feedback/as-subject"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdFeedbackAsAuthor": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/feedback/as-author"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdFeedbackAsBuyer": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/feedback/as-buyer"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdFeedbackAsSeller": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/feedback/as-seller"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdOrders": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/orders"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdReceipts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/receipts"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdTransactions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/transactions"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdCharges": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/charges"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdPayments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/payments"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdShippingTemplates": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/shipping/templates"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdPaymentsTemplates": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/payments/templates"
+        }
+      }
+    },
+    "UsersUserIdAddresses": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/addresses"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/addresses"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "first_line": {
+            "value": "{{ parameters.first_line }}",
+            "required": true
+          },
+          "second_line": {
+            "value": "{{ parameters.second_line }}"
+          },
+          "city": {
+            "value": "{{ parameters.city }}",
+            "required": true
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "zip": {
+            "value": "{{ parameters.zip }}",
+            "required": true
+          },
+          "country_id": {
+            "value": "{{ parameters.country_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PaymentsTemplatesPaymentTemplateId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/payments/templates/{{ parameters.payment_template_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/payments/templates/{{ parameters.payment_template_id }}"
+        },
+        "parameters": {
+          "allow_check": {
+            "value": "{{ parameters.allow_check }}"
+          },
+          "allow_mo": {
+            "value": "{{ parameters.allow_mo }}"
+          },
+          "allow_other": {
+            "value": "{{ parameters.allow_other }}"
+          },
+          "allow_paypal": {
+            "value": "{{ parameters.allow_paypal }}"
+          },
+          "paypal_email": {
+            "value": "{{ parameters.paypal_email }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "first_line": {
+            "value": "{{ parameters.first_line }}"
+          },
+          "second_line": {
+            "value": "{{ parameters.second_line }}"
+          },
+          "city": {
+            "value": "{{ parameters.city }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "zip": {
+            "value": "{{ parameters.zip }}"
+          },
+          "country_id": {
+            "value": "{{ parameters.country_id }}"
+          }
+        }
+      }
+    },
+    "PaymentsTemplates": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/payments/templates"
+        },
+        "parameters": {
+          "allow_check": {
+            "value": "{{ parameters.allow_check }}"
+          },
+          "allow_mo": {
+            "value": "{{ parameters.allow_mo }}"
+          },
+          "allow_other": {
+            "value": "{{ parameters.allow_other }}"
+          },
+          "allow_paypal": {
+            "value": "{{ parameters.allow_paypal }}"
+          },
+          "paypal_email": {
+            "value": "{{ parameters.paypal_email }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "first_line": {
+            "value": "{{ parameters.first_line }}"
+          },
+          "second_line": {
+            "value": "{{ parameters.second_line }}"
+          },
+          "city": {
+            "value": "{{ parameters.city }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "zip": {
+            "value": "{{ parameters.zip }}"
+          },
+          "country_id": {
+            "value": "{{ parameters.country_id }}"
+          }
+        }
+      }
+    },
+    "PaymentsListingPaymentId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/payments/{{ parameters.listing_payment_id }}"
+        }
+      }
+    },
+    "UsersUserIdAvatar": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/avatar"
+        },
+        "parameters": {
+          "src": {
+            "value": "{{ parameters.src }}"
+          },
+          "image": {
+            "value": "{{ parameters.image }}"
+          }
+        }
+      }
+    },
+    "UsersUserIdAvatarSrc": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/avatar/src"
+        }
+      }
+    },
+    "UsersUserIdAddressesUserAddressId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/addresses/{{ parameters.user_address_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/addresses/{{ parameters.user_address_id }}"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "first_line": {
+            "value": "{{ parameters.first_line }}"
+          },
+          "second_line": {
+            "value": "{{ parameters.second_line }}"
+          },
+          "city": {
+            "value": "{{ parameters.city }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "zip": {
+            "value": "{{ parameters.zip }}"
+          },
+          "country_id": {
+            "value": "{{ parameters.country_id }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/addresses/{{ parameters.user_address_id }}"
+        }
+      }
+    },
+    "FeaturedUsers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/featured/users"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "FeaturedUsersFeaturedUserId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/featured/users/{{ parameters.featured_user_id }}"
+        }
+      }
+    },
+    "": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/"
+        }
+      }
+    },
+    "ServerEpoch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/server/epoch"
+        }
+      }
+    },
+    "ServerPing": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/server/ping"
+        }
+      }
+    }
+  }
+}

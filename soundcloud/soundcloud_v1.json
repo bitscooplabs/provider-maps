@@ -1,0 +1,871 @@
+{
+  "version": "1.0",
+  "name": "Soundcloud",
+  "url": "https://api.soundcloud.com",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://soundcloud.com",
+    "authorization_url": "https://soundcloud.com/connect",
+
+    "access_token": "https://soundcloud.com/oauth2/token",
+
+    "signature": "header",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Tracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tracks"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "q": {
+            "value": "{{ parameters.q }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          },
+          "bpm-from": {
+            "value": "{{ parameters.bpm-from }}"
+          },
+          "bpm-to": {
+            "value": "{{ parameters.bpm-to }}"
+          },
+          "duration-from": {
+            "value": "{{ parameters.duration-from }}"
+          },
+          "duration-to": {
+            "value": "{{ parameters.duration-to }}"
+          },
+          "created_at-from": {
+            "value": "{{ parameters.created_at-from }}"
+          },
+          "created_at-to": {
+            "value": "{{ parameters.created_at-to }}"
+          },
+          "ids": {
+            "value": "{{ parameters.ids }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/tracks"
+        },
+        "headers": {
+          "title": "{{ headers.title }}",
+          "asset_data": "{{ headers.asset_data }}"
+        }
+      }
+    },
+    "TracksTrackId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tracks/{{ parameters.track_id }}"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/tracks/{{ parameters.track_id }}"
+        },
+        "headers": {
+          "title": "{{ headers.title }}",
+          "asset_data": "{{ headers.asset_data }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/tracks/{{ parameters.track_id }}"
+        },
+        "parameters": {
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TracksTrackIdComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tracks/{{ parameters.track_id }}/comments"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/tracks/{{ parameters.track_id }}/comments"
+        },
+        "parameters": {
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TracksTrackIdPermissions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tracks/{{ parameters.track_id }}/permissions"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/tracks/{{ parameters.track_id }}/permissions"
+        },
+        "parameters": {
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TracksTrackIdSecretToken": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tracks/{{ parameters.track_id }}/secret-token"
+        },
+        "parameters": {
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/tracks/{{ parameters.track_id }}/secret-token"
+        },
+        "parameters": {
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Users": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "q": {
+            "value": "{{ parameters.q }}"
+          }
+        }
+      }
+    },
+    "UsersUserId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdTracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/tracks"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/comments"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdFollowings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/followings"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdFollowingsContactId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/followings/{{ parameters.contact_id }}"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "contact_id": {
+            "value": "{{ parameters.contact_id }}",
+            "required": true
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/followings/{{ parameters.contact_id }}"
+        },
+        "parameters": {
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "contact_id": {
+            "value": "{{ parameters.contact_id }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/followings/{{ parameters.contact_id }}"
+        },
+        "parameters": {
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "contact_id": {
+            "value": "{{ parameters.contact_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdFollowers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/followers"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdFollowersContactId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/followers/{{ parameters.contact_id }}"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "contact_id": {
+            "value": "{{ parameters.contact_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdFavorites": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdFavoritesTrackId": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/{{ parameters.track_id }}"
+        },
+        "parameters": {
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/favorites/{{ parameters.track_id }}"
+        },
+        "parameters": {
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdGroups": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/groups"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersUserIdPlaylists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/playlists"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Me": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/me"
+        }
+      }
+    },
+    "MeTracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me/tracks"
+        }
+      }
+    },
+    "MeComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me/comments"
+        }
+      }
+    },
+    "MeFollowings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me/followings"
+        }
+      }
+    },
+    "MeFollowingsContactId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me/followings/{{ parameters.contact_id }}"
+        },
+        "parameters": {
+          "contact_id": {
+            "value": "{{ parameters.contact_id }}",
+            "required": true
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/me/followings/{{ parameters.contact_id }}"
+        },
+        "parameters": {
+          "contact_id": {
+            "value": "{{ parameters.contact_id }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/me/followings/{{ parameters.contact_id }}"
+        },
+        "parameters": {
+          "contact_id": {
+            "value": "{{ parameters.contact_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "MeFollowers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me/followers"
+        }
+      }
+    },
+    "MeFollowersContactId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me/followers/{{ parameters.contact_id }}"
+        },
+        "parameters": {
+          "contact_id": {
+            "value": "{{ parameters.contact_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "MeFavorites": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me/favorites"
+        }
+      }
+    },
+    "MeFavoritesTrackId": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/me/favorites/{{ parameters.track_id }}"
+        },
+        "parameters": {
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/me/favorites/{{ parameters.track_id }}"
+        },
+        "parameters": {
+          "track_id": {
+            "value": "{{ parameters.track_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "MeGroups": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me/groups"
+        }
+      }
+    },
+    "MePlaylists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/me/playlists"
+        }
+      }
+    },
+    "Playlists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/playlists"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "q": {
+            "value": "{{ parameters.q }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          }
+        }
+      }
+    },
+    "PlaylistsPlaylistId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/playlists/{{ parameters.playlist_id }}"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "playlist_id": {
+            "value": "{{ parameters.playlist_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Groups": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/groups"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "GroupsGroupId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/groups/{{ parameters.group_id }}"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "playlist_id": {
+            "value": "{{ parameters.playlist_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "GroupsGroupIdUsers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/groups/{{ parameters.group_id }}/users"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "playlist_id": {
+            "value": "{{ parameters.playlist_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "GroupsGroupIdModerators": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/groups/{{ parameters.group_id }}/moderators"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "playlist_id": {
+            "value": "{{ parameters.playlist_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "GroupsGroupIdMembers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/groups/{{ parameters.group_id }}/members"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "playlist_id": {
+            "value": "{{ parameters.playlist_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "GroupsGroupIdContributors": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/groups/{{ parameters.group_id }}/contributors"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "playlist_id": {
+            "value": "{{ parameters.playlist_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "GroupsGroupIdTracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/groups/{{ parameters.group_id }}/tracks"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "playlist_id": {
+            "value": "{{ parameters.playlist_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CommentsCommentId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/comments/{{ parameters.comment_id }}"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "playlist_id": {
+            "value": "{{ parameters.playlist_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Resolve": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/resolve"
+        },
+        "parameters": {
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

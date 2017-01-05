@@ -1,0 +1,156 @@
+{
+  "version": "1.0",
+  "name": "Weather Underground",
+  "url": "http://api.wunderground.com/api/",
+
+  "environment": {
+    "key": "{{insert your key}}"
+  },
+
+  "endpoints": {
+    "Alerts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/alerts/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Almanac": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/almanac/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Astronomy": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/astronomy/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "conditions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/conditions/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "currenthurricane": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/currenthurricane/view.{{ parameters.format }}"
+        }
+      }
+    },
+    "Forecast": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/forecast/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Forecast10Day": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/forecast10day/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "GeoLookup": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/geolookup/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "History": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/history_{{ parameters.date }}/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Hourly": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/hourly/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Hourly10Day": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/hourly10day/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Panner": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/planner_{{ parameters.date }}/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "RawTide": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/rawtide/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Tide": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/tide/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Webcams": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/webcams/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Yesterday": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ environment.key }}/yesteerday/q/{{ parameters.query }}.{{ parameters.format }}"
+        }
+      }
+    }
+  }
+}

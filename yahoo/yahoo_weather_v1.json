@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "name": "Yahoo_weather",
+  "url": "http://weather.yahooapis.com",
+  "endpoints": {
+    "Forecastrss": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/forecastrss"
+        },
+        "parameters": {
+          "w": {
+            "value": "{{ parameters.w }}",
+            "required": true
+          },
+          "u": {
+            "value": "{{ parameters.u }}"
+          }
+        }
+      }
+    }
+  }
+}

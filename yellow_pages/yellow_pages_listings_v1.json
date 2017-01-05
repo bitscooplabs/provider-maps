@@ -1,0 +1,131 @@
+{
+  "version": "1.0",
+  "name": "Yellow_pages",
+  "url": "http://api2.yp.com/listings/v1",
+
+  "environment": {
+    "key": "{{insert your key}}"
+  },
+
+  "parameters": {
+    "key": "{{ environment.key }}"
+  },
+  
+  "endpoints": {
+    "Listingmap": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/listingmap"
+        },
+        "parameters": {
+          "listingid": {
+            "value": "{{ parameters.listingid }}",
+            "required": true
+          },
+          "pixel_width": {
+            "value": "{{ parameters.pixel_width }}"
+          },
+          "pixel_height": {
+            "value": "{{ parameters.pixel_height }}"
+          },
+          "image_format": {
+            "value": "{{ parameters.image_format }}"
+          },
+          "zoom": {
+            "value": "{{ parameters.zoom }}"
+          },
+          "pan_vertical": {
+            "value": "{{ parameters.pan_vertical }}"
+          },
+          "pan_horizontal": {
+            "value": "{{ parameters.pan_horizontal }}"
+          }
+        }
+      }
+    },
+    "Search": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/search"
+        },
+        "parameters": {
+          "term": {
+            "value": "{{ parameters.term }}",
+            "required": true
+          },
+          "searchloc": {
+            "value": "{{ parameters.searchloc }}",
+            "required": true
+          },
+          "phonesearch": {
+            "value": "{{ parameters.phonesearch }}"
+          },
+          "listingcount": {
+            "value": "{{ parameters.listingcount }}"
+          },
+          "shorturl": {
+            "value": "{{ parameters.shorturl }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          },
+          "pagenum": {
+            "value": "{{ parameters.pagenum }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "radius": {
+            "value": "{{ parameters.radius }}"
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "Details": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/details"
+        },
+        "parameters": {
+          "listingid": {
+            "value": "{{ parameters.listingid }}",
+            "required": true
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "Reviews": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/reviews"
+        },
+        "parameters": {
+          "listingid": {
+            "value": "{{ parameters.listingid }}",
+            "required": true
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    }
+  }
+}

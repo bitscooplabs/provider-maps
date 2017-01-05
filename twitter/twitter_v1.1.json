@@ -1,0 +1,2338 @@
+{
+  "version": "1.0",
+  "name": "Twitter",
+  "url": "https://api.twitter.com/1.1",
+
+  "auth": {
+    "type": "oauth1",
+    "version": "1.0a",
+    "signature_method": "HMAC-SHA1",
+    "redirect_url": "https://twitter.com",
+    "authorization_url": "https://api.twitter.com/oauth/authenticate",
+
+    "request_token": "https://api.twitter.com/oauth/request_token",
+    "access_token": "https://api.twitter.com/oauth/access_token",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "AccountSettings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/account/settings.json"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/account/settings.json"
+        },
+        "parameters": {
+          "sleep_time_enabled": {
+            "value": "{{ parameters.sleep_time_enabled }}"
+          },
+          "start_sleep_time": {
+            "value": "{{ parameters.start_sleep_time }}"
+          },
+          "end_sleep_time": {
+            "value": "{{ parameters.end_sleep_time }}"
+          },
+          "time_zone": {
+            "value": "{{ parameters.time_zone }}"
+          },
+          "trend_location_woeid": {
+            "value": "{{ parameters.trend_location_woeid }}"
+          },
+          "lang": {
+            "value": "{{ parameters.lang }}"
+          }
+        }
+      }
+    },
+    "VerifyCredentials": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/account/verify_credentials.json"
+        },
+        "parameters": {
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "include_email": {
+            "value": "{{ parameters.include_email }}"
+          }
+        }
+      }
+    },
+    "RateLimitStatus": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/application/rate_limit_status.json"
+        },
+        "parameters": {
+          "resources": {
+            "value": "{{ parameters.resources }}"
+          }
+        }
+      }
+    },
+    "BlockIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blocks/ids.json"
+        },
+        "parameters": {
+          "stringify_ids": {
+            "value": "{{ parameters.stringify_ids }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          }
+        }
+      }
+    },
+    "Blocks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blocks/list.json"
+        },
+        "parameters": {
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          }
+        }
+      }
+    },
+    "CollectionsEntries": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/collections/entries.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "max_position": {
+            "value": "{{ parameters.max_position }}"
+          },
+          "min_position": {
+            "value": "{{ parameters.min_position }}"
+          }
+        }
+      }
+    },
+    "CollectionsList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/collections/list.json"
+        },
+        "parameters": {
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}",
+            "required": true
+          },
+          "tweet_id": {
+            "value": "{{ parameters.tweet_id }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          }
+        }
+      }
+    },
+    "CollectionsShow": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/collections/show.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "DirectMessagesReceived": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/direct_messages.json"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          }
+        }
+      }
+    },
+    "DirectMessagesSent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/direct_messages/sent.json"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      }
+    },
+    "DirectMessagesShow": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/direct_messages/show.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Favorites": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/favorites/list.json"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "FollowerIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/followers/ids.json"
+        },
+        "parameters": {
+          "stringify_ids": {
+            "value": "{{ parameters.stringify_ids }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "FollowerList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/followers/list.json"
+        },
+        "parameters": {
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "include_user_entities": {
+            "value": "{{ parameters.include_user_entities }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "FriendIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/friends/ids.json"
+        },
+        "parameters": {
+          "stringify_ids": {
+            "value": "{{ parameters.stringify_ids }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "FriendList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/friends/list.json"
+        },
+        "parameters": {
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "include_user_entities": {
+            "value": "{{ parameters.include_user_entities }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "FriendshipsIncoming": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/friendships/incoming.json"
+        },
+        "parameters": {
+          "stringify_ids": {
+            "value": "{{ parameters.stringify_ids }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          }
+        }
+      }
+    },
+    "FriendshipsLookup": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/friendships/lookup.json"
+        },
+        "parameters": {
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "FriendshipsNoRetweets": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/friendships/no_retweets/ids.json"
+        },
+        "parameters": {
+          "stringify_ids": {
+            "value": "{{ parameters.stringify_ids }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "FriendshipsOutgoing": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/friendships/outgoing.json"
+        },
+        "parameters": {
+          "stringify_ids": {
+            "value": "{{ parameters.stringify_ids }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          }
+        }
+      }
+    },
+    "FriendshipsShow": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/friendships/show.json"
+        },
+        "parameters": {
+          "source_id": {
+            "value": "{{ parameters.source_id }}"
+          },
+          "source_screen_name": {
+            "value": "{{ parameters.source_screen_name }}"
+          },
+          "target_id": {
+            "value": "{{ parameters.target_id }}",
+            "required": true
+          },
+          "target_screen_name": {
+            "value": "{{ parameters.target_screen_name }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "GeoPlace": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/geo/id/{{ parameters.place_id }}.json"
+        }
+      }
+    },
+    "ReverseGeocode": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/geo/reverse_geocode.json"
+        },
+        "parameters": {
+          "lat": {
+            "value": "{{ parameters.lat }}",
+            "required": true
+          },
+          "long": {
+            "value": "{{ parameters.long }}",
+            "required": true
+          },
+          "accuracy": {
+            "value": "{{ parameters.accuracy }}"
+          },
+          "granularity": {
+            "value": "{{ parameters.granularity }}"
+          },
+          "max_results": {
+            "value": "{{ parameters.max_results }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "GeoSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/geo/search.json"
+        },
+        "parameters": {
+          "accuracy": {
+            "value": "{{ parameters.accuracy }}"
+          },
+          "granularity": {
+            "value": "{{ parameters.granularity }}"
+          },
+          "contained_within": {
+            "value": "{{ parameters.contained_within }}"
+          },
+          "max_results": {
+            "value": "{{ parameters.max_results }}"
+          },
+          "attribute:street_address": {
+            "value": "{{ parameters.attribute_street_address }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "lat": {
+            "value": "{{ parameters.lat }}",
+            "required": true
+          },
+          "long": {
+            "value": "{{ parameters.long }}",
+            "required": true
+          },
+          "query": {
+            "value": "{{ parameters.query }}",
+            "required": true
+          },
+          "ip": {
+            "value": "{{ parameters.ip }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "HelpConfiguration": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/help/configuration.json"
+        }
+      }
+    },
+    "HelpLanguages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/help/languages.json"
+        }
+      }
+    },
+    "HelpPrivacy": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/help/privacy.json"
+        }
+      }
+    },
+    "HelpTos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/help/tos.json"
+        }
+      }
+    },
+    "ListList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/list.json"
+        },
+        "parameters": {
+          "reverse": {
+            "value": "{{ parameters.reverse }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "ListMembers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/members.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListMembersShow": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/members/show.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListMemberships": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/memberships.json"
+        },
+        "parameters": {
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "filter_to_owned_lists": {
+            "value": "{{ parameters.filter_to_owned_lists }}"
+          }
+        }
+      }
+    },
+    "ListOwnerships": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/ownerships.json"
+        },
+        "parameters": {
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          }
+        }
+      }
+    },
+    "ListShow": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/show.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListStatuses": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/statuses.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "include_rts": {
+            "value": "{{ parameters.include_rts }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}"
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}"
+          }
+        }
+      }
+    },
+    "ListSubscribers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/subscribers.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListSubscribersShow": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/subscribers/show.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListSubscriptions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/lists/subscriptions.json"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "MutedIds": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/mutes/users/ids.json"
+        },
+        "parameters": {
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          }
+        }
+      }
+    },
+    "MutedList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/mutes/users/list.json"
+        },
+        "parameters": {
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          }
+        }
+      }
+    },
+    "Projects": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "https://curator.twitter.com/broadcast/1/projects"
+        },
+        "parameters": {
+          "auth": {
+            "value": "{{ parameters.auth }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "SavedSearches": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/saved_searches/list.json"
+        }
+      }
+    },
+    "SavedSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/saved_searches/show/{{ identifier }}.json"
+        }
+      }
+    },
+    "SearchTweets": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/search/tweets.json"
+        },
+        "parameters": {
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          },
+          "geocode": {
+            "value": "{{ parameters.geocode }}"
+          },
+          "lang": {
+            "value": "{{ parameters.lang }}"
+          },
+          "locale": {
+            "value": "{{ parameters.locale }}"
+          },
+          "result_type": {
+            "value": "{{ parameters.result_type }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "until": {
+            "value": "{{ parameters.until }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "HomeTimeline": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/statuses/home_timeline.json"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          },
+          "exclude_replies": {
+            "value": "{{ parameters.exclude_replies }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "StatusesLookup": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/statuses/lookup.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "map": {
+            "value": "{{ parameters.map }}"
+          }
+        }
+      }
+    },
+    "MentionsTimeline": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/statuses/mentions_timeline.json"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "StatusOembed": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "https://publish.twitter.com/oembed"
+        },
+        "parameters": {
+          "maxwidth": {
+            "value": "{{ parameters.maxwidth }}"
+          },
+          "hide_media": {
+            "value": "{{ parameters.hide_media }}"
+          },
+          "hide_thread": {
+            "value": "{{ parameters.hide_thread }}"
+          },
+          "omit_script": {
+            "value": "{{ parameters.omit_script }}"
+          },
+          "align": {
+            "value": "{{ parameters.align }}"
+          },
+          "related": {
+            "value": "{{ parameters.related }}"
+          },
+          "lang": {
+            "value": "{{ parameters.lang }}"
+          },
+          "theme": {
+            "value": "{{ parameters.theme }}"
+          },
+          "link_color": {
+            "value": "{{ parameters.link_color }}"
+          },
+          "widget_type": {
+            "value": "{{ parameters.widget_type }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Retweeters": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/statuses/retweeters/ids.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "cursor": {
+            "value": "{{ parameters.cursor }}"
+          },
+          "stringify_ids": {
+            "value": "{{ parameters.stringify_ids }}"
+          }
+        }
+      }
+    },
+    "Retweets": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/statuses/retweets/{{ identifier }}.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          }
+        }
+      }
+    },
+    "RetweetsOfMe": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/statuses/retweets_of_me.json"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "include_user_entities": {
+            "value": "{{ parameters.include_user_entities }}"
+          }
+        }
+      }
+    },
+    "ShowStatus": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/statuses/show/{{ identifier }}.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          },
+          "include_my_retweet": {
+            "value": "{{ parameters.include_my_retweet }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "UserTimeline": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/statuses/user_timeline.json"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          },
+          "exclude_replies": {
+            "value": "{{ parameters.exclude_replies }}"
+          },
+          "contributor_details": {
+            "value": "{{ parameters.contributor_details }}"
+          },
+          "include_rts": {
+            "value": "{{ parameters.include_rts }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TrendsAvailable": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/trends/available.json"
+        }
+      }
+    },
+    "TrendsClosest": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/trends/closest.json"
+        },
+        "parameters": {
+          "lat": {
+            "value": "{{ parameters.lat }}"
+          },
+          "long": {
+            "value": "{{ parameters.long }}"
+          }
+        }
+      }
+    },
+    "TrendsPlace": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/trends/place.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "exclude": {
+            "value": "{{ parameters.exclude }}"
+          }
+        }
+      }
+    },
+    "UserLookup": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/lookup.json"
+        },
+        "parameters": {
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "UserProfileBanner": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/profile_banner.json"
+        },
+        "parameters": {
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "UserSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/search.json"
+        },
+        "parameters": {
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "UsersShow": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/show.json"
+        },
+        "parameters": {
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "Suggestions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/suggestions.json"
+        },
+        "parameters": {
+          "lang": {
+            "value": "{{ parameters.lang }}"
+          }
+        }
+      }
+    },
+    "Suggestion": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/suggestions/{{ parameters.slug }}.json"
+        },
+        "parameters": {
+          "lang": {
+            "value": "{{ parameters.lang }}"
+          }
+        }
+      }
+    },
+    "SuggestionMembers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/suggestions/{{ parameters.slug }}/members.json"
+        }
+      }
+    },
+    "RemoveProfileBanner": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/account/remove_profile_banner.json"
+        }
+      }
+    },
+    "UpdateProfile": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/account/update_profile.json"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          },
+          "location": {
+            "value": "{{ parameters.location }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "profile_link_color": {
+            "value": "{{ parameters.profile_link_color }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          }
+        }
+      }
+    },
+    "UpdateProfileBackgroundImage": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/account/update_profile_background_image.json"
+        },
+        "parameters": {
+          "image": {
+            "value": "{{ parameters.image }}",
+            "required": true
+          },
+          "tile": {
+            "value": "{{ parameters.tile }}"
+          },
+          "media_id": {
+            "value": "{{ parameters.media_id }}"
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          }
+        }
+      }
+    },
+    "UpdateProfileBanner": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/account/update_profile_banner.json"
+        },
+        "parameters": {
+          "banner": {
+            "value": "{{ parameters.banner }}"
+          },
+          "width": {
+            "value": "{{ parameters.width }}"
+          },
+          "height": {
+            "value": "{{ parameters.height }}"
+          },
+          "offset_left": {
+            "value": "{{ parameters.offset_left }}"
+          },
+          "offset_top": {
+            "value": "{{ parameters.offset_top }}"
+          }
+        }
+      }
+    },
+    "UpdateProfileImage": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/account/update_profile_image.json"
+        },
+        "parameters": {
+          "image": {
+            "value": "{{ parameters.image }}",
+            "required": true
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "CreateBlock": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/blocks/create.json"
+        },
+        "parameters": {
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "DestroyBlock": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/blocks/destroy.json"
+        },
+        "parameters": {
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          },
+          "skip_status": {
+            "value": "{{ parameters.skip_status }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CreateCollection": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/collections/create.json"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          },
+          "timeline_order": {
+            "value": "{{ parameters.timeline_order }}"
+          }
+        }
+      }
+    },
+    "DestroyConnection": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/collections/destroy.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        }
+      }
+    },
+    "AddCollectionEntry": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/collections/entries/add.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "tweet_id": {
+            "value": "{{ parameters.tweet_id }}",
+            "required": true
+          },
+          "relative_to": {
+            "value": "{{ parameters.relative_to }}"
+          },
+          "above": {
+            "value": "{{ parameters.above }}"
+          }
+        }
+      }
+    },
+    "CurateCollection": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/collections/entries/curate.json"
+        }
+      }
+    },
+    "MoveCollectionEntry": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/collections/entries/move.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "tweet_id": {
+            "value": "{{ parameters.tweet_id }}",
+            "required": true
+          },
+          "relative_to": {
+            "value": "{{ parameters.relative_to }}"
+          },
+          "above": {
+            "value": "{{ parameters.above }}"
+          }
+        }
+      }
+    },
+    "RemoveCollectionEntry": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/collections/entries/move.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "tweet_id": {
+            "value": "{{ parameters.tweet_id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UpdateCollection": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/collections/entries/move.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          }
+        }
+      }
+    },
+    "DestroyDirectMessages": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/direct_messages/destroy.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "CreateDirectMessage": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/direct_messages/new.json"
+        },
+        "parameters": {
+          "text": {
+            "value": "{{ parameters.text }}",
+            "required": true
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "CreateFavorite": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/favorites/create.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "DestroyFavorite": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/favorites/destroy.json"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "include_entities": {
+            "value": "{{ parameters.include_entities }}"
+          }
+        }
+      }
+    },
+    "CreateFriendship": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/friendships/create.json"
+        },
+        "parameters": {
+          "follow": {
+            "value": "{{ parameters.follow }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "DestroyFriendship": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/friendships/destroy.json"
+        },
+        "parameters": {
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "UpdateFriendship": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/friendships/update.json"
+        },
+        "parameters": {
+          "device": {
+            "value": "{{ parameters.device }}"
+          },
+          "retweets": {
+            "value": "{{ parameters.retweets }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "CreateList": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/create.json"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "mode": {
+            "value": "{{ parameters.mode }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          }
+        }
+      }
+    },
+    "DestroyList": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/destroy.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CreateListMember": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/members/create.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}",
+            "required": true
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CreateAllListMembers": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/members/create_all.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "DestroyListMember": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/members/destroy.json"
+        },
+        "parameters": {
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          },
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          }
+        }
+      }
+    },
+    "DestroyAllListMembers": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/members/destroy_all.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CreateListSubscriber": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/subscribers/create.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "DestroyListSubscriber": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/subscribers/destroy.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ListsUpdate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/lists/update.json"
+        },
+        "parameters": {
+          "owner_screen_name": {
+            "value": "{{ parameters.owner_screen_name }}"
+          },
+          "owner_id": {
+            "value": "{{ parameters.owner_id }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "mode": {
+            "value": "{{ parameters.mode }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "list_id": {
+            "value": "{{ parameters.list_id }}",
+            "required": true
+          },
+          "slug": {
+            "value": "{{ parameters.slug }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UploadMedia": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/media/upload.json"
+        },
+        "parameters": {
+          "media": {
+            "value": "{{ parameters.media }}",
+            "required": true
+          },
+          "media_data": {
+            "value": "{{ parameters.media_data }}",
+            "required": true
+          },
+          "additional_owners": {
+            "value": "{{ parameters.additional_owners }}"
+          }
+        }
+      }
+    },
+    "CreateMute": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/mutes/users/create.json"
+        },
+        "parameters": {
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "DestroyMute": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/mutes/users/destroy.json"
+        },
+        "parameters": {
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    },
+    "CreateSavedSearch": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/saved_searches/create.json"
+        },
+        "parameters": {
+          "query": {
+            "value": "{{ parameters.query }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "DestroySavedSearch": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/saved_searches/destroy/{{ identifier }}.json"
+        }
+      }
+    },
+    "DestroyStatus": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/statuses/destroy/{{ identifier }}.json"
+        },
+        "parameters": {
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          }
+        }
+      }
+    },
+    "RetweetStatus": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/statuses/retweet/{{ identifier }}.json"
+        },
+        "parameters": {
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          }
+        }
+      }
+    },
+    "UnretweetStatus": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/statuses/unretweet/{{ identifier }}.json"
+        },
+        "parameters": {
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          }
+        }
+      }
+    },
+    "UpdateStatus": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/statuses/update.json"
+        },
+        "parameters": {
+          "status": {
+            "value": "{{ parameters.status }}",
+            "required": true
+          },
+          "in_reply_to_status_id": {
+            "value": "{{ parameters.in_reply_to_status_id }}"
+          },
+          "possibly_sensitive": {
+            "value": "{{ parameters.possibly_sensitive }}"
+          },
+          "lat": {
+            "value": "{{ parameters.lat }}"
+          },
+          "long": {
+            "value": "{{ parameters.long }}"
+          },
+          "place_id": {
+            "value": "{{ parameters.place_id }}"
+          },
+          "display_coordinates": {
+            "value": "{{ parameters.display_coordinates }}"
+          },
+          "trim_user": {
+            "value": "{{ parameters.trim_user }}"
+          },
+          "media_ids": {
+            "value": "{{ parameters.media_ids }}"
+          }
+        }
+      }
+    },
+    "ReportSpam": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/report_spam.json"
+        },
+        "parameters": {
+          "screen_name": {
+            "value": "{{ parameters.screen_name }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          }
+        }
+      }
+    }
+  }
+}

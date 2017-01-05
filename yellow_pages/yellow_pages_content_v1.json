@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "name": "Yellow_pages",
+  "url": "http://api2.yp.com/content/v1",
+
+  "environment": {
+    "key": "{{insert your key}}"
+  },
+
+  "parameters": {
+    "key": "{{ environment.key }}"
+  },
+
+  "endpoints": {
+    "Coupons": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/coupons"
+        },
+        "parameters": {
+          "searchloc": {
+            "value": "{{ parameters.searchloc }}",
+            "required": true
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          },
+          "term": {
+            "value": "{{ parameters.term }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Deals": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/deals"
+        },
+        "parameters": {
+          "searchloc": {
+            "value": "{{ parameters.searchloc }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

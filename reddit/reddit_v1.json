@@ -1,0 +1,4726 @@
+{
+  "version": "1.0",
+  "name": "Reddit",
+  "url": "http://oauth.reddit.com/",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://reddit.com",
+    "authorization_url": "https://ssl.reddit.com/api/v1/authorize?duration=permanent",
+
+    "access_token": {
+      "method": "POST",
+      "url": "https://ssl.reddit.com/api/v1/access_token"
+    },
+    "use_auth_header": true,
+
+    "signature": "header",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {"Me": {
+    "GET": {
+      "method": "GET",
+      "scopes": ["identity"],
+      "route": {
+        "data": "",
+        "path": "/api/v1/me"
+      }
+    }
+  },
+    "MyKarma": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["mysubreddits"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/karma"
+        }
+      }
+    },
+    "MyPrefs": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["mysubreddits"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/prefs"
+        }
+      },
+      "PATCH": {
+        "method": "PATCH",
+        "scopes": ["account"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/prefs"
+        }
+      }
+    },
+    "MyTrophies": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["identity"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/trophies"
+        }
+      }
+    },
+    "PrefsFriends": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/prefs/friends"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "PrefsBlocked": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/prefs/blocked"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "PrefsMessages": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/prefs/messaging"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "PrefsTrusted": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/prefs/trusted"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "MyPrefsFriends": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/friends"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "MyPrefsBlocked": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/blocked"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "NeedsCaptcha": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["identity"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/friends"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "ClearFlairTemplates": {
+      "POST": {
+        "method": "GET",
+        "scopes": ["modflair"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/clearflairtemplates"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "flair_type": {
+            "value": "{{ parameters.flair_type }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "DeleteFlair": {
+      "POST": {
+        "method": "GET",
+        "scopes": ["modflair"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/deleteflair"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "AddFlair": {
+      "POST": {
+        "method": "GET",
+        "scopes": ["modflair"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/flair"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "css_class": {
+            "value": "{{ parameters.css_class }}"
+          },
+          "link": {
+            "value": "{{ parameters.link }}"
+          },
+          "text": {
+            "value": "{{ parameters.text }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "ConfigFlair": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modflair"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/flairconfig"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "flair_enabled": {
+            "value": "{{ parameters.flair_enabled }}"
+          },
+          "flair_position": {
+            "value": "{{ parameters.flair_position }}"
+          },
+          "flair_self_assign_enabled": {
+            "value": "{{ parameters.flair_self_assign_enabled }}"
+          },
+          "link_flair_position": {
+            "value": "{{ parameters.link_flair_position }}"
+          },
+          "link_flair_self_assign_enabled": {
+            "value": "{{ parameters.link_flair_self_assign_enabled }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "FlairCSV": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/flaircsv"
+        },
+        "parameters": {
+          "flair_csv": {
+            "value": "{{ parameters.flair_csv }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "FlairList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/flairlist"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.limit }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "after": {
+            "value": "{{ parameters.after }}",
+            "required": true
+          },
+          "before": {
+            "value": "{{ parameters.before }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "FlairSelector": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/flairselector"
+        },
+        "parameters": {
+          "link": {
+            "value": "{{ parameters.link }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          }
+        }
+      }
+    },
+    "FlairTemplate": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modflair"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/flairtemplate"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "css_class": {
+            "value": "{{ parameters.css_class }}"
+          },
+          "flair_template_id": {
+            "value": "{{ parameters.flair_template_id }}"
+          },
+          "flair_type": {
+            "value": "{{ parameters.flair_type }}"
+          },
+          "text": {
+            "value": "{{ parameters.text }}"
+          },
+          "text_editable": {
+            "value": "{{ parameters.text_editable }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SelectFlair": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["flair"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/clearflairtemplates"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "flair_template_id": {
+            "value": "{{ parameters.flair_template_id }}"
+          },
+          "link": {
+            "value": "{{ parameters.link }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "text": {
+            "value": "{{ parameters.text }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SetFlairEnabled": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["flair"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/setflairenabled"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "flair_enabled": {
+            "value": "{{ parameters.flair_enabled }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Gild": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["creddits"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/gold/gild/{{ parameters.fullname }}"
+        }
+      }
+    },
+    "GiveGold": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["creddits"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/gold/give/{{ parameters.username }}"
+        },
+        "parameters": {
+          "months": {
+            "value": "{{ parameters.months }}"
+          }
+        }
+      }
+    },
+    "SubmitComment": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["submit", "privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/comment"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "text": {
+            "value": "{{ parameters.text }}",
+            "required": true
+          },
+          "thing_id": {
+            "value": "{{ parameters.thing_id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "DeleteComment": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["edit"],
+        "route": {
+          "data": "",
+          "path": "/api/del"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "EditUserText": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["edit"],
+        "route": {
+          "data": "",
+          "path": "/api/editusertext"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.thing_id }}",
+            "required": true
+          },
+          "thing_id": {
+            "value": "{{ parameters.thing_id }}",
+            "required": true
+          },
+          "text": {
+            "value": "{{ parameters.text }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Hide": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["report"],
+        "route": {
+          "data": "",
+          "path": "/api/hide"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Info": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/info"
+        },
+        "parameters": {
+          "url": {
+            "value": "{{ parameters.url }}"
+          },
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        }
+      }
+    },
+    "Lock": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/lock"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "MarkNSFW": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/marknsfw"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "ApiMorechildren": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/morechildren"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "children": {
+            "value": "{{ parameters.children }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "link_id": {
+            "value": "{{ parameters.link_id }}",
+            "required": true
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Report": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["report"],
+        "route": {
+          "data": "",
+          "path": "/api/report"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "other_reason": {
+            "value": "{{ parameters.other_reason }}",
+            "required": true
+          },
+          "reason": {
+            "value": "{{ parameters.reason }}",
+            "required": true
+          },
+          "site_reason": {
+            "value": "{{ parameters.site_reason }}",
+            "required": true
+          },
+          "thing_id": {
+            "value": "{{ parameters.thing_id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Save": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["save"],
+        "route": {
+          "data": "",
+          "path": "/api/save"
+        },
+        "parameters": {
+          "category": {
+            "value": "{{ parameters.category }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SavedCategories": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["save"],
+        "route": {
+          "data": "",
+          "path": "/api/save"
+        }
+      }
+    },
+    "SendReplies": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["edit"],
+        "route": {
+          "data": "",
+          "path": "/api/save"
+        },
+        "parameters": {
+          "state": {
+            "value": "{{ parameters.state }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SetContestMode": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/set_contest_mode"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.state }}",
+            "required": true
+          },
+          "state": {
+            "value": "{{ parameters.state }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SetSubredditSticky": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/set_subreddit_sticky"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.state }}",
+            "required": true
+          },
+          "num": {
+            "value": "{{ parameters.num }}",
+            "required": true
+          },
+          "state": {
+            "value": "{{ parameters.state }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SetSuggestedSort": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/set_suggested_sort"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.state }}",
+            "required": true
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Spoiler": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/set_suggested_sort"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "StoreVisits": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["save"],
+        "route": {
+          "data": "",
+          "path": "/api/set_suggested_sort"
+        },
+        "parameters": {
+          "links": {
+            "value": "{{ parameters.links }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Submit": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["submit"],
+        "route": {
+          "data": "",
+          "path": "/api/submit"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "app": {
+            "value": "{{ parameters.app }}"
+          },
+          "extension": {
+            "value": "{{ parameters.extension }}"
+          },
+          "g-recaptcha-response": {
+            "value": "{{ parameters.g_recaptcha_response }}"
+          },
+          "kind": {
+            "value": "{{ parameters.kind }}"
+          },
+          "resubmit": {
+            "value": "{{ parameters.resubmit }}"
+          },
+          "sendreplies": {
+            "value": "{{ parameters.sendreplies }}"
+          },
+          "sr": {
+            "value": "{{ parameters.sr }}"
+          },
+          "text": {
+            "value": "{{ parameters.text }}"
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Unhide": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["report"],
+        "route": {
+          "data": "",
+          "path": "/api/unhide"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Unlock": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/unlock"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "UnmarkNSFW": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/unmarknsfw"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Unsave": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["save"],
+        "route": {
+          "data": "",
+          "path": "/api/unsave"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Vote": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["vote"],
+        "route": {
+          "data": "",
+          "path": "/api/vote"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "dir": {
+            "value": "{{ parameters.dir }}",
+            "required": true
+          },
+          "rank": {
+            "value": "{{ parameters.rank }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "ById": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/by_id/{{ parameters.names }}"
+        }
+      }
+    },
+    "CommentsForArticle": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/comments/{{ parameters.article }}"
+        },
+        "parameters": {
+          "article": {
+            "value": "{{ parameters.article }}",
+            "required": true
+          },
+          "comment": {
+            "value": "{{ parameters.comment }}"
+          },
+          "context": {
+            "value": "{{ parameters.context }}",
+            "required": true
+          },
+          "depth": {
+            "value": "{{ parameters.depth }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "showedits": {
+            "value": "{{ parameters.showedits }}",
+            "required": true
+          },
+          "showmore": {
+            "value": "{{ parameters.showedits }}",
+            "required": true
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}",
+            "required": true
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "DuplicateArticles": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/duplicates/{{ parameters.article }}"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.comment }}",
+            "required": true
+          },
+          "article": {
+            "value": "{{ parameters.article }}",
+            "required": true
+          },
+          "before": {
+            "value": "{{ parameters.before }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "Hot": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/hot"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.comment }}",
+            "required": true
+          },
+          "before": {
+            "value": "{{ parameters.before }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "New": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/new"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.comment }}",
+            "required": true
+          },
+          "before": {
+            "value": "{{ parameters.before }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "Random": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/random"
+        }
+      }
+    },
+    "Rising": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/rising"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.comment }}",
+            "required": true
+          },
+          "before": {
+            "value": "{{ parameters.before }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "Top": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/top"
+        },
+        "parameters": {
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "after": {
+            "value": "{{ parameters.comment }}",
+            "required": true
+          },
+          "before": {
+            "value": "{{ parameters.before }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "Controversial": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/controversial"
+        },
+        "parameters": {
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "after": {
+            "value": "{{ parameters.comment }}",
+            "required": true
+          },
+          "before": {
+            "value": "{{ parameters.before }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "LiveById": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/live/by_id/{{ parameters.names }}"
+        }
+      }
+    },
+    "CreateLive": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["submit"],
+        "route": {
+          "data": "",
+          "path": "/api/live/create"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "description": {
+            "value": "{{ parameters.description }}",
+            "required": true
+          },
+          "nsfw": {
+            "value": "{{ parameters.nsfw }}",
+            "required": true
+          },
+          "resources": {
+            "value": "{{ parameters.resources }}",
+            "required": true
+          },
+          "title": {
+            "value": "{{ parameters.title }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "HappeningNow": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/live/happening_now"
+        }
+      }
+    },
+    "LiveAcceptContributorInvite": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["livemanage"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/accept_contributor_invite"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "CloseThread": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["livemanage"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/close_thread"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "DeleteUpdate": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["edit"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/close_thread"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "EditLive": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["livemanage"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/edit"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "description": {
+            "value": "{{ parameters.description }}",
+            "required": true
+          },
+          "nsfw": {
+            "value": "{{ parameters.nsfw }}",
+            "required": true
+          },
+          "resources": {
+            "value": "{{ parameters.resources }}",
+            "required": true
+          },
+          "title": {
+            "value": "{{ parameters.title }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "InviteContributor": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["livemanage"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/invite_contributor"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "permissions": {
+            "value": "{{ parameters.permissions }}",
+            "required": true
+          },
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "LeaveContribtor": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["livemanage"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/leave_contributor"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "LiveReport": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["report"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/report"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "RevokeContributor": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["livemanage"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/rm_contributor"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "RevokeContributorInvite": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["livemanage"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/rm_contributor_invite"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SetContributorPermissions": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["livemanage"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/set_contributor_permissions"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "permissions": {
+            "value": "{{ parameters.permissions }}",
+            "required": true
+          },
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "StrikeUpdate": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["edit"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/strike_update"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "LiveUpdate": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["submit"],
+        "route": {
+          "data": "",
+          "path": "/api/live/{{ parameters.thread }}/update"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "body": {
+            "value": "{{ parameters.body }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "GetLiveThread": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/live/{{ parameters.thread }}"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.comment }}",
+            "required": true
+          },
+          "before": {
+            "value": "{{ parameters.before }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "is_embed": {
+            "value": "{{ parameters.is_embed }}"
+          },
+          "stylesr": {
+            "value": "{{ parameters.stylsr }}"
+          }
+        }
+      }
+    },
+    "AboutThread": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/live/{{ parameters.thread }}/about"
+        }
+      }
+    },
+    "ThreadContributors": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/live/{{ parameters.thread }}/contributors"
+        }
+      }
+    },
+    "ThreadDiscussions": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/live/{{ parameters.thread }}/discussions"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.comment }}",
+            "required": true
+          },
+          "before": {
+            "value": "{{ parameters.before }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "BlockMessage": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/block"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "CollapseMessage": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/collapse_message"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "ComposeMessage": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/compose"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          },
+          "from_sr": {
+            "value": "{{ parameters.from_sr }}",
+            "required": true
+          },
+          "g-recaptcha-response": {
+            "value": "{{ parameters.g_recaptcha_response }}",
+            "required": true
+          },
+          "subject": {
+            "value": "{{ parameters.subject }}",
+            "required": true
+          },
+          "text": {
+            "value": "{{ parameters.text }}",
+            "required": true
+          },
+          "to": {
+            "value": "{{ parameters.to }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "DeleteMessage": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/del_msg"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.api_type }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "ReadAllMessages": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/read_all_messages"
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "ReadMessages": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/read_message"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "UnblockSubreddit": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/unblock_subreddit"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "UncollapseMessage": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/uncollapse_message"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "UnreadMessage": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/api/unread_message"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "ReceivedMessages": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/message/inbox"
+        },
+        "parameters": {
+          "mark": {
+            "value": "{{ parameters.mark }}"
+          },
+          "mid": {
+            "value": "{{ parameters.mid }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "SentMessages": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/message/sent"
+        },
+        "parameters": {
+          "mark": {
+            "value": "{{ parameters.mark }}"
+          },
+          "mid": {
+            "value": "{{ parameters.mid }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "UnreadMessages": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/message/unread"
+        },
+        "parameters": {
+          "mark": {
+            "value": "{{ parameters.mark }}"
+          },
+          "mid": {
+            "value": "{{ parameters.mid }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "Scopes": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["identity"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/scopes"
+        },
+        "parameters": {
+          "scopes": {
+            "value": "{{ parameters.scopes }}"
+          }
+        }
+      }
+    },
+    "ModerationLog": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["modlog"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/log"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "mod": {
+            "value": "{{ parameters.mod }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          },
+          "type": {
+            "value": "{{ parameters.type }}"
+          }
+        }
+      }
+    },
+    "ModerationReports": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/reports"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "only": {
+            "value": "{{ parameters.only }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "ModerationSpam": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/spam"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "only": {
+            "value": "{{ parameters.only }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "ModerationModqueue": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/modqueue"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "only": {
+            "value": "{{ parameters.only }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "ModerationUnmoderated": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/unmoderated"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "only": {
+            "value": "{{ parameters.only }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "ModerationEdited": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/edited"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "only": {
+            "value": "{{ parameters.only }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "AcceptModeratorInvite": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modself"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/accept_moderator_invite"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Approve": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/approve"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Distinguish": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/distinguish"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "how": {
+            "value": "{{ parameters.how }}"
+          },
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "IgnoreReports": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/ignore_reports"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "LeaveContributor": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modself"],
+        "route": {
+          "data": "",
+          "path": "/api/leavecontributor"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "LeaveModerator": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modself"],
+        "route": {
+          "data": "",
+          "path": "/api/leavemoderator"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "MuteMessageAuthor": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modcontributors"],
+        "route": {
+          "data": "",
+          "path": "/api/mute_message_author"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Remove": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/remove"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "spam": {
+            "value": "{{ parameters.spam }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "UnignoreReports": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modposts"],
+        "route": {
+          "data": "",
+          "path": "/api/unignore_reports"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "UnmuteMessageAuthor": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modcontributors"],
+        "route": {
+          "data": "",
+          "path": "/api/unmute_message_author"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Stylesheet": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["modconfig"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/stylesheet"
+        }
+      }
+    },
+    "BulkRead": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/bulk_read"
+        },
+        "parameters": {
+          "entity": {
+            "value": "{{ parameters.entity }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          }
+        }
+      }
+    },
+    "Conversations": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "entity": {
+            "value": "{{ parameters.entity }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/api/mod/conversations/{{ identifier }}"
+          },
+          "parameters": {
+            "markRead": {
+              "value": "{{ parameters.markRead }}"
+            }
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations"
+        },
+        "parameters": {
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "isAuthorHidden": {
+            "value": "{{ parameters.isAuthorHidden }}"
+          },
+          "srName": {
+            "value": "{{ parameters.srName }}"
+          },
+          "subject": {
+            "value": "{{ parameters.subject }}"
+          },
+          "to": {
+            "value": "{{ parameters.to }}"
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/api/mod/conversations/{{ identifier }}"
+          },
+          "parameters": {
+            "body": {
+              "value": "{{ parameters.body }}"
+            },
+            "isAuthorHidden": {
+              "value": "{{ parameters.isAuthorHidden }}"
+            },
+            "isInternal": {
+              "value": "{{ parameters.isInternal }}"
+            }
+          }
+        }
+      }
+    },
+    "ArchiveConversation": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/{{ identifier }}/archive"
+        }
+      }
+    },
+    "HighlightConversation": {
+      "DELETE": {
+        "method": "DELETE",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/{{ identifier }}/highlight"
+        },
+        "collection": false
+      },
+      "POST": {
+        "method": "POST",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/{{ identifier }}/highlight"
+        },
+        "collection": false
+      }
+    },
+    "MuteConversation": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/{{ identifier }}/mute"
+        },
+        "collection": false
+      }
+    },
+    "UnarchiveConversation": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/{{ identifier }}/unarchive"
+        },
+        "collection": false
+      }
+    },
+    "UnmuteConversation": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/{{ identifier }}/unmute"
+        },
+        "collection": false
+      }
+    },
+    "ConversationUser": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/{{ identifier }}/user"
+        },
+        "collection": false
+      }
+    },
+    "ReadConversations": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/read"
+        },
+        "parameters": {
+          "conversationIds": {
+            "value": "{{ parameters.conversationIds }}"
+          }
+        }
+      }
+    },
+    "ConversationsSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/subreddits"
+        }
+      }
+    },
+    "UnreadConversations": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/unread"
+        },
+        "parameters": {
+          "conversationIds": {
+            "value": "{{ parameters.conversationIds }}"
+          }
+        }
+      }
+    },
+    "UnreadConversationCount": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["modmail"],
+        "route": {
+          "data": "",
+          "path": "/api/mod/conversations/unread/count"
+        }
+      }
+    },
+    "CopyMulti": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/copy"
+        },
+        "parameters": {
+          "display_name": {
+            "value": "{{ parameters.display_name }}"
+          },
+          "from": {
+            "value": "{{ parameters.from }}"
+          },
+          "to": {
+            "value": "{{ parameters.to }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "MultiMine": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/mine"
+        },
+        "parameters": {
+          "expand_srs": {
+            "value": "{{ parameters.display_name }}"
+          }
+        }
+      }
+    },
+    "RenameMulti": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/rename"
+        },
+        "parameters": {
+          "display_name": {
+            "value": "{{ parameters.display_name }}"
+          },
+          "from": {
+            "value": "{{ parameters.from }}"
+          },
+          "to": {
+            "value": "{{ parameters.to }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "GetMultisForUser": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/user/{{ parameters.username }}"
+        },
+        "parameters": {
+          "expand_srs": {
+            "value": "{{ parameters.expand_srs }}"
+          }
+        }
+      }
+    },
+    "Multi": {
+      "DELETE": {
+        "method": "DELETE",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/{{ parameters.multipath }}"
+        },
+        "parameters": {
+          "expand_srs": {
+            "value": "{{ parameters.model }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/{{ parameters.multipath }}"
+        },
+        "parameters": {
+          "expand_srs": {
+            "value": "{{ parameters.model }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/{{ parameters.multipath }}"
+        },
+        "parameters": {
+          "expand_srs": {
+            "value": "{{ parameters.expand_srs }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/{{ parameters.multipath }}"
+        },
+        "parameters": {
+          "expand_srs": {
+            "value": "{{ parameters.expand_srs }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "MultiDescription": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/{{ parameters.multipath }}/description"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/{{ parameters.multipath }}/description"
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "MultiSubreddit": {
+      "DELETE": {
+        "method": "DELETE",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/{{ parameters.multipath }}/r/{{ parameters.subreddit }}"
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/{{ parameters.multipath }}/r/{{ parameters.subreddit }}"
+        },
+        "parameters": {
+          "expand_srs": {
+            "value": "{{ parameters.model }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/multi/{{ parameters.multipath }}/r/{{ parameters.subreddit }}"
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "Search": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/search"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "include_facets": {
+            "value": "{{ parameters.include_facets }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "q": {
+            "value": "{{ parameters.q }}"
+          },
+          "restrict_sr": {
+            "value": "{{ parameters.restrict_sr }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          },
+          "syntax": {
+            "value": "{{ parameters.syntax }}"
+          },
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "type": {
+            "value": "{{ parameters.type }}"
+          }
+        }
+      }
+    },
+    "SubredditBanned": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/banned"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          },
+          "user": {
+            "value": "{{ parameters.user }}"
+          }
+        }
+      }
+    },
+    "SubredditMuted": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/muted"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          },
+          "user": {
+            "value": "{{ parameters.user }}"
+          }
+        }
+      }
+    },
+    "SubredditWikibanned": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/wikibanned"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          },
+          "user": {
+            "value": "{{ parameters.user }}"
+          }
+        }
+      }
+    },
+    "SubredditContributors": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/contributors"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          },
+          "user": {
+            "value": "{{ parameters.user }}"
+          }
+        }
+      }
+    },
+    "SubredditWikicontributors": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/wikicontributors"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          },
+          "user": {
+            "value": "{{ parameters.user }}"
+          }
+        }
+      }
+    },
+    "SubredditModerators": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/moderators"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          },
+          "user": {
+            "value": "{{ parameters.user }}"
+          }
+        }
+      }
+    },
+    "DeleteSubredditBanner": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modconfig"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/delete_sr_banner"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "DeleteSubredditHeader": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modconfig"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/delete_sr_header"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "DeleteSubredditIcon": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modconfig"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/delete_sr_icon"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "DeleteSubredditImage": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modconfig"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/delete_sr_img"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "img_name": {
+            "value": "{{ parameters.img_name }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "RecommendSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/recommend/sr/{{ parameters.subreddits }}"
+        },
+        "parameters": {
+          "omit": {
+            "value": "{{ parameters.omit }}"
+          },
+          "over_18": {
+            "value": "{{ parameters.over_18 }}"
+          }
+        }
+      }
+    },
+    "SearchRedditNames": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/search_reddit_names"
+        },
+        "parameters": {
+          "exact": {
+            "value": "{{ parameters.exact }}"
+          },
+          "include_over_18": {
+            "value": "{{ parameters.include_over_18 }}"
+          },
+          "include_unadvertisable": {
+            "value": "{{ parameters.include_unadvertisable }}"
+          },
+          "query": {
+            "value": "{{ parameters.query }}"
+          }
+        }
+      }
+    },
+    "SiteAdmin": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modconfig"],
+        "route": {
+          "data": "",
+          "path": "/api/site_admin"
+        },
+        "parameters": {
+          "allow_images": {
+            "value": "{{ parameters.allow_images }}"
+          },
+          "allow_top": {
+            "value": "{{ parameters.allow_top }}"
+          },
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "collapse_deleted_comments": {
+            "value": "{{ parameters.collapse_deleted_comments }}"
+          },
+          "comment_score_hide_mins": {
+            "value": "{{ parameters.comment_score_hide_mins }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "exclude_banned_modqueue": {
+            "value": "{{ parameters.exclude_banned_modqueue }}"
+          },
+          "g-recaptcha-response": {
+            "value": "{{ parameters.g_recaptcha_response }}"
+          },
+          "header-title": {
+            "value": "{{ parameters.header_title }}"
+          },
+          "hide_ads": {
+            "value": "{{ parameters.hide_ads }}"
+          },
+          "lang": {
+            "value": "{{ parameters.lang }}"
+          },
+          "link_type": {
+            "value": "{{ parameters.link_type }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "over_18": {
+            "value": "{{ parameters.over_18 }}"
+          },
+          "public_description": {
+            "value": "{{ parameters.public_description }}"
+          },
+          "public_traffic": {
+            "value": "{{ parameters.public_traffic }}"
+          },
+          "show_media": {
+            "value": "{{ parameters.show_media }}"
+          },
+          "show_media_preview": {
+            "value": "{{ parameters.show_media_preview }}"
+          },
+          "spam_comments": {
+            "value": "{{ parameters.spam_comments }}"
+          },
+          "spam_links": {
+            "value": "{{ parameters.spam_links }}"
+          },
+          "spam_selfposts": {
+            "value": "{{ parameters.spam_selfposts }}"
+          },
+          "spoilers_enabled": {
+            "value": "{{ parameters.spoilers_enabled }}"
+          },
+          "sr": {
+            "value": "{{ parameters.sr }}"
+          },
+          "submit_link_label": {
+            "value": "{{ parameters.submit_link_label }}"
+          },
+          "submit_text": {
+            "value": "{{ parameters.submit_text }}"
+          },
+          "submit_text_label": {
+            "value": "{{ parameters.submit_text_label }}"
+          },
+          "suggested_comment_sort": {
+            "value": "{{ parameters.suggested_comment_sort }}"
+          },
+          "theme_sr": {
+            "value": "{{ parameters.theme_sr }}"
+          },
+          "theme_sr_update": {
+            "value": "{{ parameters.theme_sr_update }}"
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "type": {
+            "value": "{{ parameters.type }}"
+          },
+          "wiki_edit_age": {
+            "value": "{{ parameters.wiki_edit_age }}"
+          },
+          "wiki_edit_karma": {
+            "value": "{{ parameters.wiki_edit_karma }}"
+          },
+          "wikimode": {
+            "value": "{{ parameters.wikimode }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SubmissionText": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["submit"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/submit_text"
+        }
+      }
+    },
+    "SubredditStylesheet": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modconfig"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/subreddit_stylesheet"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "op": {
+            "value": "{{ parameters.op }}"
+          },
+          "reason": {
+            "value": "{{ parameters.reason }}"
+          },
+          "stylesheet_contents": {
+            "value": "{{ parameters.stylesheet_contents }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SubredditsByTopix": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/subreddits_by_topic"
+        },
+        "parameters": {
+          "query": {
+            "value": "{{ parameters.query }}"
+          }
+        }
+      }
+    },
+    "Subscribe": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/subscribe"
+        },
+        "parameters": {
+          "action": {
+            "value": "{{ parameters.action }}"
+          },
+          "skip_initial_defaults": {
+            "value": "{{ parameters.skip_initial_defaults }}"
+          },
+          "sr": {
+            "value": "{{ parameters.sr }}"
+          },
+          "sr_name": {
+            "value": "{{ parameters.sr_name }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "UploadSubredditImage": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modconfig"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/upload_sr_img"
+        },
+        "parameters": {
+          "file": {
+            "value": "{{ parameters.file }}"
+          },
+          "formid": {
+            "value": "{{ parameters.formid }}"
+          },
+          "header": {
+            "value": "{{ parameters.header }}"
+          },
+          "img_type": {
+            "value": "{{ parameters.img_type }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "upload_type": {
+            "value": "{{ parameters.upload_type }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "AboutSubreddit": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about"
+        }
+      }
+    },
+    "SubredditSettings": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["modconfig"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/edit"
+        },
+        "parameters": {
+          "created": {
+            "value": "{{ parameters.created }}"
+          },
+          "location": {
+            "value": "{{ parameters.location }}"
+          }
+        }
+      }
+    },
+    "SubredditRules": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/rules"
+        }
+      }
+    },
+    "SubredditSidebar": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/sidebar"
+        }
+      }
+    },
+    "SubredditSticky": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/about/rules"
+        },
+        "parameters": {
+          "num": {
+            "value": "{{ parameters.num }}"
+          }
+        }
+      }
+    },
+    "MySubscribedSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["mysubreddits"],
+        "route": {
+          "data": "",
+          "path": "/subreddits/mine/subscriber"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "MyContributorSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["mysubreddits"],
+        "route": {
+          "data": "",
+          "path": "/subreddits/mine/contributor"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "MyModeratorSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["mysubreddits"],
+        "route": {
+          "data": "",
+          "path": "/subreddits/mine/moderator"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "SearchSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/subreddits/search"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "q": {
+            "value": "{{ parameters.q }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "PopularSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/subreddits/popular"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "NewSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/subreddits/new"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "GoldSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/subreddits/gold"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "DefaultSubreddits": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/subreddits/default"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "AddRelationship": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modothers", "modcontributors", "modwiki"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/friend"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "ban_message": {
+            "value": "{{ parameters.ban_message }}"
+          },
+          "ban_reason": {
+            "value": "{{ parameters.ban_reason }}"
+          },
+          "container": {
+            "value": "{{ parameters.container }}"
+          },
+          "duration": {
+            "value": "{{ parameters.duration }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "note": {
+            "value": "{{ parameters.note }}"
+          },
+          "permissions": {
+            "value": "{{ parameters.permissions }}"
+          },
+          "type": {
+            "value": "{{ parameters.type }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "SetPermissions": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modothers"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/setpermissions"
+        },
+        "parameters": {
+          "api_type": {
+            "value": "{{ parameters.api_type }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "permissions": {
+            "value": "{{ parameters.permissions }}"
+          },
+          "type": {
+            "value": "{{ parameters.type }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "RemoveRelationship": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modothers", "modcontributors", "modwiki", "privatemessages"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/friend"
+        },
+        "parameters": {
+          "container": {
+            "value": "{{ parameters.container }}"
+          },
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "type": {
+            "value": "{{ parameters.type }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "UsernameAvailable": {
+      "GET": {
+        "method": "GET",
+        "scopes": [],
+        "route": {
+          "data": "",
+          "path": "/api/username_available"
+        },
+        "parameters": {
+          "user": {
+            "value": "{{ parameters.user }}"
+          }
+        }
+      }
+    },
+    "Friend": {
+      "DELETE": {
+        "method": "DELETE",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/friends/{{ identifier }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "scopes": ["mysubreddits"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/friends/{{ identifier }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "scopes": ["subscribe"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/friends/{{ identifier }}"
+        }
+      }
+    },
+    "Trophies": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/api/v1/me/friends/{{ identifier }}/trophies"
+        }
+      }
+    },
+    "UserInfo": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["read"],
+        "route": {
+          "data": "",
+          "path": "/user/{{ identifier }}/about"
+        }
+      }
+    },
+    "UserComments": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["history"],
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.username }}/comments"
+        },
+        "parameters": {
+          "show": "{{ parameters.show }}",
+          "sort": "{{ parameters.sort }}",
+          "t": "{{ parameters.t }}",
+          "after": "{{ parameters.after }}",
+          "before": "{{ parameters.before }}",
+          "count": "{{ parameters.count }}",
+          "limit": "{{ parameters.limit }}",
+          "sr_detail": "{{ parameters.sr_detail }}"
+        }
+      }
+    },
+    "ThreadsSubmitted": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["history"],
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.username }}/submitted"
+        },
+        "parameters": {
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "ThreadsUpvoted": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["history"],
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.username }}/upvoted"
+        },
+        "parameters": {
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "ThreadsDownvoted": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["history"],
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.username }}/downvoted"
+        },
+        "parameters": {
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "SavedComments": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["history"],
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.username }}/saved"
+        },
+        "parameters": {
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "GildedComments": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["history"],
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.username }}/gilded"
+        },
+        "parameters": {
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "Overview": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["history"],
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.username }}/overview"
+        },
+        "parameters": {
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "HiddenComments": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["history"],
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.username }}/hidden"
+        },
+        "parameters": {
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "t": {
+            "value": "{{ parameters.t }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "WikiDelete": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modwiki"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/wiki/alloweditor/del"
+        },
+        "parameters": {
+          "act": {
+            "value": "{{ parameters.act }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "WikiAdd": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modwiki"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/wiki/alloweditor/add"
+        },
+        "parameters": {
+          "act": {
+            "value": "{{ parameters.act }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "WikiEdit": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["wikiedit"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/wiki/edit"
+        },
+        "parameters": {
+          "content": {
+            "value": "{{ parameters.content }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "previous": {
+            "value": "{{ parameters.previous }}"
+          },
+          "reason": {
+            "value": "{{ parameters.reason }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "WikiHide": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modwiki"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/wiki/hide"
+        },
+        "parameters": {
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "revision": {
+            "value": "{{ parameters.revision }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "WikiRevert": {
+      "POST": {
+        "method": "POST",
+        "scopes": ["modwiki"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/api/wiki/revert"
+        },
+        "parameters": {
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "revision": {
+            "value": "{{ parameters.revision }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        }
+      }
+    },
+    "WikiDiscussions": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["wikiread"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/wiki/discussions/{{ parameters.page }}"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        }
+      }
+    },
+    "WikiPages": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["wikiread"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/wiki/pages"
+        }
+      }
+    },
+    "WikiRevisions": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["wikiread"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/wiki/revisions"
+        },
+        "parameters": {
+          "after": {
+            "value": "{{ parameters.after }}"
+          },
+          "before": {
+            "value": "{{ parameters.before }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "show": {
+            "value": "{{ parameters.show }}"
+          },
+          "sr_detail": {
+            "value": "{{ parameters.sr_detail }}"
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/r/{{ parameters.subreddit }}/wiki/revisions/{{ identifier }}"
+          }
+        }
+      }
+    },
+    "WikiPageSettings": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["modwiki"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/wiki/settings/{{ identifier }}"
+        },
+        "collection": false
+      },
+      "POST": {
+        "method": "POST",
+        "scopes": ["modwiki"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/wiki/settings/{{ identifier }}"
+        },
+        "parameters": {
+          "listed": {
+            "value": "{{ parameters.listed }}"
+          },
+          "permlevel": {
+            "value": "{{ parameters.permlevel }}"
+          }
+        },
+        "headers": {
+          "X-Modhash": {
+            "value": "{{ headers['X-Modhash'] }}"
+          }
+        },
+        "collection": false
+      }
+    },
+    "WikiPage": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["wikiread"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/wiki/{{ identifier }}"
+        },
+        "collection": false
+      },
+      "POST": {
+        "method": "POST",
+        "scopes": ["modwiki"],
+        "route": {
+          "data": "",
+          "path": "/r/{{ parameters.subreddit }}/wiki/settings/{{ identifier }}"
+        },
+        "parameters": {
+          "v": {
+            "value": "{{ parameters.v }}"
+          },
+          "v2": {
+            "value": "{{ parameters.v2 }}"
+          }
+        },
+        "collection": false
+      }
+    }
+  }
+}

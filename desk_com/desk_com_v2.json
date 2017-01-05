@@ -1,0 +1,723 @@
+{
+  "version": "1.0",
+  "name": "Desk",
+  "url": "https://{{enter_your_subdomain}}.desk.com/api/v2",
+
+  "auth": {
+    "type": "oauth1",
+    "version": "1.0a",
+    "signature_method": "HMAC-SHA1",
+    "redirect_url": "https://500px.com",
+    "authorization_url": "https://{{enter_your_subdomain}}.desk.com/api/v2/oauth/authorize",
+
+    "request_token": "https://{{enter_your_subdomain}}.desk.com/api/v2/oauth/request_token",
+    "access_token": "https://{{enter_your_subdomain}}.desk.com/api/v2/oauth/access_token",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Cases": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/cases.{{ parameters.format }}"
+        }
+      }
+    },
+    "CasesId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/cases/{{ identifier }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "by": {
+            "value": "{{ parameters.by }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/cases/{{ identifier }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "subject": {
+            "value": "{{ parameters.subject }}"
+          },
+          "external_id": {
+            "value": "{{ parameters.external_id }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "priority": {
+            "value": "{{ parameters.priority }}"
+          },
+          "labels": {
+            "value": "{{ parameters.labels }}"
+          },
+          "custom_key": {
+            "value": "{{ parameters.custom_key }}"
+          },
+          "case_status_type_id": {
+            "value": "{{ parameters.case_status_type_id }}"
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          },
+          "group_id": {
+            "value": "{{ parameters.group_id }}"
+          },
+          "language": {
+            "value": "{{ parameters.language }}"
+          }
+        }
+      }
+    },
+    "Customers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/customers.{{ parameters.format }}"
+        },
+        "parameters": {
+          "custom_key": {
+            "value": "{{ parameters.custom_key }}"
+          },
+          "since_created_at": {
+            "value": "{{ parameters.since_created_at }}"
+          },
+          "max_created_at": {
+            "value": "{{ parameters.max_created_at }}"
+          },
+          "since_updated_at": {
+            "value": "{{ parameters.since_updated_at }}"
+          },
+          "max_updated_at": {
+            "value": "{{ parameters.max_updated_at }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "twitter": {
+            "value": "{{ parameters.twitter }}"
+          },
+          "phone": {
+            "value": "{{ parameters.phone }}"
+          },
+          "external_id": {
+            "value": "{{ parameters.external_id }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/customers.{{ parameters.format }}"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "company": {
+            "value": "{{ parameters.company }}"
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "external_id": {
+            "value": "{{ parameters.external_id }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "phone": {
+            "value": "{{ parameters.phone }}"
+          },
+          "twitter": {
+            "value": "{{ parameters.twitter }}"
+          },
+          "language": {
+            "value": "{{ parameters.language }}"
+          },
+          "custom_key": {
+            "value": "{{ parameters.custom_key }}"
+          }
+        }
+      }
+    },
+    "CustomersId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/customers/{{ identifier }}.{{ parameters.format }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/customers/{{ identifier }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "company": {
+            "value": "{{ parameters.company }}"
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "external_id": {
+            "value": "{{ parameters.external_id }}"
+          },
+          "language": {
+            "value": "{{ parameters.language }}"
+          },
+          "custom_key": {
+            "value": "{{ parameters.custom_key }}"
+          }
+        }
+      }
+    },
+    "CustomersCustomerIdEmails": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/customers/{{ parameters.customer_id }}/emails.{{ parameters.format }}"
+        },
+        "parameters": {
+          "email": {
+            "value": "{{ parameters.email }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CustomersCustomerIdEmailsId": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/customers/{{ parameters.customer_id }}/emails/{{ identifier }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "email": {
+            "value": "{{ parameters.email }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CustomersCustomerIdPhones": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/customers/{{ parameters.customer_id }}/phones.{{ parameters.format }}"
+        },
+        "parameters": {
+          "phone": {
+            "value": "{{ parameters.phone }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CustomersCustomerIdPhonesId": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/customers/{{ parameters.customer_id }}/phones/{{ identifier }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "phone": {
+            "value": "{{ parameters.phone }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Interactions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/interactions.{{ parameters.format }}"
+        },
+        "parameters": {
+          "case_id": {
+            "value": "{{ parameters.case_id }}"
+          },
+          "channels": {
+            "value": "{{ parameters.channels }}"
+          },
+          "since_created_at": {
+            "value": "{{ parameters.since_created_at }}"
+          },
+          "max_created_at": {
+            "value": "{{ parameters.max_created_at }}"
+          },
+          "since_updated_at": {
+            "value": "{{ parameters.since_updated_at }}"
+          },
+          "max_updated_at": {
+            "value": "{{ parameters.max_updated_at }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          },
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/interactions.{{ parameters.format }}"
+        },
+        "parameters": {
+          "interaction_subject": {
+            "value": "{{ parameters.interaction_subject }}",
+            "required": true
+          },
+          "customer_id": {
+            "value": "{{ parameters.customer_id }}"
+          },
+          "customer_twitter": {
+            "value": "{{ parameters.customer_twitter }}"
+          },
+          "customer_email": {
+            "value": "{{ parameters.customer_email }}"
+          },
+          "case_id": {
+            "value": "{{ parameters.case_id }}"
+          },
+          "customer_name": {
+            "value": "{{ parameters.customer_name }}"
+          },
+          "customer_custom_key": {
+            "value": "{{ parameters.customer_custom_key }}"
+          },
+          "customer_language": {
+            "value": "{{ parameters.customer_language }}"
+          },
+          "external_id": {
+            "value": "{{ parameters.external_id }}"
+          },
+          "case_labels": {
+            "value": "{{ parameters.case_labels }}"
+          },
+          "case_custom_key": {
+            "value": "{{ parameters.case_custom_key }}"
+          },
+          "case_language": {
+            "value": "{{ parameters.case_language }}"
+          },
+          "interaction_channel": {
+            "value": "{{ parameters.interaction_channel }}"
+          },
+          "interaction_body": {
+            "value": "{{ parameters.interaction_body }}"
+          }
+        }
+      }
+    },
+    "Groups": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/groups.{{ parameters.format }}"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      }
+    },
+    "GroupsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/groups/{{ identifier }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Users": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users.{{ parameters.format }}"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      }
+    },
+    "UsersId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ identifier }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Topics": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/topics.{{ parameters.format }}"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/topics.{{ parameters.format }}"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "show_in_portal": {
+            "value": "{{ parameters.show_in_portal }}"
+          }
+        }
+      }
+    },
+    "TopicsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/topics/{{ identifier }}.{{ parameters.format }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/topics/{{ identifier }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "show_in_portal": {
+            "value": "{{ parameters.show_in_portal }}"
+          },
+          "language": {
+            "value": "{{ parameters.language }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/topics/{{ identifier }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "TopicsTopicIdArticles": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/topics/{{ parameters.topic_id }}/articles.{{ parameters.format }}"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/topics/{{ parameters.topic_id }}/articles.{{ parameters.format }}"
+        },
+        "parameters": {
+          "subject": {
+            "value": "{{ parameters.subject }}",
+            "required": true
+          },
+          "main_content": {
+            "value": "{{ parameters.main_content }}"
+          },
+          "published": {
+            "value": "{{ parameters.published }}"
+          },
+          "show_in_portal": {
+            "value": "{{ parameters.show_in_portal }}"
+          },
+          "agent_content": {
+            "value": "{{ parameters.agent_content }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "chat": {
+            "value": "{{ parameters.chat }}"
+          },
+          "twitter": {
+            "value": "{{ parameters.twitter }}"
+          },
+          "question": {
+            "value": "{{ parameters.question }}"
+          },
+          "phone": {
+            "value": "{{ parameters.phone }}"
+          },
+          "quickcode": {
+            "value": "{{ parameters.quickcode }}"
+          }
+        }
+      }
+    },
+    "ArticlesId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/articles/{{ identifier }}.{{ parameters.format }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/articles/{{ identifier }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "subject": {
+            "value": "{{ parameters.subject }}",
+            "required": true
+          },
+          "main_content": {
+            "value": "{{ parameters.main_content }}"
+          },
+          "published": {
+            "value": "{{ parameters.published }}"
+          },
+          "show_in_portal": {
+            "value": "{{ parameters.show_in_portal }}"
+          },
+          "agent_content": {
+            "value": "{{ parameters.agent_content }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          },
+          "chat": {
+            "value": "{{ parameters.chat }}"
+          },
+          "twitter": {
+            "value": "{{ parameters.twitter }}"
+          },
+          "question": {
+            "value": "{{ parameters.question }}"
+          },
+          "phone": {
+            "value": "{{ parameters.phone }}"
+          },
+          "quickcode": {
+            "value": "{{ parameters.quickcode }}"
+          },
+          "topic_id": {
+            "value": "{{ parameters.topic_id }}"
+          },
+          "language": {
+            "value": "{{ parameters.language }}"
+          },
+          "mark_translations_outdated": {
+            "value": "{{ parameters.mark_translations_outdated }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/articles/{{ identifier }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Macros": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/macros.{{ parameters.format }}"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/macros.{{ parameters.format }}"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "enable": {
+            "value": "{{ parameters.enable }}"
+          },
+          "labels": {
+            "value": "{{ parameters.labels }}"
+          }
+        }
+      }
+    },
+    "MacrosId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/macros/{{ identifier }}.{{ parameters.format }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/macros/{{ identifier }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "enable": {
+            "value": "{{ parameters.enable }}"
+          },
+          "labels": {
+            "value": "{{ parameters.labels }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/macros/{{ identifier }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "MacrosMacroIdActions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/macros/{{ parameters.macro_id }}/actions.{{ parameters.format }}"
+        }
+      }
+    },
+    "MacrosMacroIdActionsType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/macros/{{ parameters.macro_id }}/actions/{{ parameters.type }}.{{ parameters.format }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/macros/{{ parameters.macro_id }}/actions/{{ parameters.type }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "value": {
+            "value": "{{ parameters.value }}",
+            "required": true
+          },
+          "enabled": {
+            "value": "{{ parameters.enabled }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

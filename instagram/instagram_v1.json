@@ -1,0 +1,423 @@
+{
+  "version": "1.0",
+  "name": "Instagram",
+  "url": "https://api.instagram.com/v1/",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://instagram.com",
+    "authorization_url": "https://api.instagram.com/oauth/authorize",
+
+    "access_token": "https://api.instagram.com/oauth/access_token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "User": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}"
+        }
+      }
+    },
+    "Self": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/self"
+        }
+      }
+    },
+    "UserMediaRecent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/media/recent"
+        },
+        "parameters": {
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "min_id": {
+            "value": "{{ parameters.min_id }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "min_timestamp": {
+            "value": "{{ parameters.min_timestamp }}"
+          },
+          "max_timestamp": {
+            "value": "{{ parameters.max_timestamp }}"
+          }
+        }
+      }
+    },
+    "SelfMediaRecent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/self/media/recent"
+        },
+        "parameters": {
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "min_id": {
+            "value": "{{ parameters.min_id }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "min_timestamp": {
+            "value": "{{ parameters.min_timestamp }}"
+          },
+          "max_timestamp": {
+            "value": "{{ parameters.max_timestamp }}"
+          }
+        }
+      }
+    },
+    "SelfMediaLiked": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/self/media/liked"
+        },
+        "parameters": {
+          "max_like_id": {
+            "value": "{{ parameters.max_like_id }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          }
+        }
+      }
+    },
+    "UserSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/search"
+        },
+        "parameters": {
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          }
+        }
+      }
+    },
+    "SelfFollows": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/self/follows"
+        }
+      }
+    },
+    "SelfFollowedBy": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/self/followed-by"
+        }
+      }
+    },
+    "SelfRequestedBy": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/self/requested-by"
+        }
+      }
+    },
+    "UserRelationship": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/relationship"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.user_id }}/relationship"
+        }
+      }
+    },
+    "Media": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/media/{{ identifier }}"
+        }
+      }
+    },
+    "MediaShortcode": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/media/shortcode/{{ identifier }}"
+        }
+      }
+    },
+    "MediaSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/media/search"
+        },
+        "parameters": {
+          "lat": {
+            "value": "{{ parameters.lat }}"
+          },
+          "lng": {
+            "value": "{{ parameters.lng }}"
+          },
+          "max_timestamp": {
+            "value": "{{ parameters.max_timestamp }}"
+          },
+          "min_timestamp": {
+            "value": "{{ parameters.min_timestamp }}"
+          },
+          "distance": {
+            "value": "{{ parameters.distance }}"
+          }
+        }
+      }
+    },
+    "MediaComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/media/{{ parameters.media_id }}/comments"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/media/{{ parameters.media_id }}/comments"
+        }
+      }
+    },
+    "DeleteComment": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/media/{{ parameters.media_id }}/comments/{{ parameters.comment_id }}"
+        }
+      }
+    },
+    "Likes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/media/{{ parameters.media_id }}/likes"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/media/{{ parameters.media_id }}/likes"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/media/{{ parameters.media_id }}/likes"
+        }
+      }
+    },
+    "Tags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/{{ parameters.tag_name }}"
+        }
+      }
+    },
+    "TaggedMedia": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/{{ parameters.tag_name }}/media/recent"
+        },
+        "parameters": {
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "min_id": {
+            "value": "{{ parameters.min_id }}"
+          }
+        }
+      }
+    },
+    "TagSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/search"
+        },
+        "parameters": {
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Location": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/locations/{{ parameters.location_id }}"
+        }
+      }
+    },
+    "MediaFromLocation": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/locations/{{ parameters.location_id }}/media/recent"
+        },
+        "parameters": {
+          "max_id": {
+            "value": "{{ parameters.max_id }}"
+          },
+          "min_id": {
+            "value": "{{ parameters.min_id }}"
+          },
+          "min_timestamp": {
+            "value": "{{ parameters.min_timestamp }}"
+          },
+          "max_timestamp": {
+            "value": "{{ parameters.max_timestamp }}"
+          }
+        }
+      }
+    },
+    "LocationSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/locations/search"
+        },
+        "parameters": {
+          "lat": {
+            "value": "{{ parameters.lat }}"
+          },
+          "lng": {
+            "value": "{{ parameters.lng }}"
+          },
+          "foursquare_id": {
+            "value": "{{ parameters.foursquare_id }}"
+          },
+          "foursquare_v2_id": {
+            "value": "{{ parameters.foursquare_v2_id }}"
+          },
+          "distance": {
+            "value": "{{ parameters.distance }}"
+          }
+        }
+      }
+    },
+    "Subscriptions": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/subscriptions"
+        },
+        "parameters": {
+          "verify_token": {
+            "value": "{{ parameters.verify_token }}",
+            "required": true
+          },
+          "client_id": {
+            "value": "{{ parameters.client_id }}",
+            "required": true
+          },
+          "client_secret": {
+            "value": "{{ parameters.client_secret }}",
+            "required": true
+          }
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/subscriptions"
+        },
+        "parameters": {
+          "client_id": {
+            "value": "{{ parameters.client_id }}",
+            "required": true
+          },
+          "client_secret": {
+            "value": "{{ parameters.client_secret }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/subscriptions"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "object": {
+            "value": "{{ parameters.object }}"
+          },
+          "client_id": {
+            "value": "{{ parameters.client_id }}",
+            "required": true
+          },
+          "client_secret": {
+            "value": "{{ parameters.client_secret }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,628 @@
+{
+  "version": "1.0",
+  "name": "Urban Airship",
+  "url": "https://go.urbanairship.com/api",
+
+  "environment": {
+    "signature": ""
+  },
+
+  "headers": {
+    "Authorization": "Basic {{ environment.signature }}"
+  },
+
+  "endpoints": {
+    "DeviceTokensToken": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/device_tokens/{{ parameters.token }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/device_tokens/{{ parameters.token }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/device_tokens/{{ parameters.token }}"
+        }
+      }
+    },
+    "Push": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/push"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "PushScheduledNotification": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/push/scheduled/{{ parameters.notification }}"
+        }
+      }
+    },
+    "PushScheduled": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/push/scheduled"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "PushScheduledAliasAlias": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/push/scheduled/alias/{{ parameters.alias }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/push/scheduled/alias/{{ parameters.alias }}"
+        }
+      }
+    },
+    "PushBatch": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/push/batch"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "PushBroadcast": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/push/broadcast"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "PushStats": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/push/stats"
+        },
+        "parameters": {
+          "start": {
+            "value": "{{ parameters.start }}",
+            "required": true
+          },
+          "end": {
+            "value": "{{ parameters.end }}",
+            "required": true
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "DeviceTokens": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/device_tokens"
+        },
+        "parameters": {
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          }
+        }
+      }
+    },
+    "DeviceTokensCount": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/device_tokens/count"
+        }
+      }
+    },
+    "DeviceTokensFeedback": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/device_tokens/feedback"
+        },
+        "parameters": {
+          "since": {
+            "value": "{{ parameters.since }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ApidsApid": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/apids/{{ parameters.apid }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apids/{{ parameters.apid }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/apids/{{ parameters.apid }}"
+        }
+      }
+    },
+    "Apids": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/apids"
+        },
+        "parameters": {
+          "start": {
+            "value": "{{ parameters.start }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          }
+        }
+      }
+    },
+    "DevicePinsPin": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/device_pins/{{ parameters.pin }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/device_pins/{{ parameters.pin }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/device_pins/{{ parameters.pin }}"
+        }
+      }
+    },
+    "User": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UserUserId": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}"
+        }
+      }
+    },
+    "UserUserIdCredsReset": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/creds/reset"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "AirmailSend": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/airmail/send"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "AirmailSendBroadcast": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/airmail/send/broadcast"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UserUserIdMessages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/messages"
+        },
+        "parameters": {
+          "full_list": {
+            "value": "{{ parameters.full_list }}"
+          },
+          "since": {
+            "value": "{{ parameters.since }}"
+          }
+        }
+      }
+    },
+    "UserUserIdMessagesUnread": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/messages/unread"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/messages/unread"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UserUserIdMessagesMessageMessageId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/messages/message/{{ parameters.message_id }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/messages/message/{{ parameters.message_id }}"
+        }
+      }
+    },
+    "UserUserIdMessagesMessageMessageIdBody": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/messages/message/{{ parameters.message_id }}/body"
+        }
+      }
+    },
+    "UserUserIdMessagesMessageMessageIdRead": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/messages/message/{{ parameters.message_id }}/read"
+        }
+      }
+    },
+    "UserUserIdMessagesDelete": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/messages/delete"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "AppContent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/app/content"
+        }
+      }
+    },
+    "AppContentProductIdDownload": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/app/content/{{ parameters.product_id }}/download"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "AppUpdates": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/app/updates"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UserRecover": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/recover"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UserRecoverId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/recover/{{ identifier }}"
+        }
+      }
+    },
+    "UserUserIdAvailableSubscriptions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/available_subscriptions"
+        }
+      }
+    },
+    "UserUserIdSubscriptionsSubscriptionKeyPurchase": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/subscriptions/{{ parameters.subscription_key }}/purchase"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "UserUserIdSubscriptionContent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/subscription_content"
+        }
+      }
+    },
+    "UserUserIdSubscriptionsContentContentIdDownload": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user_id }}/subscriptions/content/{{ parameters.content_id }}/download"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "Feeds": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/feeds"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/feeds"
+        }
+      }
+    },
+    "FeedsFeedId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/feeds/{{ parameters.feed_id }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/feeds/{{ parameters.feed_id }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/feeds/{{ parameters.feed_id }}"
+        }
+      }
+    },
+    "Tags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags"
+        }
+      }
+    },
+    "TagsTag": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/tags/{{ parameters.tag }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/tags/{{ parameters.tag }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "DeviceTokensDeviceTokenTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/device_tokens/{{ parameters.device_token }}/tags"
+        }
+      }
+    },
+    "DeviceTokensDeviceTokenTagsTag": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/device_tokens/{{ parameters.device_token }}/tags/{{ parameters.tag }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/device_tokens/{{ parameters.device_token }}/tags/{{ parameters.tag }}"
+        }
+      }
+    },
+    "PartnerApps": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/partner/apps"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/partner/apps"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "PartnerAppsAppId": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/partner/apps/{{ parameters.app_id }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    }
+  }
+}

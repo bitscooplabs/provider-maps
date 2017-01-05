@@ -1,0 +1,234 @@
+{
+  "version": "1.0",
+  "name": "Pinboard",
+  "url": "https://api.pinboard.in/v1",
+
+  "environment": {
+    "username": "",
+    "token": ""
+  },
+
+  "parameters": {
+    "auth_token": "{{ environment.username }}:{{ environment.token }}"
+  },
+
+  "endpoints": {
+    "PostsUpdate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/posts/update"
+        }
+      }
+    },
+    "PostsAdd": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/posts/add"
+        },
+        "parameters": {
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          },
+          "description": {
+            "value": "{{ parameters.description }}",
+            "required": true
+          },
+          "extended": {
+            "value": "{{ parameters.extended }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "dt": {
+            "value": "{{ parameters.dt }}"
+          },
+          "replace": {
+            "value": "{{ parameters.replace }}"
+          },
+          "shared": {
+            "value": "{{ parameters.shared }}"
+          },
+          "toread": {
+            "value": "{{ parameters.toread }}"
+          }
+        }
+      }
+    },
+    "PostsDelete": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/posts/delete"
+        },
+        "parameters": {
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PostsGet": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/posts/get"
+        },
+        "parameters": {
+          "tag": {
+            "value": "{{ parameters.tag }}"
+          },
+          "dt": {
+            "value": "{{ parameters.dt }}"
+          },
+          "url": {
+            "value": "{{ parameters.url }}"
+          },
+          "meta": {
+            "value": "{{ parameters.meta }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "PostsDates": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/posts/dates"
+        },
+        "parameters": {
+          "tag": {
+            "value": "{{ parameters.tag }}"
+          }
+        }
+      }
+    },
+    "PostsRecent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/posts/recent"
+        },
+        "parameters": {
+          "tag": {
+            "value": "{{ parameters.tag }}"
+          },
+          "count": {
+            "value": "{{ parameters.count }}"
+          }
+        }
+      }
+    },
+    "PostsAll": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/posts/all"
+        },
+        "parameters": {
+          "tag": {
+            "value": "{{ parameters.tag }}"
+          },
+          "start": {
+            "value": "{{ parameters.start }}"
+          },
+          "results": {
+            "value": "{{ parameters.results }}"
+          },
+          "fromdt": {
+            "value": "{{ parameters.fromdt }}"
+          },
+          "todt": {
+            "value": "{{ parameters.todt }}"
+          },
+          "meta": {
+            "value": "{{ parameters.meta }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "PostsSuggest": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/posts/suggest"
+        },
+        "parameters": {
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TagsGet": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/get"
+        }
+      }
+    },
+    "TagsDelete": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/delete"
+        },
+        "parameters": {
+          "tag": {
+            "value": "{{ parameters.tag }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TagsRename": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/tags/rename"
+        },
+        "parameters": {
+          "old": {
+            "value": "{{ parameters.old }}",
+            "required": true
+          },
+          "new": {
+            "value": "{{ parameters.new }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserSecret": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/secret"
+        }
+      }
+    }
+  }
+}

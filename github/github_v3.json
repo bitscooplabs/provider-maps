@@ -1,0 +1,1997 @@
+{
+  "version": "1.0",
+  "name": "Github",
+  "url": "https://api.github.com",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://github.com",
+    "authorization_url": "https://github.com/login/oauth/authorize",
+    "access_token": "https://github.com/login/oauth/access_token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Repos?page=num&perPage=perPage": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos?page={{ parameters.num }}&per_page={{ parameters.perPage }}"
+        },
+        "parameters": {
+          "num": {
+            "value": "{{ parameters.num }}",
+            "required": true
+          },
+          "perPage": {
+            "value": "{{ parameters.perPage }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "Issues": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/issues"
+        },
+        "parameters": {
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "direction": {
+            "value": "{{ parameters.direction }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}",
+            "required": true
+          },
+          "reponame": {
+            "value": "{{ parameters.reponame }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserIssues": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/issues"
+        },
+        "parameters": {
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "direction": {
+            "value": "{{ parameters.direction }}"
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "OrgsOrgIssues": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/issues"
+        },
+        "parameters": {
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "direction": {
+            "value": "{{ parameters.direction }}"
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssues": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues"
+        },
+        "parameters": {
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "direction": {
+            "value": "{{ parameters.direction }}"
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssuesId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssuesComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssuesIdComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssuesCommentsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/comments/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/comments/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameLabels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/labels"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/labels"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameLabelsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/labels/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/labels/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssuesIdLabels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssuesIdLabelsId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels/{{ parameters.id }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameMilestonesIdLabels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/milestones/{{ identifier }}/labels"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameMilestones": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/milestones"
+        },
+        "parameters": {
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "direction": {
+            "value": "{{ parameters.direction }}"
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/milestones"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameMilestonesId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/milestones/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/milestones/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssuesIssueIdEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ parameters.issueId }}/events"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssuesEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/events"
+        }
+      }
+    },
+    "ReposUserNameRepoNameIssuesEventsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/events/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameGists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/gists"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/gists"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "Gists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gists"
+        },
+        "parameters": {
+          "username": {
+            "value": "{{ parameters.username }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "GistsPublic": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gists/public"
+        },
+        "parameters": {
+          "username": {
+            "value": "{{ parameters.username }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "GistsStarred": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gists/starred"
+        },
+        "parameters": {
+          "username": {
+            "value": "{{ parameters.username }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "GistsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gists/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/gists/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "GistsIdStar": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/gists/{{ identifier }}/star"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/gists/{{ identifier }}/star"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gists/{{ identifier }}/star"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "GistsIdFork": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/gists/{{ identifier }}/fork"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "GistsGistIdComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gists/{{ parameters.gistId }}/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/gists/{{ parameters.gistId }}/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "GistsGistIdCommentsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gists/{{ parameters.gistId }}/comments/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "GistsCommentsId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/gists/comments/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "User": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserEmails": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/emails"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/emails"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/emails"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameFollowers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/followers"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserFollowers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/followers"
+        },
+        "parameters": {
+          "userName": {
+            "value": "{{ parameters.userName }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameFollowing": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/following"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserFollowing": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/following"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserFollowingUserName": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/user/following/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/following/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/following/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserUserKeys": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/{{ parameters.user }}/keys"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserKeys": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/keys"
+        },
+        "parameters": {
+          "userName": {
+            "value": "{{ parameters.userName }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/keys"
+        },
+        "parameters": {
+          "userName": {
+            "value": "{{ parameters.userName }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserKeysId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/keys/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/keys/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitBlobsSha": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/blobs/{{ parameters.sha }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitBlobs": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/blobs"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitCommitsSha": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/commits/{{ parameters.sha }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitCommits": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/commits"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitRefsRef": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs/{{ parameters.ref }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs/{{ parameters.ref }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitRefs": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitRefsTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs/tags"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitTagsSha": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/tags/{{ parameters.sha }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitTags": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/tags"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitTreesSha": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/trees/{{ parameters.sha }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitTreesSha?recursive=1": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/trees/{{ parameters.sha }}?recursive=1"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameGitTrees": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/trees"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameOrgs": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/orgs"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserOrgs": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/orgs"
+        },
+        "parameters": {
+          "userName": {
+            "value": "{{ parameters.userName }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "OrgsOrg": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "OrgsOrgMembers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/members"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "OrgsOrgMembersUserName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/members/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/members/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "TeamsIdMembersUser": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}/members/{{ parameters.user }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "OrgsOrgPublicMembers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/public_members"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "OrgsOrgPublicMembersUserName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/public_members/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/public_members/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/public_members/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "OrgsOrgTeams": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/teams"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/teams"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "TeamsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "TeamsIdMembers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}/members"
+        }
+      }
+    },
+    "TeamsIdMembersUserName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}/members/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}/members/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}/members/{{ parameters.userName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "TeamsIdRepos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}/repos"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "TeamsIdReposUserNameRepoName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/teams/{{ identifier }}/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNamePulls": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNamePullsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNamePullsIdCommits": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/commits"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNamePullsIdFiles": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/files"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNamePullsIdMerge": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/merge"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/merge"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNamePullsIdComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNamePullsCommentsId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/comments/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "Events": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/events"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/events"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "NetworksUserNameRepoNameEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/networks/{{ parameters.userName }}/{{ parameters.repoName }}/events"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "OrgsOrgEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/events"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameReceivedEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/received_events"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameReceivedEventsPublic": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/received_events/public"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/events"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameEventsPublic": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/events/public"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameEventsOrgsOrg": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/events/orgs/{{ parameters.org }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserRepos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/repos"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/repos"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameRepos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/repos"
+        }
+      }
+    },
+    "OrgsOrgRepos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/repos"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/orgs/{{ parameters.org }}/repos"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "Repositories": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repositories"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameContributors": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/contributors"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameLanguages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/languages"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameTeams": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/teams"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameTags": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/tags"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameBranches": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/branches"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameCollaborators": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/collaborators"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameCollaboratorsUser": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/collaborators/{{ parameters.user }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/collaborators/{{ parameters.user }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/collaborators/{{ parameters.user }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameCommits": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/commits"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameCommitsSha": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/commits/{{ parameters.sha }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameCommitsShaComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/commits/{{ parameters.sha }}/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/commits/{{ parameters.sha }}/comments"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameCommentsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/comments/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/comments/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameCompareBase": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/compare/{{ parameters.base }}...{{ parameters.head }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameDownloads": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/downloads"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/downloads"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameDownloadsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/downloads/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/downloads/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameForks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/forks"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/forks"
+        },
+        "parameters": {
+          "org": {
+            "value": "{{ parameters.org }}"
+          }
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameKeys": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/keys"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/keys"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameKeysId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/keys/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/keys/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameWatchers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/watchers"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UsersUserNameWatched": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userName }}/watched"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserWatched": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/watched"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "UserWatchedUserNameRepoName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/watched/{{ parameters.userName }}/{{ parameters.repoName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/user/watched/{{ parameters.userName }}/{{ parameters.repoName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/user/watched/{{ parameters.userName }}/{{ parameters.repoName }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameHooks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameHooksId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks/{{ identifier }}"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    },
+    "ReposUserNameRepoNameHooksIdTest": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks/{{ identifier }}/test"
+        },
+        "headers": {
+          "User-Agent": "{{ headers.User-Agent }}"
+        }
+      }
+    }
+  }
+}

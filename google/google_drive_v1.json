@@ -1,0 +1,506 @@
+{
+  "version": "1.0",
+  "name": "Google Drive",
+  "url": "https://docs.google.com/feeds",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://google.com",
+    "authorization_url": "https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force",
+
+    "access_token": "https://accounts.google.com/o/oauth2/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "DefaultVisibilityFull": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full"
+        },
+        "parameters": {
+          "alt": {
+            "value": "{{ parameters.alt }}"
+          },
+          "author": {
+            "value": "{{ parameters.author }}"
+          },
+          "q": {
+            "value": "{{ parameters.q }}"
+          },
+          "start-index": {
+            "value": "{{ parameters.start-index }}"
+          },
+          "max-results": {
+            "value": "{{ parameters.max-results }}"
+          },
+          "updated-min": {
+            "value": "{{ parameters.updated-min }}"
+          },
+          "updated-max": {
+            "value": "{{ parameters.updated-max }}"
+          },
+          "category": {
+            "value": "{{ parameters.category }}"
+          },
+          "start-key": {
+            "value": "{{ parameters.start-key }}"
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "title-exact": {
+            "value": "{{ parameters.title-exact }}"
+          },
+          "opened-min": {
+            "value": "{{ parameters.opened-min }}"
+          },
+          "opened-max": {
+            "value": "{{ parameters.opened-max }}"
+          },
+          "edited-min": {
+            "value": "{{ parameters.edited-min }}"
+          },
+          "edited-max": {
+            "value": "{{ parameters.edited-max }}"
+          },
+          "owner": {
+            "value": "{{ parameters.owner }}"
+          },
+          "writer": {
+            "value": "{{ parameters.writer }}"
+          },
+          "reader": {
+            "value": "{{ parameters.reader }}"
+          },
+          "showfolders": {
+            "value": "{{ parameters.showfolders }}"
+          },
+          "showroot": {
+            "value": "{{ parameters.showroot }}"
+          },
+          "showdeleted": {
+            "value": "{{ parameters.showdeleted }}"
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      }
+    },
+    "DefaultVisibilityFullCategory": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/-/{{ parameters.category }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "If-None-Match": "{{ headers.If-None-Match }}"
+        }
+      }
+    },
+    "DefaultVisibilityFullResourceID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "If-None-Match": "{{ headers.If-None-Match }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}"
+        },
+        "parameters": {
+          "delete": {
+            "value": "{{ parameters.delete }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "If-None-Match": "{{ headers.If-None-Match }}"
+        }
+      }
+    },
+    "DefaultVisibilityFullResourceIDContents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/contents"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      }
+    },
+    "DefaultVisibilityFullFolder%3AcollectionIdContents": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/folder%3A{{ parameters.collection_id }}/contents"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "DefaultVisibilityFullFolder%3AcollectionIdContentsResourceID": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/folder%3A{{ parameters.collection_id }}/contents/{{ parameters.resourceID }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      }
+    },
+    "DefaultVisibilityFullResourceIDAcl": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/acl"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/acl"
+        },
+        "parameters": {
+          "send-notification-emails": {
+            "value": "{{ parameters.send-notification-emails }}"
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "DefaultVisibilityFullResourceIDAclUser": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/acl/{{ parameters.user }}"
+        },
+        "parameters": {
+          "user": {
+            "value": "{{ parameters.user }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/acl/{{ parameters.user }}"
+        },
+        "parameters": {
+          "user": {
+            "value": "{{ parameters.user }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      }
+    },
+    "DefaultVisibilityFullFolder%3AcollectionIdAcl": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/folder%3A{{ parameters.collection_id }}/acl"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "DefaultMediaResourceID": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/default/media/{{ parameters.resourceID }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "If-Match": "{{ headers.If-Match }}",
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Slug": "{{ headers.Slug }}"
+        }
+      }
+    },
+    "DefaultVisibilityFullResourceIDRevisionsRevisionID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/revisions/{{ parameters.revisionID }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/revisions/{{ parameters.revisionID }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      }
+    },
+    "DefaultVisibilityArchive": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/archive"
+        },
+        "parameters": {
+          "author": {
+            "value": "{{ parameters.author }}"
+          },
+          "q": {
+            "value": "{{ parameters.q }}"
+          },
+          "start-index": {
+            "value": "{{ parameters.start-index }}"
+          },
+          "updated-min": {
+            "value": "{{ parameters.updated-min }}"
+          },
+          "updated-max": {
+            "value": "{{ parameters.updated-max }}"
+          },
+          "category": {
+            "value": "{{ parameters.category }}"
+          },
+          "start-key": {
+            "value": "{{ parameters.start-key }}"
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "title-exact": {
+            "value": "{{ parameters.title-exact }}"
+          },
+          "opened-min": {
+            "value": "{{ parameters.opened-min }}"
+          },
+          "opened-max": {
+            "value": "{{ parameters.opened-max }}"
+          },
+          "edited-min": {
+            "value": "{{ parameters.edited-min }}"
+          },
+          "edited-max": {
+            "value": "{{ parameters.edited-max }}"
+          },
+          "owner": {
+            "value": "{{ parameters.owner }}"
+          },
+          "writer": {
+            "value": "{{ parameters.writer }}"
+          },
+          "reader": {
+            "value": "{{ parameters.reader }}"
+          },
+          "showfolders": {
+            "value": "{{ parameters.showfolders }}"
+          },
+          "showdeleted": {
+            "value": "{{ parameters.showdeleted }}"
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "DefaultVisibilityArchiveArchiveID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/archive/{{ parameters.archiveID }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/archive/{{ parameters.archiveID }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/default/{{ parameters.visibility }}/archive/{{ parameters.archiveID }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      }
+    },
+    "MetadataUserId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/metadata/{{ parameters.user_id }}"
+        },
+        "parameters": {
+          "remaining-changestamps-first": {
+            "value": "{{ parameters.remaining-changestamps-first }}"
+          },
+          "remaining-changestamps-limit": {
+            "value": "{{ parameters.remaining-changestamps-limit }}"
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      }
+    },
+    "UserIdPrivateChanges": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.user_id }}/private/changes"
+        },
+        "parameters": {
+          "start-index": {
+            "value": "{{ parameters.start-index }}"
+          },
+          "max-results": {
+            "value": "{{ parameters.max-results }}"
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      }
+    },
+    "ResumableCreateMediaLink": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.resumable_create_media_link }}"
+        },
+        "parameters": {
+          "ocr": {
+            "value": "{{ parameters.ocr }}"
+          },
+          "ocr-language": {
+            "value": "{{ parameters.ocr-language }}"
+          },
+          "targetLanguage": {
+            "value": "{{ parameters.targetLanguage }}"
+          },
+          "sourceLanguage": {
+            "value": "{{ parameters.sourceLanguage }}"
+          },
+          "convert": {
+            "value": "{{ parameters.convert }}"
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "Content-Type": "{{ headers.Content-Type }}",
+          "X-Upload-Content-Type": "{{ headers.X-Upload-Content-Type }}",
+          "X-Upload-Content-Length": "{{ headers.X-Upload-Content-Length }}"
+        }
+      }
+    },
+    "NextLocation": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.next_location }}"
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}",
+          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Range": "{{ headers.Content-Range }}"
+        }
+      }
+    },
+    "DownloadDocumentTypeExport": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/download/{{ parameters.document_type }}/Export"
+        },
+        "parameters": {
+          "key": {
+            "value": "{{ parameters.key }}",
+            "required": true
+          },
+          "gid": {
+            "value": "{{ parameters.gid }}"
+          },
+          "exportFormat": {
+            "value": "{{ parameters.exportFormat }}"
+          },
+          "revision": {
+            "value": "{{ parameters.revision }}"
+          }
+        },
+        "headers": {
+          "GData-Version": "{{ headers.GData-Version }}"
+        }
+      }
+    }
+  }
+}

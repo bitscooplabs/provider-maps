@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "name": "Next Caller",
+  "url": "https://api.nextcaller.com/",
+  "endpoints": {
+    "VersionRecords": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/records/"
+        },
+        "parameters": {
+          "phone": {
+            "value": "{{ parameters.phone }}",
+            "required": true
+          },
+          "format": {
+            "value": "{{ parameters.format }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VersionUsersNextcallerId?format=format": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/users/{{ parameters.nextcaller_id }}/?format={{ parameters.format }}"
+        },
+        "parameters": {
+          "format": {
+            "value": "{{ parameters.format }}",
+            "required": true
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    }
+  }
+}

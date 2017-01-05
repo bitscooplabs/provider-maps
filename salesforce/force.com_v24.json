@@ -1,0 +1,169 @@
+{
+  "version": "1.0",
+  "name": "Salesforce",
+  "url": "https://na14.salesforce.com/services/data",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://salesforce.com",
+    "authorization_url": "https://login.salesforce.com/services/oauth2/authorize?response_type=code",
+    "access_token": "https://login.salesforce.com/services/oauth2/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Versions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/"
+        }
+      }
+    },
+    "Version": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}"
+        }
+      }
+    },
+    "Sobjects": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects"
+        }
+      }
+    },
+    "Sobject": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects/{{ parameters.sobject }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects/{{ parameters.sobject }}"
+        }
+      }
+    },
+    "SobjectDescribe": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects/{{ parameters.sobject }}/describe"
+        }
+      }
+    },
+    "SobjectId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects/{{ parameters.sobject }}/{{ identifier }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects/{{ parameters.sobject }}/{{ identifier }}"
+        }
+      }
+    },
+    "SobjectBlob": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects/{{ parameters.sobject }}/{{ identifier }}/{{ parameters.blobField }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "SobjectPassword": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects/User/{{ identifier }}/password"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects/User/{{ identifier }}/password"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/sobjects/User/{{ identifier }}/password"
+        }
+      }
+    },
+    "VersionQuery": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/query"
+        },
+        "parameters": {
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "VersionQueryId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/query/{{ identifier }}"
+        }
+      }
+    },
+    "VersionSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.version }}/search"
+        },
+        "parameters": {
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "version": "1.0",
+  "name": "Onenote",
+  "url": "https://www.onenote.com/api/v1.0/me/notes/",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://onenote.com",
+    "authorization_url": "https://login.live.com/oauth20_authorize.srf",
+
+    "access_token": "https://login.live.com/oauth20_token.srf",
+
+    "signature": "header",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Pages": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/pages"
+        },
+        "parameters": {
+          "sectionName": {
+            "value": "{{ parameters.sectionName }}"
+          }
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/pages"
+        },
+        "parameters": {
+          "search": {
+            "value": "{{ parameters.search }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SectionsSectionIdPages": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/sections/{{ parameters.sectionId }}/pages"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/sections/{{ parameters.sectionId }}/pages"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "orderby": {
+            "value": "{{ parameters.orderby }}"
+          },
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          },
+          "top": {
+            "value": "{{ parameters.top }}"
+          },
+          "search": {
+            "value": "{{ parameters.search }}"
+          },
+          "skip": {
+            "value": "{{ parameters.skip }}"
+          },
+          "pagelevel": {
+            "value": "{{ parameters.pagelevel }}"
+          }
+        }
+      }
+    },
+    "PagesPageId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/pages/{{ parameters.pageId }}"
+        },
+        "parameters": {
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          },
+          "pagelevel": {
+            "value": "{{ parameters.pagelevel }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/pages/{{ parameters.pageId }}"
+        }
+      }
+    },
+    "PagesPageIdContent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/pages/{{ parameters.pageId }}/content"
+        },
+        "parameters": {
+          "includeIDs": {
+            "value": "{{ parameters.includeIDs }}"
+          }
+        },
+        "headers": {
+          "Accept": "{{ headers.Accept }}"
+        }
+      }
+    },
+    "PagesPageIdPreview": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/pages/{{ parameters.pageId }}/preview"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "Notebooks": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/notebooks"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/notebooks"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "orderby": {
+            "value": "{{ parameters.orderby }}"
+          },
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "top": {
+            "value": "{{ parameters.top }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          },
+          "skip": {
+            "value": "{{ parameters.skip }}"
+          }
+        }
+      }
+    },
+    "NotebooksNotebookId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/notebooks/{{ parameters.notebookId }}"
+        },
+        "parameters": {
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          }
+        }
+      }
+    },
+    "NotebooksNotebookIdSections": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/notebooks/{{ parameters.notebookId }}/sections"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/notebooks/{{ parameters.notebookId }}/sections"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "orderby": {
+            "value": "{{ parameters.orderby }}"
+          },
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "top": {
+            "value": "{{ parameters.top }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          },
+          "skip": {
+            "value": "{{ parameters.skip }}"
+          }
+        }
+      }
+    },
+    "NotebooksNotebookIdSectiongroups": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/notebooks/{{ parameters.notebookId }}/sectiongroups"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "orderby": {
+            "value": "{{ parameters.orderby }}"
+          },
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "top": {
+            "value": "{{ parameters.top }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          },
+          "skip": {
+            "value": "{{ parameters.skip }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/notebooks/{{ parameters.notebookId }}/sectiongroups"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "SectionGroups": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/sectionGroups/"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "orderby": {
+            "value": "{{ parameters.orderby }}"
+          },
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "top": {
+            "value": "{{ parameters.top }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          },
+          "skip": {
+            "value": "{{ parameters.skip }}"
+          }
+        }
+      }
+    },
+    "SectionGroupsSectionGroupId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/sectionGroups/{{ parameters.sectionGroupId }}"
+        },
+        "parameters": {
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          }
+        }
+      }
+    },
+    "SectionGroupsSectionGroupIdSections": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/sectionGroups/{{ parameters.sectionGroupId }}/sections"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "orderby": {
+            "value": "{{ parameters.orderby }}"
+          },
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "top": {
+            "value": "{{ parameters.top }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          },
+          "skip": {
+            "value": "{{ parameters.skip }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/sectionGroups/{{ parameters.sectionGroupId }}/sections"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "SectionGroupsSectionGroupIdSectionGroups": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/sectionGroups/{{ parameters.sectionGroupId }}/sectionGroups"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "orderby": {
+            "value": "{{ parameters.orderby }}"
+          },
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "top": {
+            "value": "{{ parameters.top }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          },
+          "skip": {
+            "value": "{{ parameters.skip }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/sectionGroups/{{ parameters.sectionGroupId }}/sectionGroups"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "Sections": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/sections/"
+        },
+        "parameters": {
+          "count": {
+            "value": "{{ parameters.count }}"
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "orderby": {
+            "value": "{{ parameters.orderby }}"
+          },
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "top": {
+            "value": "{{ parameters.top }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          },
+          "skip": {
+            "value": "{{ parameters.skip }}"
+          }
+        }
+      }
+    },
+    "SectionsSectionId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/sections/{{ parameters.sectionId }}"
+        },
+        "parameters": {
+          "select": {
+            "value": "{{ parameters.select }}"
+          },
+          "expand": {
+            "value": "{{ parameters.expand }}"
+          }
+        }
+      }
+    }
+  }
+}

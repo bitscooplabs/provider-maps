@@ -1,0 +1,314 @@
+{
+  "version": "1.0",
+  "name": "Ruby Gems",
+  "url": "https://rubygems.org/api/v1",
+
+  "environment": {
+    "api_key": ""
+  },
+
+  "headers": {
+    "Authorization": "{{ environment.api_key }}"
+  },
+
+  "endpoints": {
+    "GemsByName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gems/{{ parameters.name }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Search": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/search.{{ parameters.format }}"
+        },
+        "parameters": {
+          "query": {
+            "value": "{{ parameters.query }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Gems": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gems.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/gems"
+        }
+      }
+    },
+    "GemsYank": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/gems/yank"
+        },
+        "parameters": {
+          "gem_name": {
+            "value": "{{ parameters.gem_name }}",
+            "required": true
+          },
+          "version": {
+            "value": "{{ parameters.version }}",
+            "required": true
+          },
+          "platform": {
+            "value": "{{ parameters.platform }}"
+          }
+        }
+      }
+    },
+    "GemsUnyank": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/gems/unyank"
+        },
+        "parameters": {
+          "gem_name": {
+            "value": "{{ parameters.gem_name }}",
+            "required": true
+          },
+          "version": {
+            "value": "{{ parameters.version }}",
+            "required": true
+          },
+          "platform": {
+            "value": "{{ parameters.platform }}"
+          }
+        }
+      }
+    },
+    "GemsLatest": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gems/latest.{{ parameters.format }}"
+        }
+      }
+    },
+    "GemsJustUpdated": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gems/just_updated.{{ parameters.format }}"
+        }
+      }
+    },
+    "VersionsName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/versions/{{ parameters.name }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "Downloads": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/downloads.{{ parameters.format }}"
+        }
+      }
+    },
+    "DownloadsTop": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/downloads/top.{{ parameters.format }}"
+        }
+      }
+    },
+    "DownloadsAll": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/downloads/all.{{ parameters.format }}"
+        }
+      }
+    },
+    "DownloadsNameVersion": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/downloads/{{ parameters.name }}-{{ parameters.version }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "VersionsNameVersionDownloads": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/versions/{{ parameters.name }}-{{ parameters.version }}/downloads.{{ parameters.format }}"
+        }
+      }
+    },
+    "VersionsNameVersionDownloadsSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/versions/{{ parameters.name }}-{{ parameters.version }}/downloads/search.{{ parameters.format }}"
+        },
+        "parameters": {
+          "from": {
+            "value": "{{ parameters.from }}",
+            "required": true
+          },
+          "to": {
+            "value": "{{ parameters.to }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "GemsNameOwners": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/gems/{{ parameters.name }}/owners.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/gems/{{ parameters.name }}/owners"
+        },
+        "parameters": {
+          "email": {
+            "value": "{{ parameters.email }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/gems/{{ parameters.name }}/owners"
+        },
+        "parameters": {
+          "email": {
+            "value": "{{ parameters.email }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "WebHooks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/web_hooks.{{ parameters.format }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/web_hooks"
+        },
+        "parameters": {
+          "gem_name": {
+            "value": "{{ parameters.gem_name }}",
+            "required": true
+          },
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "WebHooksRemove": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/web_hooks/remove"
+        },
+        "parameters": {
+          "gem_name": {
+            "value": "{{ parameters.gem_name }}",
+            "required": true
+          },
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "WebHooksFire": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/web_hooks/fire"
+        },
+        "parameters": {
+          "gem_name": {
+            "value": "{{ parameters.gem_name }}",
+            "required": true
+          },
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ApiKey": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/api_key.{{ parameters.format }}"
+        }
+      }
+    },
+    "Dependencies": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/dependencies"
+        },
+        "parameters": {
+          "gems": {
+            "value": "{{ parameters.gems }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

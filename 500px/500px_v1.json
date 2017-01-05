@@ -1,0 +1,791 @@
+{
+  "version": "1.0",
+  "name": "500px",
+  "url": "https://api.500px.com/v1",
+
+  "auth": {
+    "type": "oauth1",
+    "version": "1.0a",
+    "signature_method": "HMAC-SHA1",
+    "redirect_url": "https://500px.com",
+    "authorization_url": "https://api.500px.com/v1/oauth/authorize",
+
+    "request_token": "https://api.500px.com/v1/oauth/request_token",
+    "access_token": "https://api.500px.com/v1/oauth/access_token",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Photos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/photos"
+        },
+        "parameters": {
+          "feature": {
+            "value": "{{ parameters.feature }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "only": {
+            "value": "{{ parameters.only }}"
+          },
+          "exclude": {
+            "value": "{{ parameters.exclude }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "rpp": {
+            "value": "{{ parameters.rpp }}"
+          },
+          "image_size": {
+            "value": "{{ parameters.image_size }}"
+          },
+          "include_store": {
+            "value": "{{ parameters.include_store }}"
+          },
+          "include_states": {
+            "value": "{{ parameters.include_states }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/photos"
+        },
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "category": {
+            "value": "{{ parameters.category }}"
+          },
+          "shutter_speed": {
+            "value": "{{ parameters.shutter_speed }}"
+          },
+          "focal_length": {
+            "value": "{{ parameters.focal_length }}"
+          },
+          "aperture": {
+            "value": "{{ parameters.aperture }}"
+          },
+          "iso": {
+            "value": "{{ parameters.iso }}"
+          },
+          "camera": {
+            "value": "{{ parameters.camera }}"
+          },
+          "lens": {
+            "value": "{{ parameters.lens }}"
+          },
+          "latitude": {
+            "value": "{{ parameters.latitude }}"
+          },
+          "longitude": {
+            "value": "{{ parameters.longitude }}"
+          },
+          "privacy": {
+            "value": "{{ parameters.privacy }}"
+          }
+        }
+      }
+    },
+    "PhotosSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/photos/search"
+        },
+        "parameters": {
+          "term": {
+            "value": "{{ parameters.term }}"
+          },
+          "tag": {
+            "value": "{{ parameters.tag }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "rpp": {
+            "value": "{{ parameters.rpp }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          }
+        }
+      }
+    },
+    "PhotosId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "image_size": {
+            "value": "{{ parameters.image_size }}"
+          },
+          "comments": {
+            "value": "{{ parameters.comments }}"
+          },
+          "comments_page": {
+            "value": "{{ parameters.comments_page }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PhotosIdComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}/comments"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}/comments"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          }
+        }
+      }
+    },
+    "PhotosIdFavorite": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}/favorite"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "rpp": {
+            "value": "{{ parameters.rpp }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}/favorite"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}/favorite"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PhotosIdVotes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}/votes"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "rpp": {
+            "value": "{{ parameters.rpp }}"
+          }
+        }
+      }
+    },
+    "PhotosIdVote": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}/vote"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "vote": {
+            "value": "{{ parameters.vote }}"
+          }
+        }
+      }
+    },
+    "PhotosIdTags": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}/tags"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/photos/{{ identifier }}/tags"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          }
+        }
+      }
+    },
+    "Upload": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/upload"
+        },
+        "parameters": {
+          "photo_id": {
+            "value": "{{ parameters.photo_id }}",
+            "required": true
+          },
+          "upload_key": {
+            "value": "{{ parameters.upload_key }}",
+            "required": true
+          },
+          "consumer_key": {
+            "value": "{{ parameters.consumer_key }}",
+            "required": true
+          },
+          "access_key": {
+            "value": "{{ parameters.access_key }}",
+            "required": true
+          },
+          "file": {
+            "value": "{{ parameters.file }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PhotosUpload": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/photos/upload"
+        },
+        "parameters": {
+          "file": {
+            "value": "{{ parameters.file }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "description": {
+            "value": "{{ parameters.description }}"
+          },
+          "category": {
+            "value": "{{ parameters.category }}"
+          },
+          "privacy": {
+            "value": "{{ parameters.privacy }}"
+          },
+          "shutter_speed": {
+            "value": "{{ parameters.shutter_speed }}"
+          },
+          "focal_length": {
+            "value": "{{ parameters.focal_length }}"
+          },
+          "aperture": {
+            "value": "{{ parameters.aperture }}"
+          },
+          "iso": {
+            "value": "{{ parameters.iso }}"
+          },
+          "camera": {
+            "value": "{{ parameters.camera }}"
+          },
+          "lens": {
+            "value": "{{ parameters.lens }}"
+          },
+          "latitude": {
+            "value": "{{ parameters.latitude }}"
+          },
+          "longitude": {
+            "value": "{{ parameters.longitude }}"
+          }
+        }
+      }
+    },
+    "Users": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users"
+        }
+      }
+    },
+    "UsersShow": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/show"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "email": {
+            "value": "{{ parameters.email }}"
+          }
+        }
+      }
+    },
+    "UsersIdFriends": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ identifier }}/friends"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "rpp": {
+            "value": "{{ parameters.rpp }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/users/{{ identifier }}/friends"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/users/{{ identifier }}/friends"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UsersIdFollowers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ identifier }}/followers"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      }
+    },
+    "UsersSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/search"
+        },
+        "parameters": {
+          "term": {
+            "value": "{{ parameters.term }}",
+            "required": true
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "rpp": {
+            "value": "{{ parameters.rpp }}"
+          }
+        }
+      }
+    },
+    "Blogs": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs"
+        },
+        "parameters": {
+          "feature": {
+            "value": "{{ parameters.feature }}",
+            "required": true
+          },
+          "user_id": {
+            "value": "{{ parameters.user_id }}"
+          },
+          "username": {
+            "value": "{{ parameters.username }}"
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          },
+          "rpp": {
+            "value": "{{ parameters.rpp }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/blogs"
+        },
+        "parameters": {
+          "title": {
+            "value": "{{ parameters.title }}",
+            "required": true
+          },
+          "body": {
+            "value": "{{ parameters.body }}",
+            "required": true
+          },
+          "latitude": {
+            "value": "{{ parameters.latitude }}"
+          },
+          "longitude": {
+            "value": "{{ parameters.longitude }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "photo_ids": {
+            "value": "{{ parameters.photo_ids }}"
+          }
+        }
+      }
+    },
+    "BlogsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "body": {
+            "value": "{{ parameters.body }}"
+          },
+          "latitude": {
+            "value": "{{ parameters.latitude }}"
+          },
+          "longitude": {
+            "value": "{{ parameters.longitude }}"
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "photo_ids": {
+            "value": "{{ parameters.photo_ids }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "BlogsIdComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ identifier }}/comments"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "page": {
+            "value": "{{ parameters.page }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ identifier }}/comments"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "body": {
+            "value": "{{ parameters.body }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "Collections": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/collections"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/collections"
+        },
+        "parameters": {
+          "title": {
+            "value": "{{ parameters.title }}",
+            "required": true
+          },
+          "path": {
+            "value": "{{ parameters.path }}",
+            "required": true
+          },
+          "kind": {
+            "value": "{{ parameters.kind }}"
+          },
+          "photo_ids": {
+            "value": "{{ parameters.photo_ids }}"
+          },
+          "position": {
+            "value": "{{ parameters.position }}"
+          }
+        }
+      }
+    },
+    "CollectionsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/collections/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/collections/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "path": {
+            "value": "{{ parameters.path }}"
+          },
+          "kind": {
+            "value": "{{ parameters.kind }}"
+          },
+          "photo_ids": {
+            "value": "{{ parameters.photo_ids }}"
+          },
+          "position": {
+            "value": "{{ parameters.position }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/collections/{{ identifier }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

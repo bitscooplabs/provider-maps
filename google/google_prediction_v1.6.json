@@ -1,0 +1,94 @@
+{
+  "version": "1.0",
+  "name": "Google Prediction",
+  "url": "https://www.googleapis.com/prediction/v1.6",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://google.com",
+    "authorization_url": "https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force",
+
+    "access_token": "https://accounts.google.com/o/oauth2/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "HostedmodelsHostedModelNamePredict": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.project }}/hostedmodels/{{ parameters.hostedModelName }}/predict"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "Trainedmodels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.project }}/trainedmodels/{{ identifier }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.project }}/trainedmodels"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.project }}/trainedmodels/{{ identifier }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.project }}/trainedmodels/{{ identifier }}"
+        }
+      }
+    },
+    "TrainedmodelsIdPredict": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/{{ parameters.project }}/trainedmodels/{{ identifier }}/predict"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    }
+  }
+}

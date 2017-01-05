@@ -1,0 +1,169 @@
+{
+  "version": "1.0",
+  "name": "Google Analytics",
+  "url": "https://www.googleapis.com/analytics/v3",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://google.com",
+    "authorization_url": "https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force",
+
+    "access_token": "https://accounts.google.com/o/oauth2/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "DataGa": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/data/ga"
+        },
+        "parameters": {
+          "ids": {
+            "value": "{{ parameters.ids }}",
+            "required": true
+          },
+          "start-date": {
+            "value": "{{ parameters.start-date }}",
+            "required": true
+          },
+          "end-date": {
+            "value": "{{ parameters.end-date }}",
+            "required": true
+          },
+          "metrics": {
+            "value": "{{ parameters.metrics }}",
+            "required": true
+          },
+          "dimensions": {
+            "value": "{{ parameters.dimensions }}"
+          },
+          "filters": {
+            "value": "{{ parameters.filters }}"
+          },
+          "max-results": {
+            "value": "{{ parameters.max-results }}"
+          },
+          "segment": {
+            "value": "{{ parameters.segment }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          },
+          "start-index": {
+            "value": "{{ parameters.start-index }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "ManagementAccounts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/management/accounts"
+        },
+        "parameters": {
+          "max-results": {
+            "value": "{{ parameters.max-results }}"
+          },
+          "start-index": {
+            "value": "{{ parameters.start-index }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "ManagementAccountsAccountIdWebpropertiesWebPropertyIdProfilesProfileIdGoals": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/management/accounts/{{ parameters.accountId }}/webproperties/{{ parameters.webPropertyId }}/profiles/{{ parameters.profileId }}/goals"
+        },
+        "parameters": {
+          "max-results": {
+            "value": "{{ parameters.max-results }}"
+          },
+          "start-index": {
+            "value": "{{ parameters.start-index }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "ManagementAccountsAccountIdWebpropertiesWebPropertyIdProfiles": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/management/accounts/{{ parameters.accountId }}/webproperties/{{ parameters.webPropertyId }}/profiles"
+        },
+        "parameters": {
+          "max-results": {
+            "value": "{{ parameters.max-results }}"
+          },
+          "start-index": {
+            "value": "{{ parameters.start-index }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "ManagementSegments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/management/segments"
+        },
+        "parameters": {
+          "max-results": {
+            "value": "{{ parameters.max-results }}"
+          },
+          "start-index": {
+            "value": "{{ parameters.start-index }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "ManagementAccountsAccountIdWebproperties": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/management/accounts/{{ parameters.accountId }}/webproperties"
+        },
+        "parameters": {
+          "max-results": {
+            "value": "{{ parameters.max-results }}"
+          },
+          "start-index": {
+            "value": "{{ parameters.start-index }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    }
+  }
+}

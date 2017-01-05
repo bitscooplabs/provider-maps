@@ -1,0 +1,322 @@
+{
+  "version": "1.0",
+  "name": "Tumblr",
+  "url": "http://api.tumblr.com/v2/",
+
+  "auth": {
+    "type": "oauth1",
+    "version": "1.0a",
+    "signature_method": "HMAC-SHA1",
+    "redirect_url": "https://twitter.com",
+    "authorization_url": "https://www.tumblr.com/oauth/authorize",
+
+    "request_token": "https://www.tumblr.com/oauth/request_token",
+    "access_token": "https://www.tumblr.com/oauth/access_token",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "BlogBaseHostnameInfo": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/info"
+        }
+      }
+    },
+    "BlogBaseHostnameAvatarSize": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/avatar/{{ parameters.size }}"
+        }
+      }
+    },
+    "BlogBaseHostnameFollowers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/followers"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "BlogBaseHostnamePostsType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/posts/{{ parameters.type }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "tag": {
+            "value": "{{ parameters.tag }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "reblog_info": {
+            "value": "{{ parameters.reblog_info }}"
+          },
+          "notes_info": {
+            "value": "{{ parameters.notes_info }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        }
+      }
+    },
+    "BlogBaseHostnamePostsQueue": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/posts/queue"
+        }
+      }
+    },
+    "BlogBaseHostnamePostsDraft": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/posts/draft"
+        }
+      }
+    },
+    "BlogBaseHostnamePostsSubmission": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/posts/submission"
+        }
+      }
+    },
+    "BlogBaseHostnamePost": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/post"
+        },
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "tweet": {
+            "value": "{{ parameters.tweet }}"
+          },
+          "date": {
+            "value": "{{ parameters.date }}"
+          },
+          "markdown": {
+            "value": "{{ parameters.markdown }}"
+          },
+          "caption": {
+            "value": "{{ parameters.caption }}"
+          },
+          "embed": {
+            "value": "{{ parameters.embed }}"
+          },
+          "data": {
+            "value": "{{ parameters.data }}"
+          }
+        }
+      }
+    },
+    "BlogBaseHostnamePostEdit": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/post/edit"
+        },
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "tweet": {
+            "value": "{{ parameters.tweet }}"
+          },
+          "date": {
+            "value": "{{ parameters.date }}"
+          },
+          "markdown": {
+            "value": "{{ parameters.markdown }}"
+          },
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "BlogBaseHostnamePostReblog": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/post/reblog"
+        },
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "tags": {
+            "value": "{{ parameters.tags }}"
+          },
+          "tweet": {
+            "value": "{{ parameters.tweet }}"
+          },
+          "date": {
+            "value": "{{ parameters.date }}"
+          },
+          "markdown": {
+            "value": "{{ parameters.markdown }}"
+          },
+          "id": {
+            "value": "{{ parameters.id }}"
+          },
+          "reblog_key": {
+            "value": "{{ parameters.reblog_key }}",
+            "required": true
+          },
+          "comment": {
+            "value": "{{ parameters.comment }}"
+          }
+        }
+      }
+    },
+    "BlogBaseHostnamePostDelete": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/blog/{{ parameters.base_hostname }}/post/delete"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserDashboard": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/dashboard"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "type": {
+            "value": "{{ parameters.type }}"
+          },
+          "since_id": {
+            "value": "{{ parameters.since_id }}"
+          }
+        }
+      }
+    },
+    "UserLikes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/likes"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UserFollowing": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/user/following"
+        },
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "UserFollow": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/follow"
+        },
+        "parameters": {
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "UserUnfollow": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "data": "",
+          "path": "/user/unfollow"
+        },
+        "parameters": {
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

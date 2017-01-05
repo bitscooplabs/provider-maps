@@ -1,0 +1,1555 @@
+{
+  "version": "1.0",
+  "name": "New York Times",
+  "url": "http://api.nytimes.com/svc/",
+  "endpoints": {
+    "SearchV1Article": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/search/v1/article"
+        },
+        "parameters": {
+          "query": {
+            "value": "{{ parameters.query }}",
+            "required": true
+          },
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "begin_date": {
+            "value": "{{ parameters.begin_date }}"
+          },
+          "end_date": {
+            "value": "{{ parameters.end_date }}"
+          },
+          "facets": {
+            "value": "{{ parameters.facets }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          ".format": {
+            "value": "{{ parameters..format }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "rank": {
+            "value": "{{ parameters.rank }}"
+          }
+        }
+      }
+    },
+    "BooksVersionLists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/books/{{ parameters.version }}/lists.{{ parameters.format }}"
+        },
+        "parameters": {
+          "list-name": {
+            "value": "{{ parameters.list-name }}"
+          },
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "bestsellers-date": {
+            "value": "{{ parameters.bestsellers-date }}"
+          },
+          "date": {
+            "value": "{{ parameters.date }}"
+          },
+          "isbn": {
+            "value": "{{ parameters.isbn }}"
+          },
+          "list": {
+            "value": "{{ parameters.list }}"
+          },
+          "published-date": {
+            "value": "{{ parameters.published-date }}"
+          },
+          "rank": {
+            "value": "{{ parameters.rank }}"
+          },
+          "rank-last-week": {
+            "value": "{{ parameters.rank-last-week }}"
+          },
+          "weeks-on-list": {
+            "value": "{{ parameters.weeks-on-list }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "sort-by": {
+            "value": "{{ parameters.sort-by }}"
+          },
+          "sort-order": {
+            "value": "{{ parameters.sort-order }}"
+          }
+        }
+      }
+    },
+    "BooksVersionListsBestSellersHistory": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/books/{{ parameters.version }}/lists/best-sellers/history.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "age-group": {
+            "value": "{{ parameters.age-group }}"
+          },
+          "author": {
+            "value": "{{ parameters.author }}"
+          },
+          "contributor": {
+            "value": "{{ parameters.contributor }}"
+          },
+          "isbn": {
+            "value": "{{ parameters.isbn }}"
+          },
+          "price": {
+            "value": "{{ parameters.price }}"
+          },
+          "publisher": {
+            "value": "{{ parameters.publisher }}"
+          },
+          "title": {
+            "value": "{{ parameters.title }}"
+          },
+          "sort-by": {
+            "value": "{{ parameters.sort-by }}"
+          },
+          "sort-order": {
+            "value": "{{ parameters.sort-order }}"
+          }
+        }
+      }
+    },
+    "BooksVersionListsNames": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/books/{{ parameters.version }}/lists/names.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCandidatesSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/candidates/search.{{ parameters.format }}"
+        },
+        "parameters": {
+          "lname": {
+            "value": "{{ parameters.lname }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCandidatesFecId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/candidates/{{ parameters.fec_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCandidatesLeadersCategory": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/candidates/leaders/{{ parameters.category }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleSeatsStateChamberDistrict": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/seats/{{ parameters.state }}/{{ parameters.chamber }}/{{ parameters.district }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCandidatesNew": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/candidates/new.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCommitteesSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/committees/search.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "name": {
+            "value": "{{ parameters.name }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCommitteesFecId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/committees/{{ parameters.fec_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCommitteesNew": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/committees/new.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCommitteesFecIdContributions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/committees/{{ parameters.fec_id }}/contributions/.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCommitteesFecIdContributionsCandidatesCandidateId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/committees/{{ parameters.fec_id }}/contributions/candidates/{{ parameters.candidate_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCommitteesFecIdFilings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/committees/{{ parameters.fec_id }}/filings.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleCommitteesLeadership": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/committees/leadership.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCyclePresidentTotals": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/president/totals.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCyclePresidentCandidatesCandidateNameOrCommitteeID": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/president/candidates/{{ parameters.candidate_name_or_committeeID }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCyclePresidentResourceTypeLocation": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/president/{{ parameters.resource_type }}/{{ parameters.location }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          },
+          "location": {
+            "value": "{{ parameters.location }}",
+            "required": true
+          },
+          ".format": {
+            "value": "{{ parameters..format }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCyclePresidentContributionsDonorsearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/president/contributions/donorsearch.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "lname": {
+            "value": "{{ parameters.lname }}"
+          },
+          "zip": {
+            "value": "{{ parameters.zip }}"
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleFilingsYearMonthDay": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/filings/{{ parameters.year }}/{{ parameters.month }}/{{ parameters.day }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleFilingsTypes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/filings/types.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "ElectionsUsVersionFinancesCampaignCycleFilingsTypesFormTypeId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/elections/us/{{ parameters.version }}/finances/{{ parameters.campaign_cycle }}/filings/types/{{ parameters.form_type_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "callback": {
+            "value": "{{ parameters.callback }}"
+          }
+        }
+      }
+    },
+    "CommunityVersionCommentsRecent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/community/{{ parameters.version }}/comments/recent.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "force-replies": {
+            "value": "{{ parameters.force-replies }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          }
+        }
+      }
+    },
+    "CommunityVersionCommentsRandom": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/community/{{ parameters.version }}/comments/random.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "CommunityVersionCommentsByDateDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/community/{{ parameters.version }}/comments/by-date/{{ parameters.date }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          }
+        }
+      }
+    },
+    "CommunityVersionCommentsUserIdUserId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/community/{{ parameters.version }}/comments/user/id/{{ parameters.user_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          }
+        }
+      }
+    },
+    "CommunityVersionCommentsUrlMatchType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/community/{{ parameters.version }}/comments/url/{{ parameters.match_type }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "sort": {
+            "value": "{{ parameters.sort }}"
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberChamberMembers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/{{ parameters.chamber }}/members.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "state": {
+            "value": "{{ parameters.state }}"
+          },
+          "district": {
+            "value": "{{ parameters.district }}"
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressMembersMemberId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/members/{{ parameters.member_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressMembersNew": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/members/new.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressMembersChamberStateDistrictCurrent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/members/{{ parameters.chamber }}/{{ parameters.state }}/{{ parameters.district }}/current.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberChamberMembersLeaving": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/{{ parameters.chamber }}/members/leaving.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressMembersMemberIdVotes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/members/{{ parameters.member_id }}/votes.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressMembersFirstMemberIdVotesSecondMemberIdCongressNumberChamber": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/members/{{ parameters.first_member_id }}/votes/{{ parameters.second_member_id }}/{{ parameters.congress_number }}/{{ parameters.chamber }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressMembersMemberIdBillsType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/members/{{ parameters.member_id }}/bills/{{ parameters.type }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressMembersMemberId1BillsMemberId2CongressNumberChamber": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/members/{{ parameters.member_id_1 }}/bills/{{ parameters.member_id_2 }}/{{ parameters.congress_number }}/{{ parameters.chamber }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressMembersMemberIdFloorAppearances": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/members/{{ parameters.member_id }}/floor_appearances.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberChamberSessionsSessionNumberVotesRollCallNumber": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/{{ parameters.chamber }}/sessions/{{ parameters.session_number }}/votes/{{ parameters.roll_call_number }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberChamberVotesVoteType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/{{ parameters.chamber }}/votes/{{ parameters.vote_type }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressChamberVotesYearMonth": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.chamber }}/votes/{{ parameters.year }}/{{ parameters.month }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressChamberVotesStartDateEndDate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.chamber }}/votes/{{ parameters.start_date }}/{{ parameters.end_date }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberNominations": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/nominations.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberChamberBillsType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/{{ parameters.chamber }}/bills/{{ parameters.type }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberBillsBillId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/bills/{{ parameters.bill_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberBillsBillIdResource": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/bills/{{ parameters.bill_id }}/{{ parameters.resource }}.{{ parameters.format }}"
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberBillsBillIdCosponsors": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/bills/{{ parameters.bill_id }}/cosponsors.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberNomineesNominationCategory": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/nominees/{{ parameters.nomination_category }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberNomineesNomineeId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/nominees/{{ parameters.nominee_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberNomineesStateState": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/nominees/state/{{ parameters.state }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressStatesMembersParty": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/states/members/party.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressCongressNumberChamberCommitteesCommitteeId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.congress_number }}/{{ parameters.chamber }}/committees/{{ parameters.committee_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionUsLegislativeCongressChamberSchedule": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/us/legislative/congress/{{ parameters.chamber }}/schedule.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionDistricts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/districts.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "lat": {
+            "value": "{{ parameters.lat }}"
+          },
+          "lng": {
+            "value": "{{ parameters.lng }}"
+          }
+        }
+      }
+    },
+    "MostpopularVersionResourceTypeSectionShareTypesTimePeriod": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/mostpopular/{{ parameters.version }}/{{ parameters.resource_type }}/{{ parameters.section }}/{{ parameters.share_types }}/{{ parameters.time_period }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "MoviesVersionReviewsSearch": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/movies/{{ parameters.version }}/reviews/search.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "query": {
+            "value": "{{ parameters.query }}"
+          },
+          "critics-pick": {
+            "value": "{{ parameters.critics-pick }}"
+          },
+          "thousand-best": {
+            "value": "{{ parameters.thousand-best }}"
+          },
+          "dvds": {
+            "value": "{{ parameters.dvds }}"
+          },
+          "reviewer": {
+            "value": "{{ parameters.reviewer }}"
+          },
+          "publication-date": {
+            "value": "{{ parameters.publication-date }}"
+          },
+          "opening-date": {
+            "value": "{{ parameters.opening-date }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          }
+        }
+      }
+    },
+    "MoviesVersionReviewsResourcePath": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/movies/{{ parameters.version }}/reviews/{{ parameters.resource_path }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          }
+        }
+      }
+    },
+    "MoviesVersionReviewsReviewerReviewerName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/movies/{{ parameters.version }}/reviews/reviewer/{{ parameters.reviewer_name }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "critics-pick": {
+            "value": "{{ parameters.critics-pick }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "order": {
+            "value": "{{ parameters.order }}"
+          }
+        }
+      }
+    },
+    "MoviesVersionCriticsResourceType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/movies/{{ parameters.version }}/critics/{{ parameters.resource_type }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionNyLegislativeYearChamberMembers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/ny/legislative/{{ parameters.year }}/{{ parameters.chamber }}/members.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionNyLegislativeMembersMemberName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/ny/legislative/members/{{ parameters.member_name }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionNyLegislativeChamberDistrictCurrent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/ny/legislative/{{ parameters.chamber }}/{{ parameters.district }}/current.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionNyLegislativeYearChamberCommittees": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/ny/legislative/{{ parameters.year }}/{{ parameters.chamber }}/committees.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionNyLegislativeYearChamberCommitteesCommitteeName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/ny/legislative/{{ parameters.year }}/{{ parameters.chamber }}/committees/{{ parameters.committee_name }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionNyLegislativeYearChamberBillsType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/ny/legislative/{{ parameters.year }}/{{ parameters.chamber }}/bills/{{ parameters.type }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionNyLegislativeMembersMemberNameBillsType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/ny/legislative/members/{{ parameters.member_name }}/bills/{{ parameters.type }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "PoliticsVersionNyLegislativeYearBillsBillId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/politics/{{ parameters.version }}/ny/legislative/{{ parameters.year }}/bills/{{ parameters.bill_id }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "RealEstateVersionListingsPercentilePercentileValue": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/real-estate/{{ parameters.version }}/listings/percentile/{{ parameters.percentile_value }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "bedrooms": {
+            "value": "{{ parameters.bedrooms }}"
+          },
+          "building-type-id": {
+            "value": "{{ parameters.building-type-id }}"
+          },
+          "date-range": {
+            "value": "{{ parameters.date-range }}",
+            "required": true
+          },
+          "geo-extent-level": {
+            "value": "{{ parameters.geo-extent-level }}",
+            "required": true
+          },
+          "geo-extent-value": {
+            "value": "{{ parameters.geo-extent-value }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "RealEstateVersionListingsCount": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/real-estate/{{ parameters.version }}/listings/count.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "bedrooms": {
+            "value": "{{ parameters.bedrooms }}"
+          },
+          "building-built-year": {
+            "value": "{{ parameters.building-built-year }}"
+          },
+          "building-type-id": {
+            "value": "{{ parameters.building-type-id }}"
+          },
+          "date-range": {
+            "value": "{{ parameters.date-range }}",
+            "required": true
+          },
+          "geo-extent-level": {
+            "value": "{{ parameters.geo-extent-level }}",
+            "required": true
+          },
+          "geo-extent-value": {
+            "value": "{{ parameters.geo-extent-value }}",
+            "required": true
+          },
+          "geo-summary-level": {
+            "value": "{{ parameters.geo-summary-level }}",
+            "required": true
+          },
+          "loft": {
+            "value": "{{ parameters.loft }}"
+          }
+        }
+      }
+    },
+    "RealEstateVersionSalesPercentilePercentileValue": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/real-estate/{{ parameters.version }}/sales/percentile/{{ parameters.percentile_value }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "building-type-id": {
+            "value": "{{ parameters.building-type-id }}"
+          },
+          "date-range": {
+            "value": "{{ parameters.date-range }}",
+            "required": true
+          },
+          "geo-extent-level": {
+            "value": "{{ parameters.geo-extent-level }}",
+            "required": true
+          },
+          "geo-extent-value": {
+            "value": "{{ parameters.geo-extent-value }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "RealEstateVersionSalesCount": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/real-estate/{{ parameters.version }}/sales/count.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "building-built-year": {
+            "value": "{{ parameters.building-built-year }}"
+          },
+          "building-type-id": {
+            "value": "{{ parameters.building-type-id }}"
+          },
+          "date-range": {
+            "value": "{{ parameters.date-range }}",
+            "required": true
+          },
+          "geo-extent-level": {
+            "value": "{{ parameters.geo-extent-level }}",
+            "required": true
+          },
+          "geo-extent-value": {
+            "value": "{{ parameters.geo-extent-value }}",
+            "required": true
+          },
+          "geo-summary-level": {
+            "value": "{{ parameters.geo-summary-level }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "RealEstateV2BuildingTypes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/real-estate/v2/building-types.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          ".format": {
+            "value": "{{ parameters..format }}"
+          }
+        }
+      }
+    },
+    "RealEstateV2Neighborhoods": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/real-estate/v2/neighborhoods.{{ parameters.format }}"
+        },
+        "parameters": {
+          "borough": {
+            "value": "{{ parameters.borough }}"
+          },
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          ".format": {
+            "value": "{{ parameters..format }}"
+          }
+        }
+      }
+    },
+    "NewsVersionContentSourceSectionTimePeriod": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/news/{{ parameters.version }}/content/{{ parameters.source }}/{{ parameters.section }}/{{ parameters.time_period }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "NewsVersionContent": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/news/{{ parameters.version }}/content.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "url": {
+            "value": "{{ parameters.url }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "NewsVersionContentSectionList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/news/{{ parameters.version }}/content/section-list.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TimespeopleApiVersionUserUserIdDataType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/timespeople/api/{{ parameters.version }}/user/{{ parameters.user_id }}/{{ parameters.data_type }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TimespeopleApiVersionUserHashId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/timespeople/api/{{ parameters.version }}/user/{{ parameters.hash }}/id.{{ parameters.format }}"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "TimestagsSuggest": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/timestags/suggest"
+        },
+        "parameters": {
+          "api-key": {
+            "value": "{{ parameters.api-key }}",
+            "required": true
+          },
+          "query": {
+            "value": "{{ parameters.query }}",
+            "required": true
+          },
+          "filter": {
+            "value": "{{ parameters.filter }}"
+          },
+          "max": {
+            "value": "{{ parameters.max }}"
+          }
+        }
+      }
+    }
+  }
+}
