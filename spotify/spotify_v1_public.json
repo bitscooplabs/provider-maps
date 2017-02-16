@@ -1,0 +1,188 @@
+{
+  "version": "1.0",
+
+  "name": "Spotify",
+  "description": "Music streaming service",
+  "url": "https://api.spotify.com/v1",
+  "tags": ["media", "music"],
+
+  "endpoints": {
+    "Albums": {
+      "GET": {
+        "method": "GET",
+        "collection": {
+          "route": {
+            "path": "/albums"
+          },
+          "parameters": {
+            "ids": {
+              "value": "{{ parameters.ids }}",
+              "required": true
+            }
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/albums/{{ identifier }}"
+          }
+        },
+        "parameters": {
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "AlbumTracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/albums/{{ parameters.album_id }}/tracks"
+        },
+        "single": false,
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "Artists": {
+      "GET": {
+        "method": "GET",
+        "collection": {
+          "route": {
+            "path": "/artists"
+          },
+          "parameters": {
+            "ids": {
+              "value": "{{ parameters.ids }}",
+              "required": true
+            }
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/artists/{{ identifier }}"
+          }
+        }
+      }
+    },
+    "ArtistAlbums": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/artists/{{ parameters.artist_id }}/albums"
+        },
+        "single": false,
+        "parameters": {
+          "album_type": {
+            "value": "{{ parameters.album_type }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "ArtistTopTracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/artists/{{ parameters.artist_id }}/top-tracks"
+        },
+        "single": false,
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          }
+        }
+      }
+    },
+    "ArtistRelatedArtists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/artists/{{ parameters.artist_id }}/related-artists"
+        },
+        "single": false
+      }
+    },
+    "Search": {
+      "GET": {
+        "route": {
+          "path": "/search"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-read-private"],
+        "parameters": {
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          },
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "Tracks": {
+      "GET": {
+        "method": "GET",
+        "collection": {
+          "route": {
+            "path": "/tracks"
+          },
+          "parameters": {
+            "ids": {
+              "value": "{{ parameters.ids }}",
+              "required": true
+            }
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/tracks/{{ identifier }}"
+          }
+        },
+        "parameters": {
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "User": {
+      "GET": {
+        "route": {
+          "path": "/users/{{ identifier }}"
+        },
+        "method": "GET",
+        "collection": false
+      }
+    }
+  }
+}

@@ -1,0 +1,928 @@
+{
+  "version": "1.0",
+
+  "name": "Spotify",
+  "description": "Music streaming service",
+  "url": "https://api.spotify.com/v1",
+  "tags": ["media", "music"],
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://spotify.com",
+    "authorization_url": "https://accounts.spotify.com/authorize",
+
+    "access_token": "https://accounts.spotify.com/api/token",
+
+    "signature": "header",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "Albums": {
+      "GET": {
+        "method": "GET",
+        "collection": {
+          "route": {
+            "path": "/albums"
+          },
+          "parameters": {
+            "ids": {
+              "value": "{{ parameters.ids }}",
+              "required": true
+            }
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/albums/{{ identifier }}"
+          }
+        },
+        "parameters": {
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "AlbumTracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/albums/{{ parameters.album_id }}/tracks"
+        },
+        "single": false,
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "Artists": {
+      "GET": {
+        "method": "GET",
+        "collection": {
+          "route": {
+            "path": "/artists"
+          },
+          "parameters": {
+            "ids": {
+              "value": "{{ parameters.ids }}",
+              "required": true
+            }
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/artists/{{ identifier }}"
+          }
+        }
+      }
+    },
+    "ArtistAlbums": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/artists/{{ parameters.artist_id }}/albums"
+        },
+        "single": false,
+        "parameters": {
+          "album_type": {
+            "value": "{{ parameters.album_type }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "ArtistTopTracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/artists/{{ parameters.artist_id }}/top-tracks"
+        },
+        "single": false,
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          }
+        }
+      }
+    },
+    "ArtistRelatedArtists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/artists/{{ parameters.artist_id }}/related-artists"
+        },
+        "single": false
+      }
+    },
+    "AudioAnalysis": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/audio-analysis/{{ identifier }}"
+        },
+        "collection": false
+      }
+    },
+    "AudioFeatures": {
+      "GET": {
+        "method": "GET",
+        "single": {
+          "route": {
+            "path": "/audio-features/{{ identifier }}"
+          }
+        },
+        "collection": {
+          "route": {
+            "path": "/audio-features"
+          },
+          "parameters": {
+            "ids": {
+              "value": "{{ parameters.ids }}",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "FeaturedPlaylists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/browse/featured-playlists"
+        },
+        "single": false,
+        "parameters": {
+          "locale": {
+            "value": "{{ parameters.locale }}"
+          },
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "timestamp": {
+            "value": "{{ parameters.timestamp }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "NewReleases": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/browse/new-releases"
+        },
+        "single": false,
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "Categories": {
+      "GET": {
+        "method": "GET",
+        "single": {
+          "route": {
+            "path": "/browse/categories/{{ identifier }}"
+          }
+        },
+        "collection": {
+          "route": {
+            "path": "/browse/categories"
+          },
+          "parameters": {
+            "limit": {
+              "value": "{{ parameters.limit }}"
+            },
+            "offset": {
+              "value": "{{ parameters.offset }}"
+            }
+          }
+        },
+        "parameters": {
+          "locale": {
+            "value": "{{ parameters.locale }}"
+          },
+          "country": {
+            "value": "{{ parameters.country }}"
+          }
+        }
+      }
+    },
+    "CategoryPlaylists": {
+      "GET": {
+        "route": {
+          "path": "/browse/categories/{{ parameters.category_id }}/playlists"
+        },
+        "method": "GET",
+        "single": false,
+        "parameters": {
+          "country": {
+            "value": "{{ parameters.country }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "Me": {
+      "GET": {
+        "route": {
+          "path": "/me"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-read-email", "user-read-private", "user-read-birthdate"]
+      }
+    },
+    "FollowPerson": {
+      "GET": {
+        "route": {
+          "path": "/me/following"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-follow-read"],
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "after": {
+            "value": "{{ parameters.after }}"
+          }
+        }
+      },
+      "PUT": {
+        "route": {
+          "path": "/me/following"
+        },
+        "method": "PUT",
+        "single": false,
+        "scopes": ["user-follow-modify"],
+        "headers": {
+          "Content-Type": {
+            "value": "{{ headers.Content-Type }}"
+          }
+        },
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "ids": {
+            "value": "{{ parameters.ids }}"
+          }
+        }
+      },
+      "DELETE": {
+        "route": {
+          "path": "/me/following"
+        },
+        "method": "DELETE",
+        "single": false,
+        "scopes": ["user-follow-modify"],
+        "headers": {
+          "Content-Type": {
+            "value": "{{ headers.Content-Type }}"
+          }
+        },
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "ids": {
+            "value": "{{ parameters.ids }}"
+          }
+        }
+      }
+    },
+    "FollowingContains": {
+      "GET": {
+        "route": {
+          "path": "/me/following/contains"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-follow-read"],
+        "parameters": {
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "ids": {
+            "value": "{{ parameters.ids }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "FollowPlaylist": {
+      "PUT": {
+        "route": {
+          "path": "/users/{{ parameters.owner_id }}/playlists/{{ parameters.playlist_id }}/followers"
+        },
+        "method": "PUT",
+        "single": false,
+        "scopes": ["playlist-modify-public", "playlist-modify-private"],
+        "headers": {
+          "Content-Type": {
+            "value": "{{ headers.Content-Type }}"
+          }
+        }
+      },
+      "DELETE": {
+        "route": {
+          "path": "/users/{{ parameters.owner_id }}/playlists/{{ parameters.playlist_id }}/followers"
+        },
+        "method": "DELETE",
+        "single": false,
+        "scopes": ["playlist-modify-public", "playlist-modify-private"]
+      }
+    },
+    "SavedTracks": {
+      "GET": {
+        "route": {
+          "path": "/me/tracks"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-library-read"],
+        "parameters": {
+          "market": {
+            "value": "{{ parameters.market }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      },
+      "PUT": {
+        "route": {
+          "path": "/me/tracks"
+        },
+        "method": "PUT",
+        "single": false,
+        "scopes": ["user-library-modify"],
+        "headers": {
+          "Content-Type": {
+            "value": "{{ headers.Content-Type }}"
+          }
+        },
+        "parameters": {
+          "ids": {
+            "value": "{{ parameters.ids }}"
+          }
+        }
+      },
+      "DELETE": {
+        "route": {
+          "path": "/me/tracks"
+        },
+        "method": "DELETE",
+        "single": false,
+        "scopes": ["user-library-modify"],
+        "headers": {
+          "Content-Type": {
+            "value": "{{ headers.Content-Type }}"
+          }
+        },
+        "parameters": {
+          "ids": {
+            "value": "{{ parameters.ids }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SavedTracksContains": {
+      "GET": {
+        "route": {
+          "path": "/me/tracks/contains"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-library-read"],
+        "parameters": {
+          "ids": {
+            "value": "{{ parameters.ids }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SavedAlbums": {
+      "GET": {
+        "route": {
+          "path": "/me/albums"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-library-read"],
+        "parameters": {
+          "market": {
+            "value": "{{ parameters.market }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      },
+      "PUT": {
+        "route": {
+          "path": "/me/tracks"
+        },
+        "method": "PUT",
+        "single": false,
+        "scopes": ["user-library-modify"],
+        "headers": {
+          "Content-Type": {
+            "value": "{{ headers.Content-Type }}"
+          }
+        },
+        "parameters": {
+          "ids": {
+            "value": "{{ parameters.ids }}"
+          }
+        }
+      },
+      "DELETE": {
+        "route": {
+          "path": "/me/tracks"
+        },
+        "method": "DELETE",
+        "single": false,
+        "scopes": ["user-library-modify"],
+        "headers": {
+          "Content-Type": {
+            "value": "{{ headers.Content-Type }}"
+          }
+        },
+        "parameters": {
+          "ids": {
+            "value": "{{ parameters.ids }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "SavedAlbumsContains": {
+      "GET": {
+        "route": {
+          "path": "/me/tracks/contains"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-library-read"],
+        "parameters": {
+          "ids": {
+            "value": "{{ parameters.ids }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "MyTopItems": {
+      "GET": {
+        "route": {
+          "path": "/me/top/{{ parameters.type }}"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-top-read"],
+        "parameters": {
+          "time_range": {
+            "value": "{{ parameters.time_range }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "Recommendations": {
+      "GET": {
+        "route": {
+          "path": "/recommendations"
+        },
+        "method": "GET",
+        "single": false,
+        "parameters": {
+          "market": {
+            "value": "{{ parameters.market }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "seed_artists": {
+            "value": "{{ parameters.seed_artists }}"
+          },
+          "seed_genres": {
+            "value": "{{ parameters.seed_genres }}"
+          },
+          "seed_tracks": {
+            "value": "{{ parameters.seed_tracks }}"
+          },
+          "min_acousticness": {
+            "value": "{{ parameters.min_acousticness }}"
+          },
+          "max_acousticness": {
+            "value": "{{ parameters.max_acousticness }}"
+          },
+          "target_acousticness": {
+            "value": "{{ parameters.target_acousticness }}"
+          },
+          "min_danceability": {
+            "value": "{{ parameters.min_danceability }}"
+          },
+          "max_danceability": {
+            "value": "{{ parameters.max_danceability }}"
+          },
+          "target_danceability": {
+            "value": "{{ parameters.target_danceability }}"
+          },
+          "min_duration_ms": {
+            "value": "{{ parameters.min_duration_ms }}"
+          },
+          "max_duration_ms": {
+            "value": "{{ parameters.max_duration_ms }}"
+          },
+          "target_duration_ms": {
+            "value": "{{ parameters.target_duration_ms }}"
+          },
+          "min_energy": {
+            "value": "{{ parameters.min_energy }}"
+          },
+          "max_energy": {
+            "value": "{{ parameters.max_energy }}"
+          },
+          "target_energy": {
+            "value": "{{ parameters.target_energy }}"
+          },
+          "min_instrumentalness": {
+            "value": "{{ parameters.min_instrumentalness }}"
+          },
+          "max_instrumentalness": {
+            "value": "{{ parameters.max_instrumentalness }}"
+          },
+          "target_instrumentalness": {
+            "value": "{{ parameters.target_instrumentalness }}"
+          },
+          "min_key": {
+            "value": "{{ parameters.min_key }}"
+          },
+          "max_key": {
+            "value": "{{ parameters.max_key }}"
+          },
+          "target_key": {
+            "value": "{{ parameters.target_key }}"
+          },
+          "min_liveness": {
+            "value": "{{ parameters.min_liveness }}"
+          },
+          "max_liveness": {
+            "value": "{{ parameters.max_liveness }}"
+          },
+          "target_liveness": {
+            "value": "{{ parameters.target_liveness }}"
+          },
+          "min_loudness": {
+            "value": "{{ parameters.min_loudness }}"
+          },
+          "max_loudness": {
+            "value": "{{ parameters.max_loudness }}"
+          },
+          "target_loudness": {
+            "value": "{{ parameters.target_loudness }}"
+          },
+          "min_mode": {
+            "value": "{{ parameters.min_mode }}"
+          },
+          "max_mode": {
+            "value": "{{ parameters.max_mode }}"
+          },
+          "target_mode": {
+            "value": "{{ parameters.target_mode }}"
+          },
+          "min_popularity": {
+            "value": "{{ parameters.min_popularity }}"
+          },
+          "max_popularity": {
+            "value": "{{ parameters.max_popularity }}"
+          },
+          "target_popularity": {
+            "value": "{{ parameters.target_popularity }}"
+          },
+          "min_speechiness": {
+            "value": "{{ parameters.min_speechiness }}"
+          },
+          "max_speechiness": {
+            "value": "{{ parameters.max_speechiness }}"
+          },
+          "target_speechiness": {
+            "value": "{{ parameters.target_speechiness }}"
+          },
+          "min_tempo": {
+            "value": "{{ parameters.min_tempo }}"
+          },
+          "max_tempo": {
+            "value": "{{ parameters.max_tempo }}"
+          },
+          "target_tempo": {
+            "value": "{{ parameters.target_tempo }}"
+          },
+          "min_time_signature": {
+            "value": "{{ parameters.min_time_signature }}"
+          },
+          "max_time_signature": {
+            "value": "{{ parameters.max_time_signature }}"
+          },
+          "target_time_signature": {
+            "value": "{{ parameters.target_time_signature }}"
+          },
+          "min_valence": {
+            "value": "{{ parameters.min_valence }}"
+          },
+          "max_valence": {
+            "value": "{{ parameters.max_valence }}"
+          },
+          "target_valence": {
+            "value": "{{ parameters.target_valence }}"
+          }
+        }
+      }
+    },
+    "Search": {
+      "GET": {
+        "route": {
+          "path": "/search"
+        },
+        "method": "GET",
+        "single": false,
+        "scopes": ["user-read-private"],
+        "parameters": {
+          "q": {
+            "value": "{{ parameters.q }}",
+            "required": true
+          },
+          "type": {
+            "value": "{{ parameters.type }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          },
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "Tracks": {
+      "GET": {
+        "method": "GET",
+        "collection": {
+          "route": {
+            "path": "/tracks"
+          },
+          "parameters": {
+            "ids": {
+              "value": "{{ parameters.ids }}",
+              "required": true
+            }
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/tracks/{{ identifier }}"
+          }
+        },
+        "parameters": {
+          "market": {
+            "value": "{{ parameters.market }}"
+          }
+        }
+      }
+    },
+    "User": {
+      "GET": {
+        "route": {
+          "path": "/users/{{ identifier }}"
+        },
+        "method": "GET",
+        "collection": false
+      }
+    },
+    "UserPlaylists": {
+      "GET": {
+        "method": "GET",
+        "scopes": ["playlist-read-private", "playlist-read-collaborative"],
+        "collection": {
+          "route": {
+            "path": "/users/{{ parameters.user_id }}/playlists"
+          },
+          "parameters": {
+            "limit": {
+              "value": "{{ parameters.limit }}"
+            },
+            "offset": {
+              "value": "{{ parameters.offset }}"
+            }
+          }
+        },
+        "single": {
+          "route": {
+            "path": "/users/{{ parameters.user_id }}/playlists/{{ identifier }}"
+          },
+          "parameters": {
+            "fields": {
+              "value": "{{ parameters.fields }}"
+            },
+            "market": {
+              "value": "{{ parameters.market }}"
+            }
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/users/{{ parameters.user_id }}/playlists"
+        },
+        "headers": {
+          "Content-Type": {
+            "value": "application/json"
+          }
+        },
+        "scopes": ["playlist-modify-private", "playlist-modify-public"],
+        "single": false
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/users/{{ parameters.user_id }}/playlists/{{ identifier }}"
+        },
+        "headers": {
+          "Content-Type": {
+            "value": "application/json"
+          }
+        },
+        "scopes": ["playlist-modify-private", "playlist-modify-public"],
+        "collection": false
+      }
+    },
+    "MyPlaylists": {
+      "GET": {
+        "route": {
+          "path": "/me/playlists"
+        },
+        "method": "GET",
+        "scopes": ["playlist-read-private", "playlist-read-collaborative"],
+        "parameters": {
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        }
+      }
+    },
+    "PlaylistTracks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/users/{{ parameters.user_id }}/playlists/{{ parameters.playlist_id }}/tracks"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          },
+          "market": {
+            "value": "{{ parameters.market }}"
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}"
+          },
+          "offset": {
+            "value": "{{ parameters.offset }}"
+          }
+        },
+        "single": false
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/users/{{ parameters.user_id }}/playlists/{{ parameters.playlist_id }}/tracks"
+        },
+        "headers": {
+          "Content-Type": {
+            "value": "application/json"
+          }
+        },
+        "scopes": ["playlist-modify-private", "playlist-modify-public"],
+        "single": false,
+        "parameters": {
+          "uris": {
+            "value": "{{ parameters.uris }}"
+          },
+          "position": {
+            "value": "{{ parameters.position }}"
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/users/{{ parameters.user_id }}/playlists/{{ parameters.playlist_id }}/tracks"
+        },
+        "headers": {
+          "Content-Type": {
+            "value": "application/json"
+          }
+        },
+        "scopes": ["playlist-modify-private", "playlist-modify-public"],
+        "single": false
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/users/{{ parameters.user_id }}/playlists/{{ parameters.playlist_id }}/tracks"
+        },
+        "headers": {
+          "Content-Type": {
+            "value": "application/json"
+          }
+        },
+        "scopes": ["playlist-modify-private", "playlist-modify-public"],
+        "single": false
+      }
+    },
+    "UserFollowsPlaylist": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/users/{{ parameters.user_id }}/playlists/{{ parameters.playlist_id }}/followers/contains"
+        },
+        "scopes": ["playlist-read-private"],
+        "parameters": {
+          "ids": {
+            "value": "{{ parameters.ids }}"
+          }
+        },
+        "single": false
+      }
+    }
+  }
+}
