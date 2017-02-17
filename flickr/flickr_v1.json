@@ -77,12 +77,12 @@
         }
       }
     },
-    "Rest?method=flickr": {
+    "Rest": {
       "GET": {
         "method": "GET",
         "route": {
           "data": "",
-          "path": "/rest/?method=flickr.urls.lookupUser"
+          "path": "/rest"
         },
         "parameters": {
           "api_key": {
@@ -91,6 +91,9 @@
           },
           "format": {
             "value": "{{ parameters.format }}"
+          },
+          "method": {
+            "value": "{{ parameters.method }}"
           },
           "url": {
             "value": "{{ parameters.url }}",

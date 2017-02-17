@@ -300,7 +300,7 @@
         "scopes": ["user-follow-modify"],
         "headers": {
           "Content-Type": {
-            "value": "{{ headers.Content-Type }}"
+            "value": "{{ headers['Content-Type'] }}"
           }
         },
         "parameters": {
@@ -322,7 +322,7 @@
         "scopes": ["user-follow-modify"],
         "headers": {
           "Content-Type": {
-            "value": "{{ headers.Content-Type }}"
+            "value": "{{ headers['Content-Type'] }}"
           }
         },
         "parameters": {
@@ -366,7 +366,7 @@
         "scopes": ["playlist-modify-public", "playlist-modify-private"],
         "headers": {
           "Content-Type": {
-            "value": "{{ headers.Content-Type }}"
+            "value": "{{ headers['Content-Type'] }}"
           }
         }
       },
@@ -408,7 +408,7 @@
         "scopes": ["user-library-modify"],
         "headers": {
           "Content-Type": {
-            "value": "{{ headers.Content-Type }}"
+            "value": "{{ headers['Content-Type'] }}"
           }
         },
         "parameters": {
@@ -426,7 +426,7 @@
         "scopes": ["user-library-modify"],
         "headers": {
           "Content-Type": {
-            "value": "{{ headers.Content-Type }}"
+            "value": "{{ headers['Content-Type'] }}"
           }
         },
         "parameters": {
@@ -482,7 +482,7 @@
         "scopes": ["user-library-modify"],
         "headers": {
           "Content-Type": {
-            "value": "{{ headers.Content-Type }}"
+            "value": "{{ headers['Content-Type'] }}"
           }
         },
         "parameters": {
@@ -500,7 +500,7 @@
         "scopes": ["user-library-modify"],
         "headers": {
           "Content-Type": {
-            "value": "{{ headers.Content-Type }}"
+            "value": "{{ headers['Content-Type'] }}"
           }
         },
         "parameters": {

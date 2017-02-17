@@ -90,7 +90,7 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       }
     },
@@ -102,8 +102,8 @@
           "path": "/default/{{ parameters.visibility }}/full/-/{{ parameters.category }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "If-None-Match": "{{ headers.If-None-Match }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "If-None-Match": "{{ headers['If-None-Match'] }}"
         }
       }
     },
@@ -115,8 +115,8 @@
           "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "If-None-Match": "{{ headers.If-None-Match }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "If-None-Match": "{{ headers['If-None-Match'] }}"
         }
       },
       "DELETE": {
@@ -132,8 +132,8 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "If-None-Match": "{{ headers.If-None-Match }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "If-None-Match": "{{ headers['If-None-Match'] }}"
         }
       }
     },
@@ -145,11 +145,11 @@
           "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/contents"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       }
     },
-    "DefaultVisibilityFullFolder%3AcollectionIdContents": {
+    "DefaultVisibilityFullFolderCollectionIdContents": {
       "POST": {
         "method": "POST",
         "route": {
@@ -157,12 +157,12 @@
           "path": "/default/{{ parameters.visibility }}/full/folder%3A{{ parameters.collection_id }}/contents"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "Content-Type": "{{ headers.Content-Type }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
-    "DefaultVisibilityFullFolder%3AcollectionIdContentsResourceID": {
+    "DefaultVisibilityFullFolderCollectionIdContentsResourceID": {
       "DELETE": {
         "method": "DELETE",
         "route": {
@@ -170,7 +170,7 @@
           "path": "/default/{{ parameters.visibility }}/full/folder%3A{{ parameters.collection_id }}/contents/{{ parameters.resourceID }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       }
     },
@@ -182,7 +182,7 @@
           "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/acl"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       },
       "POST": {
@@ -197,8 +197,8 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "Content-Type": "{{ headers.Content-Type }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -216,8 +216,8 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "Content-Type": "{{ headers.Content-Type }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "DELETE": {
@@ -233,11 +233,11 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       }
     },
-    "DefaultVisibilityFullFolder%3AcollectionIdAcl": {
+    "DefaultVisibilityFullFolderCollectionIdAcl": {
       "POST": {
         "method": "POST",
         "route": {
@@ -245,8 +245,8 @@
           "path": "/default/{{ parameters.visibility }}/full/folder%3A{{ parameters.collection_id }}/acl"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "Content-Type": "{{ headers.Content-Type }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -258,9 +258,9 @@
           "path": "/default/media/{{ parameters.resourceID }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "If-Match": "{{ headers.If-Match }}",
-          "Content-Type": "{{ headers.Content-Type }}",
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "If-Match": "{{ headers['If-Match'] }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Slug": "{{ headers.Slug }}"
         }
       }
@@ -273,7 +273,7 @@
           "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/revisions/{{ parameters.revisionID }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       },
       "DELETE": {
@@ -283,7 +283,7 @@
           "path": "/default/{{ parameters.visibility }}/full/{{ parameters.resourceID }}/revisions/{{ parameters.revisionID }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       }
     },
@@ -351,8 +351,8 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "Content-Type": "{{ headers.Content-Type }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -364,7 +364,7 @@
           "path": "/default/{{ parameters.visibility }}/archive/{{ parameters.archiveID }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       },
       "PUT": {
@@ -374,8 +374,8 @@
           "path": "/default/{{ parameters.visibility }}/archive/{{ parameters.archiveID }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "Content-Type": "{{ headers.Content-Type }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "DELETE": {
@@ -385,7 +385,7 @@
           "path": "/default/{{ parameters.visibility }}/archive/{{ parameters.archiveID }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       }
     },
@@ -405,7 +405,7 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       }
     },
@@ -425,7 +425,7 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       }
     },
@@ -454,10 +454,10 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "Content-Type": "{{ headers.Content-Type }}",
-          "X-Upload-Content-Type": "{{ headers.X-Upload-Content-Type }}",
-          "X-Upload-Content-Length": "{{ headers.X-Upload-Content-Length }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
+          "X-Upload-Content-Type": "{{ headers['X-Upload-Content-Type'] }}",
+          "X-Upload-Content-Length": "{{ headers['X-Upload-Content-Length'] }}"
         }
       }
     },
@@ -469,9 +469,9 @@
           "path": "/{{ parameters.next_location }}"
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}",
-          "Content-Type": "{{ headers.Content-Type }}",
-          "Content-Range": "{{ headers.Content-Range }}"
+          "GData-Version": "{{ headers['GData-Version'] }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
+          "Content-Range": "{{ headers['Content-Range'] }}"
         }
       }
     },
@@ -498,7 +498,7 @@
           }
         },
         "headers": {
-          "GData-Version": "{{ headers.GData-Version }}"
+          "GData-Version": "{{ headers['GData-Version'] }}"
         }
       }
     }

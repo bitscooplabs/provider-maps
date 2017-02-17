@@ -12,7 +12,7 @@
           "path": "/email"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       }
@@ -25,7 +25,7 @@
           "path": "/email/batch"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       }
@@ -38,7 +38,7 @@
           "path": "/deliverystats"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       }
@@ -73,7 +73,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       }
@@ -86,7 +86,7 @@
           "path": "/bounces/{{ parameters.bounceID }}"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       }
@@ -99,7 +99,7 @@
           "path": "/bounces/{{ parameters.bounceID }}/dump"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       }
@@ -112,7 +112,7 @@
           "path": "/bounces/tags"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       }
@@ -125,7 +125,7 @@
           "path": "/bounces/{{ parameters.bounceID }}/activate"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       }
@@ -138,7 +138,7 @@
           "path": "/server"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       },
@@ -149,7 +149,7 @@
           "path": "/server"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "Accept": "{{ headers.Accept }}"
         }
       }

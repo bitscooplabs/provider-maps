@@ -16,16 +16,16 @@
   },
 
   "endpoints": {
-    "Repos?page=num&perPage=perPage": {
+    "Repos": {
       "GET": {
         "method": "GET",
         "route": {
           "data": "",
-          "path": "/repos?page={{ parameters.num }}&per_page={{ parameters.perPage }}"
+          "path": "/repos"
         },
         "parameters": {
-          "num": {
-            "value": "{{ parameters.num }}",
+          "page": {
+            "value": "{{ parameters.page }}",
             "required": true
           },
           "perPage": {
@@ -34,7 +34,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -68,7 +68,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -94,7 +94,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -120,7 +120,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -143,7 +143,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -153,7 +153,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -165,7 +165,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -177,7 +177,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -189,7 +189,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -199,7 +199,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -211,7 +211,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/comments/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -221,7 +221,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/comments/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -233,7 +233,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/labels"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -243,7 +243,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/labels"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -255,7 +255,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/labels/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -265,7 +265,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/labels/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -277,7 +277,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -287,7 +287,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "PUT": {
@@ -297,7 +297,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -307,7 +307,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -319,7 +319,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ identifier }}/labels/{{ parameters.id }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -331,7 +331,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/milestones/{{ identifier }}/labels"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -354,7 +354,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -364,7 +364,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/milestones"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -376,7 +376,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/milestones/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -386,7 +386,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/milestones/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -398,7 +398,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/{{ parameters.issueId }}/events"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -419,7 +419,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/issues/events/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -431,7 +431,7 @@
           "path": "/users/{{ parameters.userName }}/gists"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -441,7 +441,7 @@
           "path": "/users/{{ parameters.userName }}/gists"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -459,7 +459,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -477,7 +477,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -495,7 +495,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -507,7 +507,7 @@
           "path": "/gists/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -517,7 +517,7 @@
           "path": "/gists/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -529,7 +529,7 @@
           "path": "/gists/{{ identifier }}/star"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -539,7 +539,7 @@
           "path": "/gists/{{ identifier }}/star"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "GET": {
@@ -549,7 +549,7 @@
           "path": "/gists/{{ identifier }}/star"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -561,7 +561,7 @@
           "path": "/gists/{{ identifier }}/fork"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -573,7 +573,7 @@
           "path": "/gists/{{ parameters.gistId }}/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -583,7 +583,7 @@
           "path": "/gists/{{ parameters.gistId }}/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -595,7 +595,7 @@
           "path": "/gists/{{ parameters.gistId }}/comments/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -607,7 +607,7 @@
           "path": "/gists/comments/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -619,7 +619,7 @@
           "path": "/user"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -631,7 +631,7 @@
           "path": "/users/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -643,7 +643,7 @@
           "path": "/user/emails"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -653,7 +653,7 @@
           "path": "/user/emails"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -663,7 +663,7 @@
           "path": "/user/emails"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -675,7 +675,7 @@
           "path": "/users/{{ parameters.userName }}/followers"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -693,7 +693,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -705,7 +705,7 @@
           "path": "/users/{{ parameters.userName }}/following"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -717,7 +717,7 @@
           "path": "/user/following"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -729,7 +729,7 @@
           "path": "/user/following/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -739,7 +739,7 @@
           "path": "/user/following/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "GET": {
@@ -749,7 +749,7 @@
           "path": "/user/following/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -761,7 +761,7 @@
           "path": "/user/{{ parameters.user }}/keys"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -779,7 +779,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -795,7 +795,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -807,7 +807,7 @@
           "path": "/user/keys/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -817,7 +817,7 @@
           "path": "/user/keys/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -829,7 +829,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/blobs/{{ parameters.sha }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -841,7 +841,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/blobs"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -853,7 +853,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/commits/{{ parameters.sha }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -865,7 +865,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/commits"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -877,7 +877,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs/{{ parameters.ref }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -887,7 +887,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs/{{ parameters.ref }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -899,7 +899,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -909,7 +909,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -921,7 +921,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/refs/tags"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -933,7 +933,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/tags/{{ parameters.sha }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -945,7 +945,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/tags"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -957,19 +957,12 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/trees/{{ parameters.sha }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
-        }
-      }
-    },
-    "ReposUserNameRepoNameGitTreesSha?recursive=1": {
-      "GET": {
-        "method": "GET",
-        "route": {
-          "data": "",
-          "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/trees/{{ parameters.sha }}?recursive=1"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         },
-        "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+        "parameters": {
+          "recursive": {
+            "value": "{{ parameters.recursive }}"
+          }
         }
       }
     },
@@ -981,7 +974,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/git/trees"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -993,7 +986,7 @@
           "path": "/users/{{ parameters.userName }}/orgs"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1011,7 +1004,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1023,7 +1016,7 @@
           "path": "/orgs/{{ parameters.org }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1035,7 +1028,7 @@
           "path": "/orgs/{{ parameters.org }}/members"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1047,7 +1040,7 @@
           "path": "/orgs/{{ parameters.org }}/members/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1057,7 +1050,7 @@
           "path": "/orgs/{{ parameters.org }}/members/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1069,7 +1062,7 @@
           "path": "/teams/{{ identifier }}/members/{{ parameters.user }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1081,7 +1074,7 @@
           "path": "/orgs/{{ parameters.org }}/public_members"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1093,7 +1086,7 @@
           "path": "/orgs/{{ parameters.org }}/public_members/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "PUT": {
@@ -1103,7 +1096,7 @@
           "path": "/orgs/{{ parameters.org }}/public_members/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1113,7 +1106,7 @@
           "path": "/orgs/{{ parameters.org }}/public_members/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1125,7 +1118,7 @@
           "path": "/orgs/{{ parameters.org }}/teams"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1135,7 +1128,7 @@
           "path": "/orgs/{{ parameters.org }}/teams"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1160,7 +1153,7 @@
           "path": "/teams/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1181,7 +1174,7 @@
           "path": "/teams/{{ identifier }}/members/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "PUT": {
@@ -1191,7 +1184,7 @@
           "path": "/teams/{{ identifier }}/members/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1201,7 +1194,7 @@
           "path": "/teams/{{ identifier }}/members/{{ parameters.userName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1213,7 +1206,7 @@
           "path": "/teams/{{ identifier }}/repos"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1225,7 +1218,7 @@
           "path": "/teams/{{ identifier }}/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "PUT": {
@@ -1235,7 +1228,7 @@
           "path": "/teams/{{ identifier }}/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1245,7 +1238,7 @@
           "path": "/teams/{{ identifier }}/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1257,7 +1250,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1267,7 +1260,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1279,7 +1272,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1291,7 +1284,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/commits"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1303,7 +1296,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/files"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1315,7 +1308,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/merge"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "PUT": {
@@ -1325,7 +1318,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/merge"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1337,7 +1330,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1347,7 +1340,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/{{ identifier }}/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1359,7 +1352,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/pulls/comments/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1371,7 +1364,7 @@
           "path": "/events"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1383,7 +1376,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/events"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1395,7 +1388,7 @@
           "path": "/networks/{{ parameters.userName }}/{{ parameters.repoName }}/events"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1407,7 +1400,7 @@
           "path": "/orgs/{{ parameters.org }}/events"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1419,7 +1412,7 @@
           "path": "/users/{{ parameters.userName }}/received_events"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1431,7 +1424,7 @@
           "path": "/users/{{ parameters.userName }}/received_events/public"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1443,7 +1436,7 @@
           "path": "/users/{{ parameters.userName }}/events"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1455,7 +1448,7 @@
           "path": "/users/{{ parameters.userName }}/events/public"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1467,7 +1460,7 @@
           "path": "/users/{{ parameters.userName }}/events/orgs/{{ parameters.org }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1479,7 +1472,7 @@
           "path": "/user/repos"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1489,7 +1482,7 @@
           "path": "/user/repos"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1510,7 +1503,7 @@
           "path": "/orgs/{{ parameters.org }}/repos"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1520,7 +1513,7 @@
           "path": "/orgs/{{ parameters.org }}/repos"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1532,7 +1525,7 @@
           "path": "/repositories"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1544,7 +1537,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1554,7 +1547,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1566,7 +1559,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/contributors"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1578,7 +1571,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/languages"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1590,7 +1583,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/teams"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1602,7 +1595,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/tags"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1614,7 +1607,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/branches"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1626,7 +1619,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/collaborators"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1638,7 +1631,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/collaborators/{{ parameters.user }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "PUT": {
@@ -1648,7 +1641,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/collaborators/{{ parameters.user }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1658,7 +1651,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/collaborators/{{ parameters.user }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1670,7 +1663,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/commits"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1682,7 +1675,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/commits/{{ parameters.sha }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1694,7 +1687,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1706,7 +1699,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/commits/{{ parameters.sha }}/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1716,7 +1709,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/commits/{{ parameters.sha }}/comments"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1728,7 +1721,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/comments/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1738,7 +1731,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/comments/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1750,7 +1743,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/compare/{{ parameters.base }}...{{ parameters.head }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1762,7 +1755,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/downloads"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1772,7 +1765,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/downloads"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1784,7 +1777,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/downloads/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1794,7 +1787,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/downloads/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1806,7 +1799,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/forks"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1821,7 +1814,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1833,7 +1826,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/keys"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1843,7 +1836,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/keys"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1855,7 +1848,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/keys/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1865,7 +1858,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/keys/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1877,7 +1870,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/watchers"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1889,7 +1882,7 @@
           "path": "/users/{{ parameters.userName }}/watched"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1901,7 +1894,7 @@
           "path": "/user/watched"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1913,7 +1906,7 @@
           "path": "/user/watched/{{ parameters.userName }}/{{ parameters.repoName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "PUT": {
@@ -1923,7 +1916,7 @@
           "path": "/user/watched/{{ parameters.userName }}/{{ parameters.repoName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1933,7 +1926,7 @@
           "path": "/user/watched/{{ parameters.userName }}/{{ parameters.repoName }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1945,7 +1938,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "POST": {
@@ -1955,7 +1948,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1967,7 +1960,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       },
       "DELETE": {
@@ -1977,7 +1970,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks/{{ identifier }}"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -1989,7 +1982,7 @@
           "path": "/repos/{{ parameters.userName }}/{{ parameters.repoName }}/hooks/{{ identifier }}/test"
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     }

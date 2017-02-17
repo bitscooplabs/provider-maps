@@ -10,7 +10,7 @@
   "parameters": {
     "key": "{{ environment.key }}"
   },
-  
+
   "endpoints": {
     "Listingmap": {
       "GET": {
@@ -84,7 +84,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },
@@ -105,7 +105,7 @@
           }
         },
         "headers": {
-          "User-Agent": "{{ headers.User-Agent }}"
+          "User-Agent": "{{ headers['User-Agent'] }}"
         }
       }
     },

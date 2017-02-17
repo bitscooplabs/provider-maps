@@ -1571,7 +1571,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },

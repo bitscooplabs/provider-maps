@@ -43,7 +43,7 @@
           "path": "/push"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -64,7 +64,7 @@
           "path": "/push/scheduled"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -76,7 +76,7 @@
           "path": "/push/scheduled/alias/{{ parameters.alias }}"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "DELETE": {
@@ -95,7 +95,7 @@
           "path": "/push/batch"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -107,7 +107,7 @@
           "path": "/push/broadcast"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -182,7 +182,7 @@
           "path": "/apids/{{ parameters.apid }}"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "GET": {
@@ -225,7 +225,7 @@
           "path": "/device_pins/{{ parameters.pin }}"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "GET": {
@@ -251,7 +251,7 @@
           "path": "/user"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -263,7 +263,7 @@
           "path": "/user/{{ parameters.user_id }}"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "DELETE": {
@@ -289,7 +289,7 @@
           "path": "/user/{{ parameters.user_id }}/creds/reset"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -301,7 +301,7 @@
           "path": "/airmail/send"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -313,7 +313,7 @@
           "path": "/airmail/send/broadcast"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -349,7 +349,7 @@
           "path": "/user/{{ parameters.user_id }}/messages/unread"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -395,7 +395,7 @@
           "path": "/user/{{ parameters.user_id }}/messages/delete"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -416,7 +416,7 @@
           "path": "/app/content/{{ parameters.product_id }}/download"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -428,7 +428,7 @@
           "path": "/app/updates"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -440,7 +440,7 @@
           "path": "/user/recover"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -470,7 +470,7 @@
           "path": "/user/{{ parameters.user_id }}/subscriptions/{{ parameters.subscription_key }}/purchase"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -491,7 +491,7 @@
           "path": "/user/{{ parameters.user_id }}/subscriptions/content/{{ parameters.content_id }}/download"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -503,7 +503,7 @@
           "path": "/feeds"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "GET": {
@@ -529,7 +529,7 @@
           "path": "/feeds/{{ parameters.feed_id }}"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "DELETE": {
@@ -564,7 +564,7 @@
           "path": "/tags/{{ parameters.tag }}"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -608,7 +608,7 @@
           "path": "/partner/apps"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -620,7 +620,7 @@
           "path": "/partner/apps/{{ parameters.app_id }}"
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     }

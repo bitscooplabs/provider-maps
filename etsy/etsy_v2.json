@@ -1788,7 +1788,7 @@
         }
       }
     },
-    "": {
+    "Root": {
       "GET": {
         "method": "GET",
         "route": {

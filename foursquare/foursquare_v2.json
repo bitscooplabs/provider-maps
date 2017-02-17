@@ -427,7 +427,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "photo": "{{ headers.photo }}"
         }
       }
@@ -1833,7 +1833,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}",
+          "Content-Type": "{{ headers['Content-Type'] }}",
           "image": "{{ headers.image }}"
         }
       }

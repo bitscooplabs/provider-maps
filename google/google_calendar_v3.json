@@ -42,7 +42,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -71,7 +71,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "DELETE": {
@@ -119,7 +119,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -148,7 +148,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "DELETE": {
@@ -172,7 +172,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -201,7 +201,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "DELETE": {
@@ -288,7 +288,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -326,7 +326,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       },
       "DELETE": {
@@ -387,7 +387,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     },
@@ -505,7 +505,7 @@
           }
         },
         "headers": {
-          "Content-Type": "{{ headers.Content-Type }}"
+          "Content-Type": "{{ headers['Content-Type'] }}"
         }
       }
     }
