@@ -1,0 +1,199 @@
+{
+  "version": "1.0",
+  "name": "APIMATIC",
+  "url": "https://apimatic.io/api",
+
+  "environment": {
+    "token": "token"
+  },
+
+  "endpoints": {
+    "TransformByDescription": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/transform"
+        },
+        "single": false,
+        "parameters": {
+          "format": {
+            "value": "{{ parameters.format }}"
+          }
+        },
+        "headers": {
+          "Authorization": {
+            "value": "Basic {{ environment.token }}"
+          },
+          "Content-Type": {
+            "value": "{{ headers['Content-Type'] }}"
+          }
+        }
+      }
+    },
+    "TransformByURL": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/transform"
+        },
+        "single": false,
+        "parameters": {
+          "format": {
+            "value": "{{ parameters.format }}"
+          },
+          "descriptionUrl": {
+            "value": "{{ parameters.descriptionUrl }}"
+          }
+        },
+        "headers": {
+          "Authorization": {
+            "value": "Basic {{ environment.token }}"
+          }
+        }
+      }
+    },
+    "TransformByKey": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/transform"
+        },
+        "single": false,
+        "parameters": {
+          "format": {
+            "value": "{{ parameters.format }}"
+          },
+          "apiKey": {
+            "value": "{{ parameters.apiKey }}"
+          }
+        }
+      }
+    },
+    "GenerateByKey": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/codegen"
+        },
+        "single": false,
+        "parameters": {
+          "apiKey": {
+            "value": "{{ parameters.apiKey }}"
+          },
+          "template": {
+            "value": "{{ parameters.template }}"
+          }
+        }
+      }
+    },
+    "GenerateByDescription": {
+      "POST": {
+        "method": "GET",
+        "route": {
+          "path": "/codegen"
+        },
+        "single": false,
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          },
+          "template": {
+            "value": "{{ parameters.template }}"
+          }
+        },
+        "headers": {
+          "Authorization": {
+            "value": "Basic {{ environment.token }}"
+          },
+          "Content-Type": {
+            "value": "{{ headers['Content-Type'] }}"
+          }
+        }
+      }
+    },
+    "GenerateByURL": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/codegen"
+        },
+        "single": false,
+        "parameters": {
+          "name": {
+            "value": "{{ parameters.name }}"
+          },
+          "format": {
+            "value": "{{ parameters.format }}"
+          },
+          "template": {
+            "value": "{{ parameters.template }}"
+          },
+          "descriptionUrl": {
+            "value": "{{ parameters.descriptionUrl }}"
+          }
+        },
+        "headers": {
+          "Authorization": {
+            "value": "Basic {{ environment.token }}"
+          },
+          "Content-Type": {
+            "value": "{{ headers['Content-Type'] }}"
+          }
+        }
+      }
+    },
+    "ValidateByKey": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/validate"
+        },
+        "single": false,
+        "parameters": {
+          "apiKey": {
+            "value": "{{ parameters.apiKey }}"
+          }
+        }
+      }
+    },
+    "ValidateByDescription": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/validate"
+        },
+        "single": false,
+        "headers": {
+          "Content-Type": {
+            "value": "{{ headers['Content-Type'] }}"
+          }
+        }
+      }
+    },
+    "ValidateByURL": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/validate"
+        },
+        "single": false,
+        "parameters": {
+          "descriptionUrl": {
+            "value": "{{ parameters.descriptionUrl }}"
+          }
+        },
+        "headers": {
+          "Authorization": {
+            "value": "Basic {{ environment.token }}"
+          },
+          "Content-Type": {
+            "value": "{{ headers['Content-Type'] }}"
+          }
+        }
+      }
+    }
+  }
+}
