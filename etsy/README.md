@@ -2,7 +2,7 @@
 
 | Provider Map | File Name | |
 |------------------------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Etsy v2 API | etsy_v2.json | [![Etsy](https://d233zlhvpze22y.cloudfront.net/github/bitscoopaddbuttonxsmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/etsy/etsy_v2.json) |
+| Etsy v2 API | etsy_v2.json | [![Etsy](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/etsy/etsy_v2.json) |
 
 Etsy is an online marketplace for buying and selling handmade things. The Etsy API lets you develop applications built on this fast growing e-commerce platform.
 

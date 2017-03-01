@@ -2,7 +2,7 @@
 
 | Provider Map         | File Name             |                                                                                                                                                                                                                                              |
 |----------------------|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Yahoo Weather V1 API | yahoo_weather_v1.json | [![Yahoo Weather V1 API](https://d233zlhvpze22y.cloudfront.net/github/bitscoopaddbuttonxsmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/yahoo/yahoo_weather_v1.json) |
+| Yahoo Weather V1 API | yahoo_weather_v1.json | [![Yahoo Weather V1 API](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/yahoo/yahoo_weather_v1.json) |
 
 Yahoo! is an American multinational technology company headquartered in Sunnyvale, California.
 

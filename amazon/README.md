@@ -4,7 +4,7 @@
 
 | Provider Map | File Name | |
 |------------------------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Amazon Full API | amazon.json | [![Amazon](https://d233zlhvpze22y.cloudfront.net/github/bitscoopaddbuttonxsmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/amazon/amazon.json) |
+| Amazon Full API | amazon.json | [![Amazon](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/amazon/amazon.json) |
 
 Amazon is the world's largest provider of cloud infrastructure services.
 

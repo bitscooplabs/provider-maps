@@ -2,8 +2,8 @@
 
 | Provider Map   | File Name       |                                                                                                                                                                                                                                      |
 |----------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OneNote V1 API | onenote_v1.json | [![OneNote V1 API](https://d233zlhvpze22y.cloudfront.net/github/bitscoopaddbuttonxsmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/microsoft/onenote_v1.json) |
-| Bing Full API  | bing_v1.json    | [![Bing Full API](https://d233zlhvpze22y.cloudfront.net/github/bitscoopaddbuttonxsmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/microsoft/bing_v1.json)     |
+| OneNote V1 API | onenote_v1.json | [![OneNote V1 API](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/microsoft/onenote_v1.json) |
+| Bing Full API  | bing_v1.json    | [![Bing Full API](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/microsoft/bing_v1.json)     |
 
 Microsoft is an American multinational technology company headquartered in Redmond, Washington, that develops, manufactures, licenses, supports and sells computer software, consumer electronics and personal computers and services. Its best known software products are the Microsoft Windows line of operating systems, Microsoft Office office suite, and Internet Explorer and Edge web browsers.
 

@@ -2,7 +2,7 @@
 
 | Provider Map | File Name | |
 |------------------------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Foursquare v2 API | foursquare_v2.json | [![Foursquare](https://d233zlhvpze22y.cloudfront.net/github/bitscoopaddbuttonxsmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/foursquare/foursquare_v2.json) |
+| Foursquare v2 API | foursquare_v2.json | [![Foursquare](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/foursquare/foursquare_v2.json) |
 
 The foursquare APIs, currently in V2, grant access to the company's database of locations as well as information on venue check in's. The APIs are: The Core API, Real-time API, Merchant Platform, Venues Platform. The APIs are RESTful and support XML, JSON, JSONP.
 

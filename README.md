@@ -1,15 +1,15 @@
-# Provider Maps for the BitScoop API Toolbox
+# Provider Maps for the BitScoop Platform
 
-Welcome to our open source collection of Provider Maps for the BitScoop API Toolbox.
+Welcome to our open source collection of Provider Maps for the BitScoop Platform.
 
-<img src="http://com-bitscoop-assets.s3.amazonaws.com/github/screenshots/apitoolboximg.png" alt=" " style="margin: auto; max-width: 100%;">
+<img src="http://com-bitscoop-assets.s3.amazonaws.com/github/screenshots/BitScoopPlatformDiagram.png" alt=" " style="margin: auto; max-width: 100%;">
 
-## [Provider Map Index](https://bitscooplabs.github.io)
-https://bitscooplabs.github.io
+## [Provider Map Index](https://bitscoop.github.io)
+https://bitscoop.github.io
 
-## What is the API Toolbox?
+## What is the BitScoop Platform?
 
-The BitScoop API Toolbox makes APIs & microservices simple to integrate and easy to maintain. Our set of tools helps developers deal with data provider intricacies, inconsistencies, and annoyances that pervade app development. Using BitScoop you can more easily connect and interact with the data providers important to your work and projects.
+The BitScoop Platform makes APIs & microservices simple to integrate and easy to maintain. Our set of tools helps developers deal with data provider intricacies, inconsistencies, and annoyances that pervade app development. Using BitScoop you can more easily connect and interact with the data providers important to your work and projects.
 
 Learn more with this demo:
 
@@ -19,13 +19,34 @@ https://github.com/bitscooplabs/api-toolbox-intro
 
 Provider Maps are the JSON configuration objects that you create to describe the interactions with data providers. They can include various sub-sections such as a description of the authentication scheme the data provider uses and endpoints from which you can obtain data.
 
-Many data providers require permission from your end users to read their data. This process is generally handled by a workflow such as OAuth or OpenID and can be handled by the BitScoop API Toolbox with some configuration on the Provider Map. You'll need to instantiate Connections to the data provider behind your Provider Map as a place to store authentication and characterizing information about an end user who has giving you permission to read their data. In most cases you'll have one Connection per end user and BitScoop will automatically store the relevant information used to identify this user in the data provider's system.
+Many data providers require permission from your end users to read their data. This process is generally handled by a workflow such as OAuth or OpenID and can be handled by the BitScoop Platform with some configuration on the Provider Map. You'll need to instantiate Connections to the data provider behind your Provider Map as a place to store authentication and characterizing information about an end user who has giving you permission to read their data. In most cases you'll have one Connection per end user and BitScoop will automatically store the relevant information used to identify this user in the data provider's system.
 
 <img src="http://com-bitscoop-assets.s3.amazonaws.com/github/screenshots/bitscoopdiagram.png" alt=" " style="margin: auto; width: 100% max-height: 200px">
 
 ## How to use Provider Maps:
 
-Any Provider map can be copied out of this repository and used to create a new Provider Map in the API Toolbox, either by using the Developer Portal or by submitting it directly to the BitScoop API.
+Any Provider map can be copied out of this repository and used to create a new Provider Map in the BitScoop Platform, either by using the Developer Portal or by submitting it directly to the BitScoop API.
+
+### Use the "Add to BitScoop" Button
+
+Easly add a community API Map using the "Add to BitScoop" Button. This button allows anyone to connect to any API in just one click.
+
+<img src="https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png" style="max-width:100%;">
+
+This button makes it quick and easy to add API connections to your workspace using pre made provider maps.
+
+### Are you an API Publisher? Embed the "Add to BitScoop" Button on your site
+
+You may also easily create a "Add to BitScoop" Button for any provider map.
+
+Simply embed the code below into any site and replace "URL_TO_JSON_FILE" with the url of your provider map json. We recommend using GitHub to store and serve provider maps.
+
+
+````
+<a href="https://bitscoop.com/maps/create?source=URL_TO_JSON_FILE">
+<img src="https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png" style="max-width:100%;">
+</a>
+````
 
 ### Create a Provider Map via the Developer Portal
 
@@ -128,7 +149,7 @@ https://developer.bitscoop.com/learn/providers
 
 ## Troubleshooting / Issues:
 
-If you have any issues using BitScoop API Toolbox, please use our [Support page](https://bitscoop.com/support).
+If you have any issues using BitScoop Platform, please use our [Support page](https://bitscoop.com/support).
 
 Please note that theses are not guaranteed to be correct. If you find any issues with a, feel free to make corrections in the map(s) you create from that, email BitScoop about the problem you are encountering, or create a ticket on our GitHub repository.
 
