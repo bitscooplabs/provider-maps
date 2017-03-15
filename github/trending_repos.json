@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "name": "Trending Repos",
+  "url": "https://api.github.com",
+  "endpoints": {
+    "TrendingRepositories": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "items",
+          "path": "/search/repositories"
+        },
+        "parameters": {
+          "q": {
+            "value": "stars:>=5000"
+          },
+          "sort": {
+            "value": "stars"
+          },
+          "order": {
+            "value": "desc"
+          }
+        }
+      }
+    }
+  }
+}
