@@ -1,5 +1,4132 @@
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "url": "https://www.eventbrite.com/api/v3",
+  "name": "EventBrite API",
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://www.eventbrite.com",
+    "authorization_url": "https://accounts.eventbrite.com/o/oauth2/auth",
+    "access_token": "https://accounts.eventbrite.com/o/oauth2/token",
+    "signature": "parameter",
+    "auth_key": "*** INSERT AUTH KEY ***",
+    "auth_secret": "*** INSERT AUTH SECRET ***"
+  },
+  "description": "Manipulates events and other calendar data.",
+  "endpoints": {
+    "Calendars": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/calendars"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "CalendarsCalendarId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ]
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdAcl": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/acl"
+        },
+        "parameters": {
+          "maxResults": "{{ parameters.maxResults }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "showDeleted": "{{ parameters.showDeleted }}",
+          "syncToken": "{{ parameters.syncToken }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "etag": {
+              "type": "string"
+            },
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "etag": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "scope": {
+                  "type": "embedded",
+                  "fields": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "many": true
+            },
+            "kind": {
+              "type": "string"
+            },
+            "nextPageToken": {
+              "type": "string"
+            },
+            "nextSyncToken": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/acl"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "embedded",
+              "fields": {
+                "type": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdAclWatch": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/acl/watch"
+        },
+        "parameters": {
+          "maxResults": "{{ parameters.maxResults }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "showDeleted": "{{ parameters.showDeleted }}",
+          "syncToken": "{{ parameters.syncToken }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ]
+      }
+    },
+    "CalendarsCalendarIdAclRuleId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/acl/{{ parameters.ruleId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ]
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/acl/{{ parameters.ruleId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "embedded",
+              "fields": {
+                "type": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/acl/{{ parameters.ruleId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "embedded",
+              "fields": {
+                "type": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/acl/{{ parameters.ruleId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "embedded",
+              "fields": {
+                "type": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdClear": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/clear"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ]
+      }
+    },
+    "CalendarsCalendarIdEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events"
+        },
+        "parameters": {
+          "alwaysIncludeEmail": "{{ parameters.alwaysIncludeEmail }}",
+          "iCalUID": "{{ parameters.iCalUID }}",
+          "maxAttendees": "{{ parameters.maxAttendees }}",
+          "maxResults": "{{ parameters.maxResults }}",
+          "orderBy": "{{ parameters.orderBy }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "privateExtendedProperty": "{{ parameters.privateExtendedProperty }}",
+          "q": "{{ parameters.q }}",
+          "sharedExtendedProperty": "{{ parameters.sharedExtendedProperty }}",
+          "showDeleted": "{{ parameters.showDeleted }}",
+          "showHiddenInvitations": "{{ parameters.showHiddenInvitations }}",
+          "singleEvents": "{{ parameters.singleEvents }}",
+          "syncToken": "{{ parameters.syncToken }}",
+          "timeMax": "{{ parameters.timeMax }}",
+          "timeMin": "{{ parameters.timeMin }}",
+          "timeZone": "{{ parameters.timeZone }}",
+          "updatedMin": "{{ parameters.updatedMin }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "accessRole": {
+              "type": "string"
+            },
+            "defaultReminders": {
+              "type": "embedded",
+              "fields": {
+                "method": {
+                  "type": "string"
+                },
+                "minutes": {
+                  "type": "integer"
+                }
+              },
+              "many": true
+            },
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "anyoneCanAddSelf": {
+                  "type": "boolean"
+                },
+                "attachments": {
+                  "type": "embedded",
+                  "fields": {
+                    "fileId": {
+                      "type": "string"
+                    },
+                    "fileUrl": {
+                      "type": "string"
+                    },
+                    "iconLink": {
+                      "type": "string"
+                    },
+                    "mimeType": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "attendees": {
+                  "type": "embedded",
+                  "fields": {
+                    "additionalGuests": {
+                      "type": "integer"
+                    },
+                    "comment": {
+                      "type": "string"
+                    },
+                    "displayName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "optional": {
+                      "type": "boolean"
+                    },
+                    "organizer": {
+                      "type": "boolean"
+                    },
+                    "resource": {
+                      "type": "boolean"
+                    },
+                    "responseStatus": {
+                      "type": "string"
+                    },
+                    "self": {
+                      "type": "boolean"
+                    }
+                  },
+                  "many": true
+                },
+                "attendeesOmitted": {
+                  "type": "boolean"
+                },
+                "colorId": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "creator": {
+                  "type": "embedded",
+                  "fields": {
+                    "displayName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "self": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "description": {
+                  "type": "string"
+                },
+                "end": {
+                  "type": "embedded",
+                  "fields": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "dateTime": {
+                      "type": "string"
+                    },
+                    "timeZone": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "endTimeUnspecified": {
+                  "type": "boolean"
+                },
+                "etag": {
+                  "type": "string"
+                },
+                "extendedProperties": {
+                  "type": "embedded",
+                  "fields": {
+                    "private": {
+                      "type": "embedded",
+                      "fields": {}
+                    },
+                    "shared": {
+                      "type": "embedded",
+                      "fields": {}
+                    }
+                  }
+                },
+                "gadget": {
+                  "type": "embedded",
+                  "fields": {
+                    "display": {
+                      "type": "string"
+                    },
+                    "height": {
+                      "type": "integer"
+                    },
+                    "iconLink": {
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "string"
+                    },
+                    "preferences": {
+                      "type": "embedded",
+                      "fields": {}
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "guestsCanInviteOthers": {
+                  "type": "boolean"
+                },
+                "guestsCanModify": {
+                  "type": "boolean"
+                },
+                "guestsCanSeeOtherGuests": {
+                  "type": "boolean"
+                },
+                "hangoutLink": {
+                  "type": "string"
+                },
+                "htmlLink": {
+                  "type": "string"
+                },
+                "iCalUID": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "locked": {
+                  "type": "boolean"
+                },
+                "organizer": {
+                  "type": "embedded",
+                  "fields": {
+                    "displayName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "self": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "originalStartTime": {
+                  "type": "base"
+                },
+                "privateCopy": {
+                  "type": "boolean"
+                },
+                "recurrence": {
+                  "type": "string",
+                  "many": true
+                },
+                "recurringEventId": {
+                  "type": "string"
+                },
+                "reminders": {
+                  "type": "embedded",
+                  "fields": {
+                    "overrides": {
+                      "type": "base"
+                    },
+                    "useDefault": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "sequence": {
+                  "type": "integer"
+                },
+                "source": {
+                  "type": "embedded",
+                  "fields": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "start": {
+                  "type": "base"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "transparency": {
+                  "type": "string"
+                },
+                "updated": {
+                  "type": "string"
+                },
+                "visibility": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "kind": {
+              "type": "string"
+            },
+            "nextPageToken": {
+              "type": "string"
+            },
+            "nextSyncToken": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events"
+        },
+        "parameters": {
+          "maxAttendees": "{{ parameters.maxAttendees }}",
+          "sendNotifications": "{{ parameters.sendNotifications }}",
+          "supportsAttachments": "{{ parameters.supportsAttachments }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "anyoneCanAddSelf": {
+              "type": "boolean"
+            },
+            "attachments": {
+              "type": "embedded",
+              "fields": {
+                "fileId": {
+                  "type": "string"
+                },
+                "fileUrl": {
+                  "type": "string"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "mimeType": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "attendees": {
+              "type": "embedded",
+              "fields": {
+                "additionalGuests": {
+                  "type": "integer"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "optional": {
+                  "type": "boolean"
+                },
+                "organizer": {
+                  "type": "boolean"
+                },
+                "resource": {
+                  "type": "boolean"
+                },
+                "responseStatus": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              },
+              "many": true
+            },
+            "attendeesOmitted": {
+              "type": "boolean"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            },
+            "creator": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "end": {
+              "type": "embedded",
+              "fields": {
+                "date": {
+                  "type": "string"
+                },
+                "dateTime": {
+                  "type": "string"
+                },
+                "timeZone": {
+                  "type": "string"
+                }
+              }
+            },
+            "endTimeUnspecified": {
+              "type": "boolean"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "extendedProperties": {
+              "type": "embedded",
+              "fields": {
+                "private": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "shared": {
+                  "type": "embedded",
+                  "fields": {}
+                }
+              }
+            },
+            "gadget": {
+              "type": "embedded",
+              "fields": {
+                "display": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "preferences": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              }
+            },
+            "guestsCanInviteOthers": {
+              "type": "boolean"
+            },
+            "guestsCanModify": {
+              "type": "boolean"
+            },
+            "guestsCanSeeOtherGuests": {
+              "type": "boolean"
+            },
+            "hangoutLink": {
+              "type": "string"
+            },
+            "htmlLink": {
+              "type": "string"
+            },
+            "iCalUID": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "organizer": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "originalStartTime": {
+              "type": "base"
+            },
+            "privateCopy": {
+              "type": "boolean"
+            },
+            "recurrence": {
+              "type": "string",
+              "many": true
+            },
+            "recurringEventId": {
+              "type": "string"
+            },
+            "reminders": {
+              "type": "embedded",
+              "fields": {
+                "overrides": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "minutes": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "useDefault": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "sequence": {
+              "type": "integer"
+            },
+            "source": {
+              "type": "embedded",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            },
+            "start": {
+              "type": "base"
+            },
+            "status": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "transparency": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsImport": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events/import"
+        },
+        "parameters": {
+          "supportsAttachments": "{{ parameters.supportsAttachments }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "anyoneCanAddSelf": {
+              "type": "boolean"
+            },
+            "attachments": {
+              "type": "embedded",
+              "fields": {
+                "fileId": {
+                  "type": "string"
+                },
+                "fileUrl": {
+                  "type": "string"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "mimeType": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "attendees": {
+              "type": "embedded",
+              "fields": {
+                "additionalGuests": {
+                  "type": "integer"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "optional": {
+                  "type": "boolean"
+                },
+                "organizer": {
+                  "type": "boolean"
+                },
+                "resource": {
+                  "type": "boolean"
+                },
+                "responseStatus": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              },
+              "many": true
+            },
+            "attendeesOmitted": {
+              "type": "boolean"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            },
+            "creator": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "end": {
+              "type": "embedded",
+              "fields": {
+                "date": {
+                  "type": "string"
+                },
+                "dateTime": {
+                  "type": "string"
+                },
+                "timeZone": {
+                  "type": "string"
+                }
+              }
+            },
+            "endTimeUnspecified": {
+              "type": "boolean"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "extendedProperties": {
+              "type": "embedded",
+              "fields": {
+                "private": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "shared": {
+                  "type": "embedded",
+                  "fields": {}
+                }
+              }
+            },
+            "gadget": {
+              "type": "embedded",
+              "fields": {
+                "display": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "preferences": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              }
+            },
+            "guestsCanInviteOthers": {
+              "type": "boolean"
+            },
+            "guestsCanModify": {
+              "type": "boolean"
+            },
+            "guestsCanSeeOtherGuests": {
+              "type": "boolean"
+            },
+            "hangoutLink": {
+              "type": "string"
+            },
+            "htmlLink": {
+              "type": "string"
+            },
+            "iCalUID": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "organizer": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "originalStartTime": {
+              "type": "base"
+            },
+            "privateCopy": {
+              "type": "boolean"
+            },
+            "recurrence": {
+              "type": "string",
+              "many": true
+            },
+            "recurringEventId": {
+              "type": "string"
+            },
+            "reminders": {
+              "type": "embedded",
+              "fields": {
+                "overrides": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "minutes": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "useDefault": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "sequence": {
+              "type": "integer"
+            },
+            "source": {
+              "type": "embedded",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            },
+            "start": {
+              "type": "base"
+            },
+            "status": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "transparency": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsQuickAdd": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events/quickAdd"
+        },
+        "parameters": {
+          "text": "{{ parameters.text }}",
+          "sendNotifications": "{{ parameters.sendNotifications }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "anyoneCanAddSelf": {
+              "type": "boolean"
+            },
+            "attachments": {
+              "type": "embedded",
+              "fields": {
+                "fileId": {
+                  "type": "string"
+                },
+                "fileUrl": {
+                  "type": "string"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "mimeType": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "attendees": {
+              "type": "embedded",
+              "fields": {
+                "additionalGuests": {
+                  "type": "integer"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "optional": {
+                  "type": "boolean"
+                },
+                "organizer": {
+                  "type": "boolean"
+                },
+                "resource": {
+                  "type": "boolean"
+                },
+                "responseStatus": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              },
+              "many": true
+            },
+            "attendeesOmitted": {
+              "type": "boolean"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            },
+            "creator": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "end": {
+              "type": "embedded",
+              "fields": {
+                "date": {
+                  "type": "string"
+                },
+                "dateTime": {
+                  "type": "string"
+                },
+                "timeZone": {
+                  "type": "string"
+                }
+              }
+            },
+            "endTimeUnspecified": {
+              "type": "boolean"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "extendedProperties": {
+              "type": "embedded",
+              "fields": {
+                "private": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "shared": {
+                  "type": "embedded",
+                  "fields": {}
+                }
+              }
+            },
+            "gadget": {
+              "type": "embedded",
+              "fields": {
+                "display": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "preferences": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              }
+            },
+            "guestsCanInviteOthers": {
+              "type": "boolean"
+            },
+            "guestsCanModify": {
+              "type": "boolean"
+            },
+            "guestsCanSeeOtherGuests": {
+              "type": "boolean"
+            },
+            "hangoutLink": {
+              "type": "string"
+            },
+            "htmlLink": {
+              "type": "string"
+            },
+            "iCalUID": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "organizer": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "originalStartTime": {
+              "type": "base"
+            },
+            "privateCopy": {
+              "type": "boolean"
+            },
+            "recurrence": {
+              "type": "string",
+              "many": true
+            },
+            "recurringEventId": {
+              "type": "string"
+            },
+            "reminders": {
+              "type": "embedded",
+              "fields": {
+                "overrides": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "minutes": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "useDefault": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "sequence": {
+              "type": "integer"
+            },
+            "source": {
+              "type": "embedded",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            },
+            "start": {
+              "type": "base"
+            },
+            "status": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "transparency": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsWatch": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events/watch"
+        },
+        "parameters": {
+          "alwaysIncludeEmail": "{{ parameters.alwaysIncludeEmail }}",
+          "iCalUID": "{{ parameters.iCalUID }}",
+          "maxAttendees": "{{ parameters.maxAttendees }}",
+          "maxResults": "{{ parameters.maxResults }}",
+          "orderBy": "{{ parameters.orderBy }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "privateExtendedProperty": "{{ parameters.privateExtendedProperty }}",
+          "q": "{{ parameters.q }}",
+          "sharedExtendedProperty": "{{ parameters.sharedExtendedProperty }}",
+          "showDeleted": "{{ parameters.showDeleted }}",
+          "showHiddenInvitations": "{{ parameters.showHiddenInvitations }}",
+          "singleEvents": "{{ parameters.singleEvents }}",
+          "syncToken": "{{ parameters.syncToken }}",
+          "timeMax": "{{ parameters.timeMax }}",
+          "timeMin": "{{ parameters.timeMin }}",
+          "timeZone": "{{ parameters.timeZone }}",
+          "updatedMin": "{{ parameters.updatedMin }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ]
+      }
+    },
+    "CalendarsCalendarIdEventsEventId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}"
+        },
+        "parameters": {
+          "sendNotifications": "{{ parameters.sendNotifications }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ]
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}"
+        },
+        "parameters": {
+          "alwaysIncludeEmail": "{{ parameters.alwaysIncludeEmail }}",
+          "maxAttendees": "{{ parameters.maxAttendees }}",
+          "timeZone": "{{ parameters.timeZone }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "anyoneCanAddSelf": {
+              "type": "boolean"
+            },
+            "attachments": {
+              "type": "embedded",
+              "fields": {
+                "fileId": {
+                  "type": "string"
+                },
+                "fileUrl": {
+                  "type": "string"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "mimeType": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "attendees": {
+              "type": "embedded",
+              "fields": {
+                "additionalGuests": {
+                  "type": "integer"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "optional": {
+                  "type": "boolean"
+                },
+                "organizer": {
+                  "type": "boolean"
+                },
+                "resource": {
+                  "type": "boolean"
+                },
+                "responseStatus": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              },
+              "many": true
+            },
+            "attendeesOmitted": {
+              "type": "boolean"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            },
+            "creator": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "end": {
+              "type": "embedded",
+              "fields": {
+                "date": {
+                  "type": "string"
+                },
+                "dateTime": {
+                  "type": "string"
+                },
+                "timeZone": {
+                  "type": "string"
+                }
+              }
+            },
+            "endTimeUnspecified": {
+              "type": "boolean"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "extendedProperties": {
+              "type": "embedded",
+              "fields": {
+                "private": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "shared": {
+                  "type": "embedded",
+                  "fields": {}
+                }
+              }
+            },
+            "gadget": {
+              "type": "embedded",
+              "fields": {
+                "display": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "preferences": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              }
+            },
+            "guestsCanInviteOthers": {
+              "type": "boolean"
+            },
+            "guestsCanModify": {
+              "type": "boolean"
+            },
+            "guestsCanSeeOtherGuests": {
+              "type": "boolean"
+            },
+            "hangoutLink": {
+              "type": "string"
+            },
+            "htmlLink": {
+              "type": "string"
+            },
+            "iCalUID": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "organizer": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "originalStartTime": {
+              "type": "base"
+            },
+            "privateCopy": {
+              "type": "boolean"
+            },
+            "recurrence": {
+              "type": "string",
+              "many": true
+            },
+            "recurringEventId": {
+              "type": "string"
+            },
+            "reminders": {
+              "type": "embedded",
+              "fields": {
+                "overrides": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "minutes": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "useDefault": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "sequence": {
+              "type": "integer"
+            },
+            "source": {
+              "type": "embedded",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            },
+            "start": {
+              "type": "base"
+            },
+            "status": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "transparency": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}"
+        },
+        "parameters": {
+          "alwaysIncludeEmail": "{{ parameters.alwaysIncludeEmail }}",
+          "maxAttendees": "{{ parameters.maxAttendees }}",
+          "sendNotifications": "{{ parameters.sendNotifications }}",
+          "supportsAttachments": "{{ parameters.supportsAttachments }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "anyoneCanAddSelf": {
+              "type": "boolean"
+            },
+            "attachments": {
+              "type": "embedded",
+              "fields": {
+                "fileId": {
+                  "type": "string"
+                },
+                "fileUrl": {
+                  "type": "string"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "mimeType": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "attendees": {
+              "type": "embedded",
+              "fields": {
+                "additionalGuests": {
+                  "type": "integer"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "optional": {
+                  "type": "boolean"
+                },
+                "organizer": {
+                  "type": "boolean"
+                },
+                "resource": {
+                  "type": "boolean"
+                },
+                "responseStatus": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              },
+              "many": true
+            },
+            "attendeesOmitted": {
+              "type": "boolean"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            },
+            "creator": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "end": {
+              "type": "embedded",
+              "fields": {
+                "date": {
+                  "type": "string"
+                },
+                "dateTime": {
+                  "type": "string"
+                },
+                "timeZone": {
+                  "type": "string"
+                }
+              }
+            },
+            "endTimeUnspecified": {
+              "type": "boolean"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "extendedProperties": {
+              "type": "embedded",
+              "fields": {
+                "private": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "shared": {
+                  "type": "embedded",
+                  "fields": {}
+                }
+              }
+            },
+            "gadget": {
+              "type": "embedded",
+              "fields": {
+                "display": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "preferences": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              }
+            },
+            "guestsCanInviteOthers": {
+              "type": "boolean"
+            },
+            "guestsCanModify": {
+              "type": "boolean"
+            },
+            "guestsCanSeeOtherGuests": {
+              "type": "boolean"
+            },
+            "hangoutLink": {
+              "type": "string"
+            },
+            "htmlLink": {
+              "type": "string"
+            },
+            "iCalUID": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "organizer": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "originalStartTime": {
+              "type": "base"
+            },
+            "privateCopy": {
+              "type": "boolean"
+            },
+            "recurrence": {
+              "type": "string",
+              "many": true
+            },
+            "recurringEventId": {
+              "type": "string"
+            },
+            "reminders": {
+              "type": "embedded",
+              "fields": {
+                "overrides": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "minutes": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "useDefault": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "sequence": {
+              "type": "integer"
+            },
+            "source": {
+              "type": "embedded",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            },
+            "start": {
+              "type": "base"
+            },
+            "status": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "transparency": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}"
+        },
+        "parameters": {
+          "alwaysIncludeEmail": "{{ parameters.alwaysIncludeEmail }}",
+          "maxAttendees": "{{ parameters.maxAttendees }}",
+          "sendNotifications": "{{ parameters.sendNotifications }}",
+          "supportsAttachments": "{{ parameters.supportsAttachments }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "anyoneCanAddSelf": {
+              "type": "boolean"
+            },
+            "attachments": {
+              "type": "embedded",
+              "fields": {
+                "fileId": {
+                  "type": "string"
+                },
+                "fileUrl": {
+                  "type": "string"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "mimeType": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "attendees": {
+              "type": "embedded",
+              "fields": {
+                "additionalGuests": {
+                  "type": "integer"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "optional": {
+                  "type": "boolean"
+                },
+                "organizer": {
+                  "type": "boolean"
+                },
+                "resource": {
+                  "type": "boolean"
+                },
+                "responseStatus": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              },
+              "many": true
+            },
+            "attendeesOmitted": {
+              "type": "boolean"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            },
+            "creator": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "end": {
+              "type": "embedded",
+              "fields": {
+                "date": {
+                  "type": "string"
+                },
+                "dateTime": {
+                  "type": "string"
+                },
+                "timeZone": {
+                  "type": "string"
+                }
+              }
+            },
+            "endTimeUnspecified": {
+              "type": "boolean"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "extendedProperties": {
+              "type": "embedded",
+              "fields": {
+                "private": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "shared": {
+                  "type": "embedded",
+                  "fields": {}
+                }
+              }
+            },
+            "gadget": {
+              "type": "embedded",
+              "fields": {
+                "display": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "preferences": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              }
+            },
+            "guestsCanInviteOthers": {
+              "type": "boolean"
+            },
+            "guestsCanModify": {
+              "type": "boolean"
+            },
+            "guestsCanSeeOtherGuests": {
+              "type": "boolean"
+            },
+            "hangoutLink": {
+              "type": "string"
+            },
+            "htmlLink": {
+              "type": "string"
+            },
+            "iCalUID": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "organizer": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "originalStartTime": {
+              "type": "base"
+            },
+            "privateCopy": {
+              "type": "boolean"
+            },
+            "recurrence": {
+              "type": "string",
+              "many": true
+            },
+            "recurringEventId": {
+              "type": "string"
+            },
+            "reminders": {
+              "type": "embedded",
+              "fields": {
+                "overrides": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "minutes": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "useDefault": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "sequence": {
+              "type": "integer"
+            },
+            "source": {
+              "type": "embedded",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            },
+            "start": {
+              "type": "base"
+            },
+            "status": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "transparency": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsEventIdInstances": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}/instances"
+        },
+        "parameters": {
+          "alwaysIncludeEmail": "{{ parameters.alwaysIncludeEmail }}",
+          "maxAttendees": "{{ parameters.maxAttendees }}",
+          "maxResults": "{{ parameters.maxResults }}",
+          "originalStart": "{{ parameters.originalStart }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "showDeleted": "{{ parameters.showDeleted }}",
+          "timeMax": "{{ parameters.timeMax }}",
+          "timeMin": "{{ parameters.timeMin }}",
+          "timeZone": "{{ parameters.timeZone }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "accessRole": {
+              "type": "string"
+            },
+            "defaultReminders": {
+              "type": "embedded",
+              "fields": {
+                "method": {
+                  "type": "string"
+                },
+                "minutes": {
+                  "type": "integer"
+                }
+              },
+              "many": true
+            },
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "anyoneCanAddSelf": {
+                  "type": "boolean"
+                },
+                "attachments": {
+                  "type": "embedded",
+                  "fields": {
+                    "fileId": {
+                      "type": "string"
+                    },
+                    "fileUrl": {
+                      "type": "string"
+                    },
+                    "iconLink": {
+                      "type": "string"
+                    },
+                    "mimeType": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "attendees": {
+                  "type": "embedded",
+                  "fields": {
+                    "additionalGuests": {
+                      "type": "integer"
+                    },
+                    "comment": {
+                      "type": "string"
+                    },
+                    "displayName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "optional": {
+                      "type": "boolean"
+                    },
+                    "organizer": {
+                      "type": "boolean"
+                    },
+                    "resource": {
+                      "type": "boolean"
+                    },
+                    "responseStatus": {
+                      "type": "string"
+                    },
+                    "self": {
+                      "type": "boolean"
+                    }
+                  },
+                  "many": true
+                },
+                "attendeesOmitted": {
+                  "type": "boolean"
+                },
+                "colorId": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "creator": {
+                  "type": "embedded",
+                  "fields": {
+                    "displayName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "self": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "description": {
+                  "type": "string"
+                },
+                "end": {
+                  "type": "embedded",
+                  "fields": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "dateTime": {
+                      "type": "string"
+                    },
+                    "timeZone": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "endTimeUnspecified": {
+                  "type": "boolean"
+                },
+                "etag": {
+                  "type": "string"
+                },
+                "extendedProperties": {
+                  "type": "embedded",
+                  "fields": {
+                    "private": {
+                      "type": "embedded",
+                      "fields": {}
+                    },
+                    "shared": {
+                      "type": "embedded",
+                      "fields": {}
+                    }
+                  }
+                },
+                "gadget": {
+                  "type": "embedded",
+                  "fields": {
+                    "display": {
+                      "type": "string"
+                    },
+                    "height": {
+                      "type": "integer"
+                    },
+                    "iconLink": {
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "string"
+                    },
+                    "preferences": {
+                      "type": "embedded",
+                      "fields": {}
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "guestsCanInviteOthers": {
+                  "type": "boolean"
+                },
+                "guestsCanModify": {
+                  "type": "boolean"
+                },
+                "guestsCanSeeOtherGuests": {
+                  "type": "boolean"
+                },
+                "hangoutLink": {
+                  "type": "string"
+                },
+                "htmlLink": {
+                  "type": "string"
+                },
+                "iCalUID": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "locked": {
+                  "type": "boolean"
+                },
+                "organizer": {
+                  "type": "embedded",
+                  "fields": {
+                    "displayName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "self": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "originalStartTime": {
+                  "type": "base"
+                },
+                "privateCopy": {
+                  "type": "boolean"
+                },
+                "recurrence": {
+                  "type": "string",
+                  "many": true
+                },
+                "recurringEventId": {
+                  "type": "string"
+                },
+                "reminders": {
+                  "type": "embedded",
+                  "fields": {
+                    "overrides": {
+                      "type": "base"
+                    },
+                    "useDefault": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "sequence": {
+                  "type": "integer"
+                },
+                "source": {
+                  "type": "embedded",
+                  "fields": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "start": {
+                  "type": "base"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "transparency": {
+                  "type": "string"
+                },
+                "updated": {
+                  "type": "string"
+                },
+                "visibility": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "kind": {
+              "type": "string"
+            },
+            "nextPageToken": {
+              "type": "string"
+            },
+            "nextSyncToken": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "CalendarsCalendarIdEventsEventIdMove": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/calendars/{{ parameters.calendarId }}/events/{{ parameters.eventId }}/move"
+        },
+        "parameters": {
+          "destination": "{{ parameters.destination }}",
+          "sendNotifications": "{{ parameters.sendNotifications }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "anyoneCanAddSelf": {
+              "type": "boolean"
+            },
+            "attachments": {
+              "type": "embedded",
+              "fields": {
+                "fileId": {
+                  "type": "string"
+                },
+                "fileUrl": {
+                  "type": "string"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "mimeType": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "attendees": {
+              "type": "embedded",
+              "fields": {
+                "additionalGuests": {
+                  "type": "integer"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "optional": {
+                  "type": "boolean"
+                },
+                "organizer": {
+                  "type": "boolean"
+                },
+                "resource": {
+                  "type": "boolean"
+                },
+                "responseStatus": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              },
+              "many": true
+            },
+            "attendeesOmitted": {
+              "type": "boolean"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            },
+            "creator": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "end": {
+              "type": "embedded",
+              "fields": {
+                "date": {
+                  "type": "string"
+                },
+                "dateTime": {
+                  "type": "string"
+                },
+                "timeZone": {
+                  "type": "string"
+                }
+              }
+            },
+            "endTimeUnspecified": {
+              "type": "boolean"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "extendedProperties": {
+              "type": "embedded",
+              "fields": {
+                "private": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "shared": {
+                  "type": "embedded",
+                  "fields": {}
+                }
+              }
+            },
+            "gadget": {
+              "type": "embedded",
+              "fields": {
+                "display": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "iconLink": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "preferences": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              }
+            },
+            "guestsCanInviteOthers": {
+              "type": "boolean"
+            },
+            "guestsCanModify": {
+              "type": "boolean"
+            },
+            "guestsCanSeeOtherGuests": {
+              "type": "boolean"
+            },
+            "hangoutLink": {
+              "type": "string"
+            },
+            "htmlLink": {
+              "type": "string"
+            },
+            "iCalUID": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "organizer": {
+              "type": "embedded",
+              "fields": {
+                "displayName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "self": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "originalStartTime": {
+              "type": "base"
+            },
+            "privateCopy": {
+              "type": "boolean"
+            },
+            "recurrence": {
+              "type": "string",
+              "many": true
+            },
+            "recurringEventId": {
+              "type": "string"
+            },
+            "reminders": {
+              "type": "embedded",
+              "fields": {
+                "overrides": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "minutes": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "useDefault": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "sequence": {
+              "type": "integer"
+            },
+            "source": {
+              "type": "embedded",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            },
+            "start": {
+              "type": "base"
+            },
+            "status": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "transparency": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ChannelsStop": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/channels/stop"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ]
+      }
+    },
+    "Colors": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/colors"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "calendar": {
+              "type": "embedded",
+              "fields": {}
+            },
+            "event": {
+              "type": "embedded",
+              "fields": {}
+            },
+            "kind": {
+              "type": "string"
+            },
+            "updated": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "FreeBusy": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/freeBusy"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "calendars": {
+              "type": "embedded",
+              "fields": {}
+            },
+            "groups": {
+              "type": "embedded",
+              "fields": {}
+            },
+            "kind": {
+              "type": "string"
+            },
+            "timeMax": {
+              "type": "string"
+            },
+            "timeMin": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "UsersMeCalendarList": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/users/me/calendarList"
+        },
+        "parameters": {
+          "maxResults": "{{ parameters.maxResults }}",
+          "minAccessRole": "{{ parameters.minAccessRole }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "showDeleted": "{{ parameters.showDeleted }}",
+          "showHidden": "{{ parameters.showHidden }}",
+          "syncToken": "{{ parameters.syncToken }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "etag": {
+              "type": "string"
+            },
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "accessRole": {
+                  "type": "string"
+                },
+                "backgroundColor": {
+                  "type": "string"
+                },
+                "colorId": {
+                  "type": "string"
+                },
+                "defaultReminders": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "minutes": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "deleted": {
+                  "type": "boolean"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "etag": {
+                  "type": "string"
+                },
+                "foregroundColor": {
+                  "type": "string"
+                },
+                "hidden": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "notificationSettings": {
+                  "type": "embedded",
+                  "fields": {
+                    "notifications": {
+                      "type": "embedded",
+                      "fields": {
+                        "method": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    }
+                  }
+                },
+                "primary": {
+                  "type": "boolean"
+                },
+                "selected": {
+                  "type": "boolean"
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "summaryOverride": {
+                  "type": "string"
+                },
+                "timeZone": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "kind": {
+              "type": "string"
+            },
+            "nextPageToken": {
+              "type": "string"
+            },
+            "nextSyncToken": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/users/me/calendarList"
+        },
+        "parameters": {
+          "colorRgbFormat": "{{ parameters.colorRgbFormat }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "accessRole": {
+              "type": "string"
+            },
+            "backgroundColor": {
+              "type": "string"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "defaultReminders": {
+              "type": "embedded",
+              "fields": {
+                "method": {
+                  "type": "string"
+                },
+                "minutes": {
+                  "type": "integer"
+                }
+              },
+              "many": true
+            },
+            "deleted": {
+              "type": "boolean"
+            },
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "foregroundColor": {
+              "type": "string"
+            },
+            "hidden": {
+              "type": "boolean"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "notificationSettings": {
+              "type": "embedded",
+              "fields": {
+                "notifications": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                }
+              }
+            },
+            "primary": {
+              "type": "boolean"
+            },
+            "selected": {
+              "type": "boolean"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "summaryOverride": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "UsersMeCalendarListWatch": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/users/me/calendarList/watch"
+        },
+        "parameters": {
+          "maxResults": "{{ parameters.maxResults }}",
+          "minAccessRole": "{{ parameters.minAccessRole }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "showDeleted": "{{ parameters.showDeleted }}",
+          "showHidden": "{{ parameters.showHidden }}",
+          "syncToken": "{{ parameters.syncToken }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ]
+      }
+    },
+    "UsersMeCalendarListCalendarId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/users/me/calendarList/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ]
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/users/me/calendarList/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "accessRole": {
+              "type": "string"
+            },
+            "backgroundColor": {
+              "type": "string"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "defaultReminders": {
+              "type": "embedded",
+              "fields": {
+                "method": {
+                  "type": "string"
+                },
+                "minutes": {
+                  "type": "integer"
+                }
+              },
+              "many": true
+            },
+            "deleted": {
+              "type": "boolean"
+            },
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "foregroundColor": {
+              "type": "string"
+            },
+            "hidden": {
+              "type": "boolean"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "notificationSettings": {
+              "type": "embedded",
+              "fields": {
+                "notifications": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                }
+              }
+            },
+            "primary": {
+              "type": "boolean"
+            },
+            "selected": {
+              "type": "boolean"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "summaryOverride": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/users/me/calendarList/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "colorRgbFormat": "{{ parameters.colorRgbFormat }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "accessRole": {
+              "type": "string"
+            },
+            "backgroundColor": {
+              "type": "string"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "defaultReminders": {
+              "type": "embedded",
+              "fields": {
+                "method": {
+                  "type": "string"
+                },
+                "minutes": {
+                  "type": "integer"
+                }
+              },
+              "many": true
+            },
+            "deleted": {
+              "type": "boolean"
+            },
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "foregroundColor": {
+              "type": "string"
+            },
+            "hidden": {
+              "type": "boolean"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "notificationSettings": {
+              "type": "embedded",
+              "fields": {
+                "notifications": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                }
+              }
+            },
+            "primary": {
+              "type": "boolean"
+            },
+            "selected": {
+              "type": "boolean"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "summaryOverride": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/users/me/calendarList/{{ parameters.calendarId }}"
+        },
+        "parameters": {
+          "colorRgbFormat": "{{ parameters.colorRgbFormat }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "accessRole": {
+              "type": "string"
+            },
+            "backgroundColor": {
+              "type": "string"
+            },
+            "colorId": {
+              "type": "string"
+            },
+            "defaultReminders": {
+              "type": "embedded",
+              "fields": {
+                "method": {
+                  "type": "string"
+                },
+                "minutes": {
+                  "type": "integer"
+                }
+              },
+              "many": true
+            },
+            "deleted": {
+              "type": "boolean"
+            },
+            "description": {
+              "type": "string"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "foregroundColor": {
+              "type": "string"
+            },
+            "hidden": {
+              "type": "boolean"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "notificationSettings": {
+              "type": "embedded",
+              "fields": {
+                "notifications": {
+                  "type": "embedded",
+                  "fields": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                }
+              }
+            },
+            "primary": {
+              "type": "boolean"
+            },
+            "selected": {
+              "type": "boolean"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "summaryOverride": {
+              "type": "string"
+            },
+            "timeZone": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "UsersMeSettings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/users/me/settings"
+        },
+        "parameters": {
+          "maxResults": "{{ parameters.maxResults }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "syncToken": "{{ parameters.syncToken }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "etag": {
+              "type": "string"
+            },
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "etag": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "kind": {
+              "type": "string"
+            },
+            "nextPageToken": {
+              "type": "string"
+            },
+            "nextSyncToken": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "UsersMeSettingsWatch": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/users/me/settings/watch"
+        },
+        "parameters": {
+          "maxResults": "{{ parameters.maxResults }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "syncToken": "{{ parameters.syncToken }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ]
+      }
+    },
+    "UsersMeSettingsSetting": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/users/me/settings/{{ parameters.setting }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.eventbrite.com/auth/calendar.readonly"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,5 +1,174 @@
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "name": "del.icio.us API",
+  "url": "https://www.del.icio.usapis.com/API/v3",
+
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://del.icio.us.com",
+    "authorization_url": "https://accounts.del.icio.us.com/o/oauth2/auth?access_type=offline&approval_prompt=force",
+
+    "access_token": "https://accounts.del.icio.us.com/o/oauth2/token",
+
+    "signature": "parameter",
+
+    "auth_key": "*** INSERT YOUR AUTH KEY HERE ***",
+    "auth_secret": "*** INSERT YOUR AUTH SECRET HERE ***"
+  },
+
+  "endpoints": {
+    "UsersUserIdBlogs": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userId }}/blogs"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "BlogsBlogId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ parameters.blogId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "BlogsBlogIdPostsPostIdComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ parameters.blogId }}/posts/{{ parameters.postId }}/comments"
+        },
+        "parameters": {
+          "fetchBodies": {
+            "value": "{{ parameters.fetchBodies }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "startDate": {
+            "value": "{{ parameters.startDate }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "BlogsBlogIdPostsPostIdCommentsCommentId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ parameters.blogId }}/posts/{{ parameters.postId }}/comments/{{ parameters.commentId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "BlogsBlogIdPages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ parameters.blogId }}/pages"
+        },
+        "parameters": {
+          "fetchBodies": {
+            "value": "{{ parameters.fetchBodies }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "BlogsBlogIdPagesPageId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ parameters.blogId }}/pages/{{ parameters.pageId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "BlogsBlogIdPosts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ parameters.blogId }}/posts"
+        },
+        "parameters": {
+          "fetchBodies": {
+            "value": "{{ parameters.fetchBodies }}"
+          },
+          "maxResults": {
+            "value": "{{ parameters.maxResults }}"
+          },
+          "pageToken": {
+            "value": "{{ parameters.pageToken }}"
+          },
+          "startDate": {
+            "value": "{{ parameters.startDate }}"
+          },
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "BlogsBlogIdPostsPostId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/blogs/{{ parameters.blogId }}/posts/{{ parameters.postId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    },
+    "UsersUserId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/users/{{ parameters.userId }}"
+        },
+        "parameters": {
+          "fields": {
+            "value": "{{ parameters.fields }}"
+          }
+        }
+      }
+    }
+  }
 }

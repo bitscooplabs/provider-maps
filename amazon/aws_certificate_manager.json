@@ -1,0 +1,377 @@
+{
+  "version": "1.0",
+  "url": "http://acm.amazonaws.com/",
+  "name": "AWS Certificate Manager",
+  "headers": {
+    "Authorization": "*** INSERT API KEY ***"
+  },
+  "description": "<fullname>AWS Certificate Manager</fullname> <p>Welcome to the AWS Certificate Manager (ACM) API documentation.</p> <p>You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For general information about using ACM, see the <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/\"> <i>AWS Certificate Manager User Guide</i> </a>.</p>",
+  "endpoints": {
+    "Root": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "DeleteCertificate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/#DeleteCertificate"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "DescribeCertificate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/#DescribeCertificate"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "Certificate": {
+              "type": "embedded",
+              "fields": {
+                "CertificateArn": {
+                  "type": "string"
+                },
+                "CreatedAt": {
+                  "type": "string"
+                },
+                "DomainName": {
+                  "type": "string"
+                },
+                "DomainValidationOptions": {
+                  "type": "embedded",
+                  "fields": {
+                    "DomainName": {
+                      "type": "base"
+                    },
+                    "ValidationDomain": {
+                      "type": "base"
+                    },
+                    "ValidationEmails": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "ValidationStatus": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "FailureReason": {
+                  "type": "string"
+                },
+                "ImportedAt": {
+                  "type": "base"
+                },
+                "InUseBy": {
+                  "type": "base",
+                  "many": true
+                },
+                "IssuedAt": {
+                  "type": "base"
+                },
+                "Issuer": {
+                  "type": "base"
+                },
+                "KeyAlgorithm": {
+                  "type": "string"
+                },
+                "NotAfter": {
+                  "type": "base"
+                },
+                "NotBefore": {
+                  "type": "base"
+                },
+                "RenewalSummary": {
+                  "type": "embedded",
+                  "fields": {
+                    "DomainValidationOptions": {
+                      "type": "base"
+                    },
+                    "RenewalStatus": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "RevocationReason": {
+                  "type": "string"
+                },
+                "RevokedAt": {
+                  "type": "base"
+                },
+                "Serial": {
+                  "type": "base"
+                },
+                "SignatureAlgorithm": {
+                  "type": "base"
+                },
+                "Status": {
+                  "type": "string"
+                },
+                "Subject": {
+                  "type": "base"
+                },
+                "SubjectAlternativeNames": {
+                  "type": "base",
+                  "many": true
+                },
+                "Type": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "GetCertificate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/#GetCertificate"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "Certificate": {
+              "type": "string"
+            },
+            "CertificateChain": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ImportCertificate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/#ImportCertificate"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "CertificateArn": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ListCertificates": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/#ListCertificates"
+        },
+        "parameters": {
+          "MaxItems": "{{ parameters.MaxItems }}",
+          "NextToken": "{{ parameters.NextToken }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "CertificateSummaryList": {
+              "type": "embedded",
+              "fields": {
+                "CertificateArn": {
+                  "type": "string"
+                },
+                "DomainName": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "NextToken": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ListTagsForCertificate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/#ListTagsForCertificate"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "Tags": {
+              "type": "embedded",
+              "fields": {
+                "Key": {
+                  "type": "string"
+                },
+                "Value": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "RemoveTagsFromCertificate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/#RemoveTagsFromCertificate"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "RequestCertificate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/#RequestCertificate"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "CertificateArn": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ResendValidationEmail": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/#ResendValidationEmail"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    }
+  }
+}

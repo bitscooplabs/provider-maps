@@ -1,0 +1,2591 @@
+{
+  "version": "1.0",
+  "url": "http://apigateway.amazonaws.com/",
+  "name": "Amazon API Gateway",
+  "headers": {
+    "Authorization": "*** INSERT API KEY ***"
+  },
+  "description": "<fullname>Amazon API Gateway</fullname> <p>Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.</p>",
+  "endpoints": {
+    "Account": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/account"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "apiKeyVersion": {
+              "type": "string"
+            },
+            "cloudwatchRoleArn": {
+              "type": "base"
+            },
+            "features": {
+              "type": "base",
+              "many": true
+            },
+            "throttleSettings": {
+              "type": "embedded",
+              "fields": {
+                "burstLimit": {
+                  "type": "integer"
+                },
+                "rateLimit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Apikeys": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/apikeys"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "createdDate": {
+                  "type": "string"
+                },
+                "customerId": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "base"
+                },
+                "enabled": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "type": "base"
+                },
+                "lastUpdatedDate": {
+                  "type": "base"
+                },
+                "name": {
+                  "type": "base"
+                },
+                "stageKeys": {
+                  "type": "base",
+                  "many": true
+                },
+                "value": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            },
+            "warnings": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "ApikeysApiKey": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/apikeys/{{ parameters.api_Key }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "createdDate": {
+              "type": "string"
+            },
+            "customerId": {
+              "type": "string"
+            },
+            "description": {
+              "type": "base"
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "id": {
+              "type": "base"
+            },
+            "lastUpdatedDate": {
+              "type": "base"
+            },
+            "name": {
+              "type": "base"
+            },
+            "stageKeys": {
+              "type": "base",
+              "many": true
+            },
+            "value": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "Apikeysmodeimport": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/apikeys?mode=import"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "Clientcertificates": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/clientcertificates"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "clientCertificateId": {
+                  "type": "string"
+                },
+                "createdDate": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "base"
+                },
+                "expirationDate": {
+                  "type": "base"
+                },
+                "pemEncodedCertificate": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "ClientcertificatesClientcertificateId": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/clientcertificates/{{ parameters.clientcertificate_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "clientCertificateId": {
+              "type": "string"
+            },
+            "createdDate": {
+              "type": "string"
+            },
+            "description": {
+              "type": "base"
+            },
+            "expirationDate": {
+              "type": "base"
+            },
+            "pemEncodedCertificate": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "Domainnames": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/domainnames"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "certificateArn": {
+                  "type": "string"
+                },
+                "certificateName": {
+                  "type": "base"
+                },
+                "certificateUploadDate": {
+                  "type": "string"
+                },
+                "distributionDomainName": {
+                  "type": "base"
+                },
+                "domainName": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "DomainnamesDomainName": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/domainnames/{{ parameters.domain_name }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "certificateArn": {
+              "type": "string"
+            },
+            "certificateName": {
+              "type": "base"
+            },
+            "certificateUploadDate": {
+              "type": "string"
+            },
+            "distributionDomainName": {
+              "type": "base"
+            },
+            "domainName": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "DomainnamesDomainNameBasepathmappings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/domainnames/{{ parameters.domain_name }}/basepathmappings"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "basePath": {
+                  "type": "string"
+                },
+                "restApiId": {
+                  "type": "base"
+                },
+                "stage": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "DomainnamesDomainNameBasepathmappingsBasePath": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/domainnames/{{ parameters.domain_name }}/basepathmappings/{{ parameters.base_path }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "basePath": {
+              "type": "string"
+            },
+            "restApiId": {
+              "type": "base"
+            },
+            "stage": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "Restapis": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "binaryMediaTypes": {
+                  "type": "string",
+                  "many": true
+                },
+                "createdDate": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "base"
+                },
+                "id": {
+                  "type": "base"
+                },
+                "name": {
+                  "type": "base"
+                },
+                "version": {
+                  "type": "base"
+                },
+                "warnings": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiId": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "binaryMediaTypes": {
+              "type": "string",
+              "many": true
+            },
+            "createdDate": {
+              "type": "string"
+            },
+            "description": {
+              "type": "base"
+            },
+            "id": {
+              "type": "base"
+            },
+            "name": {
+              "type": "base"
+            },
+            "version": {
+              "type": "base"
+            },
+            "warnings": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdAuthorizers": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/authorizers"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "authType": {
+                  "type": "string"
+                },
+                "authorizerCredentials": {
+                  "type": "base"
+                },
+                "authorizerResultTtlInSeconds": {
+                  "type": "integer"
+                },
+                "authorizerUri": {
+                  "type": "base"
+                },
+                "id": {
+                  "type": "base"
+                },
+                "identitySource": {
+                  "type": "base"
+                },
+                "identityValidationExpression": {
+                  "type": "base"
+                },
+                "name": {
+                  "type": "base"
+                },
+                "providerARNs": {
+                  "type": "string",
+                  "many": true
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdAuthorizersAuthorizerId": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/authorizers/{{ parameters.authorizer_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "RestapisRestapiIdDeployments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/deployments"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "apiSummary": {
+                  "type": "embedded",
+                  "fields": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "embedded",
+                      "fields": {
+                        "key": {
+                          "type": "base"
+                        },
+                        "value": {
+                          "type": "embedded",
+                          "fields": {
+                            "apiKeyRequired": {
+                              "type": "boolean"
+                            },
+                            "authorizationType": {
+                              "type": "base"
+                            }
+                          }
+                        }
+                      },
+                      "many": true
+                    }
+                  },
+                  "many": true
+                },
+                "createdDate": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "base"
+                },
+                "id": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdDeploymentsDeploymentId": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/deployments/{{ parameters.deployment_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "apiSummary": {
+              "type": "embedded",
+              "fields": {
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "embedded",
+                  "fields": {
+                    "key": {
+                      "type": "base"
+                    },
+                    "value": {
+                      "type": "embedded",
+                      "fields": {
+                        "apiKeyRequired": {
+                          "type": "boolean"
+                        },
+                        "authorizationType": {
+                          "type": "base"
+                        }
+                      }
+                    }
+                  },
+                  "many": true
+                }
+              },
+              "many": true
+            },
+            "createdDate": {
+              "type": "string"
+            },
+            "description": {
+              "type": "base"
+            },
+            "id": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdDocumentationParts": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/documentation/parts"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "ids": {
+              "type": "string",
+              "many": true
+            },
+            "warnings": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdDocumentationPartsPartId": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/documentation/parts/{{ parameters.part_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "id": {
+              "type": "string"
+            },
+            "location": {
+              "type": "embedded",
+              "fields": {
+                "method": {
+                  "type": "base"
+                },
+                "name": {
+                  "type": "base"
+                },
+                "path": {
+                  "type": "base"
+                },
+                "statusCode": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "properties": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdDocumentationVersions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/documentation/versions"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "createdDate": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdDocumentationVersionsDocVersion": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/documentation/versions/{{ parameters.doc_version }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "createdDate": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "version": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdModels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/models"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "contentType": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "base"
+                },
+                "id": {
+                  "type": "base"
+                },
+                "name": {
+                  "type": "base"
+                },
+                "schema": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdModelsModelName": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/models/{{ parameters.model_name }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "contentType": {
+              "type": "string"
+            },
+            "description": {
+              "type": "base"
+            },
+            "id": {
+              "type": "base"
+            },
+            "name": {
+              "type": "base"
+            },
+            "schema": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdModelsModelNameDefaultTemplate": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/models/{{ parameters.model_name }}/default_template"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdRequestvalidators": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/requestvalidators"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "base"
+                },
+                "validateRequestBody": {
+                  "type": "boolean"
+                },
+                "validateRequestParameters": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdRequestvalidatorsRequestvalidatorId": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/requestvalidators/{{ parameters.requestvalidator_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "base"
+            },
+            "validateRequestBody": {
+              "type": "boolean"
+            },
+            "validateRequestParameters": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdResources": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/resources"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "id": {
+                  "type": "string"
+                },
+                "parentId": {
+                  "type": "base"
+                },
+                "path": {
+                  "type": "base"
+                },
+                "pathPart": {
+                  "type": "base"
+                },
+                "resourceMethods": {
+                  "type": "embedded",
+                  "fields": {
+                    "key": {
+                      "type": "base"
+                    },
+                    "value": {
+                      "type": "embedded",
+                      "fields": {
+                        "apiKeyRequired": {
+                          "type": "boolean"
+                        },
+                        "authorizationType": {
+                          "type": "base"
+                        },
+                        "authorizerId": {
+                          "type": "base"
+                        },
+                        "httpMethod": {
+                          "type": "base"
+                        },
+                        "methodIntegration": {
+                          "type": "embedded",
+                          "fields": {
+                            "cacheKeyParameters": {
+                              "type": "base",
+                              "many": true
+                            },
+                            "cacheNamespace": {
+                              "type": "base"
+                            },
+                            "contentHandling": {
+                              "type": "string"
+                            },
+                            "credentials": {
+                              "type": "base"
+                            },
+                            "httpMethod": {
+                              "type": "base"
+                            },
+                            "integrationResponses": {
+                              "type": "embedded",
+                              "fields": {
+                                "key": {
+                                  "type": "base"
+                                },
+                                "value": {
+                                  "type": "embedded",
+                                  "fields": {
+                                    "contentHandling": {
+                                      "type": "base"
+                                    },
+                                    "responseParameters": {
+                                      "type": "embedded",
+                                      "fields": {
+                                        "key": {
+                                          "type": "base"
+                                        },
+                                        "value": {
+                                          "type": "base"
+                                        }
+                                      },
+                                      "many": true
+                                    },
+                                    "responseTemplates": {
+                                      "type": "base"
+                                    },
+                                    "selectionPattern": {
+                                      "type": "base"
+                                    },
+                                    "statusCode": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              },
+                              "many": true
+                            },
+                            "passthroughBehavior": {
+                              "type": "base"
+                            },
+                            "requestParameters": {
+                              "type": "base"
+                            },
+                            "requestTemplates": {
+                              "type": "base"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "uri": {
+                              "type": "base"
+                            }
+                          }
+                        },
+                        "methodResponses": {
+                          "type": "embedded",
+                          "fields": {
+                            "key": {
+                              "type": "base"
+                            },
+                            "value": {
+                              "type": "embedded",
+                              "fields": {
+                                "responseModels": {
+                                  "type": "base"
+                                },
+                                "responseParameters": {
+                                  "type": "embedded",
+                                  "fields": {
+                                    "key": {
+                                      "type": "base"
+                                    },
+                                    "value": {
+                                      "type": "base"
+                                    }
+                                  },
+                                  "many": true
+                                },
+                                "statusCode": {
+                                  "type": "base"
+                                }
+                              }
+                            }
+                          },
+                          "many": true
+                        },
+                        "operationName": {
+                          "type": "base"
+                        },
+                        "requestModels": {
+                          "type": "base"
+                        },
+                        "requestParameters": {
+                          "type": "base"
+                        },
+                        "requestValidatorId": {
+                          "type": "base"
+                        }
+                      }
+                    }
+                  },
+                  "many": true
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdResourcesParentId": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/resources/{{ parameters.parent_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "RestapisRestapiIdResourcesResourceId": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/resources/{{ parameters.resource_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "id": {
+              "type": "string"
+            },
+            "parentId": {
+              "type": "base"
+            },
+            "path": {
+              "type": "base"
+            },
+            "pathPart": {
+              "type": "base"
+            },
+            "resourceMethods": {
+              "type": "embedded",
+              "fields": {
+                "key": {
+                  "type": "base"
+                },
+                "value": {
+                  "type": "embedded",
+                  "fields": {
+                    "apiKeyRequired": {
+                      "type": "boolean"
+                    },
+                    "authorizationType": {
+                      "type": "base"
+                    },
+                    "authorizerId": {
+                      "type": "base"
+                    },
+                    "httpMethod": {
+                      "type": "base"
+                    },
+                    "methodIntegration": {
+                      "type": "embedded",
+                      "fields": {
+                        "cacheKeyParameters": {
+                          "type": "base",
+                          "many": true
+                        },
+                        "cacheNamespace": {
+                          "type": "base"
+                        },
+                        "contentHandling": {
+                          "type": "string"
+                        },
+                        "credentials": {
+                          "type": "base"
+                        },
+                        "httpMethod": {
+                          "type": "base"
+                        },
+                        "integrationResponses": {
+                          "type": "embedded",
+                          "fields": {
+                            "key": {
+                              "type": "base"
+                            },
+                            "value": {
+                              "type": "embedded",
+                              "fields": {
+                                "contentHandling": {
+                                  "type": "base"
+                                },
+                                "responseParameters": {
+                                  "type": "embedded",
+                                  "fields": {
+                                    "key": {
+                                      "type": "base"
+                                    },
+                                    "value": {
+                                      "type": "base"
+                                    }
+                                  },
+                                  "many": true
+                                },
+                                "responseTemplates": {
+                                  "type": "base"
+                                },
+                                "selectionPattern": {
+                                  "type": "base"
+                                },
+                                "statusCode": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "many": true
+                        },
+                        "passthroughBehavior": {
+                          "type": "base"
+                        },
+                        "requestParameters": {
+                          "type": "base"
+                        },
+                        "requestTemplates": {
+                          "type": "base"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "uri": {
+                          "type": "base"
+                        }
+                      }
+                    },
+                    "methodResponses": {
+                      "type": "embedded",
+                      "fields": {
+                        "key": {
+                          "type": "base"
+                        },
+                        "value": {
+                          "type": "embedded",
+                          "fields": {
+                            "responseModels": {
+                              "type": "base"
+                            },
+                            "responseParameters": {
+                              "type": "embedded",
+                              "fields": {
+                                "key": {
+                                  "type": "base"
+                                },
+                                "value": {
+                                  "type": "base"
+                                }
+                              },
+                              "many": true
+                            },
+                            "statusCode": {
+                              "type": "base"
+                            }
+                          }
+                        }
+                      },
+                      "many": true
+                    },
+                    "operationName": {
+                      "type": "base"
+                    },
+                    "requestModels": {
+                      "type": "base"
+                    },
+                    "requestParameters": {
+                      "type": "base"
+                    },
+                    "requestValidatorId": {
+                      "type": "base"
+                    }
+                  }
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdResourcesResourceIdMethodsHttpMethod": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/resources/{{ parameters.resource_id }}/methods/{{ parameters.http_method }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "apiKeyRequired": {
+              "type": "boolean"
+            },
+            "authorizationType": {
+              "type": "string"
+            },
+            "authorizerId": {
+              "type": "base"
+            },
+            "httpMethod": {
+              "type": "base"
+            },
+            "methodIntegration": {
+              "type": "embedded",
+              "fields": {
+                "cacheKeyParameters": {
+                  "type": "base",
+                  "many": true
+                },
+                "cacheNamespace": {
+                  "type": "base"
+                },
+                "contentHandling": {
+                  "type": "string"
+                },
+                "credentials": {
+                  "type": "base"
+                },
+                "httpMethod": {
+                  "type": "base"
+                },
+                "integrationResponses": {
+                  "type": "embedded",
+                  "fields": {
+                    "key": {
+                      "type": "base"
+                    },
+                    "value": {
+                      "type": "embedded",
+                      "fields": {
+                        "contentHandling": {
+                          "type": "base"
+                        },
+                        "responseParameters": {
+                          "type": "embedded",
+                          "fields": {
+                            "key": {
+                              "type": "base"
+                            },
+                            "value": {
+                              "type": "base"
+                            }
+                          },
+                          "many": true
+                        },
+                        "responseTemplates": {
+                          "type": "base"
+                        },
+                        "selectionPattern": {
+                          "type": "base"
+                        },
+                        "statusCode": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "many": true
+                },
+                "passthroughBehavior": {
+                  "type": "base"
+                },
+                "requestParameters": {
+                  "type": "base"
+                },
+                "requestTemplates": {
+                  "type": "base"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "base"
+                }
+              }
+            },
+            "methodResponses": {
+              "type": "embedded",
+              "fields": {
+                "key": {
+                  "type": "base"
+                },
+                "value": {
+                  "type": "embedded",
+                  "fields": {
+                    "responseModels": {
+                      "type": "base"
+                    },
+                    "responseParameters": {
+                      "type": "embedded",
+                      "fields": {
+                        "key": {
+                          "type": "base"
+                        },
+                        "value": {
+                          "type": "base"
+                        }
+                      },
+                      "many": true
+                    },
+                    "statusCode": {
+                      "type": "base"
+                    }
+                  }
+                }
+              },
+              "many": true
+            },
+            "operationName": {
+              "type": "base"
+            },
+            "requestModels": {
+              "type": "base"
+            },
+            "requestParameters": {
+              "type": "base"
+            },
+            "requestValidatorId": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdResourcesResourceIdMethodsHttpMethodIntegration": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/resources/{{ parameters.resource_id }}/methods/{{ parameters.http_method }}/integration"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "RestapisRestapiIdResourcesResourceIdMethodsHttpMethodIntegrationResponsesStatusCode": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/resources/{{ parameters.resource_id }}/methods/{{ parameters.http_method }}/integration/responses/{{ parameters.status_code }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "contentHandling": {
+              "type": "string"
+            },
+            "responseParameters": {
+              "type": "embedded",
+              "fields": {
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "responseTemplates": {
+              "type": "base"
+            },
+            "selectionPattern": {
+              "type": "base"
+            },
+            "statusCode": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdResourcesResourceIdMethodsHttpMethodResponsesStatusCode": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/resources/{{ parameters.resource_id }}/methods/{{ parameters.http_method }}/responses/{{ parameters.status_code }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "RestapisRestapiIdStages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/stages"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "item": {
+              "type": "embedded",
+              "fields": {
+                "cacheClusterEnabled": {
+                  "type": "boolean"
+                },
+                "cacheClusterSize": {
+                  "type": "string"
+                },
+                "cacheClusterStatus": {
+                  "type": "string"
+                },
+                "clientCertificateId": {
+                  "type": "string"
+                },
+                "createdDate": {
+                  "type": "string"
+                },
+                "deploymentId": {
+                  "type": "base"
+                },
+                "description": {
+                  "type": "base"
+                },
+                "documentationVersion": {
+                  "type": "base"
+                },
+                "lastUpdatedDate": {
+                  "type": "base"
+                },
+                "methodSettings": {
+                  "type": "embedded",
+                  "fields": {
+                    "key": {
+                      "type": "base"
+                    },
+                    "value": {
+                      "type": "embedded",
+                      "fields": {
+                        "cacheDataEncrypted": {
+                          "type": "base"
+                        },
+                        "cacheTtlInSeconds": {
+                          "type": "integer"
+                        },
+                        "cachingEnabled": {
+                          "type": "base"
+                        },
+                        "dataTraceEnabled": {
+                          "type": "base"
+                        },
+                        "loggingLevel": {
+                          "type": "base"
+                        },
+                        "metricsEnabled": {
+                          "type": "base"
+                        },
+                        "requireAuthorizationForCacheControl": {
+                          "type": "base"
+                        },
+                        "throttlingBurstLimit": {
+                          "type": "base"
+                        },
+                        "throttlingRateLimit": {
+                          "type": "number"
+                        },
+                        "unauthorizedCacheControlHeaderStrategy": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "many": true
+                },
+                "stageName": {
+                  "type": "base"
+                },
+                "variables": {
+                  "type": "embedded",
+                  "fields": {
+                    "key": {
+                      "type": "base"
+                    },
+                    "value": {
+                      "type": "base"
+                    }
+                  },
+                  "many": true
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdStagesStageName": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/stages/{{ parameters.stage_name }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "cacheClusterEnabled": {
+              "type": "boolean"
+            },
+            "cacheClusterSize": {
+              "type": "string"
+            },
+            "cacheClusterStatus": {
+              "type": "string"
+            },
+            "clientCertificateId": {
+              "type": "string"
+            },
+            "createdDate": {
+              "type": "string"
+            },
+            "deploymentId": {
+              "type": "base"
+            },
+            "description": {
+              "type": "base"
+            },
+            "documentationVersion": {
+              "type": "base"
+            },
+            "lastUpdatedDate": {
+              "type": "base"
+            },
+            "methodSettings": {
+              "type": "embedded",
+              "fields": {
+                "key": {
+                  "type": "base"
+                },
+                "value": {
+                  "type": "embedded",
+                  "fields": {
+                    "cacheDataEncrypted": {
+                      "type": "base"
+                    },
+                    "cacheTtlInSeconds": {
+                      "type": "integer"
+                    },
+                    "cachingEnabled": {
+                      "type": "base"
+                    },
+                    "dataTraceEnabled": {
+                      "type": "base"
+                    },
+                    "loggingLevel": {
+                      "type": "base"
+                    },
+                    "metricsEnabled": {
+                      "type": "base"
+                    },
+                    "requireAuthorizationForCacheControl": {
+                      "type": "base"
+                    },
+                    "throttlingBurstLimit": {
+                      "type": "base"
+                    },
+                    "throttlingRateLimit": {
+                      "type": "number"
+                    },
+                    "unauthorizedCacheControlHeaderStrategy": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "many": true
+            },
+            "stageName": {
+              "type": "base"
+            },
+            "variables": {
+              "type": "embedded",
+              "fields": {
+                "key": {
+                  "type": "base"
+                },
+                "value": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdStagesStageNameCacheAuthorizers": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/stages/{{ parameters.stage_name }}/cache/authorizers"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "RestapisRestapiIdStagesStageNameCacheData": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/stages/{{ parameters.stage_name }}/cache/data"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "RestapisRestapiIdStagesStageNameExportsExportType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/stages/{{ parameters.stage_name }}/exports/{{ parameters.export_type }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "body": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "RestapisRestapiIdStagesStageNameSdksSdkType": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/restapis/{{ parameters.restapi_id }}/stages/{{ parameters.stage_name }}/sdks/{{ parameters.sdk_type }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "body": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Restapismodeimport": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/restapis?mode=import"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "Sdktypes": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/sdktypes"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "configurationProperties": {
+                  "type": "embedded",
+                  "fields": {
+                    "defaultValue": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "base"
+                    },
+                    "friendlyName": {
+                      "type": "base"
+                    },
+                    "name": {
+                      "type": "base"
+                    },
+                    "required": {
+                      "type": "boolean"
+                    }
+                  },
+                  "many": true
+                },
+                "description": {
+                  "type": "base"
+                },
+                "friendlyName": {
+                  "type": "base"
+                },
+                "id": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "SdktypesSdktypeId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/sdktypes/{{ parameters.sdktype_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "configurationProperties": {
+              "type": "embedded",
+              "fields": {
+                "defaultValue": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "base"
+                },
+                "friendlyName": {
+                  "type": "base"
+                },
+                "name": {
+                  "type": "base"
+                },
+                "required": {
+                  "type": "boolean"
+                }
+              },
+              "many": true
+            },
+            "description": {
+              "type": "base"
+            },
+            "friendlyName": {
+              "type": "base"
+            },
+            "id": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "Usageplans": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/usageplans"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "apiStages": {
+                  "type": "embedded",
+                  "fields": {
+                    "apiId": {
+                      "type": "string"
+                    },
+                    "stage": {
+                      "type": "base"
+                    }
+                  },
+                  "many": true
+                },
+                "description": {
+                  "type": "base"
+                },
+                "id": {
+                  "type": "base"
+                },
+                "name": {
+                  "type": "base"
+                },
+                "productCode": {
+                  "type": "base"
+                },
+                "quota": {
+                  "type": "embedded",
+                  "fields": {
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "offset": {
+                      "type": "base"
+                    },
+                    "period": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "throttle": {
+                  "type": "embedded",
+                  "fields": {
+                    "burstLimit": {
+                      "type": "base"
+                    },
+                    "rateLimit": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "UsageplansUsageplanId": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/usageplans/{{ parameters.usageplanId }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "apiStages": {
+              "type": "embedded",
+              "fields": {
+                "apiId": {
+                  "type": "string"
+                },
+                "stage": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "description": {
+              "type": "base"
+            },
+            "id": {
+              "type": "base"
+            },
+            "name": {
+              "type": "base"
+            },
+            "productCode": {
+              "type": "base"
+            },
+            "quota": {
+              "type": "embedded",
+              "fields": {
+                "limit": {
+                  "type": "integer"
+                },
+                "offset": {
+                  "type": "base"
+                },
+                "period": {
+                  "type": "string"
+                }
+              }
+            },
+            "throttle": {
+              "type": "embedded",
+              "fields": {
+                "burstLimit": {
+                  "type": "base"
+                },
+                "rateLimit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "UsageplansUsageplanIdKeys": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/usageplans/{{ parameters.usageplanId }}/keys"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "base"
+                },
+                "type": {
+                  "type": "base"
+                },
+                "value": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "UsageplansUsageplanIdKeysKeyId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/usageplans/{{ parameters.usageplanId }}/keys/{{ parameters.keyId }}"
+        },
+        "parameters": {
+          "keyId": "{{ parameters.keyId }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "UsageplansUsageplanIdKeysKeyIdUsage": {
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/usageplans/{{ parameters.usageplanId }}/keys/{{ parameters.keyId }}/usage"
+        },
+        "parameters": {
+          "keyId": "{{ parameters.keyId }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "endDate": {
+              "type": "string"
+            },
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "key": {
+                  "type": "base"
+                },
+                "value": {
+                  "type": "integer",
+                  "many": true
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            },
+            "startDate": {
+              "type": "base"
+            },
+            "usagePlanId": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "UsageplansUsageplanIdUsage": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/usageplans/{{ parameters.usageplanId }}/usage"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "position": "{{ parameters.position }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "endDate": {
+              "type": "string"
+            },
+            "items": {
+              "type": "embedded",
+              "fields": {
+                "key": {
+                  "type": "base"
+                },
+                "value": {
+                  "type": "integer",
+                  "many": true
+                }
+              },
+              "many": true
+            },
+            "position": {
+              "type": "base"
+            },
+            "startDate": {
+              "type": "base"
+            },
+            "usagePlanId": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    }
+  }
+}

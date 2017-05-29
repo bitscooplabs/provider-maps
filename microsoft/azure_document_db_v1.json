@@ -1,24 +1,24 @@
 {
   "version": "1.0",
-  "url": "https://management.factual.com",
+  "url": "https://management.azure.com",
   "name": "DocumentDB",
-  "description": "Factual API",
+  "description": "Azure DocumentDB Database Service Resource Provider REST API",
   "endpoints": {
-    "ProvidersAPIDatabaseAccountNamesAccountName": {
+    "ProvidersMicrosoftDatabaseAccountNamesAccountName": {
       "HEAD": {
         "method": "HEAD",
         "route": {
-          "path": "/providers/API.DocumentDB/databaseAccountNames/{{ parameters.accountName }}"
+          "path": "/providers/Microsoft.DocumentDB/databaseAccountNames/{{ parameters.accountName }}"
         },
         "parameters": {},
         "headers": {}
       }
     },
-    "SubscriptionsSubscriptionIdProvidersAPIDatabaseAccounts": {
+    "SubscriptionsSubscriptionIdProvidersMicrosoftDatabaseAccounts": {
       "GET": {
         "method": "GET",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/providers/API.DocumentDB/databaseAccounts"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/providers/Microsoft.DocumentDB/databaseAccounts"
         },
         "parameters": {},
         "headers": {},
@@ -111,11 +111,11 @@
         }
       }
     },
-    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersAPIDatabaseAccounts": {
+    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersMicrosoftDatabaseAccounts": {
       "GET": {
         "method": "GET",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts"
         },
         "parameters": {},
         "headers": {},
@@ -208,11 +208,11 @@
         }
       }
     },
-    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersAPIDatabaseAccountsAccountName": {
+    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersMicrosoftDatabaseAccountsAccountName": {
       "DELETE": {
         "method": "DELETE",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts/{{ parameters.accountName }}"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts/{{ parameters.accountName }}"
         },
         "parameters": {},
         "headers": {}
@@ -220,7 +220,7 @@
       "GET": {
         "method": "GET",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts/{{ parameters.accountName }}"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts/{{ parameters.accountName }}"
         },
         "parameters": {},
         "headers": {},
@@ -309,7 +309,7 @@
       "PATCH": {
         "method": "PATCH",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts/{{ parameters.accountName }}"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts/{{ parameters.accountName }}"
         },
         "parameters": {},
         "headers": {},
@@ -398,7 +398,7 @@
       "PUT": {
         "method": "PUT",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts/{{ parameters.accountName }}"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts/{{ parameters.accountName }}"
         },
         "parameters": {},
         "headers": {},
@@ -485,21 +485,21 @@
         }
       }
     },
-    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersAPIDatabaseAccountsAccountNameFailoverPriorityChange": {
+    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersMicrosoftDatabaseAccountsAccountNameFailoverPriorityChange": {
       "POST": {
         "method": "POST",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts/{{ parameters.accountName }}/failoverPriorityChange"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts/{{ parameters.accountName }}/failoverPriorityChange"
         },
         "parameters": {},
         "headers": {}
       }
     },
-    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersAPIDatabaseAccountsAccountNameListConnectionStrings": {
+    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersMicrosoftDatabaseAccountsAccountNameListConnectionStrings": {
       "POST": {
         "method": "POST",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts/{{ parameters.accountName }}/listConnectionStrings"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts/{{ parameters.accountName }}/listConnectionStrings"
         },
         "parameters": {},
         "headers": {},
@@ -522,11 +522,11 @@
         }
       }
     },
-    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersAPIDatabaseAccountsAccountNameListKeys": {
+    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersMicrosoftDatabaseAccountsAccountNameListKeys": {
       "POST": {
         "method": "POST",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts/{{ parameters.accountName }}/listKeys"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts/{{ parameters.accountName }}/listKeys"
         },
         "parameters": {},
         "headers": {},
@@ -554,11 +554,11 @@
         }
       }
     },
-    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersAPIDatabaseAccountsAccountNameReadonlykeys": {
+    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersMicrosoftDatabaseAccountsAccountNameReadonlykeys": {
       "GET": {
         "method": "GET",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts/{{ parameters.accountName }}/readonlykeys"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts/{{ parameters.accountName }}/readonlykeys"
         },
         "parameters": {},
         "headers": {},
@@ -575,11 +575,11 @@
         }
       }
     },
-    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersAPIDatabaseAccountsAccountNameRegenerateKey": {
+    "SubscriptionsSubscriptionIdResourceGroupsResourceGroupNameProvidersMicrosoftDatabaseAccountsAccountNameRegenerateKey": {
       "POST": {
         "method": "POST",
         "route": {
-          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/API.DocumentDB/databaseAccounts/{{ parameters.accountName }}/regenerateKey"
+          "path": "/subscriptions/{{ parameters.subscriptionId }}/resourceGroups/{{ parameters.resourceGroupName }}/providers/Microsoft.DocumentDB/databaseAccounts/{{ parameters.accountName }}/regenerateKey"
         },
         "parameters": {},
         "headers": {}

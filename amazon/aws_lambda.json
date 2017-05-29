@@ -1,0 +1,938 @@
+{
+  "version": "1.0",
+  "url": "http://lambda.amazonaws.com/",
+  "name": "AWS Lambda",
+  "headers": {
+    "Authorization": "*** INSERT API KEY ***"
+  },
+  "description": "<fullname>AWS Lambda</fullname> <p> <b>Overview</b> </p> <p>This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides additional information. For the service overview, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/welcome.html\">What is AWS Lambda</a>, and for information about how the service works, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html\">AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>",
+  "endpoints": {
+    "20141113FunctionsFunctionNameInvokeAsync": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/2014-11-13/functions/{{ parameters.FunctionName }}/invoke-async/"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "20150331EventSourceMappings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/2015-03-31/event-source-mappings/"
+        },
+        "parameters": {
+          "MaxItems": "{{ parameters.MaxItems }}",
+          "Marker": "{{ parameters.Marker }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "EventSourceMappings": {
+              "type": "embedded",
+              "fields": {
+                "BatchSize": {
+                  "type": "integer"
+                },
+                "EventSourceArn": {
+                  "type": "string"
+                },
+                "FunctionArn": {
+                  "type": "string"
+                },
+                "LastModified": {
+                  "type": "string"
+                },
+                "LastProcessingResult": {
+                  "type": "string"
+                },
+                "State": {
+                  "type": "base"
+                },
+                "StateTransitionReason": {
+                  "type": "base"
+                },
+                "UUID": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "NextMarker": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "20150331EventSourceMappingsUUID": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/2015-03-31/event-source-mappings/{{ parameters.UUID }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "20150331Functions": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/2015-03-31/functions"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/2015-03-31/functions/"
+        },
+        "parameters": {
+          "MaxItems": "{{ parameters.MaxItems }}",
+          "Marker": "{{ parameters.Marker }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "Functions": {
+              "type": "embedded",
+              "fields": {
+                "CodeSha256": {
+                  "type": "string"
+                },
+                "CodeSize": {
+                  "type": "integer"
+                },
+                "DeadLetterConfig": {
+                  "type": "embedded",
+                  "fields": {
+                    "TargetArn": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "Description": {
+                  "type": "string"
+                },
+                "Environment": {
+                  "type": "embedded",
+                  "fields": {
+                    "Error": {
+                      "type": "embedded",
+                      "fields": {
+                        "ErrorCode": {
+                          "type": "base"
+                        },
+                        "Message": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "Variables": {
+                      "type": "embedded",
+                      "fields": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    }
+                  }
+                },
+                "FunctionArn": {
+                  "type": "string"
+                },
+                "FunctionName": {
+                  "type": "string"
+                },
+                "Handler": {
+                  "type": "string"
+                },
+                "KMSKeyArn": {
+                  "type": "string"
+                },
+                "LastModified": {
+                  "type": "string"
+                },
+                "MemorySize": {
+                  "type": "integer"
+                },
+                "Role": {
+                  "type": "string"
+                },
+                "Runtime": {
+                  "type": "string"
+                },
+                "Timeout": {
+                  "type": "integer"
+                },
+                "TracingConfig": {
+                  "type": "embedded",
+                  "fields": {
+                    "Mode": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "Version": {
+                  "type": "string"
+                },
+                "VpcConfig": {
+                  "type": "embedded",
+                  "fields": {
+                    "SecurityGroupIds": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "SubnetIds": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "VpcId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "many": true
+            },
+            "NextMarker": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "20150331FunctionsFunctionName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/2015-03-31/functions/{{ parameters.FunctionName }}"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "Code": {
+              "type": "embedded",
+              "fields": {
+                "Location": {
+                  "type": "string"
+                },
+                "RepositoryType": {
+                  "type": "base"
+                }
+              }
+            },
+            "Configuration": {
+              "type": "embedded",
+              "fields": {
+                "CodeSha256": {
+                  "type": "base"
+                },
+                "CodeSize": {
+                  "type": "integer"
+                },
+                "DeadLetterConfig": {
+                  "type": "embedded",
+                  "fields": {
+                    "TargetArn": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "Description": {
+                  "type": "string"
+                },
+                "Environment": {
+                  "type": "embedded",
+                  "fields": {
+                    "Error": {
+                      "type": "embedded",
+                      "fields": {
+                        "ErrorCode": {
+                          "type": "base"
+                        },
+                        "Message": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "Variables": {
+                      "type": "embedded",
+                      "fields": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    }
+                  }
+                },
+                "FunctionArn": {
+                  "type": "string"
+                },
+                "FunctionName": {
+                  "type": "string"
+                },
+                "Handler": {
+                  "type": "string"
+                },
+                "KMSKeyArn": {
+                  "type": "string"
+                },
+                "LastModified": {
+                  "type": "string"
+                },
+                "MemorySize": {
+                  "type": "integer"
+                },
+                "Role": {
+                  "type": "string"
+                },
+                "Runtime": {
+                  "type": "string"
+                },
+                "Timeout": {
+                  "type": "integer"
+                },
+                "TracingConfig": {
+                  "type": "embedded",
+                  "fields": {
+                    "Mode": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "Version": {
+                  "type": "string"
+                },
+                "VpcConfig": {
+                  "type": "embedded",
+                  "fields": {
+                    "SecurityGroupIds": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "SubnetIds": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "VpcId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "Tags": {
+              "type": "embedded",
+              "fields": {
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "20150331FunctionsFunctionNameAliases": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/2015-03-31/functions/{{ parameters.FunctionName }}/aliases"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "Aliases": {
+              "type": "embedded",
+              "fields": {
+                "AliasArn": {
+                  "type": "string"
+                },
+                "Description": {
+                  "type": "string"
+                },
+                "FunctionVersion": {
+                  "type": "string"
+                },
+                "Name": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "NextMarker": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "20150331FunctionsFunctionNameAliasesName": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/2015-03-31/functions/{{ parameters.FunctionName }}/aliases/{{ parameters.Name }}"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "AliasArn": {
+              "type": "string"
+            },
+            "Description": {
+              "type": "string"
+            },
+            "FunctionVersion": {
+              "type": "string"
+            },
+            "Name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "20150331FunctionsFunctionNameCode": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/2015-03-31/functions/{{ parameters.FunctionName }}/code"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "CodeSha256": {
+              "type": "string"
+            },
+            "CodeSize": {
+              "type": "integer"
+            },
+            "DeadLetterConfig": {
+              "type": "embedded",
+              "fields": {
+                "TargetArn": {
+                  "type": "string"
+                }
+              }
+            },
+            "Description": {
+              "type": "string"
+            },
+            "Environment": {
+              "type": "embedded",
+              "fields": {
+                "Error": {
+                  "type": "embedded",
+                  "fields": {
+                    "ErrorCode": {
+                      "type": "base"
+                    },
+                    "Message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "Variables": {
+                  "type": "embedded",
+                  "fields": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                }
+              }
+            },
+            "FunctionArn": {
+              "type": "string"
+            },
+            "FunctionName": {
+              "type": "string"
+            },
+            "Handler": {
+              "type": "string"
+            },
+            "KMSKeyArn": {
+              "type": "string"
+            },
+            "LastModified": {
+              "type": "string"
+            },
+            "MemorySize": {
+              "type": "integer"
+            },
+            "Role": {
+              "type": "string"
+            },
+            "Runtime": {
+              "type": "string"
+            },
+            "Timeout": {
+              "type": "integer"
+            },
+            "TracingConfig": {
+              "type": "embedded",
+              "fields": {
+                "Mode": {
+                  "type": "string"
+                }
+              }
+            },
+            "Version": {
+              "type": "string"
+            },
+            "VpcConfig": {
+              "type": "embedded",
+              "fields": {
+                "SecurityGroupIds": {
+                  "type": "string",
+                  "many": true
+                },
+                "SubnetIds": {
+                  "type": "string",
+                  "many": true
+                },
+                "VpcId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "20150331FunctionsFunctionNameConfiguration": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/2015-03-31/functions/{{ parameters.FunctionName }}/configuration"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "CodeSha256": {
+              "type": "string"
+            },
+            "CodeSize": {
+              "type": "integer"
+            },
+            "DeadLetterConfig": {
+              "type": "embedded",
+              "fields": {
+                "TargetArn": {
+                  "type": "string"
+                }
+              }
+            },
+            "Description": {
+              "type": "string"
+            },
+            "Environment": {
+              "type": "embedded",
+              "fields": {
+                "Error": {
+                  "type": "embedded",
+                  "fields": {
+                    "ErrorCode": {
+                      "type": "base"
+                    },
+                    "Message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "Variables": {
+                  "type": "embedded",
+                  "fields": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                }
+              }
+            },
+            "FunctionArn": {
+              "type": "string"
+            },
+            "FunctionName": {
+              "type": "string"
+            },
+            "Handler": {
+              "type": "string"
+            },
+            "KMSKeyArn": {
+              "type": "string"
+            },
+            "LastModified": {
+              "type": "string"
+            },
+            "MemorySize": {
+              "type": "integer"
+            },
+            "Role": {
+              "type": "string"
+            },
+            "Runtime": {
+              "type": "string"
+            },
+            "Timeout": {
+              "type": "integer"
+            },
+            "TracingConfig": {
+              "type": "embedded",
+              "fields": {
+                "Mode": {
+                  "type": "string"
+                }
+              }
+            },
+            "Version": {
+              "type": "string"
+            },
+            "VpcConfig": {
+              "type": "embedded",
+              "fields": {
+                "SecurityGroupIds": {
+                  "type": "string",
+                  "many": true
+                },
+                "SubnetIds": {
+                  "type": "string",
+                  "many": true
+                },
+                "VpcId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "20150331FunctionsFunctionNameInvocations": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/2015-03-31/functions/{{ parameters.FunctionName }}/invocations"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "Payload": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "20150331FunctionsFunctionNamePolicy": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/2015-03-31/functions/{{ parameters.FunctionName }}/policy"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "Policy": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "20150331FunctionsFunctionNamePolicyStatementId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/2015-03-31/functions/{{ parameters.FunctionName }}/policy/{{ parameters.StatementId }}"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "20150331FunctionsFunctionNameVersions": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/2015-03-31/functions/{{ parameters.FunctionName }}/versions"
+        },
+        "parameters": {
+          "FunctionName": "{{ parameters.FunctionName }}"
+        },
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    },
+    "20160819AccountSettings": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/2016-08-19/account-settings/"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "AccountLimit": {
+              "type": "embedded",
+              "fields": {
+                "CodeSizeUnzipped": {
+                  "type": "integer"
+                },
+                "CodeSizeZipped": {
+                  "type": "base"
+                },
+                "ConcurrentExecutions": {
+                  "type": "integer"
+                },
+                "TotalCodeSize": {
+                  "type": "base"
+                }
+              }
+            },
+            "AccountUsage": {
+              "type": "embedded",
+              "fields": {
+                "FunctionCount": {
+                  "type": "base"
+                },
+                "TotalCodeSize": {
+                  "type": "base"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "20170331TagsARN": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/2017-03-31/tags/{{ parameters.ARN }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Action": "{{ headers.Action }}",
+          "Version": "{{ headers.Version }}",
+          "X-Amz-Content-Sha256": "{{ headers.X-Amz-Content-Sha256 }}",
+          "X-Amz-Date": "{{ headers.X-Amz-Date }}",
+          "X-Amz-Algorithm": "{{ headers.X-Amz-Algorithm }}",
+          "X-Amz-Credential": "{{ headers.X-Amz-Credential }}",
+          "X-Amz-Security-Token": "{{ headers.X-Amz-Security-Token }}",
+          "X-Amz-Signature": "{{ headers.X-Amz-Signature }}",
+          "X-Amz-SignedHeaders": "{{ headers.X-Amz-SignedHeaders }}"
+        }
+      }
+    }
+  }
+}

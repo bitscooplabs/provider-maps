@@ -1,5 +1,245 @@
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "url": "https://api.getpostman.com/",
+  "name": "Postman Pro API",
+  "description": "The Postman Pro API allows you to programmatically access data stored in Postman Pro account with ease.",
+  "endpoints": {
+    "Collections": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/collections"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/collections"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}",
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "CollectionsCollectionUid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/collections/{{ parameters.collection_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/collections/{{ parameters.collection_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/collections/{{ parameters.collection_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      }
+    },
+    "Environments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/environments"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/environments"
+        },
+        "parameters": {},
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      }
+    },
+    "EnvironmentsEnvironmentUid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/environments/{{ parameters.environment_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/environments/{{ parameters.environment_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/environments/{{ parameters.environment_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      }
+    },
+    "Mocks": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/mocks"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/mocks"
+        },
+        "parameters": {},
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      }
+    },
+    "MocksMockUid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/mocks/{{ parameters.mock_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/mocks/{{ parameters.mock_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      }
+    },
+    "Monitors": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/monitors"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/monitors"
+        },
+        "parameters": {},
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      }
+    },
+    "MonitorsMonitorUid": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/monitors/{{ parameters.monitor_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/monitors/{{ parameters.monitor_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}",
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      },
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/monitors/{{ parameters.monitor_uid }}"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      }
+    },
+    "MonitorsMonitorUidRun": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/monitors/{{ parameters.monitor_uid }}/run"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      }
+    },
+    "Me": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/me"
+        },
+        "parameters": {},
+        "headers": {
+          "X-Api-Key": "{{ headers.X-Api-Key }}"
+        }
+      }
+    }
+  }
 }

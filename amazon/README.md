@@ -4,7 +4,9 @@
 
 | Provider Map | File Name | |
 |------------------------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Amazon Full API | amazon.json | [![Amazon](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/amazon/amazon.json) |
+| Amazon Certificate Manager API | aws_certificate_manager.json | [![Amazon](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/amazon/aws_certificate_manager.json) |
+| Amazon Lambda API | aws_lambda.json | [![Amazon](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/amazon/aws_lambda.json) |
+| Amazon API Gateway API | aws_api_gateway.json | [![Amazon](https://d233zlhvpze22y.cloudfront.net/github/AddBitScoopXSmall.png)](https://bitscoop.com/maps/create?source=https://raw.githubusercontent.com/bitscooplabs/provider-maps/master/amazon/aws_api_gateway.json) |
 
 Amazon is the world's largest provider of cloud infrastructure services.
 

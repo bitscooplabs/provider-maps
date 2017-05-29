@@ -1,5 +1,167 @@
+
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "name": "donorschoose",
+  "url": "https://api.donorschoose.org/v2",
+
+  "endpoints": {
+    "Status": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/status.{{ parameters.format }}"
+        },
+        "parameters": {
+          "client_id": {
+            "value": "{{ parameters.client_id }}"
+          },
+          "device_id": {
+            "value": "{{ parameters.device_id }}"
+          },
+          "user_agent": {
+            "value": "{{ parameters.user_agent }}"
+          }
+        }
+      }
+    },
+    "Divisions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/divisions.{{ parameters.format }}"
+        },
+        "parameters": {
+          "client_id": {
+            "value": "{{ parameters.client_id }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}",
+            "required": true
+          }
+        }
+      }
+    },
+    "donorschooseSays": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/donorschoose_says.{{ parameters.format }}"
+        },
+        "parameters": {
+          "client_id": {
+            "value": "{{ parameters.client_id }}",
+            "required": true
+          },
+          "limit": {
+            "value": "{{ parameters.limit }}",
+            "required": true
+          },
+          "random": {
+            "value": "{{ parameters.random }}"
+          }
+        }
+      }
+    },
+    "schoolsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/schools/{{ identifier }}.{{ parameters.format }}"
+        },
+        "parameters": {
+          "id": {
+            "value": "{{ parameters.id }}",
+            "required": true
+          },
+          "client_id": {
+            "value": "{{ parameters.client_id }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}",
+            "required": true
+          },
+          "email_address": {
+            "value": "{{ parameters.email_address }}"
+          },
+          "area": {
+            "value": "{{ parameters.area }}"
+          },
+          "referral_id": {
+            "value": "{{ parameters.referral_id }}"
+          }
+        }
+      }
+    },
+    "schools": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/schools.{{ parameters.format }}"
+        },
+        "parameters": {
+          "client_id": {
+            "value": "{{ parameters.client_id }}",
+            "required": true
+          },
+          "show": {
+            "value": "{{ parameters.show }}",
+            "required": true
+          },
+          "email_address": {
+            "value": "{{ parameters.email_address }}"
+          },
+          "area": {
+            "value": "{{ parameters.area }}"
+          },
+          "lat": {
+            "value": "{{ parameters.lat }}"
+          },
+          "lng": {
+            "value": "{{ parameters.lng }}"
+          },
+          "radius": {
+            "value": "{{ parameters.radius }}"
+          },
+          "division_id": {
+            "value": "{{ parameters.division_id }}"
+          },
+          "device_token": {
+            "value": "{{ parameters.device_token }}"
+          },
+          "subscriber_id": {
+            "value": "{{ parameters.subscriber_id }}"
+          },
+          "affiliate": {
+            "value": "{{ parameters.affiliate }}"
+          }
+        }
+      }
+    },
+    "schoolsschoolIdPosts": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "data": "",
+          "path": "/schools/{{ parameters.school_id }}/posts.{{ parameters.format }}"
+        },
+        "parameters": {
+          "client_id": {
+            "value": "{{ parameters.client_id }}",
+            "required": true
+          },
+          "school_id": {
+            "value": "{{ parameters.school_id }}",
+            "required": true
+          }
+        }
+      }
+    }
+  }
 }

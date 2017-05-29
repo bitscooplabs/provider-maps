@@ -1,5 +1,23 @@
-{
-  "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+"version": "1.0",
+"url": "https://api.cognitive.microsoft.com/bing/v5.0/knowledge",
+"name": "Bing Knowledge Graph API",
+"headers": {
+  "Ocp-Apim-Subscription-Key": "*** INSERT API KEY ***"
+},
+"description": "The Bing Knowledge Graph API detects things of interest (entities) in text and augments the entities with rich facts, relationships, and images.",
+"endpoints": {
+  "Root": {
+    "GET": {
+      "method": "GET",
+      "route": {
+        "path": "/"
+      },
+      "parameters": {
+        "q": "{{ parameters.q }}",
+        "detectEntities": "{{ parameters.detectEntities }}"
+      },
+      "headers": {}
+    }
+  }
+}
 }

@@ -1,5 +1,419 @@
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "url": "https://slack.com/api",
+  "name": "Slack",
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://slack.com",
+    "authorization_url": "https://slack.com/oauth/authorize",
+    "access_token": "https://slack.com/api/oauth.access",
+    "signature": "parameter",
+    "auth_key": "*** INSERT AUTH KEY ***",
+    "auth_secret": "*** INSERT AUTH SECRET ***"
+  },
+  "description": "A messaging app for teams",
+  "endpoints": {
+    "Auth": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/auth.test"
+        },
+        "parameters": {
+          "token": "{{ parameters.token }}"
+        },
+        "headers": {},
+        "scopes": [
+          "identify"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "ok": {
+              "type": "boolean"
+            },
+            "team": {
+              "type": "string"
+            },
+            "team_id": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "user": {
+              "type": "string"
+            },
+            "user_id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Channels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/channels.setTopic"
+        },
+        "parameters": {
+          "channel": "{{ parameters.channel }}",
+          "topic": "{{ parameters.topic }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "ok": {
+              "type": "boolean"
+            },
+            "topic": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Chat": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/chat.update"
+        },
+        "parameters": {
+          "channel": "{{ parameters.channel }}",
+          "text": "{{ parameters.text }}",
+          "ts": "{{ parameters.ts }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "channel": {
+              "type": "string"
+            },
+            "ok": {
+              "type": "boolean"
+            },
+            "text": {
+              "type": "string"
+            },
+            "ts": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Emoji": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/emoji.list"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "emoji": {
+              "type": "embedded",
+              "fields": {
+                "bowtie": {
+                  "type": "string"
+                },
+                "shipit": {
+                  "type": "string"
+                },
+                "squirrel": {
+                  "type": "string"
+                }
+              }
+            },
+            "ok": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "Files": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/files.upload"
+        },
+        "parameters": {
+          "file": "{{ parameters.file }}",
+          "content": "{{ parameters.content }}",
+          "filetype": "{{ parameters.filetype }}",
+          "filename": "{{ parameters.filename }}",
+          "title": "{{ parameters.title }}",
+          "initial_comment": "{{ parameters.initial_comment }}",
+          "channels": "{{ parameters.channels }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "file": {
+              "type": "embedded",
+              "fields": {}
+            },
+            "ok": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "Groups": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/groups.setTopic"
+        },
+        "parameters": {
+          "channel": "{{ parameters.channel }}",
+          "topic": "{{ parameters.topic }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "ok": {
+              "type": "boolean"
+            },
+            "topic": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Im": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/im.mark"
+        },
+        "parameters": {
+          "channel": "{{ parameters.channel }}",
+          "ts": "{{ parameters.ts }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "ok": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "Search": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/search.messages"
+        },
+        "parameters": {
+          "query": "{{ parameters.query }}",
+          "sort": "{{ parameters.sort }}",
+          "sort_dir": "{{ parameters.sort_dir }}",
+          "highlight": "{{ parameters.highlight }}",
+          "count": "{{ parameters.count }}",
+          "page": "{{ parameters.page }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "messages": {
+              "type": "embedded",
+              "fields": {
+                "matches": {
+                  "type": "string",
+                  "many": true
+                },
+                "pagination": {
+                  "type": "embedded",
+                  "fields": {
+                    "first": {
+                      "type": "number"
+                    },
+                    "last": {
+                      "type": "number"
+                    },
+                    "page": {
+                      "type": "number"
+                    },
+                    "page_count": {
+                      "type": "number"
+                    },
+                    "per_page": {
+                      "type": "number"
+                    },
+                    "total_count": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "paging": {
+                  "type": "embedded",
+                  "fields": {
+                    "count": {
+                      "type": "number"
+                    },
+                    "page": {
+                      "type": "number"
+                    },
+                    "pages": {
+                      "type": "number"
+                    },
+                    "total": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "total": {
+                  "type": "number"
+                }
+              }
+            },
+            "ok": {
+              "type": "boolean"
+            },
+            "query": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Stars": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/stars.list"
+        },
+        "parameters": {
+          "user": "{{ parameters.user }}",
+          "count": "{{ parameters.count }}",
+          "page": "{{ parameters.page }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "items": {
+              "type": "string",
+              "many": true
+            },
+            "ok": {
+              "type": "boolean"
+            },
+            "paging": {
+              "type": "embedded",
+              "fields": {
+                "count": {
+                  "type": "number"
+                },
+                "page": {
+                  "type": "number"
+                },
+                "pages": {
+                  "type": "number"
+                },
+                "total": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Users": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/users.list"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "members": {
+              "type": "embedded",
+              "fields": {
+                "color": {
+                  "type": "string"
+                },
+                "deleted": {
+                  "type": "boolean"
+                },
+                "has_files": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "is_admin": {
+                  "type": "boolean"
+                },
+                "is_owner": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "profile": {
+                  "type": "embedded",
+                  "fields": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "image_192": {
+                      "type": "string"
+                    },
+                    "image_24": {
+                      "type": "string"
+                    },
+                    "image_32": {
+                      "type": "string"
+                    },
+                    "image_48": {
+                      "type": "string"
+                    },
+                    "image_72": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "phone": {
+                      "type": "string"
+                    },
+                    "real_name": {
+                      "type": "string"
+                    },
+                    "skype": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "many": true
+            },
+            "ok": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
 }

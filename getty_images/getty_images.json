@@ -1,5 +1,3499 @@
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "url": "https://api.gettyimages.com/",
+  "name": "Getty Images",
+  "headers": {
+    "Api-Key": "*** INSERT API KEY ***"
+  },
+  "description": "Build applications using the world's most powerful imagery",
+  "endpoints": {
+    "V3AssetChangesChangeSets": {
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/v3/asset-changes/change-sets"
+        },
+        "parameters": {
+          "channel_id": "{{ parameters.channel_id }}",
+          "batch_size": "{{ parameters.batch_size }}"
+        },
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "change_set_id": {
+              "type": "string"
+            },
+            "changed_assets": {
+              "type": "embedded",
+              "fields": {
+                "asset_changed_utc_datetime": {
+                  "type": "string"
+                },
+                "asset_lifecycle": {
+                  "type": "string"
+                },
+                "asset_type": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3AssetChangesChangeSetsChangeSetId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/v3/asset-changes/change-sets/{{ parameters.change_set_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}"
+        }
+      }
+    },
+    "V3AssetChangesChannels": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/asset-changes/channels"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "channels": {
+              "type": "embedded",
+              "fields": {
+                "asset_family": {
+                  "type": "string"
+                },
+                "channel_id": {
+                  "type": "integer"
+                },
+                "channel_type": {
+                  "type": "string"
+                },
+                "notification_count": {
+                  "type": "integer"
+                },
+                "start_date": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3Boards": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/boards"
+        },
+        "parameters": {
+          "board_relationship": "{{ parameters.board_relationship }}",
+          "page": "{{ parameters.page }}",
+          "pageSize": "{{ parameters.pageSize }}",
+          "sort_order": "{{ parameters.sort_order }}"
+        },
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "board_count": {
+              "type": "integer"
+            },
+            "boards": {
+              "type": "embedded",
+              "fields": {
+                "asset_count": {
+                  "type": "integer"
+                },
+                "board_relationship": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "date_last_updated": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "hero_asset": {
+                  "type": "embedded",
+                  "fields": {
+                    "asset_type": {
+                      "type": "string"
+                    },
+                    "date_added": {
+                      "type": "string"
+                    },
+                    "display_sizes": {
+                      "type": "embedded",
+                      "fields": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "uri": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/v3/boards"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      }
+    },
+    "V3BoardsBoardId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "asset_count": {
+              "type": "integer"
+            },
+            "assets": {
+              "type": "embedded",
+              "fields": {
+                "asset_type": {
+                  "type": "string"
+                },
+                "date_added": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "comment_count": {
+              "type": "integer"
+            },
+            "date_created": {
+              "type": "string"
+            },
+            "date_last_updated": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "links": {
+              "type": "embedded",
+              "fields": {
+                "invitation": {
+                  "type": "string"
+                },
+                "share": {
+                  "type": "string"
+                }
+              }
+            },
+            "name": {
+              "type": "string"
+            },
+            "permissions": {
+              "type": "embedded",
+              "fields": {
+                "can_add_assets": {
+                  "type": "boolean"
+                },
+                "can_delete_board": {
+                  "type": "boolean"
+                },
+                "can_invite_to_board": {
+                  "type": "boolean"
+                },
+                "can_remove_assets": {
+                  "type": "boolean"
+                },
+                "can_update_description": {
+                  "type": "boolean"
+                },
+                "can_update_name": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      }
+    },
+    "V3BoardsBoardIdAssets": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}/assets"
+        },
+        "parameters": {
+          "asset_ids": "{{ parameters.asset_ids }}"
+        },
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}/assets"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      }
+    },
+    "V3BoardsBoardIdAssetsAssetId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}/assets/{{ parameters.asset_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}/assets/{{ parameters.asset_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      }
+    },
+    "V3BoardsBoardIdComments": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}/comments"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "comments": {
+              "type": "embedded",
+              "fields": {
+                "created_by": {
+                  "type": "embedded",
+                  "fields": {
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "permissions": {
+                  "type": "embedded",
+                  "fields": {
+                    "can_delete_comment": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "permissions": {
+              "type": "embedded",
+              "fields": {
+                "can_add_comment": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}/comments"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      }
+    },
+    "V3BoardsBoardIdCommentsCommentId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/v3/boards/{{ parameters.board_id }}/comments/{{ parameters.comment_id }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      }
+    },
+    "V3Collections": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/collections"
+        },
+        "parameters": {},
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "collections": {
+              "type": "embedded",
+              "fields": {
+                "asset_family": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3Countries": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/countries"
+        },
+        "parameters": {},
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "countries": {
+              "type": "embedded",
+              "fields": {
+                "iso_alpha_2": {
+                  "type": "string"
+                },
+                "iso_alpha_3": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3Downloads": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/downloads"
+        },
+        "parameters": {
+          "company_downloads": "{{ parameters.company_downloads }}",
+          "end_date": "{{ parameters.end_date }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "product_type": "{{ parameters.product_type }}",
+          "start_date": "{{ parameters.start_date }}"
+        },
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "downloads": {
+              "type": "embedded",
+              "fields": {
+                "agreement_name": {
+                  "type": "string"
+                },
+                "date_downloaded": {
+                  "type": "string"
+                },
+                "download_details": {
+                  "type": "embedded",
+                  "fields": {
+                    "download_notes": {
+                      "type": "string"
+                    },
+                    "project_code": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "id": {
+                  "type": "string"
+                },
+                "product_type": {
+                  "type": "string"
+                },
+                "thumb_uri": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "result_count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "V3DownloadsImagesId": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/v3/downloads/images/{{ identifier }}"
+        },
+        "parameters": {
+          "auto_download": "{{ parameters.auto_download }}",
+          "file_type": "{{ parameters.file_type }}",
+          "height": "{{ parameters.height }}",
+          "product_id": "{{ parameters.product_id }}",
+          "product_type": "{{ parameters.product_type }}"
+        },
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      }
+    },
+    "V3DownloadsVideosId": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/v3/downloads/videos/{{ identifier }}"
+        },
+        "parameters": {
+          "auto_download": "{{ parameters.auto_download }}",
+          "product_id": "{{ parameters.product_id }}",
+          "size": "{{ parameters.size }}"
+        },
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        }
+      }
+    },
+    "V3Events": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/events"
+        },
+        "parameters": {
+          "fields": "{{ parameters.fields }}",
+          "ids": "{{ parameters.ids }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "events": {
+              "type": "embedded",
+              "fields": {
+                "child_event_count": {
+                  "type": "integer"
+                },
+                "editorial_segments": {
+                  "type": "string",
+                  "many": true
+                },
+                "hero_image": {
+                  "type": "embedded",
+                  "fields": {
+                    "display_sizes": {
+                      "type": "embedded",
+                      "fields": {
+                        "is_watermarked": {
+                          "type": "boolean"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "uri": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "image_count": {
+                  "type": "integer"
+                },
+                "location": {
+                  "type": "embedded",
+                  "fields": {
+                    "city": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "state_province": {
+                      "type": "string"
+                    },
+                    "venue": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "events_not_found": {
+              "type": "integer",
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3EventsId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/events/{{ identifier }}"
+        },
+        "parameters": {
+          "fields": "{{ parameters.fields }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "child_event_count": {
+              "type": "integer"
+            },
+            "editorial_segments": {
+              "type": "string",
+              "many": true
+            },
+            "hero_image": {
+              "type": "embedded",
+              "fields": {
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            },
+            "id": {
+              "type": "integer"
+            },
+            "image_count": {
+              "type": "integer"
+            },
+            "location": {
+              "type": "embedded",
+              "fields": {
+                "city": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "state_province": {
+                  "type": "string"
+                },
+                "venue": {
+                  "type": "string"
+                }
+              }
+            },
+            "name": {
+              "type": "string"
+            },
+            "start_date": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "V3Images": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/images"
+        },
+        "parameters": {
+          "ids": "{{ parameters.ids }}",
+          "fields": "{{ parameters.fields }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "images": {
+              "type": "embedded",
+              "fields": {
+                "allowed_use": {
+                  "type": "embedded",
+                  "fields": {
+                    "how_can_i_use_it": {
+                      "type": "string"
+                    },
+                    "release_info": {
+                      "type": "string"
+                    },
+                    "usage_restrictions": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "alternative_ids": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "artist": {
+                  "type": "string"
+                },
+                "artist_title": {
+                  "type": "string"
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "asset_type": {
+                  "type": "string"
+                },
+                "call_for_image": {
+                  "type": "boolean"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "integer"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "color_type": {
+                  "type": "string"
+                },
+                "copyright": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "credit_line": {
+                  "type": "string"
+                },
+                "date_camera_shot": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "date_submitted": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "height": {
+                      "type": "integer"
+                    },
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "download_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "bytes": {
+                      "type": "integer"
+                    },
+                    "downloads": {
+                      "type": "embedded",
+                      "fields": {
+                        "agreement_name": {
+                          "type": "string"
+                        },
+                        "product_id": {
+                          "type": "string"
+                        },
+                        "product_type": {
+                          "type": "string"
+                        },
+                        "uri": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "height": {
+                      "type": "integer"
+                    },
+                    "media_type": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "editorial_segments": {
+                  "type": "string",
+                  "many": true
+                },
+                "editorial_source": {
+                  "type": "embedded",
+                  "fields": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "event_ids": {
+                  "type": "integer",
+                  "many": true
+                },
+                "graphical_style": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "istock_licenses": {
+                  "type": "embedded",
+                  "fields": {
+                    "credits": {
+                      "type": "integer"
+                    },
+                    "license_type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "entity_types": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "entity_uris": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "relevance": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "largest_downloads": {
+                  "type": "base"
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "links": {
+                  "type": "embedded",
+                  "fields": {
+                    "rel": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "max_dimensions": {
+                  "type": "embedded",
+                  "fields": {
+                    "height": {
+                      "type": "integer"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "orientation": {
+                  "type": "string"
+                },
+                "people": {
+                  "type": "string",
+                  "many": true
+                },
+                "prestige": {
+                  "type": "boolean"
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "quality_rank": {
+                  "type": "integer"
+                },
+                "referral_destinations": {
+                  "type": "embedded",
+                  "fields": {
+                    "site_name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "state_province": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "uri_oembed": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "images_not_found": {
+              "type": "string",
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3ImagesId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/images/{{ identifier }}"
+        },
+        "parameters": {
+          "fields": "{{ parameters.fields }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "images": {
+              "type": "embedded",
+              "fields": {
+                "allowed_use": {
+                  "type": "embedded",
+                  "fields": {
+                    "how_can_i_use_it": {
+                      "type": "string"
+                    },
+                    "release_info": {
+                      "type": "string"
+                    },
+                    "usage_restrictions": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "alternative_ids": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "artist": {
+                  "type": "string"
+                },
+                "artist_title": {
+                  "type": "string"
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "asset_type": {
+                  "type": "string"
+                },
+                "call_for_image": {
+                  "type": "boolean"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "integer"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "color_type": {
+                  "type": "string"
+                },
+                "copyright": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "credit_line": {
+                  "type": "string"
+                },
+                "date_camera_shot": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "date_submitted": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "height": {
+                      "type": "integer"
+                    },
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "download_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "bytes": {
+                      "type": "integer"
+                    },
+                    "downloads": {
+                      "type": "embedded",
+                      "fields": {
+                        "agreement_name": {
+                          "type": "string"
+                        },
+                        "product_id": {
+                          "type": "string"
+                        },
+                        "product_type": {
+                          "type": "string"
+                        },
+                        "uri": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "height": {
+                      "type": "integer"
+                    },
+                    "media_type": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "editorial_segments": {
+                  "type": "string",
+                  "many": true
+                },
+                "editorial_source": {
+                  "type": "embedded",
+                  "fields": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "event_ids": {
+                  "type": "integer",
+                  "many": true
+                },
+                "graphical_style": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "istock_licenses": {
+                  "type": "embedded",
+                  "fields": {
+                    "credits": {
+                      "type": "integer"
+                    },
+                    "license_type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "entity_types": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "entity_uris": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "relevance": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "largest_downloads": {
+                  "type": "base"
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "links": {
+                  "type": "embedded",
+                  "fields": {
+                    "rel": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "max_dimensions": {
+                  "type": "embedded",
+                  "fields": {
+                    "height": {
+                      "type": "integer"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "orientation": {
+                  "type": "string"
+                },
+                "people": {
+                  "type": "string",
+                  "many": true
+                },
+                "prestige": {
+                  "type": "boolean"
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "quality_rank": {
+                  "type": "integer"
+                },
+                "referral_destinations": {
+                  "type": "embedded",
+                  "fields": {
+                    "site_name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "state_province": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "uri_oembed": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "images_not_found": {
+              "type": "string",
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3ImagesIdSimilar": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/images/{{ identifier }}/similar"
+        },
+        "parameters": {
+          "fields": "{{ parameters.fields }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        }
+      }
+    },
+    "V3Products": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/products"
+        },
+        "parameters": {
+          "fields": "{{ parameters.fields }}"
+        },
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "products": {
+              "type": "embedded",
+              "fields": {
+                "agreement_name": {
+                  "type": "string"
+                },
+                "application_website": {
+                  "type": "string"
+                },
+                "credits_remaining": {
+                  "type": "integer"
+                },
+                "download_limit": {
+                  "type": "integer"
+                },
+                "download_limit_duration": {
+                  "type": "string"
+                },
+                "download_limit_reset_utc_date": {
+                  "type": "string"
+                },
+                "download_requirements": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_note_required": {
+                      "type": "boolean"
+                    },
+                    "is_project_code_required": {
+                      "type": "boolean"
+                    },
+                    "project_codes": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "downloads_remaining": {
+                  "type": "integer"
+                },
+                "expiration_utc_date": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "imagepack_resolution": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "overage": {
+                  "type": "embedded",
+                  "fields": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "overages_reached": {
+                      "type": "boolean"
+                    },
+                    "remaining": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "premium_access_download_requirements": {
+                  "type": "base"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3PurchasedAssets": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/purchased-assets"
+        },
+        "parameters": {
+          "end_date": "{{ parameters.end_date }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "start_date": "{{ parameters.start_date }}"
+        },
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "previous_purchases": {
+              "type": "embedded",
+              "fields": {
+                "asset_id": {
+                  "type": "string"
+                },
+                "asset_type": {
+                  "type": "string"
+                },
+                "date_purchased": {
+                  "type": "string"
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "order_id": {
+                  "type": "string"
+                },
+                "thumb_uri": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "result_count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "V3PurchasedImages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/purchased-images"
+        },
+        "parameters": {
+          "end_date": "{{ parameters.end_date }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "start_date": "{{ parameters.start_date }}"
+        },
+        "headers": {
+          "Authorization": "{{ headers.Authorization }}",
+          "Accept-Language": "{{ headers.Accept-Language }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "previous_purchases": {
+              "type": "embedded",
+              "fields": {
+                "date_purchased": {
+                  "type": "string"
+                },
+                "image_id": {
+                  "type": "string"
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "order_id": {
+                  "type": "string"
+                },
+                "thumb_uri": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "result_count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "V3SearchEvents": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/search/events"
+        },
+        "parameters": {
+          "date_from": "{{ parameters.date_from }}",
+          "date_to": "{{ parameters.date_to }}",
+          "editorial_segment": "{{ parameters.editorial_segment }}",
+          "fields": "{{ parameters.fields }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "phrase": "{{ parameters.phrase }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "events": {
+              "type": "embedded",
+              "fields": {
+                "child_event_count": {
+                  "type": "integer"
+                },
+                "editorial_segments": {
+                  "type": "string",
+                  "many": true
+                },
+                "hero_image": {
+                  "type": "embedded",
+                  "fields": {
+                    "display_sizes": {
+                      "type": "embedded",
+                      "fields": {
+                        "is_watermarked": {
+                          "type": "boolean"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "uri": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "image_count": {
+                  "type": "integer"
+                },
+                "location": {
+                  "type": "embedded",
+                  "fields": {
+                    "city": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "state_province": {
+                      "type": "string"
+                    },
+                    "venue": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "result_count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "V3SearchImages": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/search/images"
+        },
+        "parameters": {
+          "age_of_people": "{{ parameters.age_of_people }}",
+          "artists": "{{ parameters.artists }}",
+          "collection_codes": "{{ parameters.collection_codes }}",
+          "collections_filter_type": "{{ parameters.collections_filter_type }}",
+          "color": "{{ parameters.color }}",
+          "compositions": "{{ parameters.compositions }}",
+          "embed_content_only": "{{ parameters.embed_content_only }}",
+          "ethnicity": "{{ parameters.ethnicity }}",
+          "event_ids": "{{ parameters.event_ids }}",
+          "exclude_nudity": "{{ parameters.exclude_nudity }}",
+          "fields": "{{ parameters.fields }}",
+          "file_types": "{{ parameters.file_types }}",
+          "graphical_styles": "{{ parameters.graphical_styles }}",
+          "keyword_ids": "{{ parameters.keyword_ids }}",
+          "license_models": "{{ parameters.license_models }}",
+          "minimum_size": "{{ parameters.minimum_size }}",
+          "number_of_people": "{{ parameters.number_of_people }}",
+          "orientations": "{{ parameters.orientations }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "phrase": "{{ parameters.phrase }}",
+          "prestige_content_only": "{{ parameters.prestige_content_only }}",
+          "product_types": "{{ parameters.product_types }}",
+          "sort_order": "{{ parameters.sort_order }}",
+          "specific_people": "{{ parameters.specific_people }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "images": {
+              "type": "embedded",
+              "fields": {
+                "allowed_use": {
+                  "type": "embedded",
+                  "fields": {
+                    "how_can_i_use_it": {
+                      "type": "string"
+                    },
+                    "release_info": {
+                      "type": "string"
+                    },
+                    "usage_restrictions": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "alternative_ids": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "artist": {
+                  "type": "string"
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "call_for_image": {
+                  "type": "boolean"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "integer"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "color_type": {
+                  "type": "string"
+                },
+                "copyright": {
+                  "type": "string"
+                },
+                "date_camera_shot": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "editorial_segments": {
+                  "type": "string",
+                  "many": true
+                },
+                "event_ids": {
+                  "type": "integer",
+                  "many": true
+                },
+                "graphical_style": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "istock_licenses": {
+                  "type": "embedded",
+                  "fields": {
+                    "credits": {
+                      "type": "integer"
+                    },
+                    "license_type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "entity_types": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "entity_uris": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "relevance": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "largest_downloads": {
+                  "type": "embedded",
+                  "fields": {
+                    "agreement_name": {
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "max_dimensions": {
+                  "type": "embedded",
+                  "fields": {
+                    "height": {
+                      "type": "integer"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "orientation": {
+                  "type": "string"
+                },
+                "people": {
+                  "type": "string",
+                  "many": true
+                },
+                "prestige": {
+                  "type": "boolean"
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "quality_rank": {
+                  "type": "integer"
+                },
+                "referral_destinations": {
+                  "type": "embedded",
+                  "fields": {
+                    "site_name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "title": {
+                  "type": "string"
+                },
+                "uri_oembed": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "result_count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "V3SearchImagesArtists": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/search/images/artists"
+        },
+        "parameters": {
+          "name": "{{ parameters.name }}",
+          "fields": "{{ parameters.fields }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "images": {
+              "type": "embedded",
+              "fields": {
+                "alternative_ids": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "asset_type": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "date_submitted": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "id": {
+                  "type": "string"
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                }
+              },
+              "many": true
+            },
+            "result_count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "V3SearchImagesCreative": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/search/images/creative"
+        },
+        "parameters": {
+          "age_of_people": "{{ parameters.age_of_people }}",
+          "artists": "{{ parameters.artists }}",
+          "collection_codes": "{{ parameters.collection_codes }}",
+          "collections_filter_type": "{{ parameters.collections_filter_type }}",
+          "color": "{{ parameters.color }}",
+          "compositions": "{{ parameters.compositions }}",
+          "embed_content_only": "{{ parameters.embed_content_only }}",
+          "ethnicity": "{{ parameters.ethnicity }}",
+          "exclude_nudity": "{{ parameters.exclude_nudity }}",
+          "fields": "{{ parameters.fields }}",
+          "file_types": "{{ parameters.file_types }}",
+          "graphical_styles": "{{ parameters.graphical_styles }}",
+          "keyword_ids": "{{ parameters.keyword_ids }}",
+          "license_models": "{{ parameters.license_models }}",
+          "minimum_size": "{{ parameters.minimum_size }}",
+          "number_of_people": "{{ parameters.number_of_people }}",
+          "orientations": "{{ parameters.orientations }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "phrase": "{{ parameters.phrase }}",
+          "prestige_content_only": "{{ parameters.prestige_content_only }}",
+          "product_types": "{{ parameters.product_types }}",
+          "sort_order": "{{ parameters.sort_order }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "images": {
+              "type": "embedded",
+              "fields": {
+                "allowed_use": {
+                  "type": "embedded",
+                  "fields": {
+                    "how_can_i_use_it": {
+                      "type": "string"
+                    },
+                    "release_info": {
+                      "type": "string"
+                    },
+                    "usage_restrictions": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "alternative_ids": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "artist": {
+                  "type": "string"
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "call_for_image": {
+                  "type": "boolean"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "integer"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "color_type": {
+                  "type": "string"
+                },
+                "copyright": {
+                  "type": "string"
+                },
+                "date_camera_shot": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "graphical_style": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "entity_types": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "entity_uris": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "relevance": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "largest_downloads": {
+                  "type": "embedded",
+                  "fields": {
+                    "agreement_name": {
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "max_dimensions": {
+                  "type": "embedded",
+                  "fields": {
+                    "height": {
+                      "type": "integer"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "orientation": {
+                  "type": "string"
+                },
+                "prestige": {
+                  "type": "boolean"
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "quality_rank": {
+                  "type": "integer"
+                },
+                "referral_destinations": {
+                  "type": "embedded",
+                  "fields": {
+                    "site_name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "title": {
+                  "type": "string"
+                },
+                "uri_oembed": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "result_count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "V3SearchImagesEditorial": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/search/images/editorial"
+        },
+        "parameters": {
+          "age_of_people": "{{ parameters.age_of_people }}",
+          "artists": "{{ parameters.artists }}",
+          "collection_codes": "{{ parameters.collection_codes }}",
+          "collections_filter_type": "{{ parameters.collections_filter_type }}",
+          "compositions": "{{ parameters.compositions }}",
+          "editorial_segments": "{{ parameters.editorial_segments }}",
+          "embed_content_only": "{{ parameters.embed_content_only }}",
+          "end_date": "{{ parameters.end_date }}",
+          "entity_uris": "{{ parameters.entity_uris }}",
+          "ethnicity": "{{ parameters.ethnicity }}",
+          "event_ids": "{{ parameters.event_ids }}",
+          "exclude_nudity": "{{ parameters.exclude_nudity }}",
+          "fields": "{{ parameters.fields }}",
+          "file_types": "{{ parameters.file_types }}",
+          "graphical_styles": "{{ parameters.graphical_styles }}",
+          "keyword_ids": "{{ parameters.keyword_ids }}",
+          "minimum_quality_rank": "{{ parameters.minimum_quality_rank }}",
+          "minimum_size": "{{ parameters.minimum_size }}",
+          "number_of_people": "{{ parameters.number_of_people }}",
+          "orientations": "{{ parameters.orientations }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "phrase": "{{ parameters.phrase }}",
+          "product_types": "{{ parameters.product_types }}",
+          "sort_order": "{{ parameters.sort_order }}",
+          "specific_people": "{{ parameters.specific_people }}",
+          "start_date": "{{ parameters.start_date }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "images": {
+              "type": "embedded",
+              "fields": {
+                "allowed_use": {
+                  "type": "embedded",
+                  "fields": {
+                    "how_can_i_use_it": {
+                      "type": "string"
+                    },
+                    "release_info": {
+                      "type": "string"
+                    },
+                    "usage_restrictions": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "alternative_ids": {
+                  "type": "embedded",
+                  "fields": {}
+                },
+                "artist": {
+                  "type": "string"
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "call_for_image": {
+                  "type": "boolean"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "integer"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "color_type": {
+                  "type": "string"
+                },
+                "copyright": {
+                  "type": "string"
+                },
+                "date_camera_shot": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "editorial_segments": {
+                  "type": "string",
+                  "many": true
+                },
+                "editorial_source": {
+                  "type": "embedded",
+                  "fields": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "event_ids": {
+                  "type": "integer",
+                  "many": true
+                },
+                "graphical_style": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "entity_types": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "entity_uris": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "relevance": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "largest_downloads": {
+                  "type": "embedded",
+                  "fields": {
+                    "agreement_name": {
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "max_dimensions": {
+                  "type": "embedded",
+                  "fields": {
+                    "height": {
+                      "type": "integer"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "orientation": {
+                  "type": "string"
+                },
+                "people": {
+                  "type": "string",
+                  "many": true
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "quality_rank": {
+                  "type": "integer"
+                },
+                "referral_destinations": {
+                  "type": "embedded",
+                  "fields": {
+                    "site_name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "title": {
+                  "type": "string"
+                },
+                "uri_oembed": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "result_count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "V3SearchVideos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/search/videos"
+        },
+        "parameters": {
+          "age_of_people": "{{ parameters.age_of_people }}",
+          "collection_codes": "{{ parameters.collection_codes }}",
+          "collections_filter_type": "{{ parameters.collections_filter_type }}",
+          "exclude_nudity": "{{ parameters.exclude_nudity }}",
+          "fields": "{{ parameters.fields }}",
+          "format_available": "{{ parameters.format_available }}",
+          "keyword_ids": "{{ parameters.keyword_ids }}",
+          "license_models": "{{ parameters.license_models }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "phrase": "{{ parameters.phrase }}",
+          "product_types": "{{ parameters.product_types }}",
+          "sort_order": "{{ parameters.sort_order }}",
+          "specific_people": "{{ parameters.specific_people }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "result_count": {
+              "type": "integer"
+            },
+            "videos": {
+              "type": "embedded",
+              "fields": {
+                "allowed_use": {
+                  "type": "embedded",
+                  "fields": {
+                    "how_can_i_use_it": {
+                      "type": "string"
+                    },
+                    "release_info": {
+                      "type": "string"
+                    },
+                    "usage_restrictions": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "artist": {
+                  "type": "string"
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "clip_length": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "integer"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "color_type": {
+                  "type": "string"
+                },
+                "copyright": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "era": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "istock_licenses": {
+                  "type": "embedded",
+                  "fields": {
+                    "credits": {
+                      "type": "integer"
+                    },
+                    "license_type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "entity_types": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "entity_uris": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "relevance": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "largest_downloads": {
+                  "type": "embedded",
+                  "fields": {
+                    "agreement_name": {
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "mastered_to": {
+                  "type": "string"
+                },
+                "originally_shot_on": {
+                  "type": "string"
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "referral_destinations": {
+                  "type": "embedded",
+                  "fields": {
+                    "site_name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shot_speed": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3SearchVideosCreative": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/search/videos/creative"
+        },
+        "parameters": {
+          "age_of_people": "{{ parameters.age_of_people }}",
+          "collection_codes": "{{ parameters.collection_codes }}",
+          "collections_filter_type": "{{ parameters.collections_filter_type }}",
+          "exclude_nudity": "{{ parameters.exclude_nudity }}",
+          "fields": "{{ parameters.fields }}",
+          "format_available": "{{ parameters.format_available }}",
+          "keyword_ids": "{{ parameters.keyword_ids }}",
+          "license_models": "{{ parameters.license_models }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "phrase": "{{ parameters.phrase }}",
+          "product_types": "{{ parameters.product_types }}",
+          "sort_order": "{{ parameters.sort_order }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "result_count": {
+              "type": "integer"
+            },
+            "videos": {
+              "type": "embedded",
+              "fields": {
+                "allowed_use": {
+                  "type": "embedded",
+                  "fields": {
+                    "how_can_i_use_it": {
+                      "type": "string"
+                    },
+                    "release_info": {
+                      "type": "string"
+                    },
+                    "usage_restrictions": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "artist": {
+                  "type": "string"
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "clip_length": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "integer"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "color_type": {
+                  "type": "string"
+                },
+                "copyright": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "era": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "istock_licenses": {
+                  "type": "embedded",
+                  "fields": {
+                    "credits": {
+                      "type": "integer"
+                    },
+                    "license_type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "entity_types": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "entity_uris": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "relevance": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "largest_downloads": {
+                  "type": "embedded",
+                  "fields": {
+                    "agreement_name": {
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "mastered_to": {
+                  "type": "string"
+                },
+                "originally_shot_on": {
+                  "type": "string"
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "referral_destinations": {
+                  "type": "embedded",
+                  "fields": {
+                    "site_name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shot_speed": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3SearchVideosEditorial": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/search/videos/editorial"
+        },
+        "parameters": {
+          "age_of_people": "{{ parameters.age_of_people }}",
+          "collection_codes": "{{ parameters.collection_codes }}",
+          "collections_filter_type": "{{ parameters.collections_filter_type }}",
+          "entity_uris": "{{ parameters.entity_uris }}",
+          "exclude_nudity": "{{ parameters.exclude_nudity }}",
+          "fields": "{{ parameters.fields }}",
+          "format_available": "{{ parameters.format_available }}",
+          "keyword_ids": "{{ parameters.keyword_ids }}",
+          "page": "{{ parameters.page }}",
+          "page_size": "{{ parameters.page_size }}",
+          "phrase": "{{ parameters.phrase }}",
+          "product_types": "{{ parameters.product_types }}",
+          "sort_order": "{{ parameters.sort_order }}",
+          "specific_people": "{{ parameters.specific_people }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "result_count": {
+              "type": "integer"
+            },
+            "videos": {
+              "type": "embedded",
+              "fields": {
+                "allowed_use": {
+                  "type": "embedded",
+                  "fields": {
+                    "how_can_i_use_it": {
+                      "type": "string"
+                    },
+                    "release_info": {
+                      "type": "string"
+                    },
+                    "usage_restrictions": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "artist": {
+                  "type": "string"
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "clip_length": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "integer"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "color_type": {
+                  "type": "string"
+                },
+                "copyright": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "era": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "istock_licenses": {
+                  "type": "embedded",
+                  "fields": {
+                    "credits": {
+                      "type": "integer"
+                    },
+                    "license_type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "entity_types": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "entity_uris": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "relevance": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "largest_downloads": {
+                  "type": "embedded",
+                  "fields": {
+                    "agreement_name": {
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "mastered_to": {
+                  "type": "string"
+                },
+                "originally_shot_on": {
+                  "type": "string"
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "referral_destinations": {
+                  "type": "embedded",
+                  "fields": {
+                    "site_name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shot_speed": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3Videos": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/videos"
+        },
+        "parameters": {
+          "ids": "{{ parameters.ids }}",
+          "fields": "{{ parameters.fields }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "videos": {
+              "type": "embedded",
+              "fields": {
+                "allowed_use": {
+                  "type": "embedded",
+                  "fields": {
+                    "how_can_i_use_it": {
+                      "type": "string"
+                    },
+                    "release_info": {
+                      "type": "string"
+                    },
+                    "usage_restrictions": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "artist": {
+                  "type": "string"
+                },
+                "asset_family": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "clip_length": {
+                  "type": "string"
+                },
+                "collection_code": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "integer"
+                },
+                "collection_name": {
+                  "type": "string"
+                },
+                "color_type": {
+                  "type": "string"
+                },
+                "copyright": {
+                  "type": "string"
+                },
+                "date_created": {
+                  "type": "string"
+                },
+                "display_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "is_watermarked": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "download_sizes": {
+                  "type": "embedded",
+                  "fields": {
+                    "bit_depth": {
+                      "type": "string"
+                    },
+                    "broadcast_video_standard": {
+                      "type": "string"
+                    },
+                    "compression": {
+                      "type": "string"
+                    },
+                    "content_type": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "downloads": {
+                      "type": "embedded",
+                      "fields": {
+                        "agreement_name": {
+                          "type": "string"
+                        },
+                        "product_id": {
+                          "type": "string"
+                        },
+                        "product_type": {
+                          "type": "string"
+                        },
+                        "uri": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "format": {
+                      "type": "string"
+                    },
+                    "frame_rate": {
+                      "type": "number"
+                    },
+                    "frame_size": {
+                      "type": "string"
+                    },
+                    "height": {
+                      "type": "number"
+                    },
+                    "interlaced": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "editorial_segments": {
+                  "type": "string",
+                  "many": true
+                },
+                "era": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "istock_licenses": {
+                  "type": "embedded",
+                  "fields": {
+                    "credits": {
+                      "type": "integer"
+                    },
+                    "license_type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "keywords": {
+                  "type": "embedded",
+                  "fields": {
+                    "entity_types": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "entity_uris": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "keyword_id": {
+                      "type": "string"
+                    },
+                    "relevance": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "license_model": {
+                  "type": "string"
+                },
+                "mastered_to": {
+                  "type": "string"
+                },
+                "originally_shot_on": {
+                  "type": "string"
+                },
+                "product_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "referral_destinations": {
+                  "type": "embedded",
+                  "fields": {
+                    "site_name": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shot_speed": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "videos_not_found": {
+              "type": "string",
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "V3VideosId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/v3/videos/{{ identifier }}"
+        },
+        "parameters": {
+          "fields": "{{ parameters.fields }}"
+        },
+        "headers": {
+          "Accept-Language": "{{ headers.Accept-Language }}",
+          "Authorization": "{{ headers.Authorization }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "allowed_use": {
+              "type": "embedded",
+              "fields": {
+                "how_can_i_use_it": {
+                  "type": "string"
+                },
+                "release_info": {
+                  "type": "string"
+                },
+                "usage_restrictions": {
+                  "type": "string",
+                  "many": true
+                }
+              }
+            },
+            "artist": {
+              "type": "string"
+            },
+            "asset_family": {
+              "type": "string"
+            },
+            "caption": {
+              "type": "string"
+            },
+            "clip_length": {
+              "type": "string"
+            },
+            "collection_code": {
+              "type": "string"
+            },
+            "collection_id": {
+              "type": "integer"
+            },
+            "collection_name": {
+              "type": "string"
+            },
+            "color_type": {
+              "type": "string"
+            },
+            "copyright": {
+              "type": "string"
+            },
+            "date_created": {
+              "type": "string"
+            },
+            "display_sizes": {
+              "type": "embedded",
+              "fields": {
+                "is_watermarked": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "download_sizes": {
+              "type": "embedded",
+              "fields": {
+                "bit_depth": {
+                  "type": "string"
+                },
+                "broadcast_video_standard": {
+                  "type": "string"
+                },
+                "compression": {
+                  "type": "string"
+                },
+                "content_type": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "downloads": {
+                  "type": "embedded",
+                  "fields": {
+                    "agreement_name": {
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "format": {
+                  "type": "string"
+                },
+                "frame_rate": {
+                  "type": "number"
+                },
+                "frame_size": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "number"
+                },
+                "interlaced": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              },
+              "many": true
+            },
+            "editorial_segments": {
+              "type": "string",
+              "many": true
+            },
+            "era": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "istock_licenses": {
+              "type": "embedded",
+              "fields": {
+                "credits": {
+                  "type": "integer"
+                },
+                "license_type": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "keywords": {
+              "type": "embedded",
+              "fields": {
+                "entity_types": {
+                  "type": "string",
+                  "many": true
+                },
+                "entity_uris": {
+                  "type": "string",
+                  "many": true
+                },
+                "keyword_id": {
+                  "type": "string"
+                },
+                "relevance": {
+                  "type": "integer"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "license_model": {
+              "type": "string"
+            },
+            "mastered_to": {
+              "type": "string"
+            },
+            "originally_shot_on": {
+              "type": "string"
+            },
+            "product_types": {
+              "type": "string",
+              "many": true
+            },
+            "referral_destinations": {
+              "type": "embedded",
+              "fields": {
+                "site_name": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "shot_speed": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
 }

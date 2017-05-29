@@ -1,5 +1,16 @@
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "url": "https://api.sandbox.paypal.com/v1/payments",
+  "name": "PayPal Payment",
+  "description": "this is a payment request to through PayPal",
+  "endpoints": {
+    "Payment": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/payment"
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,297 @@
+{
+  "version": "1.0",
+  "url": "https://api.enterprise.apigee.com/v1",
+  "name": "Apigee Edge APIs",
+  "headers": {
+    "Authorization": "Basic *** INSERT API TOKEN ***"
+  },
+  "description": "Apigee Edge Management Apis Open API 2.0 (Swagger) Spec",
+  "endpoints": {
+    "OrganizationsOrganizationDevelopers": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/organizations/{{ parameters.organization }}/developers"
+        },
+        "parameters": {},
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/organizations/{{ parameters.organization }}/developers"
+        },
+        "parameters": {},
+        "headers": {}
+      }
+    },
+    "OrganizationsOrganizationDevelopersDeveloperEmail": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/organizations/{{ parameters.organization }}/developers/{{ parameters.developerEmail }}"
+        },
+        "parameters": {},
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "apps": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "email": {
+              "type": "string"
+            },
+            "developerId": {
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "userName": {
+              "type": "string"
+            },
+            "organizationName": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "attributes": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "createdAt": {
+              "type": "number"
+            },
+            "createdBy": {
+              "type": "string"
+            },
+            "lastModifiedAt": {
+              "type": "number"
+            },
+            "lastModifiedBy": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/organizations/{{ parameters.organization }}/developers/{{ parameters.developerEmail }}"
+        },
+        "parameters": {},
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "apps": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "companies": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "email": {
+              "type": "string"
+            },
+            "developerId": {
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "userName": {
+              "type": "string"
+            },
+            "organizationName": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "attributes": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "createdAt": {
+              "type": "number"
+            },
+            "createdBy": {
+              "type": "string"
+            },
+            "lastModifiedAt": {
+              "type": "number"
+            },
+            "lastModifiedBy": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/organizations/{{ parameters.organization }}/developers/{{ parameters.developerEmail }}"
+        },
+        "parameters": {},
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        },
+        "model": {
+          "key": "id",
+          "fields": {
+            "apps": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "companies": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "email": {
+              "type": "string"
+            },
+            "developerId": {
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "userName": {
+              "type": "string"
+            },
+            "organizationName": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "attributes": {
+              "type": "embedded",
+              "fields": {
+                "name": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "createdAt": {
+              "type": "number"
+            },
+            "createdBy": {
+              "type": "string"
+            },
+            "lastModifiedAt": {
+              "type": "number"
+            },
+            "lastModifiedBy": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/organizations/{{ parameters.organization }}/developers/{{ parameters.developerEmail }}"
+        },
+        "parameters": {
+          "action": "{{ parameters.action }}"
+        },
+        "headers": {
+          "Content-Type": "{{ headers.Content-Type }}"
+        }
+      }
+    },
+    "OrganizationsOrgDevelopersDeveloperEmail": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/organizations/{{ parameters.org }}/developers/{{ parameters.developerEmail }}"
+        },
+        "parameters": {
+          "app": "{{ parameters.app }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "apps": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "companies": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "email": {
+              "type": "string"
+            },
+            "developerId": {
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "userName": {
+              "type": "string"
+            },
+            "organizationName": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "attributes": {
+              "type": "embedded",
+              "fields": {},
+              "many": true
+            },
+            "createdAt": {
+              "type": "number"
+            },
+            "createdBy": {
+              "type": "string"
+            },
+            "lastModifiedAt": {
+              "type": "number"
+            },
+            "lastModifiedBy": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

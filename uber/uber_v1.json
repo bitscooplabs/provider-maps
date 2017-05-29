@@ -1,5 +1,182 @@
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "url": "https://api.uber.com/v1",
+  "name": "Uber API",
+  "description": "Move your app forward with the Uber API",
+  "endpoints": {
+    "Products": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/products"
+        },
+        "parameters": {
+          "latitude": "{{ parameters.latitude }}",
+          "longitude": "{{ parameters.longitude }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "product_id": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "capacity": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "EstimatesPrice": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/estimates/price"
+        },
+        "parameters": {
+          "start_latitude": "{{ parameters.start_latitude }}",
+          "start_longitude": "{{ parameters.start_longitude }}",
+          "end_latitude": "{{ parameters.end_latitude }}",
+          "end_longitude": "{{ parameters.end_longitude }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "product_id": {
+              "type": "string"
+            },
+            "currency_code": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "estimate": {
+              "type": "string"
+            },
+            "low_estimate": {
+              "type": "number"
+            },
+            "high_estimate": {
+              "type": "number"
+            },
+            "surge_multiplier": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "EstimatesTime": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/estimates/time"
+        },
+        "parameters": {
+          "start_latitude": "{{ parameters.start_latitude }}",
+          "start_longitude": "{{ parameters.start_longitude }}",
+          "customer_uuid": "{{ parameters.customer_uuid }}",
+          "product_id": "{{ parameters.product_id }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "product_id": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "capacity": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Me": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/me"
+        },
+        "parameters": {},
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "picture": {
+              "type": "string"
+            },
+            "promo_code": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "History": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/history"
+        },
+        "parameters": {
+          "start_latitude": "{{ parameters.start_latitude }}",
+          "start_longitude": "{{ parameters.start_longitude }}"
+        },
+        "headers": {},
+        "model": {
+          "key": "id",
+          "fields": {
+            "offset": {
+              "type": "integer"
+            },
+            "limit": {
+              "type": "integer"
+            },
+            "count": {
+              "type": "integer"
+            },
+            "history": {
+              "type": "embedded",
+              "fields": {
+                "uuid": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

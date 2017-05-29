@@ -1,5 +1,780 @@
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "url": "https://www.api.strava.com/fitness/v1/users",
+  "name": "Strava API",
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://www.api.strava.com",
+    "authorization_url": "https://accounts.strava.com/o/oauth2/auth",
+    "access_token": "https://accounts.strava.com/o/oauth2/token",
+    "signature": "parameter",
+    "auth_key": "*** INSERT AUTH KEY ***",
+    "auth_secret": "*** INSERT AUTH SECRET ***"
+  },
+  "description": "Stores and accesses user data in Strava the fitness store from apps on any platform.",
+  "endpoints": {
+    "UserIdDataSources": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataSources"
+        },
+        "parameters": {
+          "dataTypeName": "{{ parameters.dataTypeName }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "dataSource": {
+              "type": "embedded",
+              "fields": {
+                "application": {
+                  "type": "embedded",
+                  "fields": {
+                    "detailsUrl": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "packageName": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "dataQualityStandard": {
+                  "type": "string",
+                  "many": true
+                },
+                "dataStreamId": {
+                  "type": "string"
+                },
+                "dataStreamName": {
+                  "type": "string"
+                },
+                "dataType": {
+                  "type": "embedded",
+                  "fields": {
+                    "field": {
+                      "type": "embedded",
+                      "fields": {
+                        "format": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "optional": {
+                          "type": "boolean"
+                        }
+                      },
+                      "many": true
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "device": {
+                  "type": "embedded",
+                  "fields": {
+                    "manufacturer": {
+                      "type": "string"
+                    },
+                    "model": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      },
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataSources"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ]
+      }
+    },
+    "UserIdDataSourcesDataSourceId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataSources/{{ parameters.dataSourceId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ]
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataSources/{{ parameters.dataSourceId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ]
+      },
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataSources/{{ parameters.dataSourceId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ]
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataSources/{{ parameters.dataSourceId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ]
+      }
+    },
+    "UserIdDataSourcesDataSourceIdDatasetsDatasetId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataSources/{{ parameters.dataSourceId }}/datasets/{{ parameters.datasetId }}"
+        },
+        "parameters": {
+          "currentTimeMillis": "{{ parameters.currentTimeMillis }}",
+          "modifiedTimeMillis": "{{ parameters.modifiedTimeMillis }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ]
+      },
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataSources/{{ parameters.dataSourceId }}/datasets/{{ parameters.datasetId }}"
+        },
+        "parameters": {
+          "limit": "{{ parameters.limit }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "dataSourceId": {
+              "type": "string"
+            },
+            "maxEndTimeNs": {
+              "type": "string"
+            },
+            "minStartTimeNs": {
+              "type": "string"
+            },
+            "nextPageToken": {
+              "type": "string"
+            },
+            "point": {
+              "type": "embedded",
+              "fields": {
+                "computationTimeMillis": {
+                  "type": "string"
+                },
+                "dataTypeName": {
+                  "type": "string"
+                },
+                "endTimeNanos": {
+                  "type": "string"
+                },
+                "modifiedTimeMillis": {
+                  "type": "string"
+                },
+                "originDataSourceId": {
+                  "type": "string"
+                },
+                "rawTimestampNanos": {
+                  "type": "string"
+                },
+                "startTimeNanos": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "embedded",
+                  "fields": {
+                    "fpVal": {
+                      "type": "number"
+                    },
+                    "intVal": {
+                      "type": "integer"
+                    },
+                    "mapVal": {
+                      "type": "embedded",
+                      "fields": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "embedded",
+                          "fields": {
+                            "fpVal": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "many": true
+                    },
+                    "stringVal": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      },
+      "PATCH": {
+        "method": "PATCH",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataSources/{{ parameters.dataSourceId }}/datasets/{{ parameters.datasetId }}"
+        },
+        "parameters": {
+          "currentTimeMillis": "{{ parameters.currentTimeMillis }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "dataSourceId": {
+              "type": "string"
+            },
+            "maxEndTimeNs": {
+              "type": "string"
+            },
+            "minStartTimeNs": {
+              "type": "string"
+            },
+            "nextPageToken": {
+              "type": "string"
+            },
+            "point": {
+              "type": "embedded",
+              "fields": {
+                "computationTimeMillis": {
+                  "type": "string"
+                },
+                "dataTypeName": {
+                  "type": "string"
+                },
+                "endTimeNanos": {
+                  "type": "string"
+                },
+                "modifiedTimeMillis": {
+                  "type": "string"
+                },
+                "originDataSourceId": {
+                  "type": "string"
+                },
+                "rawTimestampNanos": {
+                  "type": "string"
+                },
+                "startTimeNanos": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "embedded",
+                  "fields": {
+                    "fpVal": {
+                      "type": "number"
+                    },
+                    "intVal": {
+                      "type": "integer"
+                    },
+                    "mapVal": {
+                      "type": "embedded",
+                      "fields": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "embedded",
+                          "fields": {
+                            "fpVal": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "many": true
+                    },
+                    "stringVal": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "UserIdDatasetAggregate": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.userId }}/dataset:aggregate"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "bucket": {
+              "type": "embedded",
+              "fields": {
+                "activity": {
+                  "type": "integer"
+                },
+                "dataset": {
+                  "type": "embedded",
+                  "fields": {
+                    "dataSourceId": {
+                      "type": "string"
+                    },
+                    "maxEndTimeNs": {
+                      "type": "string"
+                    },
+                    "minStartTimeNs": {
+                      "type": "string"
+                    },
+                    "nextPageToken": {
+                      "type": "string"
+                    },
+                    "point": {
+                      "type": "embedded",
+                      "fields": {
+                        "computationTimeMillis": {
+                          "type": "string"
+                        },
+                        "dataTypeName": {
+                          "type": "string"
+                        },
+                        "endTimeNanos": {
+                          "type": "string"
+                        },
+                        "modifiedTimeMillis": {
+                          "type": "string"
+                        },
+                        "originDataSourceId": {
+                          "type": "string"
+                        },
+                        "rawTimestampNanos": {
+                          "type": "string"
+                        },
+                        "startTimeNanos": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "embedded",
+                          "fields": {
+                            "fpVal": {
+                              "type": "number"
+                            },
+                            "intVal": {
+                              "type": "integer"
+                            },
+                            "mapVal": {
+                              "type": "embedded",
+                              "fields": {
+                                "key": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "embedded",
+                                  "fields": {
+                                    "fpVal": {
+                                      "type": "number"
+                                    }
+                                  }
+                                }
+                              },
+                              "many": true
+                            },
+                            "stringVal": {
+                              "type": "string"
+                            }
+                          },
+                          "many": true
+                        }
+                      },
+                      "many": true
+                    }
+                  },
+                  "many": true
+                },
+                "endTimeMillis": {
+                  "type": "string"
+                },
+                "session": {
+                  "type": "embedded",
+                  "fields": {
+                    "activeTimeMillis": {
+                      "type": "string"
+                    },
+                    "activityType": {
+                      "type": "integer"
+                    },
+                    "application": {
+                      "type": "embedded",
+                      "fields": {
+                        "detailsUrl": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "packageName": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "endTimeMillis": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "modifiedTimeMillis": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "startTimeMillis": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "startTimeMillis": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "UserIdSessions": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/{{ parameters.userId }}/sessions"
+        },
+        "parameters": {
+          "endTime": "{{ parameters.endTime }}",
+          "includeDeleted": "{{ parameters.includeDeleted }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "startTime": "{{ parameters.startTime }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.health.write"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "deletedSession": {
+              "type": "embedded",
+              "fields": {
+                "activeTimeMillis": {
+                  "type": "string"
+                },
+                "activityType": {
+                  "type": "integer"
+                },
+                "application": {
+                  "type": "embedded",
+                  "fields": {
+                    "detailsUrl": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "packageName": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "description": {
+                  "type": "string"
+                },
+                "endTimeMillis": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "modifiedTimeMillis": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "startTimeMillis": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "hasMoreData": {
+              "type": "boolean"
+            },
+            "nextPageToken": {
+              "type": "string"
+            },
+            "session": {
+              "type": "base"
+            }
+          }
+        }
+      }
+    },
+    "UserIdSessionsSessionId": {
+      "DELETE": {
+        "method": "DELETE",
+        "route": {
+          "path": "/{{ parameters.userId }}/sessions/{{ parameters.sessionId }}"
+        },
+        "parameters": {
+          "currentTimeMillis": "{{ parameters.currentTimeMillis }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.activity.write"
+        ]
+      },
+      "PUT": {
+        "method": "PUT",
+        "route": {
+          "path": "/{{ parameters.userId }}/sessions/{{ parameters.sessionId }}"
+        },
+        "parameters": {
+          "currentTimeMillis": "{{ parameters.currentTimeMillis }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.strava.com/auth/fitness.activity.write"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "activeTimeMillis": {
+              "type": "string"
+            },
+            "activityType": {
+              "type": "integer"
+            },
+            "application": {
+              "type": "embedded",
+              "fields": {
+                "detailsUrl": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "packageName": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "endTimeMillis": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "modifiedTimeMillis": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "startTimeMillis": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
 }

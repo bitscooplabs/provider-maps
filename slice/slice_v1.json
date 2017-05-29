@@ -1,5 +1,2366 @@
 {
   "version": "1.0",
-  "url": "https://",
-  "endpoints": {}
+  "url": "https://www.api.slice.com/content/v2sandbox",
+  "name": "Slice API",
+  "auth": {
+    "type": "oauth2",
+    "redirect_url": "https://www.api.slice.com",
+    "authorization_url": "https://accounts.Slice.com/o/oauth2/auth",
+    "access_token": "https://accounts.slice.com/o/oauth2/token",
+    "signature": "parameter",
+    "auth_key": "*** INSERT AUTH KEY ***",
+    "auth_secret": "*** INSERT AUTH SECRET ***"
+  },
+  "description": "Manages product items, inventory, and accounts for Slice.",
+  "endpoints": {
+    "OrdersBatch": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/orders/batch"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "entries": {
+              "type": "embedded",
+              "fields": {
+                "batchId": {
+                  "type": "integer"
+                },
+                "errors": {
+                  "type": "embedded",
+                  "fields": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "errors": {
+                      "type": "embedded",
+                      "fields": {
+                        "domain": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "reason": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "executionStatus": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "order": {
+                  "type": "embedded",
+                  "fields": {
+                    "acknowledged": {
+                      "type": "boolean"
+                    },
+                    "channelType": {
+                      "type": "string"
+                    },
+                    "customer": {
+                      "type": "embedded",
+                      "fields": {
+                        "email": {
+                          "type": "string"
+                        },
+                        "explicitMarketingPreference": {
+                          "type": "boolean"
+                        },
+                        "fullName": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "deliveryDetails": {
+                      "type": "embedded",
+                      "fields": {
+                        "address": {
+                          "type": "embedded",
+                          "fields": {
+                            "country": {
+                              "type": "string"
+                            },
+                            "fullAddress": {
+                              "type": "string",
+                              "many": true
+                            },
+                            "isPostOfficeBox": {
+                              "type": "boolean"
+                            },
+                            "locality": {
+                              "type": "string"
+                            },
+                            "postalCode": {
+                              "type": "string"
+                            },
+                            "recipientName": {
+                              "type": "string"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "streetAddress": {
+                              "type": "string",
+                              "many": true
+                            }
+                          }
+                        },
+                        "phoneNumber": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "lineItems": {
+                      "type": "embedded",
+                      "fields": {
+                        "cancellations": {
+                          "type": "embedded",
+                          "fields": {
+                            "actor": {
+                              "type": "string"
+                            },
+                            "creationDate": {
+                              "type": "string"
+                            },
+                            "quantity": {
+                              "type": "integer"
+                            },
+                            "reason": {
+                              "type": "string"
+                            },
+                            "reasonText": {
+                              "type": "string"
+                            }
+                          },
+                          "many": true
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "price": {
+                          "type": "embedded",
+                          "fields": {
+                            "currency": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "product": {
+                          "type": "embedded",
+                          "fields": {
+                            "brand": {
+                              "type": "string"
+                            },
+                            "channel": {
+                              "type": "string"
+                            },
+                            "condition": {
+                              "type": "string"
+                            },
+                            "contentLanguage": {
+                              "type": "string"
+                            },
+                            "gtin": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "imageLink": {
+                              "type": "string"
+                            },
+                            "itemGroupId": {
+                              "type": "string"
+                            },
+                            "mpn": {
+                              "type": "string"
+                            },
+                            "offerId": {
+                              "type": "string"
+                            },
+                            "price": {
+                              "type": "base"
+                            },
+                            "shownImage": {
+                              "type": "string"
+                            },
+                            "targetCountry": {
+                              "type": "string"
+                            },
+                            "title": {
+                              "type": "string"
+                            },
+                            "variantAttributes": {
+                              "type": "embedded",
+                              "fields": {
+                                "dimension": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "string"
+                                }
+                              },
+                              "many": true
+                            }
+                          }
+                        },
+                        "quantityCanceled": {
+                          "type": "integer"
+                        },
+                        "quantityDelivered": {
+                          "type": "integer"
+                        },
+                        "quantityOrdered": {
+                          "type": "integer"
+                        },
+                        "quantityPending": {
+                          "type": "integer"
+                        },
+                        "quantityReturned": {
+                          "type": "integer"
+                        },
+                        "quantityShipped": {
+                          "type": "integer"
+                        },
+                        "returnInfo": {
+                          "type": "embedded",
+                          "fields": {
+                            "daysToReturn": {
+                              "type": "integer"
+                            },
+                            "isReturnable": {
+                              "type": "boolean"
+                            },
+                            "policyUrl": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "returns": {
+                          "type": "embedded",
+                          "fields": {
+                            "actor": {
+                              "type": "string"
+                            },
+                            "creationDate": {
+                              "type": "string"
+                            },
+                            "quantity": {
+                              "type": "integer"
+                            },
+                            "reason": {
+                              "type": "string"
+                            },
+                            "reasonText": {
+                              "type": "string"
+                            }
+                          },
+                          "many": true
+                        },
+                        "shippingDetails": {
+                          "type": "embedded",
+                          "fields": {
+                            "deliverByDate": {
+                              "type": "string"
+                            },
+                            "method": {
+                              "type": "embedded",
+                              "fields": {
+                                "carrier": {
+                                  "type": "string"
+                                },
+                                "maxDaysInTransit": {
+                                  "type": "integer"
+                                },
+                                "methodName": {
+                                  "type": "string"
+                                },
+                                "minDaysInTransit": {
+                                  "type": "integer"
+                                }
+                              }
+                            },
+                            "shipByDate": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "tax": {
+                          "type": "base"
+                        }
+                      },
+                      "many": true
+                    },
+                    "merchantId": {
+                      "type": "string"
+                    },
+                    "merchantOrderId": {
+                      "type": "string"
+                    },
+                    "netAmount": {
+                      "type": "base"
+                    },
+                    "paymentMethod": {
+                      "type": "embedded",
+                      "fields": {
+                        "billingAddress": {
+                          "type": "base"
+                        },
+                        "expirationMonth": {
+                          "type": "integer"
+                        },
+                        "expirationYear": {
+                          "type": "integer"
+                        },
+                        "lastFourDigits": {
+                          "type": "string"
+                        },
+                        "phoneNumber": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "paymentStatus": {
+                      "type": "string"
+                    },
+                    "placedDate": {
+                      "type": "string"
+                    },
+                    "promotions": {
+                      "type": "embedded",
+                      "fields": {
+                        "benefits": {
+                          "type": "embedded",
+                          "fields": {
+                            "discount": {
+                              "type": "base"
+                            },
+                            "offerIds": {
+                              "type": "string",
+                              "many": true
+                            },
+                            "subType": {
+                              "type": "string"
+                            },
+                            "taxImpact": {
+                              "type": "base"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "many": true
+                        },
+                        "effectiveDates": {
+                          "type": "string"
+                        },
+                        "genericRedemptionCode": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "longTitle": {
+                          "type": "string"
+                        },
+                        "productApplicability": {
+                          "type": "string"
+                        },
+                        "redemptionChannel": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "refunds": {
+                      "type": "embedded",
+                      "fields": {
+                        "actor": {
+                          "type": "string"
+                        },
+                        "amount": {
+                          "type": "base"
+                        },
+                        "creationDate": {
+                          "type": "string"
+                        },
+                        "reason": {
+                          "type": "string"
+                        },
+                        "reasonText": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "shipments": {
+                      "type": "embedded",
+                      "fields": {
+                        "carrier": {
+                          "type": "string"
+                        },
+                        "creationDate": {
+                          "type": "string"
+                        },
+                        "deliveryDate": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "lineItems": {
+                          "type": "embedded",
+                          "fields": {
+                            "lineItemId": {
+                              "type": "string"
+                            },
+                            "quantity": {
+                              "type": "integer"
+                            }
+                          },
+                          "many": true
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "trackingId": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "shippingCost": {
+                      "type": "base"
+                    },
+                    "shippingCostTax": {
+                      "type": "base"
+                    },
+                    "shippingOption": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "many": true
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrders": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders"
+        },
+        "parameters": {
+          "acknowledged": "{{ parameters.acknowledged }}",
+          "maxResults": "{{ parameters.maxResults }}",
+          "orderBy": "{{ parameters.orderBy }}",
+          "pageToken": "{{ parameters.pageToken }}",
+          "placedDateEnd": "{{ parameters.placedDateEnd }}",
+          "placedDateStart": "{{ parameters.placedDateStart }}",
+          "statuses": "{{ parameters.statuses }}",
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "kind": {
+              "type": "string"
+            },
+            "nextPageToken": {
+              "type": "string"
+            },
+            "resources": {
+              "type": "embedded",
+              "fields": {
+                "acknowledged": {
+                  "type": "boolean"
+                },
+                "channelType": {
+                  "type": "string"
+                },
+                "customer": {
+                  "type": "embedded",
+                  "fields": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "explicitMarketingPreference": {
+                      "type": "boolean"
+                    },
+                    "fullName": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "deliveryDetails": {
+                  "type": "embedded",
+                  "fields": {
+                    "address": {
+                      "type": "embedded",
+                      "fields": {
+                        "country": {
+                          "type": "string"
+                        },
+                        "fullAddress": {
+                          "type": "string",
+                          "many": true
+                        },
+                        "isPostOfficeBox": {
+                          "type": "boolean"
+                        },
+                        "locality": {
+                          "type": "string"
+                        },
+                        "postalCode": {
+                          "type": "string"
+                        },
+                        "recipientName": {
+                          "type": "string"
+                        },
+                        "region": {
+                          "type": "string"
+                        },
+                        "streetAddress": {
+                          "type": "string",
+                          "many": true
+                        }
+                      }
+                    },
+                    "phoneNumber": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "id": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "lineItems": {
+                  "type": "embedded",
+                  "fields": {
+                    "cancellations": {
+                      "type": "embedded",
+                      "fields": {
+                        "actor": {
+                          "type": "string"
+                        },
+                        "creationDate": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "reason": {
+                          "type": "string"
+                        },
+                        "reasonText": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "embedded",
+                      "fields": {
+                        "currency": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "product": {
+                      "type": "embedded",
+                      "fields": {
+                        "brand": {
+                          "type": "string"
+                        },
+                        "channel": {
+                          "type": "string"
+                        },
+                        "condition": {
+                          "type": "string"
+                        },
+                        "contentLanguage": {
+                          "type": "string"
+                        },
+                        "gtin": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "imageLink": {
+                          "type": "string"
+                        },
+                        "itemGroupId": {
+                          "type": "string"
+                        },
+                        "mpn": {
+                          "type": "string"
+                        },
+                        "offerId": {
+                          "type": "string"
+                        },
+                        "price": {
+                          "type": "base"
+                        },
+                        "shownImage": {
+                          "type": "string"
+                        },
+                        "targetCountry": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "variantAttributes": {
+                          "type": "embedded",
+                          "fields": {
+                            "dimension": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "many": true
+                        }
+                      }
+                    },
+                    "quantityCanceled": {
+                      "type": "integer"
+                    },
+                    "quantityDelivered": {
+                      "type": "integer"
+                    },
+                    "quantityOrdered": {
+                      "type": "integer"
+                    },
+                    "quantityPending": {
+                      "type": "integer"
+                    },
+                    "quantityReturned": {
+                      "type": "integer"
+                    },
+                    "quantityShipped": {
+                      "type": "integer"
+                    },
+                    "returnInfo": {
+                      "type": "embedded",
+                      "fields": {
+                        "daysToReturn": {
+                          "type": "integer"
+                        },
+                        "isReturnable": {
+                          "type": "boolean"
+                        },
+                        "policyUrl": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "returns": {
+                      "type": "embedded",
+                      "fields": {
+                        "actor": {
+                          "type": "string"
+                        },
+                        "creationDate": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "reason": {
+                          "type": "string"
+                        },
+                        "reasonText": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "shippingDetails": {
+                      "type": "embedded",
+                      "fields": {
+                        "deliverByDate": {
+                          "type": "string"
+                        },
+                        "method": {
+                          "type": "embedded",
+                          "fields": {
+                            "carrier": {
+                              "type": "string"
+                            },
+                            "maxDaysInTransit": {
+                              "type": "integer"
+                            },
+                            "methodName": {
+                              "type": "string"
+                            },
+                            "minDaysInTransit": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "shipByDate": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "tax": {
+                      "type": "base"
+                    }
+                  },
+                  "many": true
+                },
+                "merchantId": {
+                  "type": "string"
+                },
+                "merchantOrderId": {
+                  "type": "string"
+                },
+                "netAmount": {
+                  "type": "base"
+                },
+                "paymentMethod": {
+                  "type": "embedded",
+                  "fields": {
+                    "billingAddress": {
+                      "type": "base"
+                    },
+                    "expirationMonth": {
+                      "type": "integer"
+                    },
+                    "expirationYear": {
+                      "type": "integer"
+                    },
+                    "lastFourDigits": {
+                      "type": "string"
+                    },
+                    "phoneNumber": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "paymentStatus": {
+                  "type": "string"
+                },
+                "placedDate": {
+                  "type": "string"
+                },
+                "promotions": {
+                  "type": "embedded",
+                  "fields": {
+                    "benefits": {
+                      "type": "embedded",
+                      "fields": {
+                        "discount": {
+                          "type": "base"
+                        },
+                        "offerIds": {
+                          "type": "string",
+                          "many": true
+                        },
+                        "subType": {
+                          "type": "string"
+                        },
+                        "taxImpact": {
+                          "type": "base"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "effectiveDates": {
+                      "type": "string"
+                    },
+                    "genericRedemptionCode": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "longTitle": {
+                      "type": "string"
+                    },
+                    "productApplicability": {
+                      "type": "string"
+                    },
+                    "redemptionChannel": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "refunds": {
+                  "type": "embedded",
+                  "fields": {
+                    "actor": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "type": "base"
+                    },
+                    "creationDate": {
+                      "type": "string"
+                    },
+                    "reason": {
+                      "type": "string"
+                    },
+                    "reasonText": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shipments": {
+                  "type": "embedded",
+                  "fields": {
+                    "carrier": {
+                      "type": "string"
+                    },
+                    "creationDate": {
+                      "type": "string"
+                    },
+                    "deliveryDate": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "lineItems": {
+                      "type": "embedded",
+                      "fields": {
+                        "lineItemId": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "integer"
+                        }
+                      },
+                      "many": true
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "trackingId": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shippingCost": {
+                  "type": "base"
+                },
+                "shippingCostTax": {
+                  "type": "base"
+                },
+                "shippingOption": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersOrderId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders/{{ parameters.orderId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "acknowledged": {
+              "type": "boolean"
+            },
+            "channelType": {
+              "type": "string"
+            },
+            "customer": {
+              "type": "embedded",
+              "fields": {
+                "email": {
+                  "type": "string"
+                },
+                "explicitMarketingPreference": {
+                  "type": "boolean"
+                },
+                "fullName": {
+                  "type": "string"
+                }
+              }
+            },
+            "deliveryDetails": {
+              "type": "embedded",
+              "fields": {
+                "address": {
+                  "type": "embedded",
+                  "fields": {
+                    "country": {
+                      "type": "string"
+                    },
+                    "fullAddress": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "isPostOfficeBox": {
+                      "type": "boolean"
+                    },
+                    "locality": {
+                      "type": "string"
+                    },
+                    "postalCode": {
+                      "type": "string"
+                    },
+                    "recipientName": {
+                      "type": "string"
+                    },
+                    "region": {
+                      "type": "string"
+                    },
+                    "streetAddress": {
+                      "type": "string",
+                      "many": true
+                    }
+                  }
+                },
+                "phoneNumber": {
+                  "type": "string"
+                }
+              }
+            },
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "lineItems": {
+              "type": "embedded",
+              "fields": {
+                "cancellations": {
+                  "type": "embedded",
+                  "fields": {
+                    "actor": {
+                      "type": "string"
+                    },
+                    "creationDate": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    },
+                    "reason": {
+                      "type": "string"
+                    },
+                    "reasonText": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "id": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "embedded",
+                  "fields": {
+                    "currency": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "product": {
+                  "type": "embedded",
+                  "fields": {
+                    "brand": {
+                      "type": "string"
+                    },
+                    "channel": {
+                      "type": "string"
+                    },
+                    "condition": {
+                      "type": "string"
+                    },
+                    "contentLanguage": {
+                      "type": "string"
+                    },
+                    "gtin": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "imageLink": {
+                      "type": "string"
+                    },
+                    "itemGroupId": {
+                      "type": "string"
+                    },
+                    "mpn": {
+                      "type": "string"
+                    },
+                    "offerId": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "base"
+                    },
+                    "shownImage": {
+                      "type": "string"
+                    },
+                    "targetCountry": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "variantAttributes": {
+                      "type": "embedded",
+                      "fields": {
+                        "dimension": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    }
+                  }
+                },
+                "quantityCanceled": {
+                  "type": "integer"
+                },
+                "quantityDelivered": {
+                  "type": "integer"
+                },
+                "quantityOrdered": {
+                  "type": "integer"
+                },
+                "quantityPending": {
+                  "type": "integer"
+                },
+                "quantityReturned": {
+                  "type": "integer"
+                },
+                "quantityShipped": {
+                  "type": "integer"
+                },
+                "returnInfo": {
+                  "type": "embedded",
+                  "fields": {
+                    "daysToReturn": {
+                      "type": "integer"
+                    },
+                    "isReturnable": {
+                      "type": "boolean"
+                    },
+                    "policyUrl": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "returns": {
+                  "type": "embedded",
+                  "fields": {
+                    "actor": {
+                      "type": "string"
+                    },
+                    "creationDate": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    },
+                    "reason": {
+                      "type": "string"
+                    },
+                    "reasonText": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shippingDetails": {
+                  "type": "embedded",
+                  "fields": {
+                    "deliverByDate": {
+                      "type": "string"
+                    },
+                    "method": {
+                      "type": "embedded",
+                      "fields": {
+                        "carrier": {
+                          "type": "string"
+                        },
+                        "maxDaysInTransit": {
+                          "type": "integer"
+                        },
+                        "methodName": {
+                          "type": "string"
+                        },
+                        "minDaysInTransit": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "shipByDate": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "tax": {
+                  "type": "base"
+                }
+              },
+              "many": true
+            },
+            "merchantId": {
+              "type": "string"
+            },
+            "merchantOrderId": {
+              "type": "string"
+            },
+            "netAmount": {
+              "type": "base"
+            },
+            "paymentMethod": {
+              "type": "embedded",
+              "fields": {
+                "billingAddress": {
+                  "type": "base"
+                },
+                "expirationMonth": {
+                  "type": "integer"
+                },
+                "expirationYear": {
+                  "type": "integer"
+                },
+                "lastFourDigits": {
+                  "type": "string"
+                },
+                "phoneNumber": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "paymentStatus": {
+              "type": "string"
+            },
+            "placedDate": {
+              "type": "string"
+            },
+            "promotions": {
+              "type": "embedded",
+              "fields": {
+                "benefits": {
+                  "type": "embedded",
+                  "fields": {
+                    "discount": {
+                      "type": "base"
+                    },
+                    "offerIds": {
+                      "type": "string",
+                      "many": true
+                    },
+                    "subType": {
+                      "type": "string"
+                    },
+                    "taxImpact": {
+                      "type": "base"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "effectiveDates": {
+                  "type": "string"
+                },
+                "genericRedemptionCode": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "longTitle": {
+                  "type": "string"
+                },
+                "productApplicability": {
+                  "type": "string"
+                },
+                "redemptionChannel": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "refunds": {
+              "type": "embedded",
+              "fields": {
+                "actor": {
+                  "type": "string"
+                },
+                "amount": {
+                  "type": "base"
+                },
+                "creationDate": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "reasonText": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "shipments": {
+              "type": "embedded",
+              "fields": {
+                "carrier": {
+                  "type": "string"
+                },
+                "creationDate": {
+                  "type": "string"
+                },
+                "deliveryDate": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "lineItems": {
+                  "type": "embedded",
+                  "fields": {
+                    "lineItemId": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    }
+                  },
+                  "many": true
+                },
+                "status": {
+                  "type": "string"
+                },
+                "trackingId": {
+                  "type": "string"
+                }
+              },
+              "many": true
+            },
+            "shippingCost": {
+              "type": "base"
+            },
+            "shippingCostTax": {
+              "type": "base"
+            },
+            "shippingOption": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersOrderIdAcknowledge": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders/{{ parameters.orderId }}/acknowledge"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "executionStatus": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersOrderIdCancel": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders/{{ parameters.orderId }}/cancel"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "executionStatus": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersOrderIdCancelLineItem": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders/{{ parameters.orderId }}/cancelLineItem"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "executionStatus": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersOrderIdRefund": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders/{{ parameters.orderId }}/refund"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "executionStatus": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersOrderIdReturnLineItem": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders/{{ parameters.orderId }}/returnLineItem"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "executionStatus": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersOrderIdShipLineItems": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders/{{ parameters.orderId }}/shipLineItems"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "executionStatus": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersOrderIdUpdateMerchantOrderId": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders/{{ parameters.orderId }}/updateMerchantOrderId"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "executionStatus": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersOrderIdUpdateShipment": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/orders/{{ parameters.orderId }}/updateShipment"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "executionStatus": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdOrdersbymerchantidMerchantOrderId": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/ordersbymerchantid/{{ parameters.merchantOrderId }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "kind": {
+              "type": "string"
+            },
+            "order": {
+              "type": "embedded",
+              "fields": {
+                "acknowledged": {
+                  "type": "boolean"
+                },
+                "channelType": {
+                  "type": "string"
+                },
+                "customer": {
+                  "type": "embedded",
+                  "fields": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "explicitMarketingPreference": {
+                      "type": "boolean"
+                    },
+                    "fullName": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "deliveryDetails": {
+                  "type": "embedded",
+                  "fields": {
+                    "address": {
+                      "type": "embedded",
+                      "fields": {
+                        "country": {
+                          "type": "string"
+                        },
+                        "fullAddress": {
+                          "type": "string",
+                          "many": true
+                        },
+                        "isPostOfficeBox": {
+                          "type": "boolean"
+                        },
+                        "locality": {
+                          "type": "string"
+                        },
+                        "postalCode": {
+                          "type": "string"
+                        },
+                        "recipientName": {
+                          "type": "string"
+                        },
+                        "region": {
+                          "type": "string"
+                        },
+                        "streetAddress": {
+                          "type": "string",
+                          "many": true
+                        }
+                      }
+                    },
+                    "phoneNumber": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "id": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "lineItems": {
+                  "type": "embedded",
+                  "fields": {
+                    "cancellations": {
+                      "type": "embedded",
+                      "fields": {
+                        "actor": {
+                          "type": "string"
+                        },
+                        "creationDate": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "reason": {
+                          "type": "string"
+                        },
+                        "reasonText": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "embedded",
+                      "fields": {
+                        "currency": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "product": {
+                      "type": "embedded",
+                      "fields": {
+                        "brand": {
+                          "type": "string"
+                        },
+                        "channel": {
+                          "type": "string"
+                        },
+                        "condition": {
+                          "type": "string"
+                        },
+                        "contentLanguage": {
+                          "type": "string"
+                        },
+                        "gtin": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "imageLink": {
+                          "type": "string"
+                        },
+                        "itemGroupId": {
+                          "type": "string"
+                        },
+                        "mpn": {
+                          "type": "string"
+                        },
+                        "offerId": {
+                          "type": "string"
+                        },
+                        "price": {
+                          "type": "base"
+                        },
+                        "shownImage": {
+                          "type": "string"
+                        },
+                        "targetCountry": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "variantAttributes": {
+                          "type": "embedded",
+                          "fields": {
+                            "dimension": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "many": true
+                        }
+                      }
+                    },
+                    "quantityCanceled": {
+                      "type": "integer"
+                    },
+                    "quantityDelivered": {
+                      "type": "integer"
+                    },
+                    "quantityOrdered": {
+                      "type": "integer"
+                    },
+                    "quantityPending": {
+                      "type": "integer"
+                    },
+                    "quantityReturned": {
+                      "type": "integer"
+                    },
+                    "quantityShipped": {
+                      "type": "integer"
+                    },
+                    "returnInfo": {
+                      "type": "embedded",
+                      "fields": {
+                        "daysToReturn": {
+                          "type": "integer"
+                        },
+                        "isReturnable": {
+                          "type": "boolean"
+                        },
+                        "policyUrl": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "returns": {
+                      "type": "embedded",
+                      "fields": {
+                        "actor": {
+                          "type": "string"
+                        },
+                        "creationDate": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "reason": {
+                          "type": "string"
+                        },
+                        "reasonText": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "shippingDetails": {
+                      "type": "embedded",
+                      "fields": {
+                        "deliverByDate": {
+                          "type": "string"
+                        },
+                        "method": {
+                          "type": "embedded",
+                          "fields": {
+                            "carrier": {
+                              "type": "string"
+                            },
+                            "maxDaysInTransit": {
+                              "type": "integer"
+                            },
+                            "methodName": {
+                              "type": "string"
+                            },
+                            "minDaysInTransit": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "shipByDate": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "tax": {
+                      "type": "base"
+                    }
+                  },
+                  "many": true
+                },
+                "merchantId": {
+                  "type": "string"
+                },
+                "merchantOrderId": {
+                  "type": "string"
+                },
+                "netAmount": {
+                  "type": "base"
+                },
+                "paymentMethod": {
+                  "type": "embedded",
+                  "fields": {
+                    "billingAddress": {
+                      "type": "base"
+                    },
+                    "expirationMonth": {
+                      "type": "integer"
+                    },
+                    "expirationYear": {
+                      "type": "integer"
+                    },
+                    "lastFourDigits": {
+                      "type": "string"
+                    },
+                    "phoneNumber": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "paymentStatus": {
+                  "type": "string"
+                },
+                "placedDate": {
+                  "type": "string"
+                },
+                "promotions": {
+                  "type": "embedded",
+                  "fields": {
+                    "benefits": {
+                      "type": "embedded",
+                      "fields": {
+                        "discount": {
+                          "type": "base"
+                        },
+                        "offerIds": {
+                          "type": "string",
+                          "many": true
+                        },
+                        "subType": {
+                          "type": "string"
+                        },
+                        "taxImpact": {
+                          "type": "base"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "effectiveDates": {
+                      "type": "string"
+                    },
+                    "genericRedemptionCode": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "longTitle": {
+                      "type": "string"
+                    },
+                    "productApplicability": {
+                      "type": "string"
+                    },
+                    "redemptionChannel": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "refunds": {
+                  "type": "embedded",
+                  "fields": {
+                    "actor": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "type": "base"
+                    },
+                    "creationDate": {
+                      "type": "string"
+                    },
+                    "reason": {
+                      "type": "string"
+                    },
+                    "reasonText": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shipments": {
+                  "type": "embedded",
+                  "fields": {
+                    "carrier": {
+                      "type": "string"
+                    },
+                    "creationDate": {
+                      "type": "string"
+                    },
+                    "deliveryDate": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "lineItems": {
+                      "type": "embedded",
+                      "fields": {
+                        "lineItemId": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "integer"
+                        }
+                      },
+                      "many": true
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "trackingId": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shippingCost": {
+                  "type": "base"
+                },
+                "shippingCostTax": {
+                  "type": "base"
+                },
+                "shippingOption": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdTestorders": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/testorders"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "kind": {
+              "type": "string"
+            },
+            "orderId": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdTestordersOrderIdAdvance": {
+      "POST": {
+        "method": "POST",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/testorders/{{ parameters.orderId }}/advance"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MerchantIdTestordertemplatesTemplateName": {
+      "GET": {
+        "method": "GET",
+        "route": {
+          "path": "/{{ parameters.merchantId }}/testordertemplates/{{ parameters.templateName }}"
+        },
+        "parameters": {
+          "alt": "{{ parameters.alt }}",
+          "fields": "{{ parameters.fields }}",
+          "key": "{{ parameters.key }}",
+          "oauth_token": "{{ parameters.oauth_token }}",
+          "prettyPrint": "{{ parameters.prettyPrint }}",
+          "quotaUser": "{{ parameters.quotaUser }}",
+          "userIp": "{{ parameters.userIp }}"
+        },
+        "headers": {},
+        "scopes": [
+          "https://www.api.slice.com/auth/content"
+        ],
+        "model": {
+          "key": "id",
+          "fields": {
+            "kind": {
+              "type": "string"
+            },
+            "template": {
+              "type": "embedded",
+              "fields": {
+                "customer": {
+                  "type": "embedded",
+                  "fields": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "explicitMarketingPreference": {
+                      "type": "boolean"
+                    },
+                    "fullName": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "lineItems": {
+                  "type": "embedded",
+                  "fields": {
+                    "product": {
+                      "type": "embedded",
+                      "fields": {
+                        "brand": {
+                          "type": "string"
+                        },
+                        "channel": {
+                          "type": "string"
+                        },
+                        "condition": {
+                          "type": "string"
+                        },
+                        "contentLanguage": {
+                          "type": "string"
+                        },
+                        "gtin": {
+                          "type": "string"
+                        },
+                        "imageLink": {
+                          "type": "string"
+                        },
+                        "itemGroupId": {
+                          "type": "string"
+                        },
+                        "mpn": {
+                          "type": "string"
+                        },
+                        "offerId": {
+                          "type": "string"
+                        },
+                        "price": {
+                          "type": "embedded",
+                          "fields": {
+                            "currency": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "targetCountry": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "variantAttributes": {
+                          "type": "embedded",
+                          "fields": {
+                            "dimension": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "many": true
+                        }
+                      }
+                    },
+                    "quantityOrdered": {
+                      "type": "integer"
+                    },
+                    "returnInfo": {
+                      "type": "embedded",
+                      "fields": {
+                        "daysToReturn": {
+                          "type": "integer"
+                        },
+                        "isReturnable": {
+                          "type": "boolean"
+                        },
+                        "policyUrl": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "shippingDetails": {
+                      "type": "embedded",
+                      "fields": {
+                        "deliverByDate": {
+                          "type": "string"
+                        },
+                        "method": {
+                          "type": "embedded",
+                          "fields": {
+                            "carrier": {
+                              "type": "string"
+                            },
+                            "maxDaysInTransit": {
+                              "type": "integer"
+                            },
+                            "methodName": {
+                              "type": "string"
+                            },
+                            "minDaysInTransit": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "shipByDate": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "unitTax": {
+                      "type": "base"
+                    }
+                  },
+                  "many": true
+                },
+                "paymentMethod": {
+                  "type": "embedded",
+                  "fields": {
+                    "expirationMonth": {
+                      "type": "integer"
+                    },
+                    "expirationYear": {
+                      "type": "integer"
+                    },
+                    "lastFourDigits": {
+                      "type": "string"
+                    },
+                    "predefinedBillingAddress": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "predefinedDeliveryAddress": {
+                  "type": "string"
+                },
+                "promotions": {
+                  "type": "embedded",
+                  "fields": {
+                    "benefits": {
+                      "type": "embedded",
+                      "fields": {
+                        "discount": {
+                          "type": "base"
+                        },
+                        "offerIds": {
+                          "type": "string",
+                          "many": true
+                        },
+                        "subType": {
+                          "type": "string"
+                        },
+                        "taxImpact": {
+                          "type": "base"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "many": true
+                    },
+                    "effectiveDates": {
+                      "type": "string"
+                    },
+                    "genericRedemptionCode": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "longTitle": {
+                      "type": "string"
+                    },
+                    "productApplicability": {
+                      "type": "string"
+                    },
+                    "redemptionChannel": {
+                      "type": "string"
+                    }
+                  },
+                  "many": true
+                },
+                "shippingCost": {
+                  "type": "base"
+                },
+                "shippingCostTax": {
+                  "type": "base"
+                },
+                "shippingOption": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
